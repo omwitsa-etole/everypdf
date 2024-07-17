@@ -128,4 +128,8 @@
 </div>       
 <script src="/static/dist/js/app.7909e88.js" async></script>
 <script src="/static/js/plupload/plupload.full.min.js" async></script>
+<script src="/static/js/pdfjs/pdf.min.js" async></script>
+<script>
+    pdfjsLib.GlobalWorkerOptions.workerSrc = "/static/js/pdfjs/pdf.worker.min.js";
+</script>
 {%endblock%}

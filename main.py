@@ -1,5 +1,5 @@
 
-from flask import Flask, request,jsonify,make_response,redirect ,session,render_template,url_for
+from flask import Flask, request,jsonify,make_response,redirect ,session,render_template,url_for,send_from_directory
 import os
 from flask_cors import CORS
 #from modules import *
@@ -38,6 +38,16 @@ async def before_request_func():
         session["manifest"]["user"] = None
     else:
         session["manifest"]["user"] = session.get("user")
+
+@app.route('/static/uploads/<path:filename>')
+def serve_static(filename):
+    try:
+        response = make_response(send_from_directory('static/uploads', filename))
+        response.headers['Content-Type'] = 'application/pdf'
+        response.headers['Content-Disposition'] = 'inline; filename=' + filename
+        return response
+    except FileNotFoundError:
+        abort(404)
     
 @app.route("/v1/upload",methods=["POST"])
 def uploader():

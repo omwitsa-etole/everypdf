@@ -13613,7 +13613,7 @@ var apiServer = 'localhost:5000';
 		}, a.prototype.initPlupload = function() {
 			return new Promise(function(e) {
 				if (null === window.plupload || void 0 !== window.plupload) return e(!0);
-				r.lazyload("/js/plupload/plupload.full.min.js");
+				r.lazyload("/static/js/plupload/plupload.full.min.js");
 				var t = window.setInterval(function() {
 					if (null !== window.plupload && "object" == typeof window.plupload) return clearInterval(t), e(!0)
 				}, 100)
@@ -13745,7 +13745,31 @@ var apiServer = 'localhost:5000';
 						FileUploaded: function(e, t, n) {
 							r.file = null;
 							n = JSON.parse(n.response);
-                            console.log("response",n)
+                            console.log("response",n,t,e);
+                            var canvas = document.getElementById('cover-'+t.id);
+                            var ctx = canvas.getContext('2d');
+                            const pdfUrl = n.server_filename;
+                            pdfjsLib.GlobalWorkerOptions.workerSrc = "/static/js/pdfjs/pdf.worker.min.js";
+                            pdfjsLib.getDocument(pdfUrl).promise.then(pdf => {
+                                // Get the first page
+                                pdf.getPage(1).then(page => {
+                                    const scale = 1.5; // Adjust scale as needed
+                                    const viewport = page.getViewport({ scale });
+                            
+                                    // Set canvas dimensions
+                                    //canvas.width = viewport.width;
+                                    //canvas.height = viewport.height;
+                            
+                                    // Render PDF page into canvas context
+                                    const renderContext = {
+                                        canvasContext: ctx,
+                                        viewport: viewport,
+                                    };
+                                    page.render(renderContext);
+                                });
+                            }).catch(err => {
+                                console.error('Error loading PDF: ', err);
+                            });
 							a.fileUploaded(t.id, n)
 						},
 						UploadComplete: function(e, t) {
@@ -19344,7 +19368,7 @@ var apiServer = 'localhost:5000';
 			var n = this,
 				i = this;
 			return new Promise(function(e, t) {
-				null !== window.PDFJS && void 0 === window.PDFJS && (r.lazyload("/js/pdfjs/pdf.min.js"), n.pdfjsInterval = window.setInterval(function() {
+				null !== window.PDFJS && void 0 === window.PDFJS && (r.lazyload("/static/js/pdfjs/pdf.min.js"), n.pdfjsInterval = window.setInterval(function() {
 					if (null !== window.PDFJS && "object" == typeof window.PDFJS) return i.hasPdfjs = !0, i.pdfjs = window.PDFJS, clearInterval(i.pdfjsInterval), e(i.hasPdfjs)
 				}, 100))
 			})
