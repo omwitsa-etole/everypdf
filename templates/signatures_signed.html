@@ -1,0 +1,210 @@
+{%extends 'main.html'%}
+
+
+{%block content%}
+<link href="/static/dist/css/admin.7909e88.css" rel="stylesheet">
+
+<div id="mainAdmin" class="main-sidebar">
+    <div class="main-sidebar__sidebar">
+        <div class="sidebar" style="width: 248px; max-height: calc(-60px + 100vh); height: 712.375px;">
+
+<div class="sidebar__user">
+<div class="avatar">
+    <!--
+    <div class="avatar__image">
+        <img src="https://www.{{manifest['title']|lower}}.com/img/avatar/avatar-default.png">
+    </div>
+    -->
+    <div class="user__avatar user__avatar--registered">
+<div class="user__avatar__edit">
+<img id="avatarPreloader" class="user__avatar__edit__preload" src="/static/img/svg_icons/preload.svg">
+<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12">
+    <path d="M0 9.002v2.368h2.368l6.986-6.985-2.37-2.37zm11.185-6.45a.63.63 0 0 0 0-.891L9.707.185a.63.63 0 0 0-.891 0L7.66 1.34l2.37 2.37 1.156-1.156z" fill="#383E45" fill-rule="evenodd"></path>
+</svg>
+<img id="avatarImage" src="https://www.{{manifest['title']|lower}}.com/img/avatar/default110.png" width="110" height="110">
+</div>
+<input id="uploadAvatar" data-max-size="2048" type="file">
+</div>            <div class="avatar__information">
+        <div class="avatar__information__role avatar__information__role--registered">
+            Registered                </div>
+        <div class="avatar__information__name">
+            BRADONE Etole                </div>
+    </div>
+</div>
+</div>
+
+<ul class="sidebar__menu">
+<li class="sidebar__menu__subtitle">Profile</li>
+<li class="sidebar__menu__item ">
+    <a href="/user"><img src="/static/img/icons/admin/account.svg">My account</a>
+</li>
+<li class="sidebar__menu__item ">
+    <a href="/user/security"><img src="/static/img/icons/admin/password.svg">Security</a>
+</li>
+            <li class="sidebar__menu__item ">
+        <a href="/user/team"><img src="/static/img/icons/admin/team.svg">Team</a>
+    </li>
+
+<li class="sidebar__menu__subtitle">Activity</li>
+
+<li class="sidebar__menu__item ">
+    <a href="/user/history"><img src="/static/img/icons/admin/history.svg">Last tasks</a>
+</li>
+
+            <li class="sidebar__menu__subtitle">Signatures</li>
+
+    <li class="sidebar__menu__item ">
+        <a href="/user/signatures"><img src="/static/img/icons/admin/signature-overview.svg">Overview</a>
+    </li>
+    <li class="sidebar__menu__item ">
+        <a href="/user/signatures/requests"><img src="/static/img/icons/admin/signature-sent.svg">Sent</a>
+    </li>
+    <li class="sidebar__menu__item ">
+        <a href="/user/signatures/pending"><img src="/static/img/icons/admin/signature-inbox.svg">Inbox</a>
+    </li>
+    <li class="sidebar__menu__item sidebar__menu__item--active">
+        <a href="/user/signatures/signed"><img src="/static/img/icons/admin/signature-signed.svg">Signed</a>
+    </li>
+                <li class="sidebar__menu__item ">
+        <a href="/user/signatures/templates"><img src="/static/img/icons/admin/signature-templates.svg">Templates</a>
+    </li>
+    <li class="sidebar__menu__item ">
+        <a href="/user/contacts"><img src="/static/img/icons/admin/signature-contacts.svg">Contacts</a>
+    </li>
+
+    <li class="sidebar__menu__item ">
+        <a href="/user/signatures/settings"><img src="/static/img/icons/admin/signature-settings.svg">Settings</a>
+    </li>
+        <li class="sidebar__menu__subtitle">Billing</li>
+
+            <li class="sidebar__menu__item ">
+        <a href="/user/plan"><img src="/static/img/icons/admin/package.svg">Plans &amp; Packages</a>
+    </li>
+        <li class="sidebar__menu__item ">
+    <a href="/user/business"><img src="/static/img/icons/admin/business.svg">Business details</a>
+</li>
+<li class="sidebar__menu__item ">
+    <a href="/user/invoices"><img src="/static/img/icons/admin/card.svg">Invoices</a>
+</li>
+</ul>
+</div>            </div>
+    <div class="main-sidebar__content">
+        <div class="container">
+            
+
+<div class="box">
+<div class="row">
+<div class="col-md-6 col-sm-12">
+    <a href="/user/signatures"><img class="ie11-hide" width="200" src="/static/img/sign/signature.svg"></a>
+            </div>
+<!--  && $user->parent == 0 -->
+            <div class="col-md-6 col-sm-12 text-right">
+        <a class="btn" href="/sign-pdf">New signature</a>
+    </div>
+
+
+</div>
+</div>
+<div class="box">
+</div>
+
+<div class="row">
+<div class="col-12">
+    </div>
+</div>
+
+<div class="row">
+<div class="col-12">
+<div class="card">
+    <div class="card__header">
+        <h2 class="card__title">Processed documents<!--<span class="icon-info tooltip" data-title="Signed documents by me"></span>--></h2>
+    </div>
+    <div class="card__body">
+                    <div class="empty-results">
+<img src="/static/img/user/empty_list.svg">
+<span>No documents signed... so far!</span>
+</div>        <br>
+    </div>
+</div>
+</div>
+</div>
+
+
+
+<template class="confirmModal-template" data-template-name="remove-signature">
+<div class="modal fade confirmModal" data-state="default" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+<div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="dialog__content">
+                                <div class="dialog__body">
+                                        <div class="confirmModal__default">
+                                                    <div class="dialog__title">
+                            Remove signature                                </div>
+                                                                                                            <p>You are going to remove the access to this signature registry. Are you sure you would like to proceed?</p>                                                    </div>
+                <div class="confirmModal__loading">
+                    <img src="/static/img/svg_icons/preload.svg" alt="Loading">
+                </div>
+                <div class="confirmModal__error">
+
+                </div>
+
+                <div class="dialog__action confirmModal__default">
+                                                    <button class="btn btn--secondary btn__no">No</button>
+                        <button class="btn  btn__yes">Yes</button>
+                                            </div>
+                <div class="dialog__action confirmModal__error">
+                    <button class="btn btn__cancel">Ok</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</template>
+
+<template class="confirmModal-template" data-template-name="delete-signature">
+<div class="modal fade confirmModal" data-state="default" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+<div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="dialog__content">
+                                <div class="dialog__body">
+                                        <div class="confirmModal__default">
+                                                    <div class="dialog__title">
+                            Delete signature                                </div>
+                                                                                                            <p>You are going to delete this signature. Are you sure you would like to proceed?</p>                                                    </div>
+                <div class="confirmModal__loading">
+                    <img src="/static/img/svg_icons/preload.svg" alt="Loading">
+                </div>
+                <div class="confirmModal__error">
+
+                </div>
+
+                <div class="dialog__action confirmModal__default">
+                                                    <button class="btn btn--secondary btn__no">No</button>
+                        <button class="btn  btn__yes">Yes</button>
+                                            </div>
+                <div class="dialog__action confirmModal__error">
+                    <button class="btn btn__cancel">Ok</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</template>
+<script>
+    var unlinkRss = '/user/unlink';
+    
+    var userConfig = {"userId":105326155,"email":"{{manifest['user']['email']}}","page":null,"userToken":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJzZXJ2aWNlLmlsb3ZlcGRmLmNvbSIsImF1ZCI6IiIsImlhdCI6MTcyMTIxMTg3NywibmJmIjoxNzIxMjExODc3LCJqdGkiOjEwNTMyNjE1NX0.WgE0QZk3VFkexPDwaaXoIIHCtCMMO8hEJK-19ZKC-M4","token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJhdWQiOiIiLCJpYXQiOjE1MjMzNjQ4MjQsIm5iZiI6MTUyMzM2NDgyNCwianRpIjoicHJvamVjdF9wdWJsaWNfYzkwNWRkMWMwMWU5ZmQ3NzY5ODNjYTQwZDBhOWQyZjNfT1Vzd2EwODA0MGI4ZDJjN2NhM2NjZGE2MGQ2MTBhMmRkY2U3NyJ9.qvHSXgCJgqpC4gd6-paUlDLFmg0o2DsOvb1EUYPYx_E","startServer":"https:\/\/api.{{manifest['title']|lower}}.com","user":{"id":105326155,"name":"{{manifest['user']['name']}}","email":"{{manifest['user']['email']}}","active":1,"avatar":"https:\/\/www.{{manifest['title']|lower}}.com\/img\/avatar\/default30.png","limits":{"merge":{"mb":100,"files":25},"split":{"mb":100,"files":1},"compress":{"mb":200,"files":2},"officepdf":{"mb":15,"files":1},"wordpdf":{"mb":15,"files":1},"powerpointpdf":{"mb":15,"files":1},"excelpdf":{"mb":15,"files":1},"pdfoffice":{"mb":15,"files":1},"pdfword":{"mb":15,"files":1},"pdfocr":{"mb":15,"files":1,"pages":50},"pdfpowerpoint":{"mb":15,"files":1},"pdfexcel":{"mb":15,"files":1,"pages":500},"pdfjpg":{"mb":25,"files":2},"imagepdf":{"mb":40,"files":20},"pagenumber":{"mb":100,"files":2},"watermark":{"mb":100,"files":2},"rotate":{"mb":100,"files":20},"unlock":{"mb":100,"files":2},"protect":{"mb":100,"files":2},"pdfa":{"mb":100,"files":1},"repair":{"mb":100,"files":1},"organize":{"mb":100,"files":5},"redact":{"mb":400,"files":1},"resizeimage":{"mb":200,"files":30},"compressimage":{"mb":200,"files":30},"cropimage":{"mb":90,"files":1},"converttojpg":{"mb":200,"files":30},"convertfromjpg":{"mb":200,"files":30},"rotateimage":{"mb":200,"files":30},"watermarkimage":{"mb":200,"files":30},"memeimage":{"mb":200,"files":1},"editimage":{"mb":50,"files":1},"editpdf":{"mb":100,"files":1},"sign":{"mb":50,"files":3},"upscaleimage":{"mb":6,"files":3,"pxsize":33177600},"removebackgroundimage":{"mb":6,"files":3,"pxsize":17612800},"blurfaceimage":{"mb":100,"files":10}},"mode":0,"premium":false,"country":"KE","loginkey":"dQCKApicgZe0B5mSRvHLYK6tYdt-_F9k","can_trial":false,"current_subscription":null,"team_role":null,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJzZXJ2aWNlLmlsb3ZlcGRmLmNvbSIsImF1ZCI6IiIsImlhdCI6MTcyMTIxMTg3NywibmJmIjoxNzIxMjExODc3LCJqdGkiOjEwNTMyNjE1NX0.WgE0QZk3VFkexPDwaaXoIIHCtCMMO8hEJK-19ZKC-M4","sus_rbt":false,"custom_avatar":0,"signature":{"signatureMode":"font","initialsMode":"font","signature":"Bradone Etole","initials":"BE","font":{"fontFamily":"allura","color":"#555555"},"draw":{"signature":"","initials":"","signatureData":"","initialsData":"","color":"#555555"},"image":{"signature":"","initials":"","stamp":""},"level":null},"signConfig":{"orderCheckbox":0,"expirateCheckbox":null,"expire":15,"multipleCheckbox":null,"reminderCheckbox":1,"reminderInput":1,"certifiedCheckbox":null,"languageCheckbox":null,"selectLanguage":null,"messageCheckbox":null,"customSubject":null,"customMessage":null,"uuidCheckbox":1,"notifyCheckbox":1,"brandCheckbox":0,"brandName":null,"brandLogo":null,"svcCheckbox":1,"level":null,"isDefault":true},"brandConfig":{"brandCheckbox":0,"brandName":null,"brandLogo":null,"level":null,"isDefault":true},"signatures_left":0,"sms_left":0,"certificates_left":0},"action":"signature"};
+    
+    var iloveLang = {};
+    iloveLang.voidActionError = 'Sorry, the request annulment has failed.';
+    iloveLang.signature_status_void = 'Void';
+    iloveLang.deleteActionError = 'Sorry, the delete request has failed.';
+    iloveLang.signature_status_delete = 'Deleted';
+    </script>                 </div>
+    </div>
+    <div class="main-sidebar__backdrop"></div>
+</div>
+<script src="/static/dist/js/admin.7909e88.js" async="async"></script>
+{%endblock%}

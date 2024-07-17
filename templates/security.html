@@ -1,0 +1,296 @@
+{%extends 'main.html'%}
+
+{%block content%}
+<link href="/static/dist/css/admin.7909e88.css" rel="stylesheet">
+
+<div id="mainAdmin" class="main-sidebar">
+    <div class="main-sidebar__sidebar">
+        <div class="sidebar">
+
+<div class="sidebar__user">
+<div class="avatar">
+    <!--
+    <div class="avatar__image">
+        <img src="https://www.{{manifest['title']}}.com/img/avatar/avatar-default.png">
+    </div>
+    -->
+    <div class="user__avatar user__avatar--registered">
+<div class="user__avatar__edit">
+<img id="avatarPreloader" class="user__avatar__edit__preload" src="/static/img/svg_icons/preload.svg">
+<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12">
+    <path d="M0 9.002v2.368h2.368l6.986-6.985-2.37-2.37zm11.185-6.45a.63.63 0 0 0 0-.891L9.707.185a.63.63 0 0 0-.891 0L7.66 1.34l2.37 2.37 1.156-1.156z"
+          fill="#383E45" fill-rule="evenodd"/>
+</svg>
+<img id="avatarImage" src="https://www.{{manifest['title']|lower}}.com/img/avatar/default110.png" width="110"
+     height="110">
+</div>
+<input id="uploadAvatar" data-max-size="2048" type="file">
+</div>            <div class="avatar__information">
+        <div
+            class="avatar__information__role avatar__information__role--registered">
+            Registered                </div>
+        <div class="avatar__information__name">
+            {{manifest['user'].get('name')}}              </div>
+    </div>
+</div>
+</div>
+
+<ul class="sidebar__menu">
+<li class="sidebar__menu__subtitle">Profile</li>
+<li class="sidebar__menu__item ">
+    <a href="/user"><img
+            src="/static/img/icons/admin/account.svg"/>My account</a>
+</li>
+<li class="sidebar__menu__item sidebar__menu__item--active">
+    <a href="/user/security"><img
+            src="/static/img/icons/admin/password.svg"/>Security</a>
+</li>
+            <li class="sidebar__menu__item ">
+        <a href="/user/team"><img
+                src="/static/img/icons/admin/team.svg"/>Team</a>
+    </li>
+
+<li class="sidebar__menu__subtitle">Activity</li>
+
+<li class="sidebar__menu__item ">
+    <a href="/user/history"><img
+            src="/static/img/icons/admin/history.svg"/>Last tasks</a>
+</li>
+
+            <li class="sidebar__menu__subtitle">Signatures</li>
+
+    <li class="sidebar__menu__item ">
+        <a href="/user/signatures"><img
+                src="/static/img/icons/admin/signature-overview.svg"/>Overview</a>
+    </li>
+    <li class="sidebar__menu__item ">
+        <a href="/user/signatures/requests"><img
+                src="/static/img/icons/admin/signature-sent.svg"/>Sent</a>
+    </li>
+    <li class="sidebar__menu__item ">
+        <a href="/user/signatures/pending"><img
+                src="/static/img/icons/admin/signature-inbox.svg"/>Inbox</a>
+    </li>
+    <li class="sidebar__menu__item ">
+        <a href="/user/signatures/signed"><img
+                src="/static/img/icons/admin/signature-signed.svg"/>Signed</a>
+    </li>
+                <li class="sidebar__menu__item ">
+        <a href="/user/signatures/templates"><img
+                src="/static/img/icons/admin/signature-templates.svg"/>Templates</a>
+    </li>
+    <li class="sidebar__menu__item ">
+        <a href="/user/contacts"><img
+                src="/static/img/icons/admin/signature-contacts.svg"/>Contacts</a>
+    </li>
+
+    <li class="sidebar__menu__item ">
+        <a href="/user/signatures/settings"><img
+                src="/static/img/icons/admin/signature-settings.svg"/>Settings</a>
+    </li>
+        <li class="sidebar__menu__subtitle">Billing</li>
+
+            <li class="sidebar__menu__item ">
+        <a href="/user/plan"><img
+                src="/static/img/icons/admin/package.svg"/>Plans & Packages</a>
+    </li>
+        <li class="sidebar__menu__item ">
+    <a href="/user/business"><img
+            src="/static/img/icons/admin/business.svg"/>Business details</a>
+</li>
+<li class="sidebar__menu__item ">
+    <a href="/user/invoices"><img
+            src="/static/img/icons/admin/card.svg"/>Invoices</a>
+</li>
+</ul>
+</div>            </div>
+    <div class="main-sidebar__content">
+        <div class="container">
+            
+
+<div class="box">
+<div class="row">
+<div class="col-md-6 col-sm-12">
+    <h1 class="title2">Security</h1>
+</div>
+    <div class="col-md-6 col-sm-12 text-right">
+            <a become-premium-btn href="/user/premium" class="btn btn--premium"><svg class="btn__icon" width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM4.092 9.206l-.535-3.59c-.01-.082.039-.156.109-.167.025-.004.05 0 .073.013L5.815 6.62c.06.033.13.01.165-.055l1.823-3.384c.037-.07.116-.09.176-.048a.139.139 0 0 1 .04.044L9.97 6.571c.035.062.104.084.161.052l2.13-1.164c.064-.035.14-.003.17.07a.17.17 0 0 1 .011.084l-.547 3.593c-.009.073-.063.127-.126.127H4.22c-.065 0-.119-.054-.128-.127Zm.797 1.372a.533.533 0 0 0 0 1.067h6.222a.533.533 0 1 0 0-1.067H4.889Z" fill="#47474F"/></svg> Upgrade to Premium</a>
+    </div>
+    </div>
+</div>
+
+<div class="row">
+<div class="col-12 col-md-6">
+<div class="row">
+    <div class="col-12">
+        <div id="password-preview" class="card">
+<div class="card__header">
+<h2 class="card__title">Password</h2>
+<span class="card__header__action">
+                                <button id="password-change-btn" class="link">Create</button>
+                            </span>
+</div>
+<div class="card__body">
+<div class="user-info">
+                    <p>Create a password to secure your account access.</p>
+            </div>
+</div>
+</div>
+<div id="password-edit" class="card card--input hidden">
+<div class="card__header">
+<h2 class="card__title">Password</h2>
+</div>
+<form id="w0" action="/user/security" method="post">
+<input type="hidden" name="_csrf-{{manifest['title']|lower}}" value="UeE7VBgn-Z3nzE5jhSehoxtncC10mTuFn7s8iNpCkz5ltVUgYn7N0ZapATKwH-3nWAwbXQHTa9bXg0jMtHfJWg==">    <div class="card__body">
+        <div class="form-group field-updatepasswordform-new_password required">
+<label class="control-label" for="updatepasswordform-new_password">New Password</label><div class="input--icon input--lock"><input type="password" id="updatepasswordform-new_password" name="UpdatePasswordForm[new_password]" maxlength="255" placeholder="New password" autocomplete="new-password" required="true" aria-required="true"></div><div class="help-block"></div>
+</div>        <div class="form-group field-updatepasswordform-new_password_repeat">
+<label class="control-label" for="updatepasswordform-new_password_repeat">Re-type new Password</label><div class="input--icon input--lock"><input type="password" id="updatepasswordform-new_password_repeat" name="UpdatePasswordForm[new_password_repeat]" maxlength="255" placeholder="Repeat new password" autocomplete="new-password" required="true" minlength="8"></div><div class="help-block"></div>
+</div>    </div>
+<div class="card__actions">
+<button id="password-cancel-btn" type="button" class="link">Cancel</button>
+<input type="submit" id="save-btn" class="btn" value="Save"/>
+</div>
+</form></div>            </div>
+</div>
+</div>
+<div class="col-12 col-md-6">
+<div class="row">
+    <div class="col-12">
+        
+<div id="twofactorauth-preview" class="card">
+<div class="card__header">
+<h2 class="card__title">Two factor authentication</h2>
+<span class="card__header__action">
+   <button id="twofactorauth-change-btn" class="link">Enable</button>
+</span>
+</div>
+<div class="card__body">
+<p>Two Factor Authentication improves your account security.</p>
+            <p>You can enable Two Factor Authentication with your current password and a QR given code.</p>
+
+<p>Status: <strong>disabled</strong></p>
+</div>
+</div>
+
+<div id="twofactorauth-edit" class="card card--input hidden" >
+<div class="card__header">
+<h2 class="card__title">Two factor authentication</h2>
+</div>
+<form id="w1" action="/user/security" method="post">
+<input type="hidden" name="_csrf-{{manifest['title']|lower}}" value="UeE7VBgn-Z3nzE5jhSehoxtncC10mTuFn7s8iNpCkz5ltVUgYn7N0ZapATKwH-3nWAwbXQHTa9bXg0jMtHfJWg==">    <div class="card__body">
+
+<div class=" field-twofactorform-two_factor_auth_token required">
+
+<input type="hidden" id="twofactorform-two_factor_auth_token" class="form-control" name="TwoFactorForm[two_factor_auth_token]" value="KY4YZNBMX34IQIYJ">
+
+<p class="help-block help-block-error"></p>
+</div>
+<div class="form-group field-twofactorform-two_factor_auth_token_password required">
+<label class="control-label" for="twofactorform-two_factor_auth_token_password">Current password:</label><div class="input--icon input--lock"><input type="password" id="twofactorform-two_factor_auth_token_password" class="form-control" name="TwoFactorForm[two_factor_auth_token_password]" maxlength="255" placeholder="Password" autocomplete="current-password" required="true" minlength="8" aria-required="true"></div><p class="help-block help-block-error"></p>
+</div>
+                <div class="form-group">
+            <div class="two-factor-auth">
+                <div class="d-flex" style="margin: 48px 0;">
+                    <div><img width="200" height="200" src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=otpauth%3A%2F%2Ftotp%2F{{manifest['title']|lower}}%3A{{manifest['user']['email']}}%3Fsecret%3DKY4YZNBMX34IQIYJ%26issuer%3D{{manifest['title']|lower}}&ecc=M" /></div>
+                    <div class="two-factor-auth__text" style="padding: 12px 24px;">
+                        Download <i>Google Authenticator</i> on the <a href="https://apps.apple.com/us/app/google-authenticator/id388497605" target="_blank">App Store</a> or <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2" target="_blank">Google Play</a>, scan the QR image and insert the generated code                            </div>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="form-group field-twofactorform-google_authenticator_code">
+<label class="control-label" for="twofactorform-google_authenticator_code">Google Authenticator Code</label><div class="input--icon input--key"><input type="text" id="twofactorform-google_authenticator_code" class="form-control" name="TwoFactorForm[google_authenticator_code]" placeholder="Code" autocomplete="off"></div><p class="help-block help-block-error"></p>
+</div>        
+        <div class="form-group field-twofactorform-two_factor_auth_token_enabled">
+
+<input type="hidden" id="twofactorform-two_factor_auth_token_enabled" class="form-control" name="TwoFactorForm[two_factor_auth_token_enabled]" value="1">
+
+<p class="help-block help-block-error"></p>
+</div>
+</div>
+<div class="card__actions">
+<button id="twofactorauth-cancel-btn" type="button" class="link link--secondary">Cancel</button>
+<input type="submit" id="save-btn" class="btn" value="Enable"/>
+</div>
+</form></div>            </div>
+</div>
+</div>
+</div>
+
+<script>
+(function () {
+var getOverlayLayer = function () {
+    var overlay = document.querySelector('#overlay');
+    if (overlay) {
+        return overlay;
+    }
+
+    var nodeOverlay = document.createElement('div');
+    nodeOverlay.classList.add('absolute-overlay');
+    nodeOverlay.classList.add('hidden');
+    nodeOverlay.id = 'overlay';
+    document.getElementById("mainAdmin").appendChild(nodeOverlay);
+    return nodeOverlay;
+}
+
+var initEditCard = function (name) {
+    var previewCard = document.querySelector('#' + name + '-preview');
+    if (!previewCard) return;
+    var editCard = document.querySelector('#' + name + '-edit');
+    // In order to be in front of overlay.
+    editCard.style.position = 'relative';
+    editCard.style.zIndex = '1';
+
+    var enabled = false;
+    var overlay = getOverlayLayer();
+
+    var toggleActiveElement = function () {
+        if (enabled) {
+            previewCard.classList.toggle('hidden');
+            overlay.classList.toggle('hidden');
+            editCard.classList.toggle('hidden');
+        }
+    };
+
+    var changeBtn = document.querySelector('#' + name + '-change-btn');
+    changeBtn.addEventListener('click', function () {
+        enabled = true;
+        toggleActiveElement();
+    });
+
+    var cancelBtn = document.querySelector('#' + name + '-cancel-btn');
+    cancelBtn.addEventListener('click', function () {
+        toggleActiveElement();
+        enabled = false;
+    });
+
+    if (editCard.getAttribute('data-open') === 'true') {
+        changeBtn.click();
+    }
+
+    overlay.addEventListener('click', function () {
+        toggleActiveElement();
+        enabled = false;
+    });
+};
+
+// Init logic.
+initEditCard('password');
+initEditCard('twofactorauth');
+})();
+</script>
+
+
+<script>
+var userModel = {"parent_valid_until":null,"has_active_premium":false,"payment_intent":null,"setup_intent":null,"payment_intent_id":null,"educationEmail":null};
+var userConfig = {"userId":105326155,"email":"etolebradone@gmail.com","token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJhdWQiOiIiLCJpYXQiOjE1MjMzNjQ4MjQsIm5iZiI6MTUyMzM2NDgyNCwianRpIjoicHJvamVjdF9wdWJsaWNfYzkwNWRkMWMwMWU5ZmQ3NzY5ODNjYTQwZDBhOWQyZjNfT1Vzd2EwODA0MGI4ZDJjN2NhM2NjZGE2MGQ2MTBhMmRkY2U3NyJ9.qvHSXgCJgqpC4gd6-paUlDLFmg0o2DsOvb1EUYPYx_E","startServer":"https:\/\/api.{{manifest['title']}}.com","page":null,"userToken":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJzZXJ2aWNlLmlsb3ZlcGRmLmNvbSIsImF1ZCI6IiIsImlhdCI6MTcyMTIxMDE1OSwibmJmIjoxNzIxMjEwMTU5LCJqdGkiOjEwNTMyNjE1NX0.3rqGcowxWbKga3cHXWL-hhX6u6Cb2WyWm1VdSUGmLKA","user":{"id":105326155,"name":"BRADONE Etole","email":"etolebradone@gmail.com","active":1,"avatar":"https:\/\/www.{{manifest['title']}}.com\/img\/avatar\/default30.png","limits":{"merge":{"mb":100,"files":25},"split":{"mb":100,"files":1},"compress":{"mb":200,"files":2},"officepdf":{"mb":15,"files":1},"wordpdf":{"mb":15,"files":1},"powerpointpdf":{"mb":15,"files":1},"excelpdf":{"mb":15,"files":1},"pdfoffice":{"mb":15,"files":1},"pdfword":{"mb":15,"files":1},"pdfocr":{"mb":15,"files":1,"pages":50},"pdfpowerpoint":{"mb":15,"files":1},"pdfexcel":{"mb":15,"files":1,"pages":500},"pdfjpg":{"mb":25,"files":2},"imagepdf":{"mb":40,"files":20},"pagenumber":{"mb":100,"files":2},"watermark":{"mb":100,"files":2},"rotate":{"mb":100,"files":20},"unlock":{"mb":100,"files":2},"protect":{"mb":100,"files":2},"pdfa":{"mb":100,"files":1},"repair":{"mb":100,"files":1},"organize":{"mb":100,"files":5},"redact":{"mb":400,"files":1},"resizeimage":{"mb":200,"files":30},"compressimage":{"mb":200,"files":30},"cropimage":{"mb":90,"files":1},"converttojpg":{"mb":200,"files":30},"convertfromjpg":{"mb":200,"files":30},"rotateimage":{"mb":200,"files":30},"watermarkimage":{"mb":200,"files":30},"memeimage":{"mb":200,"files":1},"editimage":{"mb":50,"files":1},"editpdf":{"mb":100,"files":1},"sign":{"mb":50,"files":3},"upscaleimage":{"mb":6,"files":3,"pxsize":33177600},"removebackgroundimage":{"mb":6,"files":3,"pxsize":17612800},"blurfaceimage":{"mb":100,"files":10}},"mode":0,"premium":false,"country":"KE","loginkey":"dQCKApicgZe0B5mSRvHLYK6tYdt-_F9k","can_trial":false,"current_subscription":null,"team_role":null,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJzZXJ2aWNlLmlsb3ZlcGRmLmNvbSIsImF1ZCI6IiIsImlhdCI6MTcyMTIxMDE1OSwibmJmIjoxNzIxMjEwMTU5LCJqdGkiOjEwNTMyNjE1NX0.3rqGcowxWbKga3cHXWL-hhX6u6Cb2WyWm1VdSUGmLKA","sus_rbt":false,"custom_avatar":0,"signatures_left":0,"sms_left":0,"certificates_left":0},"action":"security"};
+</script>                </div>
+    </div>
+    <div class="main-sidebar__backdrop"></div>
+</div>
+
+<script src="/static/dist/js/admin.7909e88.js" async="async"></script>
+
+{%endblock%}

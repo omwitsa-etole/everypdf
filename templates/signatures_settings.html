@@ -1,0 +1,428 @@
+{%extends 'main.html'%}
+
+
+{%block content%}
+<link href="/static/dist/css/admin.7909e88.css" rel="stylesheet">
+
+<div id="mainAdmin" class="main-sidebar">
+    <div class="main-sidebar__sidebar">
+        <div class="sidebar">
+
+<div class="sidebar__user">
+<div class="avatar">
+    <!--
+    <div class="avatar__image">
+        <img src="https://www.{{manifest['title']|lower}}.com/img/avatar/avatar-default.png">
+    </div>
+    -->
+    <div class="user__avatar user__avatar--registered">
+<div class="user__avatar__edit">
+<img id="avatarPreloader" class="user__avatar__edit__preload" src="/static/img/svg_icons/preload.svg">
+<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12">
+    <path d="M0 9.002v2.368h2.368l6.986-6.985-2.37-2.37zm11.185-6.45a.63.63 0 0 0 0-.891L9.707.185a.63.63 0 0 0-.891 0L7.66 1.34l2.37 2.37 1.156-1.156z"
+          fill="#383E45" fill-rule="evenodd"/>
+</svg>
+<img id="avatarImage" src="https://www.{{manifest['title']|lower}}.com/img/avatar/default110.png" width="110"
+     height="110">
+</div>
+<input id="uploadAvatar" data-max-size="2048" type="file">
+</div>            <div class="avatar__information">
+        <div
+            class="avatar__information__role avatar__information__role--registered">
+            Registered                </div>
+        <div class="avatar__information__name">
+           {{manifest['user']['name']}}     </div>
+    </div>
+</div>
+</div>
+
+<ul class="sidebar__menu">
+<li class="sidebar__menu__subtitle">Profile</li>
+<li class="sidebar__menu__item ">
+    <a href="/user"><img
+            src="/static/img/icons/admin/account.svg"/>My account</a>
+</li>
+<li class="sidebar__menu__item ">
+    <a href="/user/security"><img
+            src="/static/img/icons/admin/password.svg"/>Security</a>
+</li>
+            <li class="sidebar__menu__item ">
+        <a href="/user/team"><img
+                src="/static/img/icons/admin/team.svg"/>Team</a>
+    </li>
+
+<li class="sidebar__menu__subtitle">Activity</li>
+
+<li class="sidebar__menu__item ">
+    <a href="/user/history"><img
+            src="/static/img/icons/admin/history.svg"/>Last tasks</a>
+</li>
+
+            <li class="sidebar__menu__subtitle">Signatures</li>
+
+    <li class="sidebar__menu__item ">
+        <a href="/user/signatures"><img
+                src="/static/img/icons/admin/signature-overview.svg"/>Overview</a>
+    </li>
+    <li class="sidebar__menu__item ">
+        <a href="/user/signatures/requests"><img
+                src="/static/img/icons/admin/signature-sent.svg"/>Sent</a>
+    </li>
+    <li class="sidebar__menu__item ">
+        <a href="/user/signatures/pending"><img
+                src="/static/img/icons/admin/signature-inbox.svg"/>Inbox</a>
+    </li>
+    <li class="sidebar__menu__item ">
+        <a href="/user/signatures/signed"><img
+                src="/static/img/icons/admin/signature-signed.svg"/>Signed</a>
+    </li>
+                <li class="sidebar__menu__item ">
+        <a href="/user/signatures/templates"><img
+                src="/static/img/icons/admin/signature-templates.svg"/>Templates</a>
+    </li>
+    <li class="sidebar__menu__item ">
+        <a href="/user/contacts"><img
+                src="/static/img/icons/admin/signature-contacts.svg"/>Contacts</a>
+    </li>
+
+    <li class="sidebar__menu__item sidebar__menu__item--active">
+        <a href="/user/signatures/settings"><img
+                src="/static/img/icons/admin/signature-settings.svg"/>Settings</a>
+    </li>
+        <li class="sidebar__menu__subtitle">Billing</li>
+
+            <li class="sidebar__menu__item ">
+        <a href="/user/plan"><img
+                src="/static/img/icons/admin/package.svg"/>Plans & Packages</a>
+    </li>
+        <li class="sidebar__menu__item ">
+    <a href="/user/business"><img
+            src="/static/img/icons/admin/business.svg"/>Business details</a>
+</li>
+<li class="sidebar__menu__item ">
+    <a href="/user/invoices"><img
+            src="/static/img/icons/admin/card.svg"/>Invoices</a>
+</li>
+</ul>
+</div>            </div>
+    <div class="main-sidebar__content">
+        <div class="container">
+            
+
+
+<div class="box">
+<div class="row">
+<div class="col-md-6 col-sm-12">
+    <a href="/user/signatures"><img class="ie11-hide" width="200"
+                                                          src="/static/img/sign/signature.svg"></a>
+            </div>
+<!--  && $user->parent == 0 -->
+            <div class="col-md-6 col-sm-12 text-right">
+        <a class="btn btn--secondary btn--sm" style="outline-color: #2BB4C0; color: #2BB4C0;"
+           href="/user/link-developers-account">
+            <svg style="margin-right: 8px" viewBox="0 0 500 500" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M0 0h500v500H0z"/><path fill-rule="evenodd" clip-rule="evenodd" d="M135.487 6.306A21.74 21.74 0 0 1 150.798 0h327.463C490.267 0 500 9.733 500 21.74v324.495a21.735 21.735 0 0 1-6.429 15.433L364.513 489.694A21.737 21.737 0 0 1 349.202 496H21.739C9.733 496 0 486.267 0 474.261V149.765a21.736 21.736 0 0 1 6.43-15.433L135.486 6.306Z" fill="#2BB4C0"/><path d="m288.955 301.711 53.742-53.779-53.742-53.78a13.81 13.81 0 0 1 0-19.543 13.786 13.786 0 0 1 19.53 0l63.576 63.62a13.81 13.81 0 0 1 0 19.544l-63.576 63.621a13.788 13.788 0 0 1-19.53 0c-5.263-5.406-5.402-14.277 0-19.683ZM208.897 301.711l-53.742-53.779 53.742-53.78a13.81 13.81 0 0 0 0-19.543 13.786 13.786 0 0 0-19.53 0l-63.576 63.62a13.81 13.81 0 0 0 0 19.544l63.576 63.621a13.788 13.788 0 0 0 19.53 0c5.263-5.406 5.402-14.277 0-19.683Z" fill="#fff"/></svg>
+            Developer connect</a>
+    </div>
+    <!--
+    <div class="col-md-6 col-sm-12 text-right">
+        <a href="/user/link-developers-account" class="text-right"><b>Link with</b> <img src="/static/img/icons/admin/Developers.svg" height="24px" style="margin-left: 24px"></a>
+    </div>
+    -->
+
+
+</div>
+</div>
+<div class="box">
+</div>
+
+<div class="row">
+<div class="col-12">
+<div class="card card--input">
+    <div class="card__header">
+        <h2 class="card__title">Settings</h2>
+    </div>
+    <form id="sign-settings" action="/user/signatures/settings" method="post">
+<input type="hidden" name="_csrf-{{manifest['title']|lower}}" value="TM6gnJCbXqUjmWFKLxrC3pk7_wDeA9QHs8Xzp9S4F154ms7o6sJq6VL8LhsaIo6a2lCUcKtJhFT7_Yfjuo1NOg==">            <div class="card__body">
+
+        
+<div class="receiver__setting">
+<div class="form__group" id="orderOption">
+<div class="checkbox">
+    <input type="hidden" name="orderCheckbox"value="0">
+    <input type="checkbox" name="orderCheckbox" id="orderCheckbox" value="1"
+           class="input"
+           >
+    <label for="orderCheckbox">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16"><path d="M14.315 16c.222 0 .436-.09.605-.268l4.822-4.922a.89.89 0 0 0 .258-.599c0-.482-.338-.804-.8-.804-.24 0-.418.09-.56.232l-2.278 2.34-1.317 1.554.08-1.965V.822c0-.482-.33-.822-.8-.822-.472 0-.8.34-.8.822V11.57l.08 1.965-1.317-1.554L9.99 9.64c-.142-.143-.32-.232-.56-.232-.463 0-.792.322-.792.804a.88.88 0 0 0 .249.599l4.822 4.922c.17.18.383.268.605.268zm-8.63 0c.472 0 .8-.34.8-.822V4.43l-.09-1.965L7.73 4.02 10 6.36c.15.143.33.232.56.232a.76.76 0 0 0 .801-.804c0-.205-.098-.438-.25-.6L6.3.268C6.12.09 5.907 0 5.685 0a.84.84 0 0 0-.614.268L.258 5.2A.89.89 0 0 0 0 5.789c0 .482.338.804.8.804.24 0 .418-.09.56-.232l2.27-2.34 1.326-1.554-.09 1.965v10.747c0 .482.338.822.82.822z" fill="#4a7aab" fill-rule="nonzero"/></svg>
+        Set the order of receivers            </label>
+</div>
+</div>
+<div class="receiver__setting__content">
+<p>Select this option to set a signing order. A signer won't receive a request until the previous person has completed their document.</p>
+</div>
+</div>
+<div class="receiver__setting">
+<div class="form__group" id="expirateOption">
+<div class="checkbox">
+    <input type="hidden" name="expirateCheckbox" value="0">
+    <input type="checkbox" name="expirateCheckbox" id="expirateCheckbox" value="1" class="input" ">
+    <label for="expirateCheckbox">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><path d="M13.115 10.038a.77.77 0 0 1 .769.769v2.325a.77.77 0 0 1-.274.589l-1.232 1.037c-.144.12-.32.18-.495.18a.77.77 0 0 1-.495-1.358l.958-.806v-1.967a.77.77 0 0 1 .769-.769h0zM18.923 7a.77.77 0 0 0-.769.769v1.184c-1.233-1.492-3.076-2.38-5.056-2.38a6.57 6.57 0 0 0-6.56 6.56c0 3.617 2.95 6.56 6.577 6.56.99 0 1.97-.223 2.858-.648l.045-.02.32-.168a.77.77 0 0 0 .296-1.047.77.77 0 0 0-1.047-.296 5.07 5.07 0 0 1-2.471.641c-2.778 0-5.038-2.253-5.038-5.02a5.03 5.03 0 0 1 5.021-5.021 5.02 5.02 0 0 1 3.985 1.965h-1.198a.77.77 0 0 0-.769.769.77.77 0 0 0 .769.769h1.5a2.31 2.31 0 0 0 2.308-2.308V7.77A.77.77 0 0 0 18.923 7h0zm-.55 8.728a.77.77 0 0 0-1.068.207.77.77 0 0 0 .207 1.068c.132.09.282.132.43.132a.77.77 0 0 0 .431-1.407zm1.292-2.378l-.018-.073-.025-.07-.032-.068-.038-.065a.72.72 0 0 0-.045-.061c-.016-.02-.033-.038-.05-.056a.69.69 0 0 0-.056-.051c-.02-.016-.04-.03-.06-.045a.74.74 0 0 0-.065-.038l-.068-.032-.07-.025-.073-.018c-.025-.005-.05-.01-.075-.01-.05-.005-.1-.005-.15 0a.7.7 0 0 0-.075.011l-.073.018a.75.75 0 0 0-.071.025c-.023.01-.046.02-.068.032a.68.68 0 0 0-.065.038.64.64 0 0 0-.061.045.72.72 0 0 0-.056.051c-.018.018-.035.037-.05.056s-.03.04-.045.06l-.038.065c-.012.022-.023.045-.032.068s-.018.047-.025.07l-.018.073-.01.075c-.003.025-.004.05-.004.076s.001.05.004.076a.71.71 0 0 0 .011.075l.018.073.025.07.032.068.038.065c.014.02.03.04.045.06s.033.038.05.056a.72.72 0 0 0 .056.051.7.7 0 0 0 .061.045.68.68 0 0 0 .065.038c.022.012.045.023.068.032l.07.025c.024.007.05.014.073.018a.7.7 0 0 0 .075.011.71.71 0 0 0 .076.004.7.7 0 0 0 .15-.015l.073-.018.07-.025.068-.032a.74.74 0 0 0 .065-.038l.06-.045a.69.69 0 0 0 .056-.051c.018-.018.035-.037.05-.056l.045-.06.038-.065c.012-.022.023-.045.032-.068s.018-.047.025-.07l.018-.073a.71.71 0 0 0 .011-.075c.003-.025.004-.05.004-.076l-.004-.076c-.002-.025-.006-.05-.01-.075zM6.308 18.154h-3.23a1.54 1.54 0 0 1-1.538-1.538v-12a1.54 1.54 0 0 1 1.538-1.538h.962v.77a.77.77 0 0 0 .769.769.77.77 0 0 0 .769-.769v-.77h3.462v.77a.77.77 0 0 0 .769.769.77.77 0 0 0 .769-.769v-.77h3.5v.77a.77.77 0 0 0 .769.769.77.77 0 0 0 .769-.769v-.77h1a1.54 1.54 0 0 1 1.538 1.538.77.77 0 0 0 .769.769.77.77 0 0 0 .769-.769 3.08 3.08 0 0 0-3.077-3.077h-1V.77A.77.77 0 0 0 14.846 0a.77.77 0 0 0-.769.769v.77h-3.5V.77A.77.77 0 0 0 9.808 0a.77.77 0 0 0-.769.769v.77H5.577V.77A.77.77 0 0 0 4.808 0a.77.77 0 0 0-.769.769v.77h-.962A3.08 3.08 0 0 0 0 4.615v12a3.08 3.08 0 0 0 3.077 3.077h3.23a.77.77 0 0 0 .769-.769.77.77 0 0 0-.769-.769z" fill="#4a7aab" fill-rule="nonzero"/></svg>
+        Change expiration date            </label>
+</div>
+</div>
+<div class="receiver__setting__content">
+<p>The document will expire in <strong><span id="expireDaysDefault"><span class="value">15</span></span><span id="expireSet"><input class="input--sm" data-default="15" type="number" name="expire" id="expire" value="15" min="1" max="130"></span> days</strong>.</p>
+<div class="small">Expires on:            <span id="dayExpireDefault">2024-08-01</span>
+    <span id="dayExpire">2024-08-01</span>
+</div>
+</div>
+</div>
+<div class="receiver__setting">
+<div class="form__group" id="multipleOption">
+<div class="checkbox">
+    <input type="hidden" name="multipleCheckbox" value="0">
+    <input type="checkbox" name="multipleCheckbox" id="multipleCheckbox" value="1" class="input" >
+    <label for="multipleCheckbox">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="16"><path d="M16.6 7.765c1.896 0 3.523-1.718 3.523-3.934C20.124 1.643 18.488 0 16.6 0c-1.896 0-3.532 1.68-3.532 3.85 0 2.197 1.627 3.915 3.532 3.915zm-10.14.207c1.645 0 3.067-1.502 3.067-3.437 0-1.906-1.422-3.324-3.067-3.324S3.383 2.667 3.383 4.554c0 1.915 1.422 3.418 3.077 3.418zM8.226 16c-.93-1.343.158-4.038 2.082-5.54-.976-.657-2.23-1.136-3.857-1.136-3.95 0-6.45 2.948-6.45 5.4C0 15.54.437 16 1.58 16h6.646zm13.878 0C23.507 16 24 15.587 24 14.798c0-2.29-2.844-5.446-7.408-5.446-4.555 0-7.408 3.155-7.408 5.446 0 .79.493 1.202 1.896 1.202h11.024z" fill="#4a7aab" fill-rule="nonzero"/></svg>
+        Multiple requests 
+        <div class="badge badge--premium" title="This is a Premium feature">
+            <img src="/static/img/svg_icons/premium.svg" height="16" width="16">
+            Premium&nbsp;
+        </div>
+    </label>
+</div>
+</div>
+<div class="receiver__setting__content">
+<p>This option will allow each signer to receive a unique and separate request to sign individually.</p>
+</div>
+</div>
+<div class="receiver__setting">
+<div class="form__group" id="notifyOption">
+<div class="checkbox">
+    <input type="hidden" name="notifyCheckbox" value="0">
+    <input type="checkbox" name="notifyCheckbox" id="notifyCheckbox" value="1" class="input" checked>
+    <label for="notifyCheckbox">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="18" fill="#4a7aab" fill-rule="nonzero"><path d="M16 6a6 6 0 1 0 0 12 6 6 0 1 0 0-12zm0 1.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 1 1 0-9zm-2.387 4.513a.68.68 0 0 0 .009.964l1.114 1.092a.682.682 0 1 0 .955-.974l-1.114-1.092a.68.68 0 0 0-.964.009z"/><path d="M17.776 10.118l-3.024 3.024a.682.682 0 1 0 .964.964l3.024-3.024a.682.682 0 1 0-.964-.964zM17.125 0C19.03 0 20 .985 20 2.906h0v2.3a7.95 7.95 0 0 0-1.476-.546V2.915L17.03 4.417 16.5 4.4c-.55 0-1.086.055-1.604.16L17.8 1.628c-.2-.068-.4-.107-.638-.107h0H2.846c-.238 0-.447.03-.62.098h0l6.72 6.796a2.42 2.42 0 0 0 .424.355 7.77 7.77 0 0 0-.546 1.364c-.237-.14-.475-.332-.715-.578h0L7.558 9l-5.31 5.38c.17.068.37.098.6.098l5.926-.001a7.96 7.96 0 0 0 .582 1.522h-6.48C.97 16 0 15.015 0 13.094h0V2.906C0 .975.96 0 2.618 0h0zM1.485 2.886v10.257L6.56 7.995l-5.074-5.1z"/></svg>
+        Enable email notifications            </label>
+</div>
+</div>
+<div class="receiver__setting__content">
+<p>You will receive an email notification when a receiver has completed their request.</p>
+</div>
+</div>
+<div class="receiver__setting">
+<div class="form__group" id="reminderOption">
+<div class="checkbox">
+    <input type="hidden" name="reminderCheckbox" value="0">
+    <input type="checkbox" name="reminderCheckbox" id="reminderCheckbox" value="1" class="input" checked>
+    <label for="reminderCheckbox">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="18" fill="#4a7aab" fill-rule="evenodd"><path d="M15.92 9.12a.69.69 0 0 1 .692.692v2.092c0 .204-.1.398-.247.53l-1.1.933a.69.69 0 0 1-.975-.084c-.246-.293-.208-.73.084-.975l.863-.725V9.8a.69.69 0 0 1 .692-.692h0zm5.226-2.736a.69.69 0 0 0-.692.692V8.14A5.9 5.9 0 0 0 15.904 6 5.91 5.91 0 0 0 10 11.904a5.92 5.92 0 0 0 5.919 5.904 5.96 5.96 0 0 0 2.572-.583l.04-.02.287-.15a.693.693 0 0 0-.676-1.209 4.56 4.56 0 0 1-2.224.577c-2.5 0-4.535-2.027-4.535-4.52s2.027-4.52 4.52-4.52c1.42 0 2.738.664 3.586 1.77H18.41a.692.692 0 1 0 0 1.385h1.35a2.08 2.08 0 0 0 2.077-2.077V7.077a.69.69 0 0 0-.692-.692h0zm-.494 7.856a.69.69 0 1 0-.774 1.146.69.69 0 0 0 .774-1.148zm1.163-2.14l-.016-.066-.023-.064-.03-.06-.035-.058a.65.65 0 0 0-.041-.055.44.44 0 0 0-.046-.05.62.62 0 0 0-.05-.046.55.55 0 0 0-.055-.04l-.058-.035-.06-.03-.064-.023-.066-.017-.067-.01a.62.62 0 0 0-.136 0 .63.63 0 0 0-.067.01l-.066.017a.62.62 0 0 0-.064.023c-.02.01-.042.018-.06.03a.61.61 0 0 0-.058.035.58.58 0 0 0-.055.04.65.65 0 0 0-.051.046l-.046.05a.55.55 0 0 0-.04.055l-.035.058a.67.67 0 0 0-.029.061.7.7 0 0 0-.023.064l-.017.066-.01.067-.004.068c0 .022.001.045.004.068a.64.64 0 0 0 .01.067l.017.066.023.064.03.06.035.058c.012.02.026.037.04.055a.44.44 0 0 0 .046.05.65.65 0 0 0 .051.046.63.63 0 0 0 .055.04.61.61 0 0 0 .058.035l.06.03.064.023c.02.007.044.012.066.017a.63.63 0 0 0 .067.01.64.64 0 0 0 .068.004.63.63 0 0 0 .135-.014l.066-.017.064-.023.06-.03c.02-.01.04-.022.058-.035l.055-.04a.62.62 0 0 0 .05-.046l.046-.05.04-.055.035-.058a.67.67 0 0 0 .029-.061.7.7 0 0 0 .023-.064l.016-.066a.64.64 0 0 0 .01-.067l.003-.068-.003-.068a.68.68 0 0 0-.01-.067z"/><path d="M17.125 0C19.03 0 20 .985 20 2.906h0v2.3c-.468-.228-.962-.412-1.476-.546V2.915L17.03 4.417 16.5 4.4c-.55 0-1.086.055-1.604.16L17.8 1.628c-.2-.068-.4-.107-.638-.107h0H2.846c-.238 0-.447.03-.62.098h0l6.72 6.796a2.42 2.42 0 0 0 .424.355 7.77 7.77 0 0 0-.546 1.364c-.237-.14-.475-.332-.715-.578h0L7.558 9 2.247 14.38c.17.068.37.098.6.098l5.926-.001c.143.53.338 1.04.582 1.522h-6.48C.97 16 0 15.015 0 13.094h0V2.906C0 .975.96 0 2.618 0h0zM1.485 2.886v10.257L6.56 7.995l-5.074-5.11z" fill-rule="nonzero"/></svg>
+        Enable reminders            </label>
+</div>
+</div>
+<div class="receiver__setting__content">
+        <p>
+Send a reminder to the participants every <strong><span id="reminderDays">1</span><span id="reminderSet"><input class="input--sm" data-default="1" type="number" name="reminderInput" id="reminderInput" value="1" min="1" max="15"></span></strong> days.</p>
+</div>
+</div>
+<div class="receiver__setting">
+<div class="form__group" id="certifiedOption">
+<div class="checkbox">
+    <input type="hidden" name="certifiedCheckbox" value="0">
+    <input type="checkbox" name="certifiedCheckbox" id="certifiedCheckbox" value="1" class="input" >
+    <label for="certifiedCheckbox">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill-rule="evenodd"><path fill-opacity="0" fill="#d8d8d8" d="M0 0h24v24H0z"/><path d="M22.43 19.971l-3.612-6.162c.366-.166.586-.545.561-.972l-.268-2.18 1.537-1.564c.342-.332.366-.901.024-1.303l-1.537-1.612.317-2.204c.049-.474-.293-.948-.781-1.043l-2.221-.427-1.074-1.92c-.22-.45-.757-.64-1.245-.45h-.024l-2.05.924L10.056.11a.98.98 0 0 0-.731-.07c-.244.071-.439.237-.561.45L7.665 2.41l-2.221.379c-.512.095-.854.545-.805 1.066l.268 2.18L3.37 7.6c-.342.332-.366.901-.024 1.303l1.537 1.612-.317 2.204c-.049.427.22.829.634.995l-3.636 6.257c-.098.142-.073.332 0 .474.098.142.244.237.415.237h3.905l1.781 3.01c.098.142.244.237.415.237s.342-.095.415-.237l3.49-5.783 3.49 5.854c.098.142.244.237.415.237s.342-.095.415-.237l1.781-3.081h3.905c.171 0 .342-.095.415-.237.122-.142.122-.332.024-.474zM9.52 15.705h-.024l-1.074-1.967c-.146-.237-.39-.427-.683-.45l-2.245-.403.317-2.18c.049-.284-.049-.592-.244-.782L4.054 8.311l1.537-1.564c.22-.213.317-.498.268-.782l-.268-2.157s0-.024.024-.047l2.221-.379c.268-.047.537-.213.683-.474L9.618.988l2.001.948a.96.96 0 0 0 .879 0l2.026-.901h.024l1.074 1.967c.146.237.39.427.659.45l2.221.427-.317 2.18c-.049.284.049.592.244.782l1.537 1.612-1.562 1.564c-.22.213-.317.498-.268.782l.268 2.18-2.196.355c-.268.047-.537.213-.683.474l-1.098 1.92-2.001-.948a.96.96 0 0 0-.879 0l-2.026.924zm2.257-3.574c-2.163 0-3.932-1.728-3.932-3.84s1.769-3.84 3.932-3.84 3.932 1.728 3.932 3.84-1.769 3.84-3.932 3.84z" fill="#4a7aab" fill-rule="nonzero"/></svg>
+        Digital Signature                <div class="badge badge--premium" title="This is a Premium feature">
+            <img src="/static/img/svg_icons/premium.svg" height="16" width="16">
+            Premium&nbsp;
+        </div>
+    </label>
+</div>
+</div>
+<div class="receiver__setting__content">
+<p>A signed Certified Hash and a Qualified Timestamp is embedded to the signed documents, ensuring the future integrity of the document and signature. Certified signatures are eIDAS, ESIGN & UETA compliant.</p>
+</div>
+</div>
+<div class="receiver__setting">
+<div class="form__group" id="languageOption">
+<div class="checkbox">
+    <input type="hidden" name="languageCheckbox" value="0">
+    <input type="checkbox" name="languageCheckbox" id="languageCheckbox" value="1" class="input"  >
+    <label for="languageCheckbox">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><path d="M10.016 20C15.484 20 20 15.463 20 9.995S15.473 0 10.005 0 0 4.527 0 9.995 4.548 20 10.016 20zm.57-14.892v-3.14c.888.338 1.703 1.417 2.285 2.91-.698.127-1.46.212-2.285.233zm-1.174 0c-.814-.02-1.586-.106-2.285-.233.582-1.49 1.396-2.57 2.285-2.91v3.14zm4.643-.518c-.36-.9-.804-1.692-1.31-2.306a8.15 8.15 0 0 1 2.792 1.682 7.6 7.6 0 0 1-1.481.624zm-8.102 0c-.55-.17-1.047-.38-1.49-.624a8.25 8.25 0 0 1 2.792-1.682c-.508.613-.94 1.396-1.3 2.306zM18.16 9.402h-3.173c-.053-1.354-.254-2.612-.57-3.723.74-.233 1.386-.518 1.935-.846a8.18 8.18 0 0 1 1.809 4.569zm-13.136 0H1.85c.127-1.724.783-3.3 1.798-4.57.55.328 1.206.613 1.935.846-.317 1.11-.518 2.37-.56 3.723zm4.39 0H6.23a14.44 14.44 0 0 1 .529-3.427c.825.17 1.724.275 2.655.307v3.12zm4.368 0h-3.194v-3.12c.94-.032 1.83-.137 2.655-.307a14.99 14.99 0 0 1 .539 3.427zm-10.1 5.785a8.12 8.12 0 0 1-1.83-4.611h3.173c.042 1.375.243 2.655.56 3.786-.72.222-1.364.508-1.904.825zm3.078-1.12a14.9 14.9 0 0 1-.529-3.49h3.184v3.183c-.93.032-1.83.137-2.655.307zm6.483 0c-.825-.17-1.713-.275-2.655-.307v-3.183h3.194c-.042 1.248-.233 2.433-.54 3.5zm3.1 1.132a8.72 8.72 0 0 0-1.925-.836c.328-1.132.53-2.41.57-3.786h3.173a8.14 8.14 0 0 1-1.819 4.622zm-6.928 2.866c-.888-.338-1.703-1.417-2.285-2.898.698-.127 1.47-.212 2.285-.233v3.13zm1.174 0v-3.13c.825.02 1.586.106 2.285.233-.582 1.48-1.396 2.56-2.285 2.898zm-3.374-.37a8.27 8.27 0 0 1-2.718-1.639c.434-.243.92-.444 1.46-.603.35.878.772 1.64 1.26 2.242zm5.574.01c.487-.613.92-1.375 1.27-2.253.54.17 1.036.37 1.47.603-.793.72-1.713 1.28-2.74 1.65z" fill="#4a7aab" fill-rule="nonzero"/></svg>
+        Set language            </label>
+</div>
+</div>
+<div class="receiver__setting__content">
+        <p>Notifications will be sent in <strong><span id="languageSelected">English</span><span id="languageDefault">English</span></strong>.</p>
+<div id="languageSelectOption">
+    <!--<span class="lang__current">
+English</span>
+-->
+<select class="input--sm" id="selectLanguage" name="selectLanguage">
+    <option value="en-US"  selected="selected" >English</option>
+    <option value="es" >Español</option>
+    <option value="fr" >Français</option>
+    <option value="de" >Deutsch</option>
+    <option value="it" >Italiano</option>
+    <option value="pt" >Português</option>
+    <option value="ja" >日本語</option>
+    <option value="ru" >Pусский</option>
+    <option value="ko" >한국어</option>
+    <option value="zh-Hans" >中文 (简体)</option>
+    <option value="zh-Hant" >中文 (繁體)</option>
+    <option value="ar" >العربية</option>
+    <option value="bg" >Български</option>
+    <option value="ca" >Català</option>
+    <option value="nl" >Nederlands</option>
+    <option value="el" >Ελληνικά</option>
+    <option value="hi" >हिन्दी</option>
+    <option value="id" >Bahasa Indonesia</option>
+    <option value="ms" >Bahasa Melayu</option>
+    <option value="pl" >Polski</option>
+    <option value="sv" >Svenska</option>
+    <option value="th" >ภาษาไทย</option>
+    <option value="tr" >Türkçe</option>
+    <option value="uk" >Українська</option>
+    <option value="vi" >Tiếng Việt</option>
+</select>        </div>
+</div>
+</div>
+<div class="receiver__setting">
+<div class="form__group" id="messageOption">
+<div class="checkbox">
+    <input type="hidden" name="messageCheckbox" value="0">
+    <input type="checkbox" name="messageCheckbox" id="messageCheckbox" value="1" class="input" >
+    <label for="messageCheckbox">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16"><path d="M17.382 16C19.04 16 20 15.015 20 13.094V2.906C20 .985 19.03 0 17.125 0H2.618C.96 0 0 .975 0 2.906v10.19C0 15.015.97 16 2.875 16h14.507zm-7.368-7.03c-.352 0-.685-.166-1.066-.556L2.228 1.62c.17-.068.38-.098.62-.098h14.317c.238 0 .447.04.638.107l-6.72 6.786c-.38.4-.714.556-1.066.556zm-8.53 4.173V2.886l5.074 5.11-5.074 5.148zm17.04-.03l-5.055-5.12 5.055-5.08v10.2zm-1.36 1.365H2.846c-.228 0-.428-.03-.6-.098L7.558 9l.552.556c.638.653 1.257.917 1.904.917s1.266-.263 1.904-.917L12.47 9l5.302 5.372c-.17.068-.38.107-.61.107z" fill="#4a7aab" fill-rule="nonzero"/></svg>
+        Customize the request email            </label>
+</div>
+</div>
+<div class="receiver__setting__content">
+<p>Edit the text you want to appear in the subject and body of the signature request email.</p>
+<div class="receiver__messages">
+    <div class="form__group">
+        <input type="text" class="input" id="customSubject" name="customSubject" maxlength="255"
+               placeholder="Email subject. Example: &#8220;Your signature is required&#8221;" value="">
+    </div>
+    <div class="form__group">
+                            <textarea id="customMessage" name="customMessage"
+                                      placeholder="Email body. Example: &#8220;Please sign the document that I'm sending&#8221;"></textarea>
+    </div>
+</div>
+</div>
+</div>
+<div class="receiver__setting">
+<div class="form__group" id="uuidOption">
+<div class="checkbox">
+    <input type="hidden" name="uuidCheckbox" value="0">
+    <input type="checkbox" name="uuidCheckbox" id="uuidCheckbox" value="1" class="input" checked>
+    <label for="uuidCheckbox">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="20" fill="#4a7aab" fill-rule="nonzero"><path d="M15.843 4.013a.62.62 0 0 1-.421-.163c-1.84-1.677-4.2-2.6-6.646-2.6s-4.807.923-6.646 2.6c-.256.233-.65.213-.883-.04s-.214-.65.04-.883C3.36 1.04 6.018 0 8.776 0s5.418 1.04 7.488 2.927c.255.232.273.628.04.883-.123.135-.293.203-.463.203h0zM16.9 8.098c-.2 0-.4-.097-.52-.277-1.735-2.583-4.578-4.126-7.606-4.126S2.905 5.238 1.17 7.82a.62.62 0 0 1-.867.17c-.285-.194-.363-.58-.17-.867 1.968-2.93 5.2-4.678 8.644-4.678s6.677 1.75 8.644 4.68c.193.287.117.675-.17.867-.107.07-.227.105-.348.105zM6.802 20c-.16 0-.322-.062-.444-.185-.137-.138-3.34-3.407-3.34-6.554 0-3.267 2.583-5.924 5.758-5.924s5.758 2.658 5.758 5.924c0 .345-.28.625-.625.625s-.625-.28-.625-.625c0-2.578-2.022-4.674-4.508-4.674S4.27 10.683 4.27 13.26c0 2.64 2.948 5.644 2.978 5.674.243.245.242.64-.004.884a.62.62 0 0 1-.44.181h0zm3.948 0c-1.503 0-4.988-2.86-5.326-6.045-.12-1.126.24-2.277.957-3.08.625-.698 1.47-1.086 2.377-1.1h.018c.885 0 1.722.347 2.358.98a3.49 3.49 0 0 1 1.03 2.498v.408c0 1.004.782 1.82 1.743 1.82s1.744-.817 1.744-1.82v-.143c0-3.892-2.82-7.13-6.418-7.37-1.877-.127-3.677.52-5.066 1.82C2.727 9.325 1.9 11.252 1.9 13.262c0 1.653.56 3.264 1.577 4.536.215.27.172.663-.098.878s-.663.172-.88-.098C1.307 17.085.65 15.197.65 13.26c0-2.355.972-4.614 2.664-6.197C4.958 5.525 7.1 4.76 9.316 4.9c4.253.284 7.586 4.07 7.586 8.617v.143c0 1.693-1.343 3.07-2.994 3.07s-2.993-1.377-2.993-3.07v-.408c0-.615-.235-1.187-.662-1.612a2.08 2.08 0 0 0-1.477-.617c-.716.003-1.2.37-1.463.675-.488.544-.73 1.336-.647 2.116.276 2.598 3.262 4.928 4.083 4.928.345 0 .625.28.625.625s-.28.624-.624.624h0zm2.32-1.222c-2.237 0-4.968-2.733-4.968-5.924 0-.345.28-.625.625-.625s.625.28.625.625c0 2.473 2.08 4.674 3.718 4.674.345 0 .625.28.625.625s-.28.625-.625.625z"/></svg>
+        UUID (recommended)            </label>
+</div>
+</div>
+<div class="receiver__setting__content">
+<p>Show the Unique Signer Identifier code that appears below the signatures to help validate the signature on the Audit Trail. <strong>It is recommended that you keep this activated</strong>, otherwise it lowers the legal weight of the end document.</p>
+</div>
+</div>
+<div class="receiver__setting">
+<div class="form__group" id="svcOption">
+<div class="checkbox">
+    <input type="hidden" name="svcCheckbox" value="0">
+    <input type="checkbox" name="svcCheckbox" id="svcCheckbox" value="1" class="input" checked>
+    <label for="svcCheckbox">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"><path d="M22 13.535v2.449a.86.86 0 0 1-.859.859h-2.406a.86.86 0 0 1-.859-.859.86.86 0 0 1 .859-.859h1.547v-1.59a.86.86 0 0 1 .859-.859.86.86 0 0 1 .859.859zM10.141 9.324A.86.86 0 0 0 11 8.465V6.531h.859a.86.86 0 0 0 .859-.859V.859a.86.86 0 0 0-.891-.859C11.362.017 11 .414 11 .88v.667h-.859a.86.86 0 0 0-.859.859.86.86 0 0 0 .859.859H11v1.547h-.859a.86.86 0 0 0-.859.859v2.793a.86.86 0 0 0 .859.859zM.859 12.676a.86.86 0 0 0 .859-.859v-.859h.902a.86.86 0 0 0 .859-.859.86.86 0 0 0-.859-.859H.859a.86.86 0 0 0-.859.859v1.719a.86.86 0 0 0 .859.859zm12.719-1.719h2.32v2.557c0 .466.362.863.828.88a.86.86 0 0 0 .891-.859v-.859h.902a.86.86 0 0 0 .859-.859.86.86 0 0 0-.859-.859h-.902v-.859a.86.86 0 0 0-.859-.859h-3.18a.86.86 0 0 0-.859.859.86.86 0 0 0 .859.859zm7.563-1.719a.86.86 0 0 0-.859.859.86.86 0 0 0 .859.859.86.86 0 0 0 .859-.859.86.86 0 0 0-.859-.859zm-7.562 3.437a.86.86 0 0 0-.859.859v1.59h-.43a.86.86 0 0 0-.859.859.86.86 0 0 0 .859.859h1.289a.86.86 0 0 0 .859-.859v-2.449a.86.86 0 0 0-.859-.859zm0 7.605h-.859v-.859a.86.86 0 0 0-.859-.859H11v-.859a.86.86 0 0 0-.859-.859.86.86 0 0 0-.859.859v1.719a.86.86 0 0 0 .859.859H11v.859a.86.86 0 0 0 .859.859h1.719a.86.86 0 0 0 .859-.859.86.86 0 0 0-.859-.859zm3.438-1.719a.86.86 0 0 0-.859-.859h-.43a.86.86 0 0 0-.859.859.86.86 0 0 0 .859.859h.43a.86.86 0 0 0 .859-.859zm4.125 1.719h-.687v-.859a.86.86 0 0 0-.859-.859.86.86 0 0 0-.859.859v.859h-1.719a.86.86 0 0 0-.859.859.86.86 0 0 0 .859.859h4.125a.86.86 0 0 0 .859-.859.86.86 0 0 0-.859-.859zm-11-6.016a.86.86 0 0 0 .859-.859v-1.59a.86.86 0 0 0-.859-.859H7.047v-.839c0-.466-.362-.863-.828-.88a.86.86 0 0 0-.891.859v.859h-.43a.86.86 0 0 0-.859.859.86.86 0 0 0 .859.859h4.383v.73a.86.86 0 0 0 .859.859zM0 5.156V2.578A2.58 2.58 0 0 1 2.578 0h2.578a2.58 2.58 0 0 1 2.578 2.578v2.578a2.58 2.58 0 0 1-2.578 2.578H2.578A2.58 2.58 0 0 1 0 5.156zm1.719 0a.86.86 0 0 0 .859.859h2.578a.86.86 0 0 0 .859-.859V2.578a.86.86 0 0 0-.859-.859H2.578a.86.86 0 0 0-.859.859v2.578zm2.148-.43a.86.86 0 0 0 .859-.859.86.86 0 0 0-.859-.859.86.86 0 0 0-.859.859.86.86 0 0 0 .859.859zM22 2.578v2.578a2.58 2.58 0 0 1-2.578 2.578h-2.578a2.58 2.58 0 0 1-2.578-2.578V2.578A2.58 2.58 0 0 1 16.844 0h2.578A2.58 2.58 0 0 1 22 2.578zm-1.719 0a.86.86 0 0 0-.859-.859h-2.578a.86.86 0 0 0-.859.859v2.578a.86.86 0 0 0 .859.859h2.578a.86.86 0 0 0 .859-.859V2.578zm-2.148.43a.86.86 0 0 0-.859.859.86.86 0 0 0 .859.859.86.86 0 0 0 .859-.859.86.86 0 0 0-.859-.859zM7.734 16.844v2.578A2.58 2.58 0 0 1 5.156 22H2.578A2.58 2.58 0 0 1 0 19.422v-2.578a2.58 2.58 0 0 1 2.578-2.578h2.578a2.58 2.58 0 0 1 2.578 2.578zm-1.719 0a.86.86 0 0 0-.859-.859H2.578a.86.86 0 0 0-.859.859v2.578a.86.86 0 0 0 .859.859h2.578a.86.86 0 0 0 .859-.859v-2.578zm-2.148.43a.86.86 0 0 0-.859.859.86.86 0 0 0 .859.859.86.86 0 0 0 .859-.859.86.86 0 0 0-.859-.859z" fill="#4a7aab"/></svg>
+        Signature verification code            </label>
+</div>
+</div>
+<div class="receiver__setting__content">
+<p>Digitally verify the integrity of the printed document using a QR code and a unique password that are provided in the Audit Trail.</p>
+<p><small>Highly recommended</small></p>
+</div>
+</div>                
+<!-- brand setting -->
+<div class="receiver__setting">
+<div class="form__group" id="brandOption">
+<div class="checkbox">
+    <input type="hidden" name="brandCheckbox" value="0">
+    <input type="checkbox" name="brandCheckbox" id="brandCheckbox" value="1" class="input" >
+    <label for="brandCheckbox">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#4a7aab"><path d="M7.18 19.974c-.528.005-1.037-.204-1.4-.578L.604 14.23c-.38-.37-.592-.88-.592-1.4s.213-1.038.592-1.4L11.4.604a1.96 1.96 0 0 1 1.41-.578h5.188C19.097.026 19.98.9 19.98 2v5.18a1.96 1.96 0 0 1-.578 1.41L8.6 19.396c-.373.374-.88.583-1.4.578zm-.395-1.572c.22.22.576.22.796 0l10.82-10.82c.104-.105.163-.247.162-.395V2c0-.31-.252-.564-.564-.564h-5.18c-.148-.001-.3.058-.395.162L1.598 12.418c-.22.22-.22.576 0 .796l5.188 5.188z"/><circle cx="16.125" cy="3.819" r="1"/><path d="M3.97 11.97a.75.75 0 0 1 .977-.073l.084.073 3 3a.75.75 0 0 1-.977 1.133l-.084-.073-3-3a.75.75 0 0 1 0-1.061z"/></svg>
+        Email branding                <div class="badge badge--premium" title="This is a Premium feature">
+            <img src="/static/img/svg_icons/premium.svg" height="16" width="16">
+            Premium&nbsp;
+        </div>
+    </label>
+</div>
+</div>
+<div class="receiver__setting__content">
+<p>Include the company name and logo in the signature request email. Both are required to apply your settings.</p>
+<div id="brandOptions" class="form__group">
+    <div>
+        <input type="text" class="input--sm" id="brandName" name="brandName" maxlength="255"
+               placeholder="Company name" value="">
+    </div>
+    <div class="upload-box" id="uploadBrandContainer">
+        <div class="upload-box__clean" id="uploadBrandClean">
+            <img src="/static/img/items/trash_g.svg">
+        </div>
+        <input type="hidden" name="brandLogo" id="brandLogo" value="">
+        <input type="hidden" name="fileApiBrand" id="fileApiBrand" value="">
+        <div class="upload-box__area" id="uploadBrandArea"></div>
+        <div class="upload-box__content">
+            <p>
+                <button class="btn btn--secondary btn--sm" id="uploadBrand">Upload logo</button>
+            </p>
+            <p>or drop file here</p>
+        </div>
+        <div class="upload-box__preview" id="uploadBrandPreview"></div>
+    </div>
+    <p class="small">Accepted formats: <strong>PNG</strong>, <strong>JPG</strong> and <strong>SVG</strong></p>
+    <p class="small">Recommended size 300x150 px.</p>
+</div>
+</div>
+</div>            </div>
+    <div class="card__actions">
+        <button class="btn" id="settingsBtn" type="submit">Save</button>
+    </div>
+
+    </form>        </div>
+</div>
+</div>
+
+<!-- Modal certs payment -->
+<div class="modal fade" id="customCertsModal" tabindex="-1" role="dialog" aria-hidden="true"
+data-keyboard="true">
+
+<div class="modal-dialog modal-dialog-centered" role="document">
+<div class="modal-content">
+    <div class="dialog__body">
+        <h3 class="dialog__title">Custom Certificate name</h3>
+        <p>Provide a contact email. We will contact you soon to create a unique certificate for your company/entity.</p>
+        <div class="form__group required">
+            <label for="emailCustomCert">Email</label>
+            <input type="text" id="emailCustomCert" class=" input required" name="emailCustomCert"
+                   id="emailMore"
+                   placeholder="Your Email"
+                   aria-required="true">
+        </div>
+    </div>
+    <div class="dialog__footer">
+        <div class="text-right">
+            <a href="#" id="cancelCustomCertBtn">Cancel</a>
+            <button class="btn" id="sendCustomCertBtn">Send</button>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<script>
+var userConfig = {"userId":105326155,"email":"{{manifest['user']['email']}}","page":null,"userToken":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJzZXJ2aWNlLmlsb3ZlcGRmLmNvbSIsImF1ZCI6IiIsImlhdCI6MTcyMTIxMTg3NywibmJmIjoxNzIxMjExODc3LCJqdGkiOjEwNTMyNjE1NX0.WgE0QZk3VFkexPDwaaXoIIHCtCMMO8hEJK-19ZKC-M4","token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJhdWQiOiIiLCJpYXQiOjE1MjMzNjQ4MjQsIm5iZiI6MTUyMzM2NDgyNCwianRpIjoicHJvamVjdF9wdWJsaWNfYzkwNWRkMWMwMWU5ZmQ3NzY5ODNjYTQwZDBhOWQyZjNfT1Vzd2EwODA0MGI4ZDJjN2NhM2NjZGE2MGQ2MTBhMmRkY2U3NyJ9.qvHSXgCJgqpC4gd6-paUlDLFmg0o2DsOvb1EUYPYx_E","startServer":"https:\/\/api.{{manifest['title']|lower}}.com","user":{"id":105326155,"name":"{{manifest['user']['name']}}","email":"{{manifest['user']['email']}}","active":1,"avatar":"https:\/\/www.{{manifest['title']|lower}}.com\/img\/avatar\/default30.png","limits":{"merge":{"mb":100,"files":25},"split":{"mb":100,"files":1},"compress":{"mb":200,"files":2},"officepdf":{"mb":15,"files":1},"wordpdf":{"mb":15,"files":1},"powerpointpdf":{"mb":15,"files":1},"excelpdf":{"mb":15,"files":1},"pdfoffice":{"mb":15,"files":1},"pdfword":{"mb":15,"files":1},"pdfocr":{"mb":15,"files":1,"pages":50},"pdfpowerpoint":{"mb":15,"files":1},"pdfexcel":{"mb":15,"files":1,"pages":500},"pdfjpg":{"mb":25,"files":2},"imagepdf":{"mb":40,"files":20},"pagenumber":{"mb":100,"files":2},"watermark":{"mb":100,"files":2},"rotate":{"mb":100,"files":20},"unlock":{"mb":100,"files":2},"protect":{"mb":100,"files":2},"pdfa":{"mb":100,"files":1},"repair":{"mb":100,"files":1},"organize":{"mb":100,"files":5},"redact":{"mb":400,"files":1},"resizeimage":{"mb":200,"files":30},"compressimage":{"mb":200,"files":30},"cropimage":{"mb":90,"files":1},"converttojpg":{"mb":200,"files":30},"convertfromjpg":{"mb":200,"files":30},"rotateimage":{"mb":200,"files":30},"watermarkimage":{"mb":200,"files":30},"memeimage":{"mb":200,"files":1},"editimage":{"mb":50,"files":1},"editpdf":{"mb":100,"files":1},"sign":{"mb":50,"files":3},"upscaleimage":{"mb":6,"files":3,"pxsize":33177600},"removebackgroundimage":{"mb":6,"files":3,"pxsize":17612800},"blurfaceimage":{"mb":100,"files":10}},"mode":0,"premium":false,"country":"KE","loginkey":"dQCKApicgZe0B5mSRvHLYK6tYdt-_F9k","can_trial":false,"current_subscription":null,"team_role":null,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJzZXJ2aWNlLmlsb3ZlcGRmLmNvbSIsImF1ZCI6IiIsImlhdCI6MTcyMTIxMTg3NywibmJmIjoxNzIxMjExODc3LCJqdGkiOjEwNTMyNjE1NX0.WgE0QZk3VFkexPDwaaXoIIHCtCMMO8hEJK-19ZKC-M4","sus_rbt":false,"custom_avatar":0,"signature":{"signatureMode":"font","initialsMode":"font","signature":"Bradone Etole","initials":"BE","font":{"fontFamily":"allura","color":"#555555"},"draw":{"signature":"","initials":"","signatureData":"","initialsData":"","color":"#555555"},"image":{"signature":"","initials":"","stamp":""},"level":null},"signConfig":{"orderCheckbox":0,"expirateCheckbox":null,"expire":15,"multipleCheckbox":null,"reminderCheckbox":1,"reminderInput":1,"certifiedCheckbox":null,"languageCheckbox":null,"selectLanguage":null,"messageCheckbox":null,"customSubject":null,"customMessage":null,"uuidCheckbox":1,"notifyCheckbox":1,"brandCheckbox":0,"brandName":null,"brandLogo":null,"svcCheckbox":1,"level":null,"isDefault":true},"brandConfig":{"brandCheckbox":0,"brandName":null,"brandLogo":null,"level":null,"isDefault":true},"signatures_left":0,"sms_left":0,"certificates_left":0},"action":"signature"};
+</script>                </div>
+    </div>
+    <div class="main-sidebar__backdrop"></div>
+</div>
+<script src="/static/dist/js/admin.7909e88.js" async="async"></script
+{%endblock%}

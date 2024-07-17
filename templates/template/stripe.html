@@ -1,0 +1,33 @@
+<div class="payment__stripe-view">
+    <div class="payment__stripe-view__current-payment-method-view">
+      <div class='payment__card-details'>
+        <div class="payment__card-details__label">Card details</div>
+        <div class='payment__card-details__text'>
+            <span class="payment__card-details__text__brand">${cardBrand} (${cardLast4Digits}) </span>
+            <span class="payment__card-details__text__expires">Expires: ${expMonthCard}/${expYearCard}</span>
+        </div>
+        <div class='payment__card-details__change-btn'>Change</div>
+        <div class='payment__card-error payment__card-error--hidden'>&nbsp;</div>
+      </div>
+    </div> <!-- /Current payment method  -->
+  
+    <div class="payment__stripe-view__new-payment-method-view">
+      <div class='payment__card-details-desc'>Card details</div>
+      <div class="payment__stripe-view__card-binding">
+        <!-- Contents of this container are appended by Stripe library -->
+      </div>
+      <div class='payment__card-details__keep-card-btn' style="display: none">
+          Keep ${cardBrand} (${cardLast4Digits})    </div>
+      <div class='payment__card-error payment__card-error--hidden'>&nbsp;</div>
+    </div><!-- /New payment method  -->
+  
+    <div class="payment__actions">
+      <button class="payment__pay-btn btn btn--dbr"></button>
+    </div>
+  
+    <div class='stripe__text-translations' style="display:none;">
+      {"generic_payment_error":"Something went wrong with the paymen","generic_card_update_error":"Error updating your credit card"}  </div>
+  
+  </div>
+  
+  

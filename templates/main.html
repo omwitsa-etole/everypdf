@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+    <title>{{manifest['title']}} | Online PDF tools for PDF lovers</title>
+    <meta name="description" content="{{manifest['title']}} is an online service to work with PDF files completely free and easy to use. Merge PDF, split PDF, compress PDF, office to PDF, PDF to JPG and more!"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta name="author" content="{{manifest['title']|lower}}.com"/>
+    <meta name="keywords" content="Merge PDF, split PDF, combine PDF, extract PDF, compress PDF, convert PDF, Word to PDF, Excel to PDF, Powerpoint to PDF, PDF to JPG, JPG to PDF"/>
+    <link rel="canonical" href="https://www.{{manifest['title']|lower}}.com/"/>
+    <meta name="apple-itunes-app" content="app-id=1207332399">
+    <meta name="google-play-app" content="app-id=com.{{manifest['title']|lower}}.www">
+    <link rel="apple-touch-icon" href="/static/img/app-icon.png">
+    <meta name="google-site-verification" content="IZueAX8T8h1eMQN3D0y8Xx7qu8-yCvtHnwn3MmpdSLo"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/img/favicons-pdf/favicon-32x32.png">
+    <meta property="og:site_name" content="{{manifest['title']}} - Online tools for PDF"/>
+    <meta property="og:title" content="{{manifest['title']}} | Online PDF tools for PDF lovers"/>
+    <meta property="og:description" content="{{manifest['title']}} is an online service to work with PDF files completely free and easy to use. Merge PDF, split PDF, compress PDF, office to PDF, PDF to JPG and more!"/>
+    <meta property="og:image" content="https://www.{{manifest['title']|lower}}.com/img/{{manifest['title']|lower}}/social/en-US/{{manifest['title']|lower}}.png"/>
+        <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://www.{{manifest['title']|lower}}.com/"/>
+    <meta property="og:app_id" content="127502793959418"/>
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@{{manifest['title']|lower}}_com">
+    <meta name="twitter:creator" content="@{{manifest['title']|lower}}_com">
+    <meta name="twitter:title" content="{{manifest['title']}} | Online PDF tools for PDF lovers">
+    <meta name="twitter:description" content="{{manifest['title']}} is an online service to work with PDF files completely free and easy to use. Merge PDF, split PDF, compress PDF, office to PDF, PDF to JPG and more!">
+    <meta name="twitter:image:src" content="https://www.{{manifest['title']|lower}}.com/img/{{manifest['title']|lower}}/social/en-US/{{manifest['title']|lower}}.png"/>
+    <link rel="preload" href="/static/font/Graphik-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="/static/font/Graphik-Semibold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="/static/font/Graphik-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="/static/font/Graphik-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/c63faa1f51.js" crossorigin="anonymous"></script>
+<meta name="csrf-param" content="_csrf-{{manifest['title']|lower}}">
+    <meta name="csrf-token" content="pKRQ2CyDdV-JOt7CDk7V7SjWyys-wghk5FRkwh04Izfg4ya6XMQPcuBiqPRgEbvafpevEnyDWyKoeQWTS1JKew==">
+<script>var ilx = {'c': 'site', 'a': 'index'};</script>
+<script>
+    var isgdpr=false;
+    var cmp_ck=0;
+    var release='7909e88';
+    (function (i,l,o,v,e,g,u,a) {
+        i['ib']=i['ib']||{'set':function(){(i['ib'].q=i['ib'].q||[]).push(arguments)}};
+        i['iLE']=e;i[e]=i[e]||function(){(i[e].q=i[e].q||[]).push(arguments)};i[e].l=1*new Date();u=l.createElement(o);
+        a=l.getElementsByTagName(o)[0];u.async=1;u.src=v;a.parentNode.insertBefore(u,a);i[e+'u']=g;    })(window, document, 'script', '/static/js/ilove.min.js?a=1.3', 'ev');
+        ev('set', 'cmp_ck', cmp_ck);
+        ev('set', 'release', release);
+            ev('sendOnce', 'pageview');
+    </script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-44KQ8HETWT"></script>
+<script>
+    var gck=undefined;
+    var c_cg="granted",c_cd="denied";
+    var gcas=gcaa=gcap=gcad=c_cg;isgdpr&&(gcas=c_cd,gcaa=c_cd,gcap=c_cd,gcad=c_cd,1==gck?(gcas=c_cg,gcaa=c_cg,gcap=c_cg,gcad=c_cg):2==gck?(gcas=c_cd,gcaa=c_cg,gcap=c_cg,gcad=c_cg):3==gck&&(gcas=c_cd,gcaa=c_cd,gcap=c_cd,gcad=c_cd));
+    window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {'analytics_storage': gcas, 'ad_storage': gcaa, 'ad_personalization': gcap, 'ad_user_data': gcad});gtag('js', new Date());
+    var config = {};    gtag('config', 'G-44KQ8HETWT', config);
+</script><script>
+(function(){
+    window.__browserSupports__ = [];
+    try{ 
+        var grid_supported = typeof document.createElement('div').style.grid === 'string';
+        grid_supported ? window.__browserSupports__.push('grid') : window.__browserSupports__.push('not:grid');
+    }catch(e){}
+
+    var interval = null;
+    var fn = function(){
+        document.body.setAttribute("data-browser-supports", window.__browserSupports__.join(" "));
+        clearInterval(interval);
+        interval = null;
+    }
+
+    interval = setInterval(function(){
+        if(document.body) fn();
+    }, 5);
+})();
+</script><link href="/static/dist/css/web.7909e88.css" rel="stylesheet"></head>
+<body class="lang-en-US home  ">
+    <header class="header">
+            <nav>
+                
+        <a class="brand" href="" title="{{manifest['title']}}" style="height: 100%;object-fit:cover;zoom: 250%;">
+            <img src="/static/img/{{manifest['title']|lower}}.svg" alt="{{manifest['title']}}"/>
+        </a>            <div class="menu">
+                <span class="menu--sm"><i class="ico ico--tools"></i></span>
+                <span class="menu--md">All PDF tools <i class="ico ico--down"></i></span>
+                <ul>
+                    <li><a  href="/merge_pdf">Merge PDF</a></li>
+                    <li><a  href="/split_pdf">Split PDF</a></li>
+                    <li><a  href="/compress_pdf">Compress PDF</a></li>
+                    <li class="has-dropdown">
+                        <span >Convert PDF<i class="ico ico--down"></i>
+                        </span>
+                        <div class="dropdown">
+                            <ul>
+                                <li>
+                                    <ul>
+                                        <li>
+                                            <div class="nav__title">Convert to PDF</div>
+                                        </li>
+                                        <li><a  href="/jpg_to_pdf"><i  class="ico ico--jpgpdf"></i>JPG to PDF</a></li>
+                                        <li><a  href="/word_to_pdf"><i class="ico ico--wordpdf"></i>WORD to PDF</a></li>
+                                        <li><a  href="/powerpoint_to_pdf"><i class="ico ico--powerpointpdf"></i>POWERPOINT to PDF</a></li>
+                                        <li><a  href="/excel_to_pdf"><i class="ico ico--excelpdf"></i>EXCEL to PDF</a></li>
+                                        <li><a  href="/html-to-pdf"><i class="ico ico--htmlpdf"></i> HTML to PDF</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul>
+                                        <li><div class="nav__title">Convert from PDF</div></li>
+                                        <li><a  href="/pdf_to_jpg"><i class="ico ico--pdfjpg"></i> PDF to JPG</a></li>
+                                        <li><a  href="/pdf_to_word"><i class="ico ico--pdfword"></i> PDF to WORD</a></li>
+                                        <li><a  href="/pdf_to_powerpoint"><i class="ico ico--pdfpowerpoint"></i> PDF to POWERPOINT</a></li>
+                                        <li><a  href="/pdf_to_excel"><i class="ico ico--pdfexcel"></i> PDF to EXCEL</a></li>
+                                        <li><a  href="/convert-pdf-to-pdfa"><i  class="ico ico--pdfa"></i> PDF to PDF/A</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="menu__main">
+                    <li class="has-dropdown has-dropdown--full">
+                        <span >All PDF tools<i class="ico ico--down"></i>
+                        </span>
+                        <div class="dropdown dropdown--full">
+                            <ul>
+                                <li>
+                                    <ul>
+                                        <li><div class="nav__title">Organize PDF</div></li>
+                                        <li><a  href="/merge_pdf"><i class="ico ico--merge"></i> Merge PDF</a></li>
+                                        <li><a  href="/split_pdf"><i class="ico ico--split"></i> Split PDF</a></li>
+                                        <li><a  href="/remove-pages"><i class="ico ico--remove"></i> Remove pages</a></li>
+                                        <li><a href="/split_pdf#split,extract"><i class="ico ico--extract"></i> Extract pages</a></li>
+                                        <li><a  href="/organize-pdf"><i class="ico ico--organize"></i> Organize PDF</a></li>
+                                        <li><a  href="/scan-pdf"><i  class="ico ico--scan"></i> Scan to PDF</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul>
+                                        <li><div class="nav__title">Optimize PDF</div></li>
+                                        <li><a  href="/compress_pdf"><i class="ico ico--compress"></i> Compress PDF</a></li>
+                                        <li><a  href="/repair-pdf"><i class="ico ico--repair"></i> Repair PDF</a></li>
+                                        <li><a  href="/ocr-pdf"><i class="ico ico--pdfocr"></i> OCR PDF</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul>
+                                        <li><div class="nav__title">Convert to PDF</div></li>
+                                        <li><a  href="/jpg_to_pdf"><i class="ico ico--jpgpdf"></i> JPG to PDF</a></li>
+                                        <li><a  href="/word_to_pdf"><i class="ico ico--wordpdf"></i>WORD to PDF</a></li>
+                                        <li><a  href="/powerpoint_to_pdf"><i class="ico ico--powerpointpdf"></i> POWERPOINT to PDF</a></li>
+                                        <li><a  href="/excel_to_pdf"><i class="ico ico--excelpdf"></i> EXCEL to PDF</a></li>
+                                        <li><a  href="/html-to-pdf"><i class="ico ico--htmlpdf"></i> HTML to PDF</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul>
+                                        <li><div class="nav__title">Convert from PDF</div></li>
+                                        <li><a  href="/pdf_to_jpg"><i class="ico ico--pdfjpg"></i> PDF to JPG</a></li>
+                                        <li><a  href="/pdf_to_word"><i class="ico ico--pdfword"></i>PDF to WORD</a></li>
+                                        <li><a  href="/pdf_to_powerpoint"><i class="ico ico--pdfpowerpoint"></i> PDF to POWERPOINT</a></li>
+                                        <li><a  href="/pdf_to_excel"><i class="ico ico--pdfexcel"></i> PDF to EXCEL</a></li>
+                                        <li><a href="/convert-pdf-to-pdfa"><i class="ico ico--pdfa"></i> PDF to PDF/A</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul>
+                                        <li><div class="nav__title">Edit PDF</div></li>
+                                        <li><a  href="/rotate_pdf"><i class="ico ico--rotate"></i>Rotate PDF</a></li>
+                                        <li><a  href="/add_pdf_page_number"><i class="ico ico--pagenumber"></i> Add page numbers</a></li>
+                                        <li><a  href="/pdf_add_watermark"><i class="ico ico--watermark"></i> Add watermark</a></li>
+                                        <li><a  href="/edit-pdf"><i class="ico ico--editpdf"></i>Edit PDF</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul>
+                                        <li><div class="nav__title">PDF security</div></li>
+                                        <li><a  href="/unlock_pdf"><i class="ico ico--unlock"></i> Unlock PDF</a></li>
+                                        <li><a  href="/protect-pdf"><i class="ico ico--protect"></i>Protect PDF</a></li>
+                                        <li><a  href="/sign-pdf"><i class="ico ico--sign"></i>Sign PDF</a></li>
+                                                                        <li><a  href="redact-pdf"><i class="ico ico--redact"></i> Redact PDF</a></li>
+                                        <li><a  href="/compare-pdf"><i class="ico ico--pdfcompare"></i> Compare PDF</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+                    <div class="actions">
+                    <a href="desktop" class="hide--sm tooltip tooltip--bottom" title="{{manifest['title']}} Desktop, work offline">
+                        <i class="ico ico--desk"></i>
+                    </a>
+                    {%if manifest.get("user") == None%}
+                    <a href="login" class="link--secondary hide--sm">Login</a>
+                    <a href="register" class="btn btn--sm hide--sm">Sign up</a>
+                    <a href="register" class="show--sm">
+                        <i class="ico ico--auth"></i>
+                    </a>
+                    {%else%}
+                    <ul>
+                    <li class="has-dropdown" data-account="true" >
+                        <a href="/user" title="User area access">
+                            <img class="avatar avatar--registered" src="https://www.ilovepdf.com/img/avatar/default30.png"
+                                 alt="BRADONE Etole"><span></span>
+                        </a>
+                        <div class="dropdown dropdown--single  dropdown--left">
+                            <ul class="menu__user">
+                                <li class="">
+                                    <a href="/user">
+                                        <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.84 12.5c.84-.587 1.673-1.037 2.5-1.35A7.443 7.443 0 0 1 8 10.68c.947 0 1.837.157 2.67.47.833.313 1.67.763 2.51 1.35.587-.72 1.003-1.447 1.25-2.18.247-.733.37-1.507.37-2.32 0-1.933-.65-3.55-1.95-4.85C11.55 1.85 9.933 1.2 8 1.2c-1.933 0-3.55.65-4.85 1.95C1.85 4.45 1.2 6.067 1.2 8c0 .813.127 1.587.38 2.32.253.733.673 1.46 1.26 2.18ZM8 8.6c-.773 0-1.423-.263-1.95-.79-.527-.527-.79-1.177-.79-1.95 0-.773.263-1.423.79-1.95.527-.527 1.177-.79 1.95-.79.773 0 1.423.263 1.95.79.527.527.79 1.177.79 1.95 0 .773-.263 1.423-.79 1.95-.527.527-1.177.79-1.95.79ZM8 16a7.74 7.74 0 0 1-3.1-.63 8.114 8.114 0 0 1-2.55-1.72A8.115 8.115 0 0 1 .63 11.1 7.74 7.74 0 0 1 0 8c0-1.107.21-2.143.63-3.11a8.146 8.146 0 0 1 1.72-2.54A8.114 8.114 0 0 1 4.9.63 7.74 7.74 0 0 1 8 0a7.72 7.72 0 0 1 3.11.63c.967.42 1.813.993 2.54 1.72a8.146 8.146 0 0 1 1.72 2.54c.42.967.63 2.003.63 3.11a7.74 7.74 0 0 1-.63 3.1 8.115 8.115 0 0 1-1.72 2.55 8.146 8.146 0 0 1-2.54 1.72A7.72 7.72 0 0 1 8 16Zm0-1.2c.733 0 1.45-.107 2.15-.32.7-.213 1.39-.587 2.07-1.12a8.703 8.703 0 0 0-2.08-1.1A6.302 6.302 0 0 0 8 11.88c-.72 0-1.433.127-2.14.38-.707.253-1.4.62-2.08 1.1.68.533 1.37.907 2.07 1.12.7.213 1.417.32 2.15.32Zm0-7.4c.453 0 .823-.143 1.11-.43.287-.287.43-.657.43-1.11 0-.453-.143-.823-.43-1.11-.287-.287-.657-.43-1.11-.43-.453 0-.823.143-1.11.43-.287.287-.43.657-.43 1.11 0 .453.143.823.43 1.11.287.287.657.43 1.11.43Z" fill="#161616"/></svg>
+                                        Account</a>
+                                </li>
+                                                        <li class="">
+                                    <a href="/user/team">
+                                        <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.8 3.988c0 .984-.802 1.789-1.8 1.789-.999 0-1.8-.805-1.8-1.789C6.2 3.005 7.001 2.2 8 2.2c.998 0 1.8.805 1.8 1.788Zm-.69 2.778a3.002 3.002 0 0 1-2.017.072L5.097 9.82c.396.386.685.88.82 1.435h4.18a2.981 2.981 0 0 1 .88-1.45L9 6.837l.11-.072Zm.907-.566A2.975 2.975 0 0 0 11 3.988 2.994 2.994 0 0 0 8 1C6.343 1 5 2.338 5 3.988c0 .905.404 1.716 1.041 2.264l-1.954 2.92A3.002 3.002 0 0 0 3 8.968c-1.657 0-3 1.338-3 2.988a2.994 2.994 0 0 0 3 2.988 2.997 2.997 0 0 0 2.958-2.49h4.076a2.982 2.982 0 0 0 1.466 2.144 3.006 3.006 0 0 0 4.098-1.093A2.981 2.981 0 0 0 14.5 9.424a3.004 3.004 0 0 0-2.49-.233l-1.993-2.99ZM4.8 11.957c0 .983-.802 1.788-1.8 1.788-.999 0-1.8-.805-1.8-1.788s.801-1.788 1.8-1.788c.998 0 1.8.805 1.8 1.788Zm6.64-.837a1.781 1.781 0 0 0 .659 2.439c.863.497 1.965.2 2.461-.655a1.781 1.781 0 0 0-.658-2.44 1.806 1.806 0 0 0-2.461.656Z" fill="#E5322D"/></svg>
+                                        Team                            </a>
+                                </li>
+                                                                                                            <li class="">
+                                        <a href="/user/signatures">
+                                            <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.076.908a.532.532 0 0 0-.752-.752L6.82 1.66a1.595 1.595 0 0 0 0 2.256l.158.158-3.414 1.219a2.659 2.659 0 0 0-1.679 1.833L.047 14.172a1.46 1.46 0 0 0 1.781 1.78l7.046-1.837a2.66 2.66 0 0 0 1.833-1.679l1.22-3.414.157.158a1.595 1.595 0 0 0 2.256 0l1.504-1.504a.532.532 0 0 0-.752-.752l-1.504 1.504a.532.532 0 0 1-.752 0L7.572 3.164a.532.532 0 0 1 0-.752L9.076.908Zm2.018 7.282L9.705 12.08c-.177.496-.589.873-1.1 1.007l-6.682 1.743 4.245-4.245a1.063 1.063 0 1 0-.752-.752l-4.245 4.245 1.743-6.683c.134-.51.51-.922 1.008-1.1L7.81 4.907l3.284 3.284Z" fill="#161616"/></svg>
+                                            Signatures</a>
+                                    </li>
+                                                        <li class="">
+                                    <a href="/user/history">
+                                        <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0Zm0 1.334A6.674 6.674 0 0 0 1.334 8 6.674 6.674 0 0 0 8 14.666 6.674 6.674 0 0 0 14.666 8 6.674 6.674 0 0 0 8 1.334ZM7.4 3.2a.6.6 0 0 1 .595.519L8 3.8V8h2.6a.6.6 0 0 1 .081 1.195L10.6 9.2H7.4a.6.6 0 0 1-.595-.519L6.8 8.6V3.8a.6.6 0 0 1 .6-.6Z" fill="#E5322D"/></svg>
+                                        Last tasks</a>
+                                </li>
+                                    {%if manifest['user'].get('premium') == True%}
+                                    <li><a href="#">
+                                        <svg class="premium" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8 0C12.4183 0 16 3.58172 16 8C16 12.4183 12.4183 16 8 16C3.58172 16 0 12.4183 0 8C0 3.58172 3.58172 0 8 0ZM4.09251 9.20585L3.55688 5.61517C3.54722 5.53438 3.59611 5.45983 3.66608 5.44868C3.69105 5.4447 3.71649 5.44933 3.73919 5.46199L5.81554 6.62012C5.8744 6.65295 5.94522 6.62924 5.97975 6.56516L7.80313 3.18079C7.84044 3.11154 7.91931 3.09033 7.97928 3.13341C7.99482 3.14458 8.00811 3.15948 8.01824 3.17709L9.97109 6.57143C10.0062 6.63253 10.0749 6.65457 10.1323 6.62319L12.262 5.45929C12.3258 5.4244 12.402 5.45588 12.4323 5.5296C12.443 5.55569 12.4468 5.58481 12.4433 5.61339L11.8964 9.20625C11.8875 9.27913 11.8335 9.33333 11.7697 9.33333H4.21919C4.15532 9.33333 4.10124 9.27891 4.09251 9.20585ZM11.6444 11.1111C11.6444 10.8166 11.4056 10.5778 11.111 10.5778H4.8888L4.80229 10.5848C4.54888 10.6261 4.35547 10.846 4.35547 11.1111C4.35547 11.4057 4.59425 11.6444 4.8888 11.6444H11.111L11.1975 11.6375C11.4509 11.5961 11.6444 11.3762 11.6444 11.1111Z" fill="#EF9E02"/>
+                                        </svg>
+                                        Premium Membership</a>
+                                    </li>  
+                                    {%else%}
+                                    <li>
+                                        <a href="/user/premium">
+                                            <svg class="premium" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M8 0C12.4183 0 16 3.58172 16 8C16 12.4183 12.4183 16 8 16C3.58172 16 0 12.4183 0 8C0 3.58172 3.58172 0 8 0ZM4.09251 9.20585L3.55688 5.61517C3.54722 5.53438 3.59611 5.45983 3.66608 5.44868C3.69105 5.4447 3.71649 5.44933 3.73919 5.46199L5.81554 6.62012C5.8744 6.65295 5.94522 6.62924 5.97975 6.56516L7.80313 3.18079C7.84044 3.11154 7.91931 3.09033 7.97928 3.13341C7.99482 3.14458 8.00811 3.15948 8.01824 3.17709L9.97109 6.57143C10.0062 6.63253 10.0749 6.65457 10.1323 6.62319L12.262 5.45929C12.3258 5.4244 12.402 5.45588 12.4323 5.5296C12.443 5.55569 12.4468 5.58481 12.4433 5.61339L11.8964 9.20625C11.8875 9.27913 11.8335 9.33333 11.7697 9.33333H4.21919C4.15532 9.33333 4.10124 9.27891 4.09251 9.20585ZM11.6444 11.1111C11.6444 10.8166 11.4056 10.5778 11.111 10.5778H4.8888L4.80229 10.5848C4.54888 10.6261 4.35547 10.846 4.35547 11.1111C4.35547 11.4057 4.59425 11.6444 4.8888 11.6444H11.111L11.1975 11.6375C11.4509 11.5961 11.6444 11.3762 11.6444 11.1111Z" fill="#EF9E02"/>
+                                            </svg>
+                                            Upgrade to Premium</a>
+                                    </li>
+                                    {%endif%}
+                                <li class="divider"></li>
+                                <li>
+                                    <a class="logout" href="/logout">
+                                        Log Out</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    </ul>
+                    {%endif%}
+                            
+            <ul>
+                <li class="has-dropdown">
+                    <span><i class="ico ico--hamburger"></i></span>
+                    <div class="dropdown dropdown--single dropdown--left">
+                        <ul>
+                            <li><a href=""><i class="ico ico--{{manifest['title']|lower}}"></i> Home</a></li>
+                            <li class="has-dropdown">
+                                <span><i class="ico ico--product"></i> Product</span>
+                                <ul class="dropdown">
+                                    <li><a href="/desktop"><i class="ico ico--desktop"></i> Desktop</a></li>
+                                    <li><a href="/mobile"><i class="ico ico--app"></i> Mobile</a></li>
+                                    <!--<li><a href="https://signature.{{manifest['title']|lower}}.com"><i class="ico ico--signature"></i> Signature</a></li>-->
+                                    <li><a href="/features"><i class="ico ico--features"></i> Features</a></li>
+                                    
+                                </ul>
+                            </li>
+                            <li class="has-dropdown">
+                                <span><i class="ico ico--solutions"></i> Solutions</span>
+                                <ul class="dropdown">
+                                    <li><a href="/business"><i class="ico ico--business"></i> Business</a></li>
+                                    <li><a href="/education"><i class="ico ico--education"></i> Education</a></li>
+                                    
+                                </ul>
+                            </li>
+                            <li><a href="/pricing"><i class="ico ico--pricing"></i> Pricing</a></li>
+        
+                            <li class="divider"></li>
+                            <li class="has-dropdown"><span><i class="ico ico--lang"></i> Language</span><div class="dropdown lang"><span class="lang__current">
+            <i class="ico ico--world"></i>
+            English <i class="ico ico--down"></i>
+        </span>
+        <ul class="lang__menu">
+            <li><a href=""><svg aria-hidden="true" width="12" height="12" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M435.848 83.466L172.804 346.51l-96.652-96.652c-4.686-4.686-12.284-4.686-16.971 0l-28.284 28.284c-4.686 4.686-4.686 12.284 0 16.971l133.421 133.421c4.686 4.686 12.284 4.686 16.971 0l299.813-299.813c4.686-4.686 4.686-12.284 0-16.971l-28.284-28.284c-4.686-4.686-12.284-4.686-16.97 0z" class=""></path></svg> English</a></li>
+                                            <li><a href="es"> Español</a></li>
+                                        <li><a href="fr"> Français</a></li>
+                                        <li><a href="de"> Deutsch</a></li>
+                                        <li><a href="it"> Italiano</a></li>
+                                        <li><a href="pt"> Português</a></li>
+                                        <li><a href="ja"> 日本語</a></li>
+                                        <li><a href="ru"> Pусский</a></li>
+                                        <li><a href="ko"> 한국어</a></li>
+                                        <li><a href="zh-cn"> 中文 (简体)</a></li>
+                                        <li><a href="zh-tw"> 中文 (繁體)</a></li>
+                                        <li><a href="ar"> العربية</a></li>
+                                        <li><a href="bg"> Български</a></li>
+                                        <li><a href="ca"> Català</a></li>
+                                        <li><a href="nl"> Nederlands</a></li>
+                                        <li><a href="el"> Ελληνικά</a></li>
+                                        <li><a href="hi"> हिन्दी</a></li>
+                                        <li><a href="id"> Bahasa Indonesia</a></li>
+                                        <li><a href="ms"> Bahasa Melayu</a></li>
+                                        <li><a href="pl"> Polski</a></li>
+                                        <li><a href="sv"> Svenska</a></li>
+                                        <li><a href="th"> ภาษาไทย</a></li>
+                                        <li><a href="tr"> Türkçe</a></li>
+                                        <li><a href="uk"> Українська</a></li>
+                                        <li><a href="vi"> Tiếng Việt</a></li>
+                    </ul>
+        </div></li>
+                            <li class="has-dropdown">
+                                <span ><i class="ico ico--help"></i> Help</span>
+                                <ul class="dropdown">
+                                    <li><a href="/help/faq"><i class="ico ico--faq"></i> FAQ</a></li>
+                                    <li><a href="/help/documentation"><i class="ico ico--documentation"></i> Tools</a></li>
+                                    <li><a href="/help/legal"><i class="ico ico--legal"></i> Legal &amp; Privacy</a></li>
+                                    <li><a href="/help/about"><i class="ico ico--about"></i> Our Story</a></li>
+                                    <li><a  href="/contact"><i class="ico ico--contact"></i> Contact</a></li>
+                                </ul>
+                            </li>
+                            <li class="divider"></li>
+                            
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+                    </div>
+            </nav>
+        </header>
+    {%block content%}
+    {%endblock%}
+
+    <div class="footer-main">
+        <div class="container">
+            <div class="d-flex justify-content-between flex-wrap">
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="footer-main__title">{{manifest['title']}}</div>
+                    <ul class="footer-main__nav">
+                        <li>
+                            <a href="/">Home</a>
+                        </li>
+                        <li>
+                            <a href="/features">Features</a>
+                        </li>
+                        <li>
+                            <a href="/pricing">Pricing</a>
+                        </li>
+                        <li>
+                            <a href="/help/documentation">Tools</a>
+                        </li>
+                        <li><a href="/help/faq">FAQ</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="footer-main__title">Product</div>
+                    <ul class="footer-main__nav">
+                        <li>
+                            <a href="/desktop">{{manifest['title']}} Desktop</a>
+                        </li>
+                        <li>
+                            <a href="/mobile">{{manifest['title']}} Mobile</a>
+                        </li>
+                        <!--<li><a href="https://signature.{{manifest['title']|lower}}.com">{{manifest['title']|lower}} Signature</a></li>-->
+                        
+                    </ul>
+                </div>
+                <div class="col-md-3 col-sm-6 mt-md-0 mt-sm-5 col-xs-12">
+                    <div class="footer-main__title">Solutions</div>
+                    <ul class="footer-main__nav">
+                        <li>
+                            <a href="/business">Business</a>
+                        </li>
+                        <li>
+                            <a href="/education">Education</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-sm-6 mt-md-0 mt-sm-5 col-xs-12">
+                    <div class="footer-main__title">Company</div>
+                    <ul class="footer-main__nav">
+                        <li>
+                            <a href="/help/about">Our Story</a>
+                        </li>
+                        <li>
+                            <a href="/blog">Blog</a>
+                        </li>
+                       
+                        <li>
+                            <a href="/help/legal">Legal &amp; Privacy</a>
+                        </li>
+                        <li>
+                            <a href="/contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <ul class="app__store">
+                <!--<li><a href="" rel="noopener" target="_blank" title="Microsoft Store"><img
+                            src="img/logos/microsoft_store.svg"/></a></li>-->
+                <li><a href="https://play.google.com/store/apps/details?id=com.{{manifest['title']|lower}}.www" rel="noopener" target="_blank" title="Google Play"><img
+                            src="/static/img/logos/google_play.svg" alt="Google Play" /></a></li>
+                <li><a href="https://itunes.apple.com/es/app/{{manifest['title']|lower}}/id1207332399?mt=8" rel="noopener" target="_blank" title="App Store"><img
+                            src="/static/img/logos/app_store.svg" alt="App Store" /></a></li>
+            </ul>
+            <div class="separator"></div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="footer-big__lang">
+                        <span class="lang__current">
+        <i class="ico ico--world"></i>
+        English <i class="ico ico--down"></i>
+    </span>
+    <ul class="lang__menu">
+        <li><a href=""><svg aria-hidden="true" width="12" height="12" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M435.848 83.466L172.804 346.51l-96.652-96.652c-4.686-4.686-12.284-4.686-16.971 0l-28.284 28.284c-4.686 4.686-4.686 12.284 0 16.971l133.421 133.421c4.686 4.686 12.284 4.686 16.971 0l299.813-299.813c4.686-4.686 4.686-12.284 0-16.971l-28.284-28.284c-4.686-4.686-12.284-4.686-16.97 0z" class=""></path></svg> English</a></li>
+                                        <li><a href="es"> Español</a></li>
+                                    <li><a href="fr"> Français</a></li>
+                                    <li><a href="de"> Deutsch</a></li>
+                                    <li><a href="it"> Italiano</a></li>
+                                    <li><a href="pt"> Português</a></li>
+                                    <li><a href="ja"> 日本語</a></li>
+                                    <li><a href="ru"> Pусский</a></li>
+                                    <li><a href="ko"> 한국어</a></li>
+                                    <li><a href="zh-cn"> 中文 (简体)</a></li>
+                                    <li><a href="zh-tw"> 中文 (繁體)</a></li>
+                                    <li><a href="ar"> العربية</a></li>
+                                    <li><a href="bg"> Български</a></li>
+                                    <li><a href="ca"> Català</a></li>
+                                    <li><a href="nl"> Nederlands</a></li>
+                                    <li><a href="el"> Ελληνικά</a></li>
+                                    <li><a href="hi"> हिन्दी</a></li>
+                                    <li><a href="id"> Bahasa Indonesia</a></li>
+                                    <li><a href="ms"> Bahasa Melayu</a></li>
+                                    <li><a href="pl"> Polski</a></li>
+                                    <li><a href="sv"> Svenska</a></li>
+                                    <li><a href="th"> ภาษาไทย</a></li>
+                                    <li><a href="tr"> Türkçe</a></li>
+                                    <li><a href="uk"> Українська</a></li>
+                                    <li><a href="vi"> Tiếng Việt</a></li>
+                </ul>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="footer-main__info">
+                        <div class="slogan">
+                            <p>&copy; {{manifest["title"]}} <script>document.write(new Date().getFullYear())</script> &reg; - Your PDF Editor</p>
+                        </div>
+                            <div class="social">
+            <a class="social__item social__item--twitter" href="https://twitter.com/{{manifest['title']|lower}}_com" rel="noopener" target="_blank" title="Follow us on Twitter!" ></a>
+            <a class="social__item social__item--facebook" href="https://www.facebook.com/{{manifest['title']|lower}}com-238648522858564/" rel="noopener" target="_blank" title="Like us on Facebook!"></a>
+            <a class="social__item social__item--linkedin" href="https://www.linkedin.com/company/{{manifest['title']|lower}}/" rel="noopener" target="_blank" title="LinkedIn - {{manifest['title']|lower}}"></a>
+            <a class="social__item social__item--instagram" href="https://www.instagram.com/{{manifest['title']|lower}}_official/" rel="noopener" target="_blank" title="Instagram - {{manifest['title']|lower}}_official"></a>
+            <a class="social__item social__item--tiktok" href="https://www.tiktok.com/@{{manifest['title']|lower}}_official" rel="noopener" target="_blank" title="TikTok - {{manifest['title']|lower}}_official"></a>
+        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>        
+    <div id="network" class="network">
+        <i class="ico ico--network"></i>
+        <div class="network__text">
+            Woops! Something is wrong with your Internet connection...    </div>
+    </div>
+    
+<script>
+    var lang = 'en-US';
+var brand = "{manifest['title']|lower";
+var brand_ref = "{{manifest['title']|lower}}";
+        var nds = {
+    'ck': 0,
+    'content': '<p>We hope you like it and find it easier to use.<br>If you run into any issues, please <a href=\"/contact\">let us know</a>.<br>We can fix any problem if we know about it.</p>',
+    'title': '<span style="color:#1D9D58">Welcome to the newly designed {{manifest["title"]}}</span>'
+};
+</script>
+<script src="/static/dist/js/web.7909e88.js" async="async"></script></body>
+</html>

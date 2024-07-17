@@ -1,0 +1,819 @@
+{%extends 'main.html'%}
+{%block content%}
+<link href="/dist/css/pages.7909e88.css" rel="stylesheet">
+
+
+<div class="main">
+    <style>
+    .js-scroll {
+        opacity: 0;
+        transition: opacity 500ms;
+    }
+
+    .js-scroll.scrolled {
+        opacity: 1;
+    }
+
+    .scrolled.fade-in {
+        animation: fade-in 0.75s ease-in-out both;
+    }
+
+    .scrolled.fade-in-bottom {
+        animation: fade-in-bottom 0.75s ease-in-out both;
+    }
+
+    .scrolled.slide-left {
+        animation: slide-in-left 0.75s ease-in-out both;
+    }
+
+    .scrolled.slide-right {
+        animation: slide-in-right 0.75s ease-in-out both;
+    }
+
+    [data-period-selected] + .btn, .pricing__account__price + .btn {
+        margin-top: 48px;
+    }
+
+    .block {
+        position: relative;
+    }
+
+    .bg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background-image: url('/img/business/bg0.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
+    .bg1 {
+        background-image: url('/img/business/bg1.svg');
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: cover;
+    }
+
+    .bg2 {
+        background-image: url('/img/business/bg2.svg');
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: cover;
+    }
+
+    .bg3 {
+        background-color: white;
+        background-image: url('/img/business/bg3.svg');
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: cover;
+    }
+
+    .stars {
+        display: flex;
+        justify-content: center;
+    }
+
+    .btn--card {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        border-radius: 12px;
+        padding: 32px;
+        background-color: #ffffff;
+        box-shadow: 0 5px 30px 0 rgba(22, 22, 22, 0.1);
+        margin-bottom: 32px;
+    }
+
+    .btn--card .title3 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .btn--card svg {
+        margin-right: 16px;
+    }
+
+    .btn--card + ul {
+        width: fit-content;
+        margin: 32px auto;
+    }
+
+    .btn--card + ul li {
+        padding: 12px;
+    }
+
+    .btn--card + ul li div {
+        display: flex;
+        align-items: center;
+    }
+
+    .btn--card + ul .ico {
+        display: inline-block;
+        margin-right: 8px;
+    }
+
+    .pricing__account__price {
+        font-size: 16px;
+        line-height: 28px;
+    }
+
+    .card__icon {
+        width: 48px;
+        height: 48px;
+        margin-bottom: 32px;
+    }
+
+    .card__body {
+        padding: 12px;
+    }
+
+    .rtl .stars {
+        direction: rtl;
+    }
+
+    .rtl .btn--card svg {
+        margin-right: 0;
+        margin-left: 16px;
+    }
+
+    .rtl .btn--card + ul .ico {
+        margin-left: 8px;
+        margin-right: 0;
+    }
+</style>
+<div class="block block--intro">
+    <div class="bg"></div>
+    <div class="block__container">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-xl-6 col-lg-6 col-md-12">
+                <div class="super">
+                    <h1 class="super__title">Simplify document management</h1>
+                    <p class="super__content">Convert, edit, and optimize PDFs. Electronically sign documents and gather signatures. Collaborate seamlessly with your team. Streamline document workflows on any platform. All in one place.</p>
+                    <div class="buttons">
+                        <a href="/"
+                           class="btn btn--secondary">Get Started</a>
+                        <a href="/contact"
+                           class="btn">Contact Sales</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-1">
+            </div>
+            <div class="col-xl-5 col-lg-5 d-sm-none d-lg-block">
+                <img style="width:100%;" src="/static/img/business/business.png" srcset="/img/business/business@2x.png 2x"
+                     title="{{manifest['title']}} tools for business">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="block block--white">
+    <div class="block__container">
+        <div class="block__header">
+            <h2 class="title1">Work efficiently with your documents while keeping data safe and secure</h2>
+        </div>
+        <div class="block__body">
+            <div style="max-width: 950px; margin:auto; overflow: hidden">
+                <div
+                    style="display: flex;justify-content: center;position: relative;height: 0;padding-top: 56.25%;width:100%;margin-bottom: -1px;">
+                    <iframe style="position: absolute;top: 0; left: 0;border: 0;width: 100%;height: 100%;"
+                            src="https://www.youtube-nocookie.com/embed/B8qYtVqcLDw?si=Dd-p8j-RQDCdY83m&controls=0&rel=0"
+                            title="{{manifest['title']}} Business" frameborder="0"
+                            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture;"
+                            allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="block block--white">
+    <div class="block__container">
+        <div class="block__header">
+            <h2 class="title1">The PDF software trusted by millions</h2>
+            <p class="subtitle1">Over 208,500+ professionals worldwide love us</p>
+        </div>
+        <div class="block__body">
+            <div class="row js-scroll fade-in">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card__body">
+                            <div class=" text-center">
+                                <img style="margin-bottom: 32px;" src="/static/img/business/logos/capterra.png"
+                                     title="Capterra">
+                                <h3 class="title2">4.7/5</h3>
+                                <p>1300+ verified reviews</p>
+                                <div class="stars">
+                                    <img src="/static/img/business/star.svg" title="Star">
+                                    <img src="/static/img/business/star.svg" title="Star">
+                                    <img src="/static/img/business/star.svg" title="Star">
+                                    <img src="/static/img/business/star.svg" title="Star">
+                                    <img src="/static/img/business/star-half.svg" title="Star">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card__body">
+                            <div class=" text-center">
+                                <img style="margin-bottom: 32px;" src="/static/img/business/logos/advice.png" title="Advice">
+                                <h3 class="title2">4.6/5</h3>
+                                <p>385+ verified reviews</p>
+                                <div class="stars">
+                                    <img src="/static/img/business/star.svg" title="Star">
+                                    <img src="/static/img/business/star.svg" title="Star">
+                                    <img src="/static/img/business/star.svg" title="Star">
+                                    <img src="/static/img/business/star.svg" title="Star">
+                                    <img src="/static/img/business/star-half.svg" title="Star">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card__body">
+                            <div class=" text-center">
+                                <img style="margin-bottom: 32px;" src="/static/img/business/logos/getapp.png" title="GetApp">
+                                <h3 class="title2">4.7/5</h3>
+                                <p>1304+ verified reviews</p>
+                                <div class="stars">
+                                    <img src="/static/img/business/star.svg" title="Star">
+                                    <img src="/static/img/business/star.svg" title="Star">
+                                    <img src="/static/img/business/star.svg" title="Star">
+                                    <img src="/static/img/business/star.svg" title="Star">
+                                    <img src="/static/img/business/star-half.svg" title="Star">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="block block--white">
+    <div class="block__container">
+        <div class="block__body">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-lg-6 col-md-12">
+                    <h2 class="title1">Work offline for enhanced performance</h2>
+                    <h3 class="title3">Process heavy PDF tasks in seconds</h3>
+                    <p>The Desktop App offers the fastest processing speeds, making it ideal for handling large or complex PDF tasks efficiently and with minimal lag.</p>
+                    <h3 class="title3">Keep your business documents safe</h3>
+                    <p>Encrypt and protect PDF files with a password to safeguard sensitive information. Convert business documents to PDF/A, the ISO-standardized version of PDF specialized for preserving digital documents.</p>
+                    <h3 class="title3">Maximum privacy</h3>
+                    <p>The {{manifest['title']}} Desktop App provides added security for sensitive documents by allowing you to work locally on your computer.</p>
+                    <p><a href="/desktop">See more</a></p>
+                </div>
+                <div class="col-lg-1 col-md-12"></div>
+                <div class="col-lg-5 col-md-8 mt-lg-0 mt-sm-5 js-scroll fade-in-bottom">
+                    <div class="text-center">
+                        <img src="/static/img/business/desktop.png" srcset="/img/business/desktop@2x.png 2x"
+                             alt="Save mobile data working straight to the cloud">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="block block--white">
+    <div class="block__container">
+        <div class="block__body">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-lg-6 col-md-12">
+                    <h2 class="title1">Your PDF editor for mobile and tablet</h2>
+                    <h3 class="title3">High-quality scanner</h3>
+                    <p>Turn your mobile device into a scanner. Scan papers and whiteboards into high-quality PDFs, use accurate automatic text recognition, and easily fix any distortion.</p>
+                    <h3 class="title3">Professional templates library</h3>
+                    <p>Access a library of pre-designed templates to simplify the creation of professional documents and forms. Ideal for business or personal use.</p>
+                    <h3 class="title3">Cloud Integration</h3>
+                    <p>Seamlessly connect with popular cloud storage services like Google Drive, Dropbox, and OneDrive. Store, access, and share your files from anywhere with an internet connection.</p>
+                    <p><a href="/mobile">See more</a></p>
+                </div>
+                <div class="col-lg-1 col-md-12"></div>
+                <div class="col-lg-5 col-md-8 mt-lg-0 mt-sm-5 js-scroll fade-in-bottom">
+                    <div class="text-center"><img src="/static/img/business/mobile.png" srcset="/img/business/mobile@2x.png 2x"
+                                                  alt="Save mobile data working straight to the cloud">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="block block--white">
+    <div class="block__container">
+        <div class="block__body">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-lg-5 col-md-8 mt-md-5">
+                    <div class="text-center">
+                        <img src="/static/img/business/security.svg"
+                             alt="Save mobile data working straight to the cloud">
+                    </div>
+                </div>
+                <div class="col-lg-1 col-md-12"></div>
+                <div class="col-lg-6 col-md-12">
+                    <h2 class="title1">The security of your data is our #1 priority</h2>
+                    <p>All files uploaded to our service are encrypted using Hypertext Transfer Protocol Secure (HTTPS). {{manifest['title']}} does not access, use, analyze, or store any processed data. {{manifest['title']}} is ISO certified and GDPR-compliant. If you would like to know more about {{manifest['title']}} s data collection, you can read our <a href="/help/privacy" title="Privacy Policy">Privacy Policy</a>.</p>
+                    <br/>
+                    <div
+                        style="margin-left:14px"> <div class="new-premium__logos new-premium__logos--left" >
+            <img width="55" height="25" src="/static/img/logos/pdf-association-logo.svg" alt="PDF Association">
+        <img width="67" height="30" src="/static/img/logos/iso-logo.svg" alt="ISO27001 certified">
+    <img width="89" height="30" src="/static/img/logos/ssl-encrypted-logo.svg" alt="Secure connection Https">
+                <img height="25" src="/static/img/logos/open-trusted-cloud.svg" title="Open Trusted Cloud">
+    </div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="bg3">
+    <div class="block" id="tools">
+        <div class="block__container">
+            <div class="block__header">
+                <div class="container max-900">
+                    <h2 class="title1"
+                        id="seeTools">A full suite of tools to boost your productivity</h2>
+                </div>
+            </div>
+            <div class="block__body">
+
+                <script>function toogleTools() {
+                        var lists = document.querySelectorAll('.btn--card+ul');
+                        lists.forEach(function (list) {
+                            var isVisible = list.style.display === 'block';
+                            list.style.display = isVisible ? 'none' : 'block';
+                            if (!isVisible) location.hash = "#seeTools";
+                        });
+                        return false;
+                    }</script>
+                <!-- <div class="text-center" style="margin-bottom:32px"><a href="javascript:toogleTools();">See all tools</a></div>-->
+                <div class="row row-eq-height">
+                    <div class="col-md-4">
+                        <div class="btn--card">
+                            <h4 class="title3">
+                                <svg width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="14" height="14" rx="2" fill="#EE6C4D"/>
+                                    <rect x="18" width="14" height="14" rx="2" fill="#F5A38F"/>
+                                    <rect y="18" width="14" height="14" rx="2" fill="#F5A38F"/>
+                                    <rect x="18" y="18" width="14" height="14" rx="2" fill="#EE6C4D"/>
+                                </svg>
+                                Organization tools                            </h4>
+                        </div>
+                        <ul>
+                            <li>
+                                <div><i class="ico ico--merge"></i> Merge PDF</div>
+                            </li>
+                            <li>
+                                <div><i class="ico ico--split"></i> Split PDF</div>
+                            </li>
+                            <li>
+                                <div><i class="ico ico--remove"></i> Remove pages                                </div>
+                            </li>
+                            <li>
+                                <div><i class="ico ico--extract"></i> Extract pages                                </div>
+                            </li>
+                            <li>
+                                <div><i class="ico ico--organize"></i> Organize PDF                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="btn--card">
+                            <h4 class="title3">
+                                <svg width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="32" height="32" rx="4" fill="#8FBC5D"/>
+                                    <g clip-path="url(#a)" fill="#fff" stroke="#fff" stroke-width=".3">
+                                        <path
+                                            d="m25.636 13.727-1.909-.368a8.597 8.597 0 0 0-.4-.964l1.068-1.609a.454.454 0 0 0-.059-.572l-2.55-2.569a.454.454 0 0 0-.572-.059l-1.61 1.069a8.565 8.565 0 0 0-.963-.382l-.368-1.91A.454.454 0 0 0 17.818 6h-3.636a.455.455 0 0 0-.455.364l-.368 1.909c-.329.113-.65.247-.964.4l-1.609-1.087a.454.454 0 0 0-.572.06l-2.569 2.568a.454.454 0 0 0-.059.572l1.069 1.61a8.565 8.565 0 0 0-.382.963l-1.91.368a.455.455 0 0 0-.363.455v3.636c-.004.22.149.41.364.455l1.909.368c.113.329.247.65.4.964l-1.087 1.609c-.119.18-.094.42.06.572l2.568 2.569a.454.454 0 0 0 .572.059l1.61-1.069c.312.153.634.287.963.4l.368 1.891a.455.455 0 0 0 .455.364h3.636c.22.004.41-.149.455-.364l.368-1.909a8.59 8.59 0 0 0 .964-.4l1.609 1.068c.18.12.42.095.572-.059l2.569-2.568a.454.454 0 0 0 .059-.573l-1.069-1.609c.146-.307.274-.623.382-.945l1.91-.368a.455.455 0 0 0 .363-.455v-3.636a.455.455 0 0 0-.364-.455Zm-.545 3.718-1.787.373a.455.455 0 0 0-.345.314 7.243 7.243 0 0 1-.54 1.304.455.455 0 0 0 .022.455l1.009 1.514-2.046 2.045-1.513-1.01a.455.455 0 0 0-.455-.022c-.417.22-.853.402-1.304.541a.454.454 0 0 0-.314.346l-.373 1.786h-2.89l-.373-1.787a.454.454 0 0 0-.314-.345c-.45-.14-.887-.32-1.304-.54a.455.455 0 0 0-.455.022l-1.514 1.009-2.045-2.046 1.01-1.513a.455.455 0 0 0 .022-.455 7.247 7.247 0 0 1-.541-1.304.454.454 0 0 0-.346-.314l-1.786-.373v-2.89l1.786-.373a.455.455 0 0 0 .346-.314c.137-.451.318-.888.54-1.304a.454.454 0 0 0-.022-.455L8.55 10.595l2.045-2.045 1.514 1.01c.137.087.31.096.455.022.417-.22.853-.402 1.304-.541a.455.455 0 0 0 .314-.346l.373-1.786h2.89l.373 1.786a.454.454 0 0 0 .314.346c.45.14.887.32 1.304.54a.454.454 0 0 0 .455-.022l1.514-1.009 2.045 2.045-1.01 1.514a.455.455 0 0 0-.022.455c.223.416.404.853.541 1.304.049.16.181.28.346.314l1.786.359v2.904Z"/>
+                                        <path
+                                            d="M16 11a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0 9.167a4.167 4.167 0 1 1 0-8.334 4.167 4.167 0 0 1 0 8.334Z"/>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="a">
+                                            <path fill="#fff" transform="translate(6 6)" d="M0 0h20v20H0z"/>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                                Optimize PDF                            </h4>
+                        </div>
+                        <ul>
+                            <li>
+                                <div><i class="ico ico--compress"></i> Compress PDF                                </div>
+                            </li>
+                            <li>
+                                <div><i class="ico ico--repair"></i> Repair PDF</div>
+                            </li>
+                            <li>
+                                <div><i class="ico ico--pdfocr"></i> OCR PDF</div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="btn--card">
+                            <h4 class="title3">
+                                <svg width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M4.669.005 26.872 0c1.783 0 2.43.186 3.082.534.651.349 1.163.86 1.512 1.512.348.652.534 1.299.534 3.082v21.744c0 1.783-.186 2.43-.534 3.082a3.635 3.635 0 0 1-1.512 1.512c-.652.348-1.299.534-3.082.534H5.128c-1.783 0-2.43-.186-3.082-.534a3.635 3.635 0 0 1-1.512-1.512c-.317-.593-.499-1.181-.53-2.623L0 5.128c0-1.783.186-2.43.534-3.082A3.635 3.635 0 0 1 2.046.534C2.64.217 3.227.035 4.67.004Z"
+                                          fill="#FFD400"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="m25.204 23.53.023-4.749a1.328 1.328 0 0 1 1.319-1.319 1.296 1.296 0 0 1 1.305 1.306l-.04 7.874a1.328 1.328 0 0 1-1.318 1.318l-7.87.04a1.296 1.296 0 0 1-1.305-1.306 1.328 1.328 0 0 1 1.319-1.319l5.03-.025-7.326-7.33a1.18 1.18 0 0 1 .01-1.67 1.18 1.18 0 0 1 1.668-.009l7.185 7.189Z"
+                                          fill="#FFF3B6"/>
+                                </svg>
+                                Convert to PDF                            </h4>
+                        </div>
+                        <ul>
+                            <li>
+                                <div><i class="ico ico--jpgpdf"></i> JPG to PDF</div>
+                            </li>
+                            <li>
+                                <div><i class="ico ico--wordpdf"></i> Word to PDF                                </div>
+                            </li>
+                            <li>
+                                <div><i class="ico ico--excelpdf"></i> Excel to PDF                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <i class="ico ico--powerpoinpdf"></i> Powerpoint to PDF                                </div>
+                            </li>
+                            <li>
+                                <div><i class="ico ico--htmlpdf"></i> HTML to PDF                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="btn--card">
+                            <h4 class="title3">
+                                <svg width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M4.669.005 26.872 0c1.783 0 2.43.186 3.082.534.651.349 1.163.86 1.512 1.512.348.652.534 1.299.534 3.082v21.744c0 1.783-.186 2.43-.534 3.082a3.635 3.635 0 0 1-1.512 1.512c-.652.348-1.299.534-3.082.534H5.128c-1.783 0-2.43-.186-3.082-.534a3.635 3.635 0 0 1-1.512-1.512c-.317-.593-.499-1.181-.53-2.623L0 5.128c0-1.783.186-2.43.534-3.082A3.635 3.635 0 0 1 2.046.534C2.64.217 3.227.035 4.67.004Z"
+                                          fill="#FFD400"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="m6.648 8.47-.024 4.749a1.328 1.328 0 0 1-1.318 1.319 1.296 1.296 0 0 1-1.305-1.306l.04-7.874A1.328 1.328 0 0 1 5.359 4.04l7.87-.04a1.296 1.296 0 0 1 1.304 1.306 1.328 1.328 0 0 1-1.318 1.319l-5.03.025 7.326 7.33a1.18 1.18 0 0 1-.01 1.67 1.18 1.18 0 0 1-1.668.009L6.648 8.47Z"
+                                          fill="#FFF3B6"/>
+                                </svg>
+                                Convert from PDF                            </h4>
+                        </div>
+                        <ul>
+                            <li>
+                                <div><i class="ico ico--pdfjpg"></i> PDF to JPG</div>
+                            </li>
+                            <li>
+                                <div><i class="ico ico--pdfword"></i> PDF to Word                                </div>
+                            </li>
+                            <li>
+                                <div><i class="ico ico--pdfexcel"></i> PDF to Excel                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <i class="ico ico--pdfpowerpoint"></i> PDF to Powerpoint                                </div>
+                            </li>
+                            <li>
+                                <div><i class="ico ico--pdfa"></i> PDF to PDF/A</div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="btn--card">
+                            <h4 class="title3">
+                                <svg width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="32" height="32" rx="4" fill="#AB6993"/>
+                                    <path
+                                        d="M16.001 16.833a.833.833 0 0 1-.589-1.422l7.5-7.5a.832.832 0 1 1 1.178 1.178l-7.5 7.5a.833.833 0 0 1-.589.244Z"
+                                        fill="#fff"/>
+                                    <path
+                                        d="M23.501 24.333h-15a.833.833 0 0 1-.833-.833v-15a.833.833 0 0 1 .833-.833h10a.833.833 0 0 1 0 1.666H9.335v13.334h13.333V13.5a.834.834 0 0 1 1.667 0v10a.833.833 0 0 1-.834.833Z"
+                                        fill="#F5F5FA"/>
+                                </svg>
+                                Edit PDF                            </h4>
+                        </div>
+                        <ul>
+                            <li>
+                                <div><i class="ico ico--rotate"></i> Rotate PDF</div>
+                            </li>
+                            <li>
+                                <div>
+                                    <i class="ico ico--pagenumber"></i> Add page numbers                                </div>
+                            </li>
+                            <li>
+                                <div><i class="ico ico--watermark"></i> Add watermark                                </div>
+                            </li>
+                            <li>
+                                <div><i class="ico ico--editpdf"></i> Edit PDF</div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="btn--card">
+                            <h4 class="title3">
+                                <svg width="33" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M5.297 0H27.03c1.782 0 2.428.186 3.08.534.651.349 1.163.86 1.511 1.512.349.652.534 1.299.534 3.082v21.744c0 1.783-.186 2.43-.534 3.082a3.634 3.634 0 0 1-1.511 1.512c-.652.348-1.298.534-3.08.534H5.297c-1.782 0-2.428-.186-3.08-.534a3.634 3.634 0 0 1-1.511-1.512c-.349-.652-.534-1.299-.534-3.082V5.128c0-1.783.185-2.43.534-3.082A3.634 3.634 0 0 1 2.217.534C2.87.186 3.515 0 5.297 0Z"
+                                          fill="#4A7AAB"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M15.746 26.94c.199.08.422.08.621 0a13.743 13.743 0 0 0 8.574-12.725v-4.057a.82.82 0 0 0-.507-.758l-8.062-3.337a.825.825 0 0 0-.631 0L7.679 9.4a.82.82 0 0 0-.507.758v4.058a13.743 13.743 0 0 0 8.574 12.723Zm.31-1.651a12.1 12.1 0 0 1-7.239-11.074v-3.51l7.24-2.996 7.239 2.997v3.51a12.1 12.1 0 0 1-7.24 11.073Z"
+                                          fill="#fff"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M14.564 18.682a.825.825 0 0 0 1.166 0l4.125-4.122a.823.823 0 1 0-1.166-1.165l-3.542 3.54-1.72-1.72a.825.825 0 0 0-1.166 1.165l2.303 2.302Z"
+                                          fill="#fff"/>
+                                </svg>
+                                PDF Security                            </h4>
+                        </div>
+                        <ul>
+                            <li><div><i class="ico ico--unlock"></i> Unlock PDF</div></li>
+                            <li><div><i class="ico ico--protect"></i> Protect PDF</div></li>
+                            <li><div><i class="ico ico--sign"></i> Sign PDF</div></li>
+                            <li><div><i class="ico ico--redact"></i> Redact PDF</div></li>
+                            <li><div><i class="ico ico--pdfcompare"></i> Compare PDF</div></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="block">
+        <div class="block__container">
+            <div class="block__header">
+                <h2 class="title1">Complete your business transactions with legally binding electronic signatures</h2>
+                <p class="subtitle1">From everyday simple transactions to complex contracts, {{manifest['title']}} Signature transforms how you prepare, sign, act on and manage agreements.</p>
+            </div>
+            <div class="block__body">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-lg-6 col-md-12">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3 class="title2">eIDAS Signature Types</h3>
+                                <p>Keep track of every step of the signing process. The Audit Trail proves who signed the document  and when they signed it.</p>
+                            </div>
+                            <div class="col-md-6">
+                                <h3 class="title2">Audit Trail</h3>
+                                <p>Enable convenient and secure electronic transactions across borders.</p>
+                            </div>
+                        </div>
+                        <div class="row mt-5">
+                            <div class="col-md-6">
+                                <h3 class="title2">An EU compliant service</h3>
+                                <p>{{manifest['title']}} Signature meets the world s most stringent security standards by using EU qualified Certificate Authorities.</p>
+                            </div>
+                            <div class="col-md-6">
+                                <h3 class="title2">Scale as you grow</h3>
+                                <p>Whether you re sending one or one hundred contracts, eSignature adapts to the scale and needs of your business.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-1 col-md-12"></div>
+                    <div class="col-lg-5 col-md-8 mt-lg-0 mt-sm-5 ">
+                        <div class="text-center">
+                            <img src="/static/img/business/signature.png" srcset="/img/business/signature@2x.png 2x"
+                                 alt="{{manifest['title']}} Signature">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="block block--black bg1">
+    <div class="block__container section">
+        <div class="row align-items-center justify-content-center d-lg-flex">
+            <div class="col-lg-6 col-md-12 section__item">
+                <div class="title1">Automate your document processes with {{manifest['title']}} API</div>
+                <p>Millions of people trust {{manifest['title']}} to process their documents. Now you have full access to those same tools and infrastructure, built to scale.</p>
+                <br/>
+                <div class="new-premium__logos new-premium__logos--left" >
+    <img src="/static/img/logos/ruby-w.svg" alt="Ruby">
+    <img src="/static/img/logos/dotnet-w.svg" alt=".Net">
+    <img src="/static/img/logos/python-w.svg" alt="Python">
+    <img src="/static/img/logos/php-w.svg" title="Php">
+</div>            </div>
+            <div class="col-lg-2 col-md-12 mt-sm-5"></div>
+            <div class="col-lg-4 col-md-6 d-flex justify-content-lg-end section__item">
+                <ul class="listcheck listcheck--content">
+                    <li class="listcheck__item listcheck__item--ok"><span
+                            class="title3">Make project development easy with PDF libraries</span>
+                    </li>
+                    <li class="listcheck__item listcheck__item--ok"><span
+                            class="title3">Automate heavy PDF tasks with dedicated servers</span>
+                    </li>
+                    <li class="listcheck__item listcheck__item--ok"><span
+                            class="title3">Rely on high- quality PDF technology powered by PDF Tools AG</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="block block--white">
+    <div class="block__container section">
+        <div class="row align-items-center justify-content-center d-lg-flex">
+            <div class="col-lg-4 col-md-6">
+                <h1 class="title1">Plans &amp; Pricing</h1>
+                <p>Get the perfect plan to match your needs and budget. Take advantage of more secure, efficient, and organized document management by unlocking the best of {{manifest['title']}}.</p>
+                <a href="/pricing" class="btn">Compare pricing</a>
+            </div>
+            <div class="col-lg-2 col-md-12 mt-sm-5"></div>
+            <div class="col-lg-6 col-md-12 section__item">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card card--fill">
+                            <div class="card__body">
+                                <img class="card__icon" src="/static/img/business/icons/teams.svg">
+                                <div class="card__title">Teams</div>
+                                <p>2-25 Users</p>
+                                <p>
+                                                                            <span class="pricing__account__price">$<span class="pricing__price__numbers">43</span></span> per user per year                                                                    </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card card--fill">
+                            <div class="card__body">
+                                <img class="card__icon" src="/static/img/business/icons/organizations.svg">
+                                <div class="card__title">Organizations</div>
+                                <p>&nbsp</p>
+                                <p>Custom Pricing</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="block block--white">
+    <div class="block__container">
+        <div class="block__header">
+            <h1 class="title1">Frequently Asked Questions</h1>
+        </div>
+        <div class="block__body">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="accordion">
+                        <div class="accordion__item open">
+                            <div
+                                class="accordion__title">How does {{manifest['title']}} benefit businesses?</div>
+                            <div class="accordion__content">
+                                {{manifest['title']}} streamlines document management workflows, offering tools for conversion, editing, signing, and more. This boosts efficiency, collaboration, and compliance within your organization.                            </div>
+                        </div>
+                        <div class="accordion__item">
+                            <div
+                                class="accordion__title">Is {{manifest['title']}} suitable for both small businesses and large enterprises?</div>
+                            <div class="accordion__content">
+                                Absolutely! {{manifest['title']}} caters to businesses of all sizes, providing tailored solutions for varying document processing needs.                            </div>
+                        </div>
+                        <div class="accordion__item">
+                            <div
+                                class="accordion__title">How secure is {{manifest['title']}} for sensitive business documents?</div>
+                            <div class="accordion__content">
+                                {{manifest['title']}} prioritizes security. We employ industry-standard encryption and data protection measures, ensuring your confidential documents remain secure throughout the process.                            </div>
+                        </div>
+                        <div class="accordion__item">
+                            <div
+                                class="accordion__title">Can {{manifest['title']}} integrate with our existing business systems?</div>
+                            <div class="accordion__content">
+                                Yes, {{manifest['title']}} offers integration options with popular cloud storage services, content management systems, and productivity tools, making it easy to incorporate into your existing workflows.                            </div>
+                        </div>
+                        <div class="accordion__item">
+                            <div
+                                class="accordion__title">What file formats does {{manifest['title']}} support for conversion and editing?</div>
+                            <div class="accordion__content">
+                                {{manifest['title']}} supports a wide range of file formats, including PDF, Word, Excel, PowerPoint, and more, ensuring seamless compatibility for your document tasks.                            </div>
+                        </div>
+                        <div class="accordion__item">
+                            <div
+                                class="accordion__title">Are electronic signatures legally binding with {{manifest['title']}}?</div>
+                            <div class="accordion__content">
+                                Yes, {{manifest['title']}}'s electronic signatures adhere to legal standards, offering a secure and compliant way to sign and authenticate documents.                            </div>
+                        </div>
+                        <div class="accordion__item">
+                            <div
+                                class="accordion__title">Can multiple team members collaborate on a document using {{manifest['title']}}?</div>
+                            <div class="accordion__content">
+                                Absolutely, {{manifest['title']}} facilitates effortless collaboration. Team members can co-edit, comment, and review documents, enhancing teamwork and productivity.                            </div>
+                        </div>
+                        <div class="accordion__item">
+                            <div
+                                class="accordion__title">How user-friendly is {{manifest['title']}} for employees with varying technical skills?</div>
+                            <div class="accordion__content">
+                                {{manifest['title']}} features an intuitive interface designed for ease of use. It's suitable for users with diverse technical backgrounds, requiring minimal training.                            </div>
+                        </div>
+                        <div class="accordion__item">
+                            <div
+                                class="accordion__title">What kind of customer support does {{manifest['title']}} offer for businesses?</div>
+                            <div class="accordion__content">
+                                {{manifest['title']}} provides dedicated customer support to assist businesses with inquiries, technical issues, and guidance on optimizing document workflows.                            </div>
+                        </div>
+                        <div class="accordion__item">
+                            <div
+                                class="accordion__title">How can our business get started with {{manifest['title']}}?</div>
+                            <div class="accordion__content">
+                                Getting started is simple! Visit our website to explore our plans, sign up for an account, and begin streamlining your document processes with {{manifest['title']}}.                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    // Accordion logic.
+    (function () {
+        var accordion = document.querySelector('.accordion');
+        var itemsArray = accordion.querySelectorAll('.accordion__item');
+        var titlesArray = accordion.querySelectorAll('.accordion__title');
+        titlesArray.forEach(function (title) {
+            title.addEventListener('click', function (event) {
+                // Close items.
+                itemsArray.forEach(function (item) {
+                    item.classList.remove('open');
+                });
+                // Open item.
+                event.currentTarget.parentElement.classList.add('open');
+            })
+        });
+    })();
+</script>
+
+<div class="block block--black bg2">
+    <div class="block__container">
+        <div class="row align-items-center justify-content-center d-lg-flex">
+            <div class="col-md-10 text-center">
+                <h2 class="title1">Your trusted partner for optimizing document processes</h2>
+                <h3 class="subtitle1">Founded in 2024, {{manifest['title']}} has developed into a leading and globally trusted company with a wide range of tools and solutions used by millions of users worldwide.</h3>
+                <div class="buttons">
+                    <a href="/" class="btn">Get started</a>
+                    <a href="/contact"
+                       class="btn btn--secondary">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    const scrollElements = document.querySelectorAll(".js-scroll");
+    const elementInView = (el, dividend = 1) => {
+        const elementTop = el.getBoundingClientRect().top;
+
+        return (
+            elementTop <=
+            (window.innerHeight || document.documentElement.clientHeight) / dividend
+        );
+    };
+
+    const elementOutofView = (el) => {
+        const elementTop = el.getBoundingClientRect().top;
+
+        return (
+            elementTop > (window.innerHeight || document.documentElement.clientHeight)
+        );
+    };
+
+    const displayScrollElement = (element) => {
+        element.classList.add("scrolled");
+    };
+
+    const hideScrollElement = (element) => {
+        element.classList.remove("scrolled");
+    };
+
+    const handleScrollAnimation = () => {
+        scrollElements.forEach((el) => {
+            if (elementInView(el, 1.25)) {
+                displayScrollElement(el);
+            } else if (elementOutofView(el)) {
+                hideScrollElement(el)
+            }
+        })
+    }
+
+    window.addEventListener("scroll", () => {
+        handleScrollAnimation();
+    });
+    handleScrollAnimation();
+
+</script>
+</div>
+{%endblock%}

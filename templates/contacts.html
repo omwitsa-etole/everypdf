@@ -1,0 +1,292 @@
+{%extends 'main.html'%}
+
+
+{%block content%}
+<link href="/static/dist/css/admin.7909e88.css" rel="stylesheet">
+
+<div id="mainAdmin" class="main-sidebar">
+    <div class="main-sidebar__sidebar">
+        <div class="sidebar" style="width: 248px; max-height: calc(-60px + 100vh); height: 642.375px;">
+
+<div class="sidebar__user">
+<div class="avatar">
+    <!--
+    <div class="avatar__image">
+        <img src="https://www.{{manifest['title']|lower}}.com/img/avatar/avatar-default.png">
+    </div>
+    -->
+    <div class="user__avatar user__avatar--registered">
+<div class="user__avatar__edit">
+<img id="avatarPreloader" class="user__avatar__edit__preload" src="/static/img/svg_icons/preload.svg">
+<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12">
+    <path d="M0 9.002v2.368h2.368l6.986-6.985-2.37-2.37zm11.185-6.45a.63.63 0 0 0 0-.891L9.707.185a.63.63 0 0 0-.891 0L7.66 1.34l2.37 2.37 1.156-1.156z" fill="#383E45" fill-rule="evenodd"></path>
+</svg>
+<img id="avatarImage" src="https://www.{{manifest['title']|lower}}.com/img/avatar/default110.png" width="110" height="110">
+</div>
+<input id="uploadAvatar" data-max-size="2048" type="file">
+</div>            <div class="avatar__information">
+        <div class="avatar__information__role avatar__information__role--registered">
+            Registered                </div>
+        <div class="avatar__information__name">
+           {{manifest['user']['name']}}              </div>
+    </div>
+</div>
+</div>
+
+<ul class="sidebar__menu">
+<li class="sidebar__menu__subtitle">Profile</li>
+<li class="sidebar__menu__item ">
+    <a href="/user"><img src="/static/img/icons/admin/account.svg">My account</a>
+</li>
+<li class="sidebar__menu__item ">
+    <a href="/user/security"><img src="/static/img/icons/admin/password.svg">Security</a>
+</li>
+            <li class="sidebar__menu__item ">
+        <a href="/user/team"><img src="/static/img/icons/admin/team.svg">Team</a>
+    </li>
+
+<li class="sidebar__menu__subtitle">Activity</li>
+
+<li class="sidebar__menu__item ">
+    <a href="/user/history"><img src="/static/img/icons/admin/history.svg">Last tasks</a>
+</li>
+
+            <li class="sidebar__menu__subtitle">Signatures</li>
+
+    <li class="sidebar__menu__item ">
+        <a href="/user/signatures"><img src="/static/img/icons/admin/signature-overview.svg">Overview</a>
+    </li>
+    <li class="sidebar__menu__item ">
+        <a href="/user/signatures/requests"><img src="/static/img/icons/admin/signature-sent.svg">Sent</a>
+    </li>
+    <li class="sidebar__menu__item ">
+        <a href="/user/signatures/pending"><img src="/static/img/icons/admin/signature-inbox.svg">Inbox</a>
+    </li>
+    <li class="sidebar__menu__item ">
+        <a href="/user/signatures/signed"><img src="/static/img/icons/admin/signature-signed.svg">Signed</a>
+    </li>
+                <li class="sidebar__menu__item ">
+        <a href="/user/signatures/templates"><img src="/static/img/icons/admin/signature-templates.svg">Templates</a>
+    </li>
+    <li class="sidebar__menu__item sidebar__menu__item--active">
+        <a href="/user/contacts"><img src="/static/img/icons/admin/signature-contacts.svg">Contacts</a>
+    </li>
+
+    <li class="sidebar__menu__item ">
+        <a href="/user/signatures/settings"><img src="/static/img/icons/admin/signature-settings.svg">Settings</a>
+    </li>
+        <li class="sidebar__menu__subtitle">Billing</li>
+
+            <li class="sidebar__menu__item ">
+        <a href="/user/plan"><img src="/static/img/icons/admin/package.svg">Plans &amp; Packages</a>
+    </li>
+        <li class="sidebar__menu__item ">
+    <a href="/user/business"><img src="/static/img/icons/admin/business.svg">Business details</a>
+</li>
+<li class="sidebar__menu__item ">
+    <a href="/user/invoices"><img src="/static/img/icons/admin/card.svg">Invoices</a>
+</li>
+</ul>
+</div>            </div>
+    <div class="main-sidebar__content">
+        <div class="container">
+            
+
+<div class="box">
+<div class="row">
+<div class="col-md-6 col-sm-12">
+    <a href="/user/signatures"><img class="ie11-hide" width="200" src="/static/img/sign/signature.svg"></a>
+            </div>
+<!--  && $user->parent == 0 -->
+            <div class="col-md-6 col-sm-12 text-right">
+        <a class="btn" href="/sign-pdf">New signature</a>
+    </div>
+
+
+</div>
+</div>
+<div class="box">
+</div>
+
+<div class="row contacts-agenda">
+<div class="col-12">
+<div class="card card--input">
+    <div class="card__header">
+        <h2 class="card__title">Contacts</h2>
+        <div class="card__header__actions">
+                                <button class="link" data-toggle="modal" data-target="#importContactsModal">
+                <svg xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" width="12" height="12" style="margin-right: 8px;" viewBox="0 0 16 16"><path fill-opacity="0" fill="currentColor" d="M0 0h16v16H0z"></path><path fill="currentColor" d="M3.575 3.894l3.699-3.6a1.04 1.04 0 0 1 1.455 0l3.699 3.6a.98.98 0 0 1 .28.972c-.094.349-.375.623-.734.714s-.741-.013-.999-.273L9.027 3.415V12.2c0 .552-.46 1-1.027 1s-1.027-.448-1.027-1V3.415L5.028 5.308c-.258.26-.64.364-.999.273s-.64-.365-.734-.714a.98.98 0 0 1 .28-.972h0zM15.5 15c0 .552-.46 1-1.027 1H1.527C.96 16 .5 15.552.5 15v-2.8c0-.552.46-1 1.027-1s1.027.448 1.027 1V14h10.89v-1.8c0-.552.46-1 1.027-1s1.027.448 1.027 1V15z" fill-rule="nonzero"></path></svg>Import contacts                    </button>
+                            </div>
+    </div>
+    <div class="contacts-agenda__filter-box">
+        <div class="form-group">
+        <label style="display: none;">Select filter:</label>
+            <form id="contactFormFilter" action="/user/contacts" method="get">                        <div class="contacts-agenda__filter-box__items-container">
+                    <select id="filterPendingSigning" class="contacts-agenda__filter-box__item" name="pending_signing" style="display: none;">
+                        <option value=""></option>
+                        <option value="1">Filter pending signing</option>
+                    </select>
+                    <div class="input--icon input--search contacts-agenda__filter-box__item">
+                        <input type="text" class="input" name="search_string" placeholder="Name/Email" value="">
+                    </div>
+                    <input type="hidden" name="page" value="1">
+                </div>
+            </form>                </div>
+    </div>
+    <div class="card__body overflow-auto">
+        <form id="contactsForm" action="/user/contacts/batch-delete" method="post">
+<input type="hidden" name="_csrf-{{manifest['title']|lower}}" value="Uzv1588gpymY5McFr1VUVwldsVX_97vIWX0EuB2K5GFnb5uTtXmTZemBiFSabRgTSjbaJYq965sRRXD8c7--BQ==">                <table>
+            <thead>
+            <tr>
+                <th style="display: flex;">
+                    <div class="checkbox checkbox--hover">
+                        <input type="checkbox" name="selectAll" id="selectAll" class="input">
+                        <label for="selectAll"></label>
+                    </div>
+                    <div class="action-button-group justify-content-end">
+                        <div id="deleteAll" class="action-button tooltip" data-title="Remove the selected contacts">
+                            <svg width="13" height="14">
+                                <use xlink:href="/static/img/icons/svg-icons/trash.svg#main"></use>
+                            </svg>
+                        </div>
+                    </div>
+                </th>
+                <th class="contacts-agenda__field-name">Name</th>
+                <th class="contacts-agenda__field-name">Email</th>
+                <th class="contacts-agenda__field-name">Phone</th>
+                <th></th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+                                                        <tr>
+                    <td class="td--sm">
+                    </td>
+                    <td>
+                        <a href="#" id="openAddContactModal" class="btn btn--secondary btn--sm">
+                            <svg aria-hidden="true" width="12" height="12" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z" class=""></path></svg>
+                            <span>Add contact</span>
+                        </a>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+                                </tbody>
+        </table>
+        </form>                                    <small class="pageinfo">
+                1-0 of 0                    </small>
+                                    </div>
+</div>
+</div>
+</div>
+
+<!-- Modal confirm phone -->
+<div class="modal fade contacts-agenda" id="importContactsModal" tabindex="-1" role="dialog" data-keyboard="false" style="display: none;" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered" role="document">
+<div class="modal-content">
+    <div class="modal-header d-flex justify-content-center text-center">
+        <div class="dialog__close" data-dismiss="modal" aria-hidden="true"></div>
+        <div>
+        <h3 class="title3">Import contacts</h3>
+        <p>Import your contacts using <strong>CSV</strong>, <strong>Excel</strong> and <strong>VCard</strong> files</p>
+        </div>
+    </div>
+    <div class="dialog__body">
+        <div class="box--sm">
+            <div id="badImport" class="text-center hidden" style="margin-bottom: 12px;">
+                <span class="error"><strong>Could not import the data correctly. File does not have correct structure</strong></span>
+            </div>
+        </div>
+        <div class="box--sm">
+            <div id="contactExceeded" class="text-center hidden" style="margin-bottom: 12px;">
+                <span class="error"><strong>File size exceeded</strong></span>
+            </div>
+        </div>
+        <div class="card__body d-flex justify-content-center">
+            <!-- <div class="btn-group"> -->
+                <div class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <strong><a href="/sample_files/example.xlsx">Download Excel sample</a></strong>
+                </div>
+                <div class="dropdown-menu" style="text-transform: none; position: absolute; transform: translate3d(147px, 148px, 0px); top: 0px; left: 0px; will-change: transform;" x-placement="bottom-start">
+                    <strong><a href="/sample_files/signature_contacts/example.xlsx">Download Excel sample</a></strong>
+                    <strong><a href="/sample_files/signature_contacts/example.csv">Download CSV sample</a></strong>
+                    <strong><a href="/sample_files/signature_contacts/example.vcf">Download VCard sample</a></strong>
+                </div>
+            <!-- </div> -->
+        </div>
+        <div class="card__body d-flex justify-content-center hidden" id="contactExceeded">
+            <p></p>
+        </div>
+        <div class="card__actions justify-content-center">
+            <button id="contactUpload" type="button" class="btn">Import users</button>
+            <input id="contactUploadInput" data-max-size="2048" type="file" style="display:none" accept=".csv,.xls,.xlsx,.vcf,.vcard">
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<template id="addContactModal_template" style="display: none;">
+<div class="dialog__content contacts-agenda">
+<div class="dialog__body">
+    <div class="dialog__close" data-dismiss="modal" aria-hidden="true"></div>
+    <div class="dialog__title">Add Contact</div>
+    <br><br>
+    <form id="agendaAddForm" action="/user/contacts/add" method="post">
+<input type="hidden" name="_csrf-{{manifest['title']|lower}}" value="Uzv1588gpymY5McFr1VUVwldsVX_97vIWX0EuB2K5GFnb5uTtXmTZemBiFSabRgTSjbaJYq965sRRXD8c7--BQ==">            <div>
+        <table>
+            <thead>
+                <tr>
+                    <th class="contacts-agenda__field-name">Name</th>
+                    <th class="contacts-agenda__field-name">Email</th>
+                    <th class="contacts-agenda__field-name">Phone</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="agendaAddList"></tbody>
+        </table>
+    </div>
+    
+    <div class="text-center" style="margin-bottom: 12px;"><a class="link" id="agendaAddMore">Add more</a></div>
+    <div class="dialog__action">
+        <button close-dialog-action="" class="btn btn--secondary">Close</button>
+        <button create-contacts-action="" class="btn">Create</button>
+    </div>
+    </form>        </div>
+</div>
+</template>
+
+<template id="contactAddItemTemplate">
+<td><input type="text" name="contacts[0][name]" maxlength="150" minlength="3" placeholder="Name" autocomplete="off" required=""></td>
+<td><input type="email" name="contacts[0][email]" maxlength="150" minlength="7" placeholder="Email" autocomplete="off" required=""></td>
+<td class="contacts-agenda__field__phone"><input type="tel" name="contacts[0][phone]" maxlength="30" minlength="5" placeholder="Phone" autocomplete="off"></td>
+<td><span class="remove-agenda-contact"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="13">
+        <path d="M8.902 13c.787 0 1.262-.412 1.295-1.174l.397-8.596h.918c.267 0 .488-.212.488-.47 0-.262-.22-.475-.488-.475H8.727V1.43C8.727.562 8.115 0 7.132 0H4.86c-.976 0-1.588.562-1.588 1.43v.856H.488C.22 2.286 0 2.5 0 2.76c0 .256.22.47.488.47h.924l.397 8.596c.033.762.5 1.174 1.295 1.174h5.798zm-1.2-10.714H4.315v-.8c0-.33.254-.568.625-.568h2.12c.37 0 .63.237.63.568v.8zM3.826 11.37c-.228 0-.397-.187-.403-.444l-.267-6.422c-.007-.256.176-.444.4-.444.22 0 .4.2.423.437l.247 6.422c.007.244-.17.45-.4.45zm2.174 0c-.228 0-.423-.206-.423-.45V4.498c0-.237.195-.437.423-.437s.43.2.43.437l-.007 6.422c0 .244-.195.45-.423.45zm2.174 0c-.24 0-.4-.206-.403-.45l.247-6.422c.007-.237.195-.437.416-.437a.42.42 0 0 1 .416.444l-.273 6.422c-.007.256-.17.444-.403.444z" fill="#000" fill-rule="nonzero"></path>
+    </svg></span></td>
+</template>
+
+<script>
+var userConfig = {"userId":105326155,"email":"{{manifest['user']['email']}}","page":null,"userToken":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJzZXJ2aWNlLmlsb3ZlcGRmLmNvbSIsImF1ZCI6IiIsImlhdCI6MTcyMTIxMTg3NywibmJmIjoxNzIxMjExODc3LCJqdGkiOjEwNTMyNjE1NX0.WgE0QZk3VFkexPDwaaXoIIHCtCMMO8hEJK-19ZKC-M4","token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJhdWQiOiIiLCJpYXQiOjE1MjMzNjQ4MjQsIm5iZiI6MTUyMzM2NDgyNCwianRpIjoicHJvamVjdF9wdWJsaWNfYzkwNWRkMWMwMWU5ZmQ3NzY5ODNjYTQwZDBhOWQyZjNfT1Vzd2EwODA0MGI4ZDJjN2NhM2NjZGE2MGQ2MTBhMmRkY2U3NyJ9.qvHSXgCJgqpC4gd6-paUlDLFmg0o2DsOvb1EUYPYx_E","startServer":"https:\/\/api.{{manifest['title']|lower}}.com","user":{"id":105326155,"name":"{{manifest['user']['name']}}","email":"{{manifest['user']['email']}}","active":1,"avatar":"https:\/\/www.{{manifest['title']|lower}}.com\/img\/avatar\/default30.png","limits":{"merge":{"mb":100,"files":25},"split":{"mb":100,"files":1},"compress":{"mb":200,"files":2},"officepdf":{"mb":15,"files":1},"wordpdf":{"mb":15,"files":1},"powerpointpdf":{"mb":15,"files":1},"excelpdf":{"mb":15,"files":1},"pdfoffice":{"mb":15,"files":1},"pdfword":{"mb":15,"files":1},"pdfocr":{"mb":15,"files":1,"pages":50},"pdfpowerpoint":{"mb":15,"files":1},"pdfexcel":{"mb":15,"files":1,"pages":500},"pdfjpg":{"mb":25,"files":2},"imagepdf":{"mb":40,"files":20},"pagenumber":{"mb":100,"files":2},"watermark":{"mb":100,"files":2},"rotate":{"mb":100,"files":20},"unlock":{"mb":100,"files":2},"protect":{"mb":100,"files":2},"pdfa":{"mb":100,"files":1},"repair":{"mb":100,"files":1},"organize":{"mb":100,"files":5},"redact":{"mb":400,"files":1},"resizeimage":{"mb":200,"files":30},"compressimage":{"mb":200,"files":30},"cropimage":{"mb":90,"files":1},"converttojpg":{"mb":200,"files":30},"convertfromjpg":{"mb":200,"files":30},"rotateimage":{"mb":200,"files":30},"watermarkimage":{"mb":200,"files":30},"memeimage":{"mb":200,"files":1},"editimage":{"mb":50,"files":1},"editpdf":{"mb":100,"files":1},"sign":{"mb":50,"files":3},"upscaleimage":{"mb":6,"files":3,"pxsize":33177600},"removebackgroundimage":{"mb":6,"files":3,"pxsize":17612800},"blurfaceimage":{"mb":100,"files":10}},"mode":0,"premium":false,"country":"KE","loginkey":"dQCKApicgZe0B5mSRvHLYK6tYdt-_F9k","can_trial":false,"current_subscription":null,"team_role":null,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJzZXJ2aWNlLmlsb3ZlcGRmLmNvbSIsImF1ZCI6IiIsImlhdCI6MTcyMTIxMTg3NywibmJmIjoxNzIxMjExODc3LCJqdGkiOjEwNTMyNjE1NX0.WgE0QZk3VFkexPDwaaXoIIHCtCMMO8hEJK-19ZKC-M4","sus_rbt":false,"custom_avatar":0,"signature":{"signatureMode":"font","initialsMode":"font","signature":"Bradone Etole","initials":"BE","font":{"fontFamily":"allura","color":"#555555"},"draw":{"signature":"","initials":"","signatureData":"","initialsData":"","color":"#555555"},"image":{"signature":"","initials":"","stamp":""},"level":null},"signConfig":{"orderCheckbox":0,"expirateCheckbox":null,"expire":15,"multipleCheckbox":null,"reminderCheckbox":1,"reminderInput":1,"certifiedCheckbox":null,"languageCheckbox":null,"selectLanguage":null,"messageCheckbox":null,"customSubject":null,"customMessage":null,"uuidCheckbox":1,"notifyCheckbox":1,"brandCheckbox":0,"brandName":null,"brandLogo":null,"svcCheckbox":1,"level":null,"isDefault":true},"brandConfig":{"brandCheckbox":0,"brandName":null,"brandLogo":null,"level":null,"isDefault":true},"signatures_left":0,"sms_left":0,"certificates_left":0},"action":"signature"};
+var iloveLang = {
+'deleteAll': 'Do you want to remove these contacts?',
+'deleteOne': 'Do you want to remove this contact?',
+'yesText': 'Yes',
+'noText': 'No'
+}
+var userCountry     = 'KE';
+var accessCountry   = 'KE';
+</script>
+        </div>
+    </div>
+    <div class="main-sidebar__backdrop"></div>
+</div>
+
+<script src="/static/dist/js/admin.7909e88.js" async="async"></script>
+
+{%endblock%}

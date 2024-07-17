@@ -1,0 +1,110 @@
+
+<div class="dialog__content">
+    <div class="dialog__header dialog__header--premium">
+        <div class="dialog__title"><!-- Contents filled by PremiumContext at runtime --></div>
+        <div class="dialog__subtitle">
+            <div class="dialog__subtitle dialog__subtitle--large new-premium__trigger-reason_sub1"><!-- Contents filled by PremiumContext at runtime --></div>
+            <div class="dialog__subtitle dialog__subtitle--large new-premium__trigger-reason_sub2"><!-- Contents filled by PremiumContext at runtime --></div>
+        </div>
+        <div class="dialog__close"></div>
+    </div>
+
+    <main class='dialog__body'>
+        
+        <div data-state="CanTrialState" data-template-name='new-premium/can_trial'>
+            <!-- This template should be loaded after user authentication -->
+        </div>
+
+        <div data-state="CannotTrialState" data-template-name='new-premium/cannot_trial'>
+            <!-- This template should be loaded after user authentication -->
+        </div>
+
+        <div data-state="TrialSuccessState">
+            <div data-screen='default'>
+                <div class="dialog__icon">
+    <img src="/static/img/animated-check.gif">
+</div>
+<div class="dialog__title">Trial activated</div>
+<p class="dialog__subtitle">A confirmation email has been sent to ${email}</p>
+
+<div class='dialog__action'>
+    <button class="btn" next-from-payment-completed>Done</button>
+</div>            </div>
+        </div>
+
+        <div data-state="SubscriptionSuccessState">
+            <div data-screen='default'>
+                <div class="dialog__icon">
+    <img src="/static/img/animated-check.gif">
+</div>
+<div class="dialog__title">Welcome to {{manifest['title']}} Premium</div>
+<p class="dialog__subtitle">A confirmation email has been sent to ${email}</p>
+
+<div class='dialog__action'>
+    <button class="btn" next-from-payment-completed>Done</button>
+</div>            </div>
+        </div>
+    </main>
+
+    <footer class="dialog__footer">
+        <div class="new-premium__logos">
+            <img width="55px" height="25px" src="/static/img/logos/pdf-association-logo.svg" title="PDF Association">
+        <img width="67px" height="30px" src="/static/img/logos/iso-logo.svg" title="ISO27001 certified">
+    <img width="80px" height="26px" src="/static/img/logos/secure-payment-logo.svg" title="Secure Payment">
+    <img width="80px" height="26px" src="/static/img/logos/ssl-encrypted-logo.svg" title="Secure connection Https">
+    </div>    </footer>
+</div>
+
+<!-- Tooltip -->
+<div class="new-premium__all-features-tooltip__html-template" style="display:none;">
+    <div class="new-premium__all-features-tooltip__content">
+        <ul class="listcheck">
+            <li class="listcheck__item listcheck__item--ok">Full access to {{manifest['title']}} tools</li>
+                            <li class="listcheck__item listcheck__item--ok">Convert scanned PDF to Word with OCR</li>
+                <li class="listcheck__item listcheck__item--ok">Sign with digital signatures</li>
+                <li class="listcheck__item listcheck__item--ok">Unlimited file processing</li>
+                <li class="listcheck__item listcheck__item--ok">Work on Web, <span class="new-premium__mobile-tooltip">Mobile</b> and <b class="new-premium__desktop-tooltip">Desktop</b></li>
+                        <li class="listcheck__item listcheck__item--ok">No ads</li>
+            <li class="listcheck__item listcheck__item--ok">Customer support</li>
+        </ul>
+    </div>
+</div>
+
+<div class="new-premium__ocr-features-tooltip__html-template" style="display:none;">
+    <div class="new-premium__ocr-features-tooltip__content">
+        <p>Optical Character Recognition converts non-selectable text from scanned documents into editable Office files.</p>
+        <p>Supported languages: English, Danish, Dutch, Finnish, French, German, Italian, Norwegian, Polish, Portuguese, Russian, Spanish, Swedish and Turkish</p>
+    </div>
+</div>
+
+<div class='new-premium__text-translations' style="display:none;" data-format="html">
+        <div data-key="title_canTrial">Try {{manifest['title']}} for Free</div>
+        <div data-key="title_cannotTrial">Upgrade to Premium</div>
+        <div data-key="triggerReason_errorFilesNum_subtitle1">This tool is limited to <b>${n} files</b> per task</div>
+        <div data-key="triggerReason_errorFilesNum_subtitle2"><span class="new-premium__all-features-tooltip" data-template="new-premium__all-features-tooltip__html-template">Premium</span> users can process up to <b>${n} files</b> per task</div>
+        <div data-key="triggerReason_errorFilesSize_subtitle1">This tool is limited to <b>${n} MB</b> per task</div>
+        <div data-key="triggerReason_errorFilesSize_subtitle2"><span class="new-premium__all-features-tooltip" data-template="new-premium__all-features-tooltip__html-template">Premium</span> users can process up to <b>${n} GB</b> per task</div>
+        <div data-key="triggerReason_errorFeature_subtitle1">This is a Premium feature</div>
+        <div data-key="triggerReason_errorFeature_subtitle2"><span class="new-premium__all-features-tooltip" data-template="new-premium__all-features-tooltip__html-template">Premium</span> gives you unlimited access to all features</div>
+    <div data-key="triggerReason_errorFilesPages_subtitle1">This tool is limited to <b>${n} pages</b> per task</div>
+    <div data-key="triggerReason_errorFilesPages_subtitle2"><span class="new-premium__all-features-tooltip" data-template="new-premium__all-features-tooltip__html-template">Premium</span> users can process up to <b>${n} pages</b> per task</div>
+
+    <!-- ocr word -->
+        <div data-key="triggerReason_errorFeature_pdfoffice_pdfword_ocr_subtitle1">OCR is a Premium feature</div>
+        <div data-key="triggerReason_errorFeature_pdfoffice_pdfword_ocr_subtitle2"><span class="new-premium__all-features-tooltip" data-template="new-premium__all-features-tooltip__html-template">Premium</span> users can convert scanned PDF to Word</div>
+        <!-- ocr excel -->
+        <div data-key="triggerReason_errorFeature_pdfoffice_pdfexcel_ocr_subtitle1">OCR is a Premium feature</div>
+        <div data-key="triggerReason_errorFeature_pdfoffice_pdfexcel_ocr_subtitle2"><span class="new-premium__all-features-tooltip" data-template="new-premium__all-features-tooltip__html-template">Premium</span> users can convert scanned PDF to Excel</div>
+
+        <div data-key="triggerReason_errorFeature_pdfa_subtitle1">PDF to PDF/A conversion is a Premium feature</div>
+        <div data-key="triggerReason_errorFeature_pdfa_subtitle2"><span class="new-premium__all-features-tooltip" data-template="new-premium__all-features-tooltip__html-template">Premium</span> users can convert to PDF/A</div>
+        <div data-key="triggerReason_errorFeature_sign_subtitle1">Premium users can Digitally sign documents</div>
+        <div data-key="triggerReason_errorFeature_sign_subtitle2">Get full access to <span class="new-premium__all-features-tooltip" data-template="new-premium__all-features-tooltip__html-template">all features</span></div>
+        <div data-key="triggerReason_errorFeature_teams_subtitle1">Only Premium users can add members to their team.</div>
+        <div data-key="triggerReason_errorFeature_teams_subtitle2">Get full access to <span class="new-premium__all-features-tooltip" data-template="new-premium__all-features-tooltip__html-template">all features</span></div>
+        <div data-key="triggerReason_errorFeature">Process unlimited files per task</div>
+        
+        <div data-key="triggerReason_errorFilesNum">Process unlimited files per task</div>
+        <div data-key="triggerReason_errorFilesSize">Get unlimited file size per task</div>
+        <div data-key="triggerReason_errorFeature_sign">Digitally sign your documents</div>
+</div>

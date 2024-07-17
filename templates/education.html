@@ -1,0 +1,289 @@
+{%extends 'main.html'%}
+
+{%block content%}
+<link href="/static/dist/css/pages.7909e88.css" rel="stylesheet">
+<div class="main">
+    
+    <style>
+        .js-scroll {
+            opacity: 0;
+            transition: opacity 500ms;
+        }
+    
+        .js-scroll.scrolled {
+            opacity: 1;
+        }
+    
+        .scrolled.fade-in {
+            animation: fade-in 0.75s ease-in-out both;
+        }
+    
+        .scrolled.fade-in-bottom {
+            animation: fade-in-bottom 0.75s ease-in-out both;
+        }
+    
+        .scrolled.slide-left {
+            animation: slide-in-left 0.75s ease-in-out both;
+        }
+    
+        .scrolled.slide-right {
+            animation: slide-in-right 0.75s ease-in-out both;
+        }
+    
+        [data-period-selected] + .btn, .pricing__account__price + .btn{
+            margin-top: 48px;
+        }
+    </style>
+    
+    <div class="block block--intro">
+        <div class="block__container">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-xl-7 col-lg-6 col-md-12">
+                    <div class="super">
+                        <h3 class="super__brand">{{manifest['title']}} Education</h3>
+                        <h1 class="super__title">Boosting productivity in education</h1>
+                        <p class="super__content">{{manifest['title']}} Education version boosts academic productivity by addressing the unique needs of students, teachers and education professionals, driving document efficiency across the entire institution. <strong>Register now and enjoy a full year on us.</strong></p>
+    
+                        <a href="/register" style="margin-top:48px" class="btn">Sign Up Now</a>
+                    </div>
+                </div>
+                <div class="col-lg-1">
+                </div>
+                <div class="col-xl-4 col-lg-5 col-md-8 mt-md-5">
+                    <img src="/static/img/education/productivity.png" title="{{manifest['title']}} Education">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="block block--full block--white">
+        <div class="block__container">
+            <div class="block__header">
+                <h2 class="title1">Simplifying document workflow for students &amp; faculty</h2>
+                <h3 class="subtitle1">{{manifest['title']}} breaks down barriers to file management, making it effortless to modify and optimize documents</h3>
+            </div>
+            <div class="block__body">
+                <div class="row justify-content-center">
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                        <div class="infocard infocard--fill js-scroll fade-in">
+                            <div class="infocard__icon">
+                                <img src="/static/img/education/productivity.svg" alt="Increase productivity">
+                            </div>
+                            <div class="infocard__title">Increase productivity</div>
+                            <div class="infocard__body">
+                                <p>As efficiency is crucial on the road to success, {{manifest['title']}} brings powerful tools for teachers and students alike.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                        <div class="infocard infocard--fill js-scroll fade-in">
+                            <div class="infocard__icon">
+                                <img src="/static/img/education/security.svg" alt="Security">
+                            </div>
+                            <div class="infocard__title">Keep your projects safe</div>
+                            <div class="infocard__body">
+                                <p>Your data matters to us. {{manifest['title']}} is built with security, compliance and privacy in mind.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                        <div class="infocard infocard--fill js-scroll fade-in">
+                            <div class="infocard__icon">
+                                <img src="/static/img/education/everywhere.svg" alt="Everywhere">
+                            </div>
+                            <div class="infocard__title">Make your student life easy</div>
+                            <div class="infocard__body">
+                                <p>Keep your schoolwork in order like never before. Stay on top of your assignments in a seamless way.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <img src="/static/img/education/school.jpg" alt="education" width="100%">
+    <div class="block block--white">
+        <div class="block__container">
+            <div class="block__header">
+                <h2 class="title1">Powerful features to help you stay on top of your work</h2>
+                <h3 class="subtitle1">Our tools enhance learning &amp; speed up educational chores</h3>
+            </div>
+            <div class="block__body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <ul class="listcheck listcheck--content">
+                            <li class="listcheck__item listcheck__item--ok">
+                                <div>
+                                    <h4 class="title3">Access everywhere</h4>
+                                    <p>Edit and organize your documents on every device you own, on your smartphone, and on the web.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="listcheck listcheck--content">
+                            <li class="listcheck__item listcheck__item--ok">
+                                <div>
+                                    <h4 class="title3">Stay organized</h4>
+                                    <p>Get rid of clutter in your smartphone. Organize your documents in the Library Manager.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="listcheck listcheck--content">
+                            <li class="listcheck__item listcheck__item--ok">
+                                <div>
+                                    <h4 class="title3">Turn data into information</h4>
+                                    <p>Extract information from scanned documents with OCR (Optical Character Recognition).</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="listcheck listcheck--content">
+                            <li class="listcheck__item listcheck__item--ok">
+                                <div>
+                                    <h4 class="title3">Mark what matters</h4>
+                                    <p>Mark up PDFs with arrows, shapes, and comments to highlight key details with our Mobile App.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="listcheck listcheck--content">
+                            <li class="listcheck__item listcheck__item--ok">
+                                <div>
+                                    <h4 class="title3">Jump hurdles</h4>
+                                    <p>Break down barriers to file management. Modify and optimize documents from one place.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="listcheck listcheck--content">
+                            <li class="listcheck__item listcheck__item--ok">
+                                <div>
+                                    <h4 class="title3">Achieve more</h4>
+                                    <p>Integration with Google Drive and Dropbox means that you can work directly from the Cloud.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="block block--separator block--grey">
+        <div class="block__container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2 class="title1">For Students &amp; Teachers</h2>
+                    <p class="subtitle1">Upgrade your academic performance. Join our Student Program and enjoy a year of Premium features for free.</p>
+                    <a href="/register" class="btn">Sign Up Now</a>
+                </div>
+                <div class="col-md-1 mt-sm-5"></div>
+                <div class="col-md-5">
+                    <h2 class="title1">For Institutions</h2>
+                    <p class="subtitle1">Get a Full Education License and bring {{manifest['title']}} to your school.</p>
+                    <a class="btn btn--secondary" href="/education/contact">Contact Us</a>
+                </div>
+            </div>
+            <div class="max800">
+    
+            </div>
+        </div>
+    </div>
+    <div class="block block--separator block--white text-center">
+        <div class="bg"></div>
+        <div class="block__container">
+            <div class="block__body">
+                <div class="max800">
+        <svg class="heart" width="48px" height="43px" viewBox="0 0 48 43" version="1.1"
+             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g transform="translate(-696.000000, -3270.000000)" fill="#E5322D">
+                    <g transform="translate(404.000000, 3270.000000)">
+                        <path d="M322.540678,19.3072731 L322.540678,3.40535522 L338.11729,19.3072731 L322.540678,19.3072731 Z M322.74695,1.27357969 C320.054976,2.59988235 318.035548,4.83527527 316.560604,7.36902534 C314.189828,3.30021404 310.420528,0 304.712397,0 C299.00158,0 292,4.94803538 292,13.3063021 C292,21.768491 298.916802,25.7793984 302.342517,28.0446575 C306.004353,30.4635142 312.252192,34.8614631 316.560604,43 C320.87021,34.8614631 327.117452,30.4635142 330.780184,28.0446575 C333.353649,26.3416752 337.900571,23.6521943 340,18.8272807 L322.74695,1.27357969 Z"
+                              id="Fill-1"></path>
+                    </g>
+                </g>
+            </g>
+        </svg>
+        <h3 class="title2">Because every PDF problem you might now have can be our next challenge</h3>
+    </div>        </div>
+        </div>
+    </div>
+    
+    <script>
+        function defer(method) {
+            if (window.jQuery) {
+                method();
+            } else {
+                setTimeout(function () {
+                    defer(method)
+                }, 50);
+            }
+        }
+    
+        defer(function () {
+            $('.payment--year').on('click', function () {
+                $('.payment__period__item').removeClass('payment__period__item--active');
+                $(this).addClass('payment__period__item--active');
+                $('.priceYear').show();
+                $('.priceMonth').hide();
+            })
+            $('.payment--month').on('click', function () {
+                $('.payment__period__item').removeClass('payment__period__item--active');
+                $(this).addClass('payment__period__item--active');
+                $('.priceYear').hide();
+                $('.priceMonth').show();
+            })
+        })
+    </script>
+    
+    
+    <script>
+        const scrollElements = document.querySelectorAll(".js-scroll");
+    
+        const elementInView = (el, dividend = 1) => {
+            const elementTop = el.getBoundingClientRect().top;
+    
+            return (
+                elementTop <=
+                (window.innerHeight || document.documentElement.clientHeight) / dividend
+            );
+        };
+    
+        const elementOutofView = (el) => {
+            const elementTop = el.getBoundingClientRect().top;
+    
+            return (
+                elementTop > (window.innerHeight || document.documentElement.clientHeight)
+            );
+        };
+    
+        const displayScrollElement = (element) => {
+            element.classList.add("scrolled");
+        };
+    
+        const hideScrollElement = (element) => {
+            element.classList.remove("scrolled");
+        };
+    
+        const handleScrollAnimation = () => {
+            scrollElements.forEach((el) => {
+                if (elementInView(el, 1.25)) {
+                    displayScrollElement(el);
+                } else if (elementOutofView(el)) {
+                    hideScrollElement(el)
+                }
+            })
+        }
+    
+        window.addEventListener("scroll", () => {
+            handleScrollAnimation();
+        });
+        handleScrollAnimation();
+    </script></div>
+{%endblock%}

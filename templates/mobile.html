@@ -1,0 +1,329 @@
+{%extends 'main.html'%}
+
+{%block content%}
+<link href="/dist/css/pages.7909e88.css" rel="stylesheet">
+<div class="main">
+    
+    <style>
+        .js-scroll {
+            opacity: 0;
+            transition: opacity 500ms;
+        }
+    
+        .js-scroll.scrolled {
+            opacity: 1;
+        }
+    
+        .scrolled.fade-in {
+            animation: fade-in 0.75s ease-in-out both;
+        }
+    
+        .scrolled.fade-in-bottom {
+            animation: fade-in-bottom 0.75s ease-in-out both;
+        }
+    
+        .scrolled.slide-left {
+            animation: slide-in-left 0.75s ease-in-out both;
+        }
+    
+        .scrolled.slide-right {
+            animation: slide-in-right 0.75s ease-in-out both;
+        }
+    
+        @keyframes slide-in-left {
+            0% {
+                -webkit-transform: translateX(-100px);
+                transform: translateX(-100px);
+                opacity: 0;
+            }
+            100% {
+                -webkit-transform: translateX(0);
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+    
+        @keyframes slide-in-right {
+            0% {
+                -webkit-transform: translateX(100px);
+                transform: translateX(100px);
+                opacity: 0;
+            }
+            100% {
+                -webkit-transform: translateX(0);
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+    
+        @keyframes fade-in-bottom {
+            0% {
+                -webkit-transform: translateY(50px);
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            100% {
+                -webkit-transform: translateY(0);
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    
+    </style>
+    
+    <!-- v3 -->
+    <div class="block block--grey">
+        <div class="block__container">
+            <div class="block__header">
+                <div id="ios"></div>
+                <div id="android"></div>
+                <h1 class="title0">{{manifest['title']}} Mobile</h1>
+                <div class="subtitle">
+                    <div class="app-buttons">
+        <div class="app-buttons__item">
+            <a href="https://play.google.com/store/apps/details?id=com.{{manifest['title']|lower}}.www" rel="noopener" target="_blank" title="{{manifest['title']}} on Google Play">
+                <img src="/static/img/logos/google_play.svg" alt="Google Play">
+            </a></div>
+        <div class="app-buttons__item"><a href="https://itunes.apple.com/es/app/{{manifest['title']|lower}}/id1207332399?mt=8" rel="noopener" target="_blank" title="{{manifest['title']}} on AppStore">
+                <img src="/static/img/logos/app_store.svg" alt="App Store">
+            </a>
+        </div>
+    </div>            </div>
+            </div>
+            <div class="block__body text-center js-scroll fade-in-bottom">
+                <img src="/static/img/app/lang/en-mobile.png" alt="{{manifest['title']}} Mobile">
+            </div>
+            <div class="block__body"></div>
+            <div class="block__header">
+                <h2 class="title1">Scan, edit and share documents from your smartphone and tablet</h2>
+                <h3 class="subtitle1">Turn your mobile device or tablet into a portable PDF editor. Keep projects moving and stay productive by working with your favorite PDF tools anytime, anywhere.</h3>
+            </div>
+        </div>
+    </div>
+    <div class="block block--white">
+        <div class="block__container">
+            <div class="block__header">
+                <h2 class="title1">PDF Tools for productive people</h2>
+            </div>
+            <div class="block__body">
+                <div class="row justify-content-center">
+                    <div class="col-xl-3 col-lg-4 col-md-4">
+                        <div class="infocard infocard--fill js-scroll fade-in">
+                            <div class="infocard__icon">
+                                <img src="/static/img/app/pdf-editor.svg" alt="PDF Editor">
+                            </div>
+                            <div class="infocard__title">PDF Editor</div>
+                            <div class="infocard__body">
+                                <p>Include colorful comments and annotations in your PDF to highlight important information.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-4">
+                        <div class="infocard infocard--fill js-scroll fade-in">
+                            <div class="infocard__icon">
+                                <img src="/static/img/app/e-sign.svg" alt="e-Signing and Scanner">
+                            </div>
+                            <div class="infocard__title">e-Signing and Scanner</div>
+                            <div class="infocard__body">
+                                <p>Sign any document from your smartphone and tablet, no printing required. e-Sign and send PDFs right away.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-4">
+                        <div class="infocard infocard--fill js-scroll fade-in">
+                            <div class="infocard__icon">
+                                <img src="/static/img/app/file-manager.svg" alt="File manager">
+                            </div>
+                            <div class="infocard__title">File manager</div>
+                            <div class="infocard__body">
+                                <p>Keep your files organized on your device. Store your documents easily and efficiently.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="block block--white">
+        <div class="block__container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="title1">Turn your mobile device into a portable PDF Editor and Reader</div>
+                    <div class="app-buttons">
+        <div class="app-buttons__item">
+            <a href="https://play.google.com/store/apps/details?id=com.{{manifest['title']|lower}}.www" rel="noopener" target="_blank" title="{{manifest['title']}} on Google Play">
+                <img src="/static/img/logos/google_play.svg" alt="Google Play">
+            </a></div>
+        <div class="app-buttons__item"><a href="https://itunes.apple.com/es/app/{{manifest['title']|lower}}/id1207332399?mt=8" rel="noopener" target="_blank" title="{{manifest['title']}} on AppStore">
+                <img src="/static/img/logos/app_store.svg" alt="App Store">
+            </a>
+        </div>
+    </div>            </div>
+                <div class="col-md-1"></div>
+                <div class="col-md-5 js-scroll slide-right">
+                        <img src="/static/img/app/lifestyle-tablet.png" alt="Work offline">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="block block--grey">
+        <div class="block__container">
+            <div class="block__header">
+                <div class="title1">Streamline your document workflow</div>
+            </div>
+            <div class="block__body">
+                <div class="row align-items-center">
+                    <div class="col-md-5">
+                        <ul class="listcheck listcheck--content">
+                            <li class="listcheck__item listcheck__item--ok">
+                                <div>
+                                    <h4 class="title3">Send large files</h4>
+                                    <p>Having trouble pinging PDFs via email? Use the Compress PDF tool to reduce the size of your file for easy sharing, without compromising on the quality.</p>
+                                </div>
+                            </li>
+                            <li class="listcheck__item listcheck__item--ok">
+                                <div>
+                                    <h4 class="title3">Annotate and Markup PDF</h4>
+                                    <p>Sometimes you need to give feedback on a document quickly. Tap Edit to start annotating directly on your PDF—you can highlight paragraphs and add comments or notes.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2 col-sm-3"></div>
+                    <div class="col-md-5">
+                        <ul class="listcheck listcheck--content">
+                            <li class="listcheck__item listcheck__item--ok">
+                                <div>
+                                    <h4 class="title3">e-Sign documents</h4>
+                                    <p>No printer? No problem. To sign a document, just use the Sign PDF tool. It lets you add your signature electronically, so you don't need to print anything.</p>
+                                </div>
+                            </li>
+                            <li class="listcheck__item listcheck__item--ok">
+                                <div>
+                                    <h4 class="title3">Digitize your paperwork</h4>
+                                    <p>Contracts, reports, records—to digitize your documents, head to the app's JPG to PDF tool. It's a practical, easy way to create a digital archive of your personal papers.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <style>
+        .binary-link img {
+            margin-bottom: 12px;
+            margin-top: 24px;
+        }
+        .binary-link p {
+            color: #161616;
+        }
+        .binary-link {
+            text-decoration: none;
+        }
+        .binary-link:hover p{
+            color:#E5322D;
+        }
+    </style>
+    <div class="block block--white">
+        <div class="block__container">
+            <div class="block__header">
+                <h2 class="title1">Looking for another solution?</h2>
+            </div>
+            <div class="block__body"></div>
+            <div class="block__header js-scroll fade-in-bottom">
+                <div class="row justify-content-around">
+                    <div class="col-md-2 col-sm-3">
+                        <a class="binary-link" href="/mobile#ios" title="iOS">
+                            <img src="/static/img/desktop/ios.svg" alt="iOS">
+                            <p>iOS</p>
+                        </a>
+                    </div>
+                    <div class="col-md-2 col-sm-3">
+                        <a class="binary-link" href="/mobile#android" title="Android">
+                            <img src="/static/img/desktop/android.svg" alt="Android">
+                            <p>Android</p>
+                        </a>
+                    </div>
+                    <div class="col-md-2 col-sm-3">
+                        <a class="binary-link" href="/desktop#macos" title="MacOS">
+                            <img src="/static/img/desktop/apple.svg" alt="MacOS">
+                            <p>MacOS</p>
+                        </a>
+                    </div>
+                    <div class="col-md-2 col-sm-3">
+                        <a class="binary-link" href="/desktop#windows" title="Windows">
+                            <img src="/static/img/desktop/windows.svg" alt="Windows">
+                            <p>Windows</p>
+                        </a>
+                    </div>
+                    <div class="col-md-2 col-sm-3">
+                        <a class="binary-link" href="/" title="Web">
+                            <img src="/static/img/desktop/web.svg" alt="Web">
+                            <p>Web</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <script>
+        const scrollElements = document.querySelectorAll(".js-scroll");
+    
+        const elementInView = (el, dividend = 1) => {
+            const elementTop = el.getBoundingClientRect().top;
+    
+            return (
+                elementTop <=
+                (window.innerHeight || document.documentElement.clientHeight) / dividend
+            );
+        };
+    
+        const elementOutofView = (el) => {
+            const elementTop = el.getBoundingClientRect().top;
+    
+            return (
+                elementTop > (window.innerHeight || document.documentElement.clientHeight)
+            );
+        };
+    
+        const displayScrollElement = (element) => {
+            element.classList.add("scrolled");
+        };
+    
+        const hideScrollElement = (element) => {
+            element.classList.remove("scrolled");
+        };
+    
+        const handleScrollAnimation = () => {
+            scrollElements.forEach((el) => {
+                if (elementInView(el, 1.25)) {
+                    displayScrollElement(el);
+                } else if (elementOutofView(el)) {
+                    hideScrollElement(el)
+                }
+            })
+        }
+    
+        window.addEventListener("scroll", () => {
+            handleScrollAnimation();
+        });
+        handleScrollAnimation();
+    </script>
+    
+    <script> if(typeof ib !== 'undefined') {ib.set('v', 'm');} </script>
+</div>
+{%endblock%}

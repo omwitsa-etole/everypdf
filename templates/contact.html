@@ -1,0 +1,111 @@
+{%extends 'main.html'%}
+
+
+{%block content%}
+<link href="/static/dist/css/app.7909e88.css" rel="stylesheet">
+<div class="main">
+    <style>
+    .pattern-bg {
+        overflow: hidden;
+        width: 100vw;
+        height: 100vh;
+        z-index: -1;
+        position: fixed;
+        background-position: center center;
+        background-size: 100% auto;
+        background-image: url('/img/bg/background.svg');
+    }
+</style>
+<div class="pattern-bg"></div>
+<div class="block">
+    <div class="block__container">
+        <div class="block__header">
+        </div>
+        <div class="block__body">
+            <div class="row">
+                <div class="col-lg-5 col-md-12">
+                    <div class="super">
+                        <h1 class="super__title">Contact</h1>
+                        <h2 class="super__content">Contact us to report a problem, clarify any doubts about {{manifest['title']}}, or just find out more.</h2>
+                    </div>
+                </div>
+                <div class="col-md-1">
+                </div>
+                <div class="col-lg-6 col-md-12 mt-md-5">
+                    <div class="card card--input">
+                        <div class="card__body">
+                                                                                    <form id="contact-form" action="/contact" method="post">
+<input type="hidden" name="_csrf-{{manifest['title']}}" value="gculPjEtvuOAHjfnCgXL26ODdEryX_zkSwbWtqSw2he1n8tKS3SKr_F7eLY_PYef4OgfOocVrLcDPqLyyoWAcw==">                                <div class="title2"><!--Hello, how can we help?--></div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form__group field-contactform-name required">
+<label class="control-label" for="contactform-name">Your Name</label>
+<input type="text" id="contactform-name" class="input" name="ContactForm[name]" autofocus="true" placeholder="Your Name" aria-required="true">
+
+<div class="help-block"></div>
+</div>                                </div>
+                                <div class="col-md-6">
+                                    <div class="form__group field-contactform-fname">
+<label class="control-label" for="contactform-fname">Your Surname</label>
+<input type="text" id="contactform-fname" class="input" name="ContactForm[fname]" placeholder="Your Surname">
+
+<div class="help-block"></div>
+</div>                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form__group field-contactform-email required">
+<label class="control-label" for="contactform-email">Your Email</label>
+<input type="text" id="contactform-email" class="input" name="ContactForm[email]" autofocus="true" placeholder="Your Email" aria-required="true">
+
+<div class="help-block"></div>
+</div>                                </div>
+                                <div class="col-md-6">
+                                    <div class="form__group field-contactform-subject required">
+
+                                                <label class="control-label" for="contactform-subject">Subject</label>
+                                                <div class="input--icon input--clip"><select id="contactform-subject" class="input" name="ContactForm[subject]" aria-required="true">
+<option value="">Choose a subject...</option>
+<option value="General information">General information / Contact</option>
+<option value="Sales">Sales</option>
+<option value="Suggest a feature">Suggest a feature</option>
+<option value="Report a Problem">Report a Problem</option>
+<option value="Privacy">Privacy</option>
+<option value="{{manifest['title']}} Signature">{{manifest['title']}} Signature</option>
+</select></div>
+                                                <div class="help-block"></div>
+</div>                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                            <div class="form__group field-contactform-body required">
+<label class="control-label" for="contactform-body">Message</label>
+<textarea id="contactform-body" class="input" name="ContactForm[body]" rows="6" placeholder="Write a message" aria-required="true"></textarea>
+
+<div class="help-block"></div>
+</div>
+                                <div class="form__group field-contactform-terms required">
+<div class="checkbox"><input type="checkbox" id="contactform-terms" class="" name="ContactForm[terms]" aria-required="true"><label class="control-label" for="contactform-terms">I accept <a href="/help/terms" class="termsLink">Terms &amp; Conditions</a> and <a href="/help/privacy" class="legalLink">Legal &amp; Privacy</a></label><div class="help-block"></div></div>
+</div>
+                                <div class="card__actions">
+                                <div class="form__group">
+                                    <button type="submit" class="btn" name="contact-button">Send message</button>                                </div>
+                            </div>
+                                </div>
+                            </div>
+                            </form>                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .field-contactform-fname {
+        display: none;
+    }
+</style></div>
+
+{%endblock%}

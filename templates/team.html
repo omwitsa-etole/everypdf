@@ -1,0 +1,160 @@
+{%extends 'main.html'%}
+
+{%block content%}
+<link href="/static/dist/css/admin.7909e88.css" rel="stylesheet">
+
+<div id="mainAdmin" class="main-sidebar">
+            <div class="main-sidebar__sidebar">
+                <div class="sidebar">
+
+    <div class="sidebar__user">
+        <div class="avatar">
+            <!--
+            <div class="avatar__image">
+                <img src="https://www.{{manifest['title']}}.com/img/avatar/avatar-default.png">
+            </div>
+            -->
+            <div class="user__avatar user__avatar--registered">
+    <div class="user__avatar__edit">
+        <img id="avatarPreloader" class="user__avatar__edit__preload" src="/static/img/svg_icons/preload.svg">
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12">
+            <path d="M0 9.002v2.368h2.368l6.986-6.985-2.37-2.37zm11.185-6.45a.63.63 0 0 0 0-.891L9.707.185a.63.63 0 0 0-.891 0L7.66 1.34l2.37 2.37 1.156-1.156z"
+                  fill="#383E45" fill-rule="evenodd"/>
+        </svg>
+        <img id="avatarImage" src="https://www.{{manifest['title']|lower}}.com/img/avatar/default110.png" width="110"
+             height="110">
+    </div>
+    <input id="uploadAvatar" data-max-size="2048" type="file">
+</div>            <div class="avatar__information">
+                <div
+                    class="avatar__information__role avatar__information__role--registered">
+                    Registered                </div>
+                <div class="avatar__information__name">
+                    {{manifest['user']['name']}}      </div>
+            </div>
+        </div>
+    </div>
+
+        <ul class="sidebar__menu">
+        <li class="sidebar__menu__subtitle">Profile</li>
+        <li class="sidebar__menu__item ">
+            <a href="/user"><img
+                    src="/static/img/icons/admin/account.svg"/>My account</a>
+        </li>
+        <li class="sidebar__menu__item ">
+            <a href="/user/security"><img
+                    src="/static/img/icons/admin/password.svg"/>Security</a>
+        </li>
+                    <li class="sidebar__menu__item sidebar__menu__item--active">
+                <a href="/user/team"><img
+                        src="/static/img/icons/admin/team.svg"/>Team</a>
+            </li>
+        
+        <li class="sidebar__menu__subtitle">Activity</li>
+
+        <li class="sidebar__menu__item ">
+            <a href="/user/history"><img
+                    src="/static/img/icons/admin/history.svg"/>Last tasks</a>
+        </li>
+
+                    <li class="sidebar__menu__subtitle">Signatures</li>
+
+            <li class="sidebar__menu__item ">
+                <a href="/user/signatures"><img
+                        src="/static/img/icons/admin/signature-overview.svg"/>Overview</a>
+            </li>
+            <li class="sidebar__menu__item ">
+                <a href="/user/signatures/requests"><img
+                        src="/static/img/icons/admin/signature-sent.svg"/>Sent</a>
+            </li>
+            <li class="sidebar__menu__item ">
+                <a href="/user/signatures/pending"><img
+                        src="/static/img/icons/admin/signature-inbox.svg"/>Inbox</a>
+            </li>
+            <li class="sidebar__menu__item ">
+                <a href="/user/signatures/signed"><img
+                        src="/static/img/icons/admin/signature-signed.svg"/>Signed</a>
+            </li>
+                        <li class="sidebar__menu__item ">
+                <a href="/user/signatures/templates"><img
+                        src="/static/img/icons/admin/signature-templates.svg"/>Templates</a>
+            </li>
+            <li class="sidebar__menu__item ">
+                <a href="/user/contacts"><img
+                        src="/static/img/icons/admin/signature-contacts.svg"/>Contacts</a>
+            </li>
+
+            <li class="sidebar__menu__item ">
+                <a href="/user/signatures/settings"><img
+                        src="/static/img/icons/admin/signature-settings.svg"/>Settings</a>
+            </li>
+                <li class="sidebar__menu__subtitle">Billing</li>
+
+                    <li class="sidebar__menu__item ">
+                <a href="/user/plan"><img
+                        src="/static/img/icons/admin/package.svg"/>Plans & Packages</a>
+            </li>
+                <li class="sidebar__menu__item ">
+            <a href="/user/business"><img
+                    src="/static/img/icons/admin/business.svg"/>Business details</a>
+        </li>
+        <li class="sidebar__menu__item ">
+            <a href="/user/invoices"><img
+                    src="/static/img/icons/admin/card.svg"/>Invoices</a>
+        </li>
+    </ul>
+</div>            </div>
+            <div class="main-sidebar__content">
+                <div class="container">
+                    
+<style>
+    .btn{
+        margin-bottom: 12px;
+    }
+    @media (max-width: 576px) {
+        .card img{
+            margin-bottom: 24px
+        }
+    }
+</style>
+<div class="box">
+    <div class="row">
+        <div class="col-md-6 col-sm-12">
+            <h1 class="title2">Workspace</h1>
+        </div>
+    </div>
+</div>
+<div class="box">
+    <div class="row">
+        <div class="col-12">
+                <div class="card">
+                    <div class="card__body">
+                        <div class="row align-items-center">
+                            <div class="col-lg-4 col-md-5">
+                                <img width="100%" src="/static/img/user/team/workspace.svg">
+                            </div>
+                            <div class="col-lg-1 col-md-1"></div>
+                            <div class="col-md-6">
+                                <h2 class="title2">Create and manage teams in your workspace</h2>
+                                <ul class="listcheck">
+                                    <li class="listcheck__item listcheck__item--ok">Obtain and manage multiple {{manifest['title']}} licenses, inviting several users to your workspace.</li>
+                                    <li class="listcheck__item listcheck__item--ok">Organize your workspace into various teams.</li>
+                                    <li class="listcheck__item listcheck__item--ok">Set permission roles and assign each member to their team in your workspace.</li>
+                                </ul>
+                                <p class="hidden">Manage multiple {{manifest['title']}} licences by inviting several users to the Workspace. Easily organize members into different teams and set their permissions.</p>
+                                <a class="btn" become-premium-btn href="/user/team/invite">Invite members</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var userConfig = {"userId":105326155,"email":"{{manifest['user']['email']}}","page":"welcome","userToken":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJzZXJ2aWNlLmlsb3ZlcGRmLmNvbSIsImF1ZCI6IiIsImlhdCI6MTcyMTIxMDU0MCwibmJmIjoxNzIxMjEwNTQwLCJqdGkiOjEwNTMyNjE1NX0.tS_S41p6hfKr0XAhdW0tpmT0kKKU34_n85YtdVNbT7k","token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJhdWQiOiIiLCJpYXQiOjE1MjMzNjQ4MjQsIm5iZiI6MTUyMzM2NDgyNCwianRpIjoicHJvamVjdF9wdWJsaWNfYzkwNWRkMWMwMWU5ZmQ3NzY5ODNjYTQwZDBhOWQyZjNfT1Vzd2EwODA0MGI4ZDJjN2NhM2NjZGE2MGQ2MTBhMmRkY2U3NyJ9.qvHSXgCJgqpC4gd6-paUlDLFmg0o2DsOvb1EUYPYx_E","startServer":"https:\/\/api.{{manifest['title']|lower}}.com","user":{"id":105326155,"name":"BRADONE Etole","email":"etolebradone@gmail.com","active":1,"avatar":"https:\/\/www.{{manifest['title']}}.com\/img\/avatar\/default30.png","limits":{"merge":{"mb":100,"files":25},"split":{"mb":100,"files":1},"compress":{"mb":200,"files":2},"officepdf":{"mb":15,"files":1},"wordpdf":{"mb":15,"files":1},"powerpointpdf":{"mb":15,"files":1},"excelpdf":{"mb":15,"files":1},"pdfoffice":{"mb":15,"files":1},"pdfword":{"mb":15,"files":1},"pdfocr":{"mb":15,"files":1,"pages":50},"pdfpowerpoint":{"mb":15,"files":1},"pdfexcel":{"mb":15,"files":1,"pages":500},"pdfjpg":{"mb":25,"files":2},"imagepdf":{"mb":40,"files":20},"pagenumber":{"mb":100,"files":2},"watermark":{"mb":100,"files":2},"rotate":{"mb":100,"files":20},"unlock":{"mb":100,"files":2},"protect":{"mb":100,"files":2},"pdfa":{"mb":100,"files":1},"repair":{"mb":100,"files":1},"organize":{"mb":100,"files":5},"redact":{"mb":400,"files":1},"resizeimage":{"mb":200,"files":30},"compressimage":{"mb":200,"files":30},"cropimage":{"mb":90,"files":1},"converttojpg":{"mb":200,"files":30},"convertfromjpg":{"mb":200,"files":30},"rotateimage":{"mb":200,"files":30},"watermarkimage":{"mb":200,"files":30},"memeimage":{"mb":200,"files":1},"editimage":{"mb":50,"files":1},"editpdf":{"mb":100,"files":1},"sign":{"mb":50,"files":3},"upscaleimage":{"mb":6,"files":3,"pxsize":33177600},"removebackgroundimage":{"mb":6,"files":3,"pxsize":17612800},"blurfaceimage":{"mb":100,"files":10}},"mode":0,"premium":false,"country":"KE","loginkey":"dQCKApicgZe0B5mSRvHLYK6tYdt-_F9k","can_trial":false,"current_subscription":null,"team_role":null,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJzZXJ2aWNlLmlsb3ZlcGRmLmNvbSIsImF1ZCI6IiIsImlhdCI6MTcyMTIxMDU0MCwibmJmIjoxNzIxMjEwNTQwLCJqdGkiOjEwNTMyNjE1NX0.tS_S41p6hfKr0XAhdW0tpmT0kKKU34_n85YtdVNbT7k","sus_rbt":false,"custom_avatar":0,"signatures_left":0,"sms_left":0,"certificates_left":0},"action":"team"};
+</script>                </div>
+            </div>
+<script src="/static/dist/js/admin.7909e88.js" async="async"></script>
+{%endblock%}
