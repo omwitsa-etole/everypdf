@@ -8,11 +8,20 @@ from datetime import datetime,timedelta,timezone
 #from controllers import *
 import json
 #from daraja import *
+from werkzeug.utils import secure_filename
 app = Flask(__name__)
+
+UPLOAD_FOLDER = os.path.join(os.getcwd(), 'static', 'uploads')
+ALLOWED_EXTENSIONS = {'pdf'}
 
 app.secret_key = 'ussd'
 
 CORS(app)
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
+def allowed_file(filename):
+    return '.' in filename and \
+            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 @app.before_request
 async def before_request_func():
@@ -29,7 +38,14 @@ async def before_request_func():
         session["manifest"]["user"] = None
     else:
         session["manifest"]["user"] = session.get("user")
-    pass
+    
+@app.route("/v1/upload",methods=["POST"])
+def uploader():
+    file = request.files['file']
+    print(file)
+    thumb = secure_filename(request.form['name'])
+    file.save(os.path.join(app.config['UPLOAD_FOLDER'], thumb))
+    return jsonify({"server_filename":"/static/uploads/"+thumb})
 
 @app.route("/stripe/execute",methods=["POST"])
 def stripe_pay():
@@ -40,6 +56,10 @@ def stripe_pay():
 def paypal_pay():
     print(request.form)
     return "EC-64F96244MB6033632"
+
+@app.route("/problem/<string:tool>/<string:key>/<int:id>/ServerError")
+def error_merge(tool,key,id):
+    return "An error occured during "+tool+"<a href='/'>Home</a>"
 
 @app.route("/")
 def index():
