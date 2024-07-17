@@ -13753,9 +13753,13 @@ var apiServer = 'localhost:5000';
                             pdfjsLib.getDocument(pdfUrl).promise.then(pdf => {
                                 // Get the first page
                                 pdf.getPage(1).then(page => {
-                                    const scale = 1.5; // Adjust scale as needed
+                                    //const scale = 1.5; // Adjust scale as needed
+                                    
+                                    const originalViewport = page.getViewport({ 1 });
+                                    const scaleWidth = canvas.width / originalViewport.width;
+                                    const scaleHeight = canvas.height / originalViewport.height;
+                                    const scale = Math.min(scaleWidth, scaleHeight);
                                     const viewport = page.getViewport({ scale });
-                            
                                     // Set canvas dimensions
                                     //canvas.width = viewport.width;
                                     //canvas.height = viewport.height;
