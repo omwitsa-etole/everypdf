@@ -2,7 +2,8 @@
 
 {%block content%}
 <link href="/static/dist/css/app.7909e88.css" rel="stylesheet">
-<script>var ilx = {'c': 'tool', 'a': 'merge'};</script>
+{%set ico = tool['tool'].split('_')[0]%}
+<script>var ilx = {'c': 'tool', 'a': "{{ico}}"};</script>
 <style>
     .footer-main{display:none;}
 </style>

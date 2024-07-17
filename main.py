@@ -196,6 +196,7 @@ def function(title):
                 if key == title:
                     print("tool",tool)
                     found = tool[key]
+                    found["tool"] = key
     if found != None:
         return render_template("tool.html",manifest=session["manifest"],tool=found)
     return render_template("tool.html",manifest=session["manifest"],tool=found)
