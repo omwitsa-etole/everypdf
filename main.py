@@ -20,7 +20,7 @@ async def before_request_func():
         session["manifest"] = {
             "title": "EveryPDF",
             "tools":[
-                {"merge_pdf":{"title":"Merge PDF","svg":"","description":"","new":True,"category":"ORGANIZE PDF" }},
+                {"merge_pdf":{"title":"Merge PDF","svg":"","description":"Combine PDFs in the order you want with the easiest PDF merger available.","new":True,"category":"ORGANIZE PDF" }},
                 {"split_pdf":{"title":"Split PDF","svg":"","description":"","new":True,"catgory":"ORGANIZE PDF"}}
             ]
         }
@@ -164,7 +164,7 @@ def contact():
 @app.route("/logout")
 def logout():
     session["user"] = None
-    session["manifest"]["user"] = None
+    session["manifest"] = None
     return redirect(url_for("login"))
 
 @app.route("/login",methods=["GET","POST"])
@@ -188,8 +188,16 @@ def load_template_n(name,name_n):
     return render_template("template/"+name+"/"+name_n+".html",manifest=session["manifest"])
 @app.route("/<string:title>")
 def function(title):
+    found = None
     if title:
-        pass
+        for tool in session["manifest"]["tools"]:
+            for key in tool.keys():
+                if key == title:
+                    print("tool",tool)
+                    found = tool[key]
+    if found != None:
+        return render_template("tool.html",manifest=session["manifest"],tool=found)
+    return render_template("tool.html",manifest=session["manifest"],tool=found)
 
 
     
