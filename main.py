@@ -21,8 +21,9 @@ async def before_request_func():
             "title": "EveryPDF",
             "tools":[
                 {"merge_pdf":{"title":"Merge PDF","svg":"","description":"Combine PDFs in the order you want with the easiest PDF merger available.","new":True,"category":"ORGANIZE PDF" }},
-                {"split_pdf":{"title":"Split PDF","svg":"","description":"","new":True,"catgory":"ORGANIZE PDF"}}
-            ]
+                {"split_pdf":{"title":"Split PDF","svg":"","description":"","new":True,"category":"ORGANIZE PDF"}}
+            ],
+            "categories":["ORGANIZE PDF","OPTIMIZE PDF","CONVERT TO PDF","CONVERT FROM PDF","EDIT PDF","PDF SECURITY"]
         }
     if session.get("user") == None:
         session["manifest"]["user"] = None

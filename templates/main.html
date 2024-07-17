@@ -79,45 +79,17 @@
     <header class="header">
             <nav>
                 
-        <a class="brand" href="" title="{{manifest['title']}}" style="height: 100%;object-fit:cover;zoom: 250%;">
+        <a class="brand" href="/" title="{{manifest['title']}}" style="height: 100%;object-fit:cover;zoom: 250%;">
             <img src="/static/img/{{manifest['title']|lower}}.svg" alt="{{manifest['title']}}"/>
         </a>            <div class="menu">
                 <span class="menu--sm"><i class="ico ico--tools"></i></span>
                 <span class="menu--md">All PDF tools <i class="ico ico--down"></i></span>
                 <ul>
-                    <li><a  href="/merge_pdf">Merge PDF</a></li>
-                    <li><a  href="/split_pdf">Split PDF</a></li>
-                    <li><a  href="/compress_pdf">Compress PDF</a></li>
-                    <li class="has-dropdown">
-                        <span >Convert PDF<i class="ico ico--down"></i>
-                        </span>
-                        <div class="dropdown">
-                            <ul>
-                                <li>
-                                    <ul>
-                                        <li>
-                                            <div class="nav__title">Convert to PDF</div>
-                                        </li>
-                                        <li><a  href="/jpg_to_pdf"><i  class="ico ico--jpgpdf"></i>JPG to PDF</a></li>
-                                        <li><a  href="/word_to_pdf"><i class="ico ico--wordpdf"></i>WORD to PDF</a></li>
-                                        <li><a  href="/powerpoint_to_pdf"><i class="ico ico--powerpointpdf"></i>POWERPOINT to PDF</a></li>
-                                        <li><a  href="/excel_to_pdf"><i class="ico ico--excelpdf"></i>EXCEL to PDF</a></li>
-                                        <li><a  href="/html-to-pdf"><i class="ico ico--htmlpdf"></i> HTML to PDF</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <ul>
-                                        <li><div class="nav__title">Convert from PDF</div></li>
-                                        <li><a  href="/pdf_to_jpg"><i class="ico ico--pdfjpg"></i> PDF to JPG</a></li>
-                                        <li><a  href="/pdf_to_word"><i class="ico ico--pdfword"></i> PDF to WORD</a></li>
-                                        <li><a  href="/pdf_to_powerpoint"><i class="ico ico--pdfpowerpoint"></i> PDF to POWERPOINT</a></li>
-                                        <li><a  href="/pdf_to_excel"><i class="ico ico--pdfexcel"></i> PDF to EXCEL</a></li>
-                                        <li><a  href="/convert-pdf-to-pdfa"><i  class="ico ico--pdfa"></i> PDF to PDF/A</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
+                    {%for tool in manifest['tools'][0:5]%}
+                    {%set tool_key=tool.keys() | first %}
+                    <li><a  href="/{{tool_key}}">{{tool[tool_key]['title']}}</a></li>
+                    
+                    {%endfor%}
                 </ul>
                 <ul class="menu__main">
                     <li class="has-dropdown has-dropdown--full">
@@ -125,64 +97,24 @@
                         </span>
                         <div class="dropdown dropdown--full">
                             <ul>
+                                {%for category in manifest['categories']%}
                                 <li>
+                                    
                                     <ul>
-                                        <li><div class="nav__title">Organize PDF</div></li>
-                                        <li><a  href="/merge_pdf"><i class="ico ico--merge"></i> Merge PDF</a></li>
-                                        <li><a  href="/split_pdf"><i class="ico ico--split"></i> Split PDF</a></li>
-                                        <li><a  href="/remove-pages"><i class="ico ico--remove"></i> Remove pages</a></li>
-                                        <li><a href="/split_pdf#split,extract"><i class="ico ico--extract"></i> Extract pages</a></li>
-                                        <li><a  href="/organize-pdf"><i class="ico ico--organize"></i> Organize PDF</a></li>
-                                        <li><a  href="/scan-pdf"><i  class="ico ico--scan"></i> Scan to PDF</a></li>
+                                        <li><div class="nav__title">{{category}}</div></li>
+                                        {%for tool in manifest['tools']%}
+                                        {%set tool_key=tool.keys() | first %}
+                                        {%set ico = tool_key.split('_')%}
+                                            
+                                            {%if tool[tool_key]['category'] == category%}
+                                            
+                                            <li><a  href="/{{tool_key}}"><i class="ico ico--{{ico[0]}}"></i> {{tool[tool_key]['title']}}</a></li>
+                                            {%endif%}
+                                        {%endfor%}
                                     </ul>
+                                    
                                 </li>
-                                <li>
-                                    <ul>
-                                        <li><div class="nav__title">Optimize PDF</div></li>
-                                        <li><a  href="/compress_pdf"><i class="ico ico--compress"></i> Compress PDF</a></li>
-                                        <li><a  href="/repair-pdf"><i class="ico ico--repair"></i> Repair PDF</a></li>
-                                        <li><a  href="/ocr-pdf"><i class="ico ico--pdfocr"></i> OCR PDF</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <ul>
-                                        <li><div class="nav__title">Convert to PDF</div></li>
-                                        <li><a  href="/jpg_to_pdf"><i class="ico ico--jpgpdf"></i> JPG to PDF</a></li>
-                                        <li><a  href="/word_to_pdf"><i class="ico ico--wordpdf"></i>WORD to PDF</a></li>
-                                        <li><a  href="/powerpoint_to_pdf"><i class="ico ico--powerpointpdf"></i> POWERPOINT to PDF</a></li>
-                                        <li><a  href="/excel_to_pdf"><i class="ico ico--excelpdf"></i> EXCEL to PDF</a></li>
-                                        <li><a  href="/html-to-pdf"><i class="ico ico--htmlpdf"></i> HTML to PDF</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <ul>
-                                        <li><div class="nav__title">Convert from PDF</div></li>
-                                        <li><a  href="/pdf_to_jpg"><i class="ico ico--pdfjpg"></i> PDF to JPG</a></li>
-                                        <li><a  href="/pdf_to_word"><i class="ico ico--pdfword"></i>PDF to WORD</a></li>
-                                        <li><a  href="/pdf_to_powerpoint"><i class="ico ico--pdfpowerpoint"></i> PDF to POWERPOINT</a></li>
-                                        <li><a  href="/pdf_to_excel"><i class="ico ico--pdfexcel"></i> PDF to EXCEL</a></li>
-                                        <li><a href="/convert-pdf-to-pdfa"><i class="ico ico--pdfa"></i> PDF to PDF/A</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <ul>
-                                        <li><div class="nav__title">Edit PDF</div></li>
-                                        <li><a  href="/rotate_pdf"><i class="ico ico--rotate"></i>Rotate PDF</a></li>
-                                        <li><a  href="/add_pdf_page_number"><i class="ico ico--pagenumber"></i> Add page numbers</a></li>
-                                        <li><a  href="/pdf_add_watermark"><i class="ico ico--watermark"></i> Add watermark</a></li>
-                                        <li><a  href="/edit-pdf"><i class="ico ico--editpdf"></i>Edit PDF</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <ul>
-                                        <li><div class="nav__title">PDF security</div></li>
-                                        <li><a  href="/unlock_pdf"><i class="ico ico--unlock"></i> Unlock PDF</a></li>
-                                        <li><a  href="/protect-pdf"><i class="ico ico--protect"></i>Protect PDF</a></li>
-                                        <li><a  href="/sign-pdf"><i class="ico ico--sign"></i>Sign PDF</a></li>
-                                                                        <li><a  href="redact-pdf"><i class="ico ico--redact"></i> Redact PDF</a></li>
-                                        <li><a  href="/compare-pdf"><i class="ico ico--pdfcompare"></i> Compare PDF</a></li>
-                                    </ul>
-                                </li>
+                                {%endfor%}
                             </ul>
                         </div>
                     </li>
