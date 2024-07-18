@@ -1,7 +1,7 @@
 {%extends 'main.html'%}
 
 {%block content%}
-<script>var apiServer = 'http://localhost';</script>
+
 <link href="/static/dist/css/app.7909e88.css" rel="stylesheet">
 <link href="/static/dist/css/download.7909e88.css" rel="stylesheet">
 <div class="main">
@@ -364,7 +364,7 @@ window.open('http://www.facebook.com/sharer.php?u=https://www.{{manifest["title"
 
     var ilovePdfConfig = {
         action: 'download',
-        workerServer: apiServer,
+        workerServer: "{{apiServer}}",
         taskId: 's49qmk4lhttqjq59949hnkcr9rk1k4h07q89wlmpwy33skb819z1mghgb71k8fzcc4l3y89z8nc99cdgpztf4k6dgskhvpcw4dzhp3gqrcdvjpml60rk0jymAAy9yf2f2kzjfmp4sy7khm2rzs0fqrl9A74rzj8330x3cwlvwxgxwb8mth21',
         token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJhdWQiOiIiLCJpYXQiOjE1MjMzNjQ4MjQsIm5iZiI6MTUyMzM2NDgyNCwianRpIjoicHJvamVjdF9wdWJsaWNfYzkwNWRkMWMwMWU5ZmQ3NzY5ODNjYTQwZDBhOWQyZjNfT1Vzd2EwODA0MGI4ZDJjN2NhM2NjZGE2MGQ2MTBhMmRkY2U3NyJ9.qvHSXgCJgqpC4gd6-paUlDLFmg0o2DsOvb1EUYPYx_E',
         tool: 'merge',
