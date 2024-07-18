@@ -121,7 +121,7 @@
                 </ul>
             </div>
                     <div class="actions">
-                    <a href="desktop" class="hide--sm tooltip tooltip--bottom" title="{{manifest['title']}} Desktop, work offline">
+                    <a href="/desktop" style="display:none;"class="hide--sm tooltip tooltip--bottom" title="{{manifest['title']}} Desktop, work offline">
                         <i class="ico ico--desk"></i>
                     </a>
                     {%if manifest.get("user") == None%}
@@ -135,7 +135,7 @@
                     <li class="has-dropdown" data-account="true" >
                         <a href="/user" title="User area access">
                             <img class="avatar avatar--registered" src="https://www.ilovepdf.com/img/avatar/default30.png"
-                                 alt="BRADONE Etole"><span></span>
+                                 alt="{{manifest['user']['name']}}"><span></span>
                         </a>
                         <div class="dropdown dropdown--single  dropdown--left">
                             <ul class="menu__user">
@@ -192,7 +192,7 @@
                     <div class="dropdown dropdown--single dropdown--left">
                         <ul>
                             <li><a href=""><i class="ico ico--{{manifest['title']|lower}}"></i> Home</a></li>
-                            <li class="has-dropdown">
+                            <li class="has-dropdown" style="display:none;">
                                 <span><i class="ico ico--product"></i> Product</span>
                                 <ul class="dropdown">
                                     <li><a href="/desktop"><i class="ico ico--desktop"></i> Desktop</a></li>
@@ -289,7 +289,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="col-md-3 col-sm-6 col-xs-12" style="display:none;">
                     <div class="footer-main__title">Product</div>
                     <ul class="footer-main__nav">
                         <li>

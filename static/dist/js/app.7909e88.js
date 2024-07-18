@@ -1,4 +1,4 @@
-var apiServer = 'localhost:5000';
+var apiServer = 'http://localhost';
 
 ! function(n) {
 	var i = {};
@@ -13675,7 +13675,7 @@ var apiServer = 'localhost:5000';
 					drop_element: a.dropElement,
 					dragdrop: a.haveDrop,
 					multi_selection: a.config.getConfig("multiSelection"),
-					url: /*a.getUrl()*/"http://"+apiServer+"/v1/upload",
+					url: /*a.getUrl()*/apiServer+"/v1/request/upload/upload-single",
 					filters: {
 						mime_types: a.config.getConfig("mimeTypes")
 					},
@@ -13755,7 +13755,7 @@ var apiServer = 'localhost:5000';
                                 pdf.getPage(1).then(page => {
                                     //const scale = 1.5; // Adjust scale as needed
                                     
-                                    const originalViewport = page.getViewport({ 1 });
+                                    const originalViewport = page.getViewport({ scale:1 });
                                     const scaleWidth = canvas.width / originalViewport.width;
                                     const scaleHeight = canvas.height / originalViewport.height;
                                     const scale = Math.min(scaleWidth, scaleHeight);

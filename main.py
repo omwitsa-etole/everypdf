@@ -27,7 +27,7 @@ def allowed_file(filename):
 async def before_request_func():
     if session.get("manifest") == None:
         session["manifest"] = {
-            "title": "EveryPDF",
+            "title": "WebDocEdit",
             "tools":[
                 {"merge_pdf":{"title":"Merge PDF","svg":"","description":"Combine PDFs in the order you want with the easiest PDF merger available.","new":True,"category":"ORGANIZE PDF" }},
                 {"split_pdf":{"title":"Split PDF","svg":"","description":"","new":True,"category":"ORGANIZE PDF"}}
@@ -196,7 +196,7 @@ def contact():
 def logout():
     session["user"] = None
     session["manifest"] = None
-    return redirect(url_for("login"))
+    return redirect(url_for("index"))
 
 @app.route("/login",methods=["GET","POST"])
 def login():

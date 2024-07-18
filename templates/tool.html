@@ -2,8 +2,10 @@
 
 {%block content%}
 <link href="/static/dist/css/app.7909e88.css" rel="stylesheet">
+{%if tool%}
 {%set ico = tool['tool'].split('_')[0]%}
 <script>var ilx = {'c': 'tool', 'a': "{{ico}}"};</script>
+{%endif%}
 <style>
     .footer-main{display:none;}
 </style>
@@ -124,12 +126,10 @@
 </div>
 <div class="footer">
     <div class="footer__copy">
-        &copy; iLovePDF 2024 &reg; - Your PDF Editor    </div>
+        &copy; {{manifest['title']}} 2024 &reg; - Your PDF Editor    </div>
 </div>       
 <script src="/static/dist/js/app.7909e88.js" async></script>
 <script src="/static/js/plupload/plupload.full.min.js" async></script>
 <script src="/static/js/pdfjs/pdf.min.js" async></script>
-<script>
-    pdfjsLib.GlobalWorkerOptions.workerSrc = "/static/js/pdfjs/pdf.worker.min.js";
-</script>
+
 {%endblock%}
