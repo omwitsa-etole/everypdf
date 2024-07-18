@@ -1,4 +1,5 @@
 var apiServer = 'http://localhost';
+var apiFiles = apiServer+"/files/uploads/"
 
 ! function(n) {
 	var i = {};
@@ -3834,7 +3835,7 @@ var apiServer = 'http://localhost';
 			}, i.prototype.sendRequest = function(e, t, n, i, o) {
 				void 0 === n && (n = null), void 0 === i && (i = !1), void 0 === o && (o = !1);
 				var r = new XMLHttpRequest;
-				return r.open(e, this.workerServer + "/" + this.apiVersion + "/" + t, !0), r.setRequestHeader("Authorization", "Bearer " + this.token), r.setRequestHeader("Accept", "application/json"), 1 == o && r.setRequestHeader("Content-Type", "application/json"), i && (r.responseType = "blob"), 1 == o ? r.send(JSON.stringify(n)) : r.send(n), r
+				return r.open(e, /*this.workerServer*/apiServer + "/" + this.apiVersion + "/" + t, !0), r.setRequestHeader("Authorization", "Bearer " + this.token), r.setRequestHeader("Accept", "application/json"), 1 == o && r.setRequestHeader("Content-Type", "application/json"), i && (r.responseType = "blob"), 1 == o ? r.send(JSON.stringify(n)) : r.send(n), r
 			}, i.prototype.sendServiceRequest = function(e, t, n, i, o) {
 				void 0 === n && (n = null), void 0 === i && (i = !1), void 0 === o && (o = !1);
 				var r = new XMLHttpRequest;
@@ -13748,7 +13749,7 @@ var apiServer = 'http://localhost';
                             console.log("response",n,t,e);
                             var canvas = document.getElementById('cover-'+t.id);
                             var ctx = canvas.getContext('2d');
-                            const pdfUrl = n.server_filename;
+                            const pdfUrl = apiFiles+n.server_filename;
                             pdfjsLib.GlobalWorkerOptions.workerSrc = "/static/js/pdfjs/pdf.worker.min.js";
                             pdfjsLib.getDocument(pdfUrl).promise.then(pdf => {
                                 // Get the first page
@@ -17134,7 +17135,7 @@ var apiServer = 'http://localhost';
 				userToken: this.userToken
 			}
 		}, g.prototype.changeServer = function(e) {
-			this.uploadManager.workerServer = e, this.uploadManager.plupload.workerServer = e, this.uploadManager.plupload.uploader.setOption("url", e + "/" + this.uploadManager.plupload.apiVersion + "/upload"), "changeServer" in this.optionsManager && this.optionsManager.changeServer(e), this.uploadManager.workerServer = e
+			this.uploadManager.workerServer = e, this.uploadManager.plupload.workerServer = e, this.uploadManager.plupload.uploader.setOption("url", /*e*/apiServer + "/" + this.uploadManager.plupload.apiVersion + "/upload"), "changeServer" in this.optionsManager && this.optionsManager.changeServer(e), this.uploadManager.workerServer = e
 		}, g.prototype.listenEventTaskIdChanged = function() {
 			var t = this;
 			window.addEventListener("taskIdChanged", function(e) {
