@@ -74,6 +74,7 @@ def error_merge(tool,key,id):
 
 @app.route("/download/<string:key>/<int:id>")
 def success_download(key,id):
+    
     return render_template("download.html",key=key,id=id,manifest=session["manifest"],apiServer="http://localhost")
 
 @app.route("/")
