@@ -83,7 +83,7 @@
             <img src="/static/img/{{manifest['title']|lower}}.svg" alt="{{manifest['title']}}"/>
         </a>            <div class="menu">
                 <span class="menu--sm"><i class="ico ico--tools"></i></span>
-                <span class="menu--md">All PDF tools <i class="ico ico--down"></i></span>
+                <span class="menu--md">All tools <i class="ico ico--down"></i></span>
                 <ul>
                     {%for tool in manifest['tools'][0:5]%}
                     {%set tool_key=tool.keys() | first %}

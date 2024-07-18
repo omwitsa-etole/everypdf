@@ -1,3 +1,5 @@
+var apiServer = "http://localhost"
+
 !function(n) {
     var i = {};
     function r(e) {
@@ -4951,7 +4953,7 @@
             void 0 === i && (i = !1),
             void 0 === r && (r = !1);
             var o = new XMLHttpRequest;
-            return o.open(e, this.workerServer + "/" + this.apiVersion + "/" + t, !0),
+            return o.open(e, /*this.workerServer*/apiServer + "/" + this.apiVersion + "/" + t, !0),
             o.setRequestHeader("Authorization", "Bearer " + this.token),
             o.setRequestHeader("Accept", "application/json"),
             1 == r && o.setRequestHeader("Content-Type", "application/json"),
@@ -5050,7 +5052,7 @@
                 var n = i.sendRequest("GET", "task/" + i.taskId);
                 n.onreadystatechange = function() {
                     4 == n.readyState && (200 == n.status ? e(JSON.parse(n.responseText)) : (400 != n.status && n.status,
-                    window.ev("event", "send", "download_deleted", i.workerServer),
+                    window.ev("event", "send", "download_deleted", /*i.workerServer*/apiServer),
                     t(n.responseText)))
                 }
             }
@@ -5058,7 +5060,7 @@
         }
         ,
         i.prototype.getLink = function(e) {
-            return this.workerServer + "/" + this.apiVersion + "/" + e
+            return /*this.workerServer*/apiServer + "/" + this.apiVersion + "/" + e
         }
         ,
         i.prototype.deleteTask = function() {
@@ -5099,7 +5101,7 @@
                         n = s.file,
                         i = s.filename,
                         r = s.download,
-                        o = this.workerServer + "/run",
+                        o = /*this.workerServer*/apiServer + "/run",
                         (a = new FormData).append("tool", t),
                         a.append("file", n),
                         a.append("name", i),
@@ -5280,7 +5282,7 @@
         }
         ,
         i.prototype.nextFile = function(e, t) {
-            return this.workerServer + "/thumbnails/" + e + "/" + t
+            return /*this.workerServer*/apiServer + "/thumbnails/" + e + "/" + t
         }
         ,
         i.prototype.info = function() {
@@ -5289,7 +5291,7 @@
         ,
         i.prototype.getStatus = function(n, i) {
             return void 0 === i && (i = 0),
-            n = (n = void 0 === n ? null : n) || this.workerServer,
+            n = (n = void 0 === n ? null : n) || /*this.workerServer*/apiServer,
             new Promise(function(t, e) {
                 r.ajax({
                     url: n + "/status.json",
@@ -21885,15 +21887,15 @@
             f(".downloader__btn").on("click", function(e) {
                 f(".downloader__btn").hasClass("active") || e.preventDefault()
             }),
-            this.userCookie && this.userCookie.server && (t.workerServer = this.userCookie.server,
-            0 == t.workerServer.indexOf("//") && (t.workerServer = "https:" + t.workerServer),
+            this.userCookie && this.userCookie.server && (/*t.workerServer*/apiServer = this.userCookie.server,
+            0 == /*t.workerServer*/apiServer.indexOf("//") && (/*t.workerServer*/apiServer = "https:" + t.workerServer),
             e = this.userCookie.toolUrl.split("?")[0],
             f(".downloader__extra__btn--black").attr("href", e)),
             f(".downloader__extra__btn--black").css("display", "flex"),
             t.api = new n.Api({
                 taskId: t.taskId,
                 tool: null,
-                workerServer: t.workerServer,
+                workerServer: /*t.workerServer*/apiServer,
                 token: t.token
             }),
             this.userCookie ? (t.showDownloadFromCookie(this.userCookie),
@@ -21950,7 +21952,7 @@
             e.download_filename,
             n.dropbox = new r.DropboxDownload({
                 id: "dropbox_file_selector",
-                workerServer: e.server,
+                workerServer: /*e.server*/apiServer,
                 api: n.api,
                 taskId: n.taskId,
                 fileUrl: n.api.getLink("download") + "/" + n.taskId,
@@ -22069,7 +22071,7 @@
         }
         ,
         v.prototype.initAutoDownload = function() {
-            this.userCookie && this.userCookie.server && (this.workerServer = this.userCookie.server,
+            this.userCookie && this.userCookie.server && (/*this.workerServer*/apiServer = this.userCookie.server,
             this.autoDownInterval = setTimeout(function() {
                 window.location = f(".downloader__btn").attr("href")
             }, 5e3))
