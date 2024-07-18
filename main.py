@@ -72,8 +72,8 @@ def error_merge(tool,key,id):
     return "An error occured during "+tool+"<a href='/'>Home</a>"
 
 
-@app.route("/download/<string:key>/<int:id>")
-def success_download(key,id):
+@app.route("/download/<int:id>/<string:key>")
+def success_download(id,key):
     print("id",id)
     return render_template("download.html",url_key=key,url_id=id,manifest=session["manifest"],apiServer="http://localhost")
 
