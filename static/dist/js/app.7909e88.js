@@ -13753,7 +13753,7 @@ var apiFiles = apiServer+"/files/uploads/"
                             pdfjsLib.GlobalWorkerOptions.workerSrc = "/static/js/pdfjs/pdf.worker.min.js";
                             pdfjsLib.getDocument(pdfUrl).promise.then(pdf => {
                                 // Get the first page
-								if(window.location.href.includes('merge')){
+								if(window.location.href.includes('merge') || window.location.href.includes('organize')){
 									pdf.getPage(1).then(page => {
 										//const scale = 1.5; // Adjust scale as needed
 										var canvas = document.getElementById('cover-'+t.id);

@@ -31,7 +31,8 @@ async def before_request_func():
             "tools":[
                 {"merge_pdf":{"title":"Merge PDF","svg":"","description":"Combine PDFs in the order you want with the easiest PDF merger available.","new":True,"category":"ORGANIZE PDF" }},
                 {"split_pdf":{"title":"Split PDF","svg":"","description":"Separate one page or a whole set for easy conversion into independent PDF files.","new":True,"category":"ORGANIZE PDF"}},
-                {"remove_pages":{"title":"Remove Pages","svg":"","description":"Select and remove the PDF pages you don’t need. Get a new file without your deleted pages.","new":True,"category":"ORGANIZE PDF"}}
+                {"remove_pages":{"title":"Remove Pages","svg":"","description":"Select and remove the PDF pages you don’t need. Get a new file without your deleted pages.","new":True,"category":"ORGANIZE PDF"}},
+                {"organize_pdf":{"title":"Organize PDF","svg":"","description":"Sort, add and delete PDF pages.Drag and drop the page thumbnails and sort them in our PDF organizer.","new":True,"category":"ORGANIZE PDF"}}
             ],
             "categories":["ORGANIZE PDF","OPTIMIZE PDF","CONVERT TO PDF","CONVERT FROM PDF","EDIT PDF","PDF SECURITY"]
         }
