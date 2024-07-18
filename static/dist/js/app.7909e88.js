@@ -13359,7 +13359,7 @@ var apiFiles = apiServer+"/files/uploads/"
 				}, 100)
 			}
 		}, m.prototype.goDownload = function(e) {
-			1 != this.stopGoDownload && (/*window.location.href = this.downloadUrl + "/" + this.taskId + "/" + this.getWorkerNumber()*/console.log(e))
+			1 != this.stopGoDownload && (window.location.href = this.downloadUrl + "/" + e.Id + "/" + e.tool/*this.getWorkerNumber()*/)
 		}, m.prototype.getWorkerNumber = function() {
 			return this.workerServer.split(".")[0].replace(/^\D+/g, "")
 		}, m.prototype.goProblem = function(e) {
