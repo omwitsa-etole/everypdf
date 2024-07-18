@@ -30,7 +30,7 @@ async def before_request_func():
             "title": "WebDocEdit",
             "tools":[
                 {"merge_pdf":{"title":"Merge PDF","svg":"","description":"Combine PDFs in the order you want with the easiest PDF merger available.","new":True,"category":"ORGANIZE PDF" }},
-                {"split_pdf":{"title":"Split PDF","svg":"","description":"","new":True,"category":"ORGANIZE PDF"}}
+                {"split_pdf":{"title":"Split PDF","svg":"","description":"Separate one page or a whole set for easy conversion into independent PDF files.","new":True,"category":"ORGANIZE PDF"}}
             ],
             "categories":["ORGANIZE PDF","OPTIMIZE PDF","CONVERT TO PDF","CONVERT FROM PDF","EDIT PDF","PDF SECURITY"]
         }
@@ -234,7 +234,7 @@ def function(title):
                     found = tool[key]
                     found["tool"] = key
     if found != None:
-        return render_template("tool.html",manifest=session["manifest"],tool=found)
+        return render_template("tools/"+found["tool"]+".html",manifest=session["manifest"],tool=found)
     return render_template("tool.html",manifest=session["manifest"],tool=found)
 
 

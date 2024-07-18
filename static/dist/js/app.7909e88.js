@@ -13747,6 +13747,7 @@ var apiFiles = apiServer+"/files/uploads/"
 							r.file = null;
 							n = JSON.parse(n.response);
                             console.log("response",n,t,e);
+							//n.server_filename = apiFiles+n.server_filename;
                             var canvas = document.getElementById('cover-'+t.id);
                             var ctx = canvas.getContext('2d');
                             const pdfUrl = apiFiles+n.server_filename;
