@@ -81,27 +81,21 @@
 </div>
 
     <ul class="chained__list">
+        {%for tool in manifest['tools']%}
+        {%set tool_key=tool.keys() | first %}
+        {%set ico = tool_key.split('_')%}
         <li class="">
-            <a href="/compress_pdf?t={{key}}&amp;w={{id}}" title="Continue to Compress PDF" data-tool="compress" class="chained__list__link link--secondary tooltip tooltip--top" data-title="Continue to Compress PDF">
+            <a href="/{{tool_key}}?t={{key}}&amp;w={{id}}" title="Continue to {{tool[tool_key]['title']}}" data-tool="{{ico[0]}}" class="chained__list__link link--secondary tooltip tooltip--top" data-title="Continue to {{tool[tool_key]['title']}}">
                 <span class="chained__list__link__img">
-                    <i class="ico ico--compress"></i>
+                    <i class="ico ico--{{ico[0]}}"></i>
                 </span>
                 <span class="chained__list__link__text">
-                    Compress PDF                    </span>
+                    {{tool[tool_key]['title']}}                </span>
                 <svg width="13" height="12" fill="none" xmlns="http://www.w3.org/2000/svg" class="chained__list__link__arrow"><path d="M9.334 5.997a.51.51 0 0 0-.043-.207.542.542 0 0 0-.135-.179L4.291 1.155A.554.554 0 0 0 3.898 1a.6.6 0 0 0-.288.07.52.52 0 0 0-.276.454c0 .142.053.267.16.374l4.803 4.41v-.616l-4.804 4.41a.504.504 0 0 0-.159.374c0 .1.025.19.074.27.049.077.116.139.202.185a.6.6 0 0 0 .288.069.607.607 0 0 0 .221-.04.581.581 0 0 0 .178-.115l4.86-4.456a.533.533 0 0 0 .177-.392Z" fill="currentColor"></path></svg>
             </a>
         </li>
-        <li class="">
-            <a href="/split_pdf?t={{key}}&amp;w={{id}}" title="Continue to Split PDF" data-tool="split" class="chained__list__link link--secondary tooltip tooltip--top" data-title="Continue to Split PDF">
-                <span class="chained__list__link__img">
-                    <i class="ico ico--split"></i>
-                </span>
-                <span class="chained__list__link__text">
-                    Split PDF                    </span>
-                <svg width="13" height="12" fill="none" xmlns="http://www.w3.org/2000/svg" class="chained__list__link__arrow"><path d="M9.334 5.997a.51.51 0 0 0-.043-.207.542.542 0 0 0-.135-.179L4.291 1.155A.554.554 0 0 0 3.898 1a.6.6 0 0 0-.288.07.52.52 0 0 0-.276.454c0 .142.053.267.16.374l4.803 4.41v-.616l-4.804 4.41a.504.504 0 0 0-.159.374c0 .1.025.19.074.27.049.077.116.139.202.185a.6.6 0 0 0 .288.069.607.607 0 0 0 .221-.04.581.581 0 0 0 .178-.115l4.86-4.456a.533.533 0 0 0 .177-.392Z" fill="currentColor"></path></svg>
-            </a>
-        </li>
-         
+        {%endfor%}
+        
     </ul>
 
 <div class="chained__more ">
