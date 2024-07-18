@@ -1,0 +1,394 @@
+{%extends 'main.html'%}
+
+{%block content%}
+<script>var apiServer = 'http://localhost';</script>
+<link href="/static/dist/css/app.7909e88.css" rel="stylesheet">
+
+<div class="main">
+    <div class="container">
+    <div class="box">
+        <h1 class="title2">PDFs have been merged!</h1>
+    <div id="download" class="downloader">
+    <div class="downloader__extra">
+        <a href="https://www.{{manifest['title']}}.com/merge_pdf" class="btn-icon active downloader__extra__btn downloader__extra__btn--black tooltip tooltip--top" title="Back to Merge PDF" style="display: flex;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16">
+                <title> back</title>
+                <path d="M6.533 15.065L.438 8.968c-.116-.116-.208-.255-.27-.4a1.27 1.27 0 0 1 .009-.971c.066-.155.16-.296.277-.415l6.21-6.21A1.27 1.27 0 0 1 8.461.947c.49.49.485 1.295-.017 1.797l-4.02 4.02 10.47-.097a1.24 1.24 0 0 1 1.258 1.258 1.3 1.3 0 0 1-1.282 1.282L4.4 9.305l3.947 3.947c.49.492.485 1.295-.017 1.797s-1.306.508-1.797.017z" fill="#fff" fill-rule="nonzero"></path>
+            </svg>
+        </a>
+    </div>
+    <a slot="downloadUrl" class="downloader__btn active" id="pickfiles" href="{{apiServer}}/v1/download/{{key}}">
+        <svg aria-hidden="true" width="26" height="24" data-icon="download" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <path fill="currentColor" d="M216 0h80c13.3 0 24 10.7 24 24v168h87.7c17.8 0 26.7 21.5 14.1 34.1L269.7 378.3c-7.5 7.5-19.8 7.5-27.3 0L90.1 226.1c-12.6-12.6-3.7-34.1 14.1-34.1H192V24c0-13.3 10.7-24 24-24zm296 376v112c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V376c0-13.3 10.7-24 24-24h146.7l49 49c20.1 20.1 52.5 20.1 72.6 0l49-49H488c13.3 0 24 10.7 24 24zm-124 88c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20zm64 0c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20z" class=""></path>
+        </svg>
+        Download merged PDF        </a>
+    <div class="downloader__extra">
+        <a class="btn-icon downloader__extra__btn tooltip tooltip--top active" id="gdrive_file_selector" title="Save to Google Drive">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="16" viewBox="0 0 18 16">
+                <path fill="#FFF" d="M8.7375,5.80725 L3.021,15.70725 L0.12375,10.69725 L5.847,0.795 L8.7375,5.80725 Z M17.865,10.38225 L12.078,10.39125 L6.378,0.489 L12.1725,0.489 L17.865,10.38225 Z M17.87625,10.9875 L14.9865,15.9975 L3.5415,15.99 L6.43425,10.98375 L17.87625,10.9875 Z"></path>
+            </svg>
+        </a>
+        <a class="btn-icon downloader__extra__btn tooltip tooltip--bottom active" id="dropbox_file_selector" title="Save to Dropbox">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+                <path fill="#FFF" d="M5.3475,0.7035 L0.096,4.125 L3.708,7.03725 L9.018,3.765 L5.3475,0.7035 Z M17.904,4.14 L12.66525,0.7275 L9.01875,3.7725 L14.29875,7.03875 L17.904,4.14 Z M9.01875,10.305 L12.66525,13.35975 L17.904,9.945 L14.2995,7.0395 L9.01875,10.305 Z M0.096,9.9585 L5.3475,13.35975 L9.01875,10.305 L3.70875,7.0455 L0.096,9.9585 Z M9.01875,10.9635 L5.35575,14.0385 L3.786,13.02 L3.786,14.16 L9.01875,17.30475 L14.271,14.15175 L14.271,13.0125 L12.693,14.031 L9.01875,10.9635 Z"></path>
+            </svg>
+        </a>
+    </div>
+    <div class="downloader__extra">
+        <a class="btn-icon downloader__extra__btn tooltip tooltip--top active" id="sharelink" title="Share download link or scan QR">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18">
+                <path d="M10.963 7.004a4.12 4.12 0 0 0-.704-.566 4.19 4.19 0 0 0-2.261-.662 4.17 4.17 0 0 0-2.964 1.228l-3.8 3.812a4.19 4.19 0 0 0-1.225 2.959C0 16.1 1.875 17.967 4.2 17.968a4.18 4.18 0 0 0 2.96-1.222l3.144-3.144a.3.3 0 0 0-.213-.512h-.12a5.04 5.04 0 0 1-1.916-.371.3.3 0 0 0-.326.066L5.46 15.05a1.8 1.8 0 0 1-2.542 0 1.8 1.8 0 0 1 0-2.542l3.824-3.82a1.8 1.8 0 0 1 2.54 0 1.23 1.23 0 0 0 1.683 0 1.2 1.2 0 0 0 .347-.761 1.2 1.2 0 0 0-.347-.922zm5.777-5.776a4.19 4.19 0 0 0-5.928 0L7.67 4.366a.3.3 0 0 0 .219.512H8a5.03 5.03 0 0 1 1.913.374.3.3 0 0 0 .326-.066l2.255-2.252a1.8 1.8 0 0 1 2.542 0 1.8 1.8 0 0 1 0 2.542l-2.8 2.806-.024.027-.982.976a1.8 1.8 0 0 1-2.54 0 1.23 1.23 0 0 0-1.683 0 1.2 1.2 0 0 0 0 1.689c.347.348.752.632 1.198.838l.2.08.192.072.192.063.177.048.362.075a4.17 4.17 0 0 0 .446.042h.228l.18-.02.213-.018h.102l.207-.03.096-.018.174-.036h.033a4.19 4.19 0 0 0 1.943-1.102l3.812-3.812c1.637-1.637 1.637-4.3 0-5.928z" fill="#fff" fill-rule="nonzero"></path>
+            </svg>
+        </a>
+        <a class="btn-icon downloader__extra__btn tooltip tooltip--bottom active" id="delete" title="Delete it now">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="19">
+                <path d="M12.37 2.017H9.164V1c0-.557-.457-1-1.02-1H5.43c-.56 0-1.018.453-1.018 1v1H1.207A1.2 1.2 0 0 0 0 3.213v1.494h13.576V3.213c0-.66-.542-1.196-1.207-1.196zm-3.884 0H5.1V1c0-.186.152-.336.34-.336h2.715c.187 0 .34.15.34.336v1zM.68 17.413c0 .7.568 1.254 1.266 1.254h9.687c.698 0 1.266-.562 1.266-1.254V6.228H.68v11.185" fill="#fff" fill-rule="evenodd"></path>
+            </svg>
+        </a>
+    </div>
+</div>
+<div class="downloader__info"></div>
+<div class="downloader__warning">
+    <div class="repaired">
+        Some files have been repaired            <ul class="repaired__list">
+
+        </ul>
+    </div>
+    <div class="damaged">
+        Some files haven't  been processed            <ul class="damaged__list">
+
+        </ul>
+    </div>
+    <div class="conformance">
+        Some files have been downgraded to a laxer PDF/A conformance            <ul class="conformance__list">
+
+        </ul>
+    </div>
+</div>
+</div>
+    <div class="ad-layout">
+        <div class="ad-layout__left">
+                <div id="ad-left" class="add">
+  
+                </div>
+        </div>
+        <div class="ad-layout__mid">
+                                
+
+<div class="chained" style="visibility: visible;">
+<div class="chained__title">
+    <h2 class="title4">Continue to...</h2>
+</div>
+
+    <ul class="chained__list">
+        <li class="">
+            <a href="/compress_pdf?t={{key}}&amp;w={{id}}" title="Continue to Compress PDF" data-tool="compress" class="chained__list__link link--secondary tooltip tooltip--top" data-title="Continue to Compress PDF">
+                <span class="chained__list__link__img">
+                    <i class="ico ico--compress"></i>
+                </span>
+                <span class="chained__list__link__text">
+                    Compress PDF                    </span>
+                <svg width="13" height="12" fill="none" xmlns="http://www.w3.org/2000/svg" class="chained__list__link__arrow"><path d="M9.334 5.997a.51.51 0 0 0-.043-.207.542.542 0 0 0-.135-.179L4.291 1.155A.554.554 0 0 0 3.898 1a.6.6 0 0 0-.288.07.52.52 0 0 0-.276.454c0 .142.053.267.16.374l4.803 4.41v-.616l-4.804 4.41a.504.504 0 0 0-.159.374c0 .1.025.19.074.27.049.077.116.139.202.185a.6.6 0 0 0 .288.069.607.607 0 0 0 .221-.04.581.581 0 0 0 .178-.115l4.86-4.456a.533.533 0 0 0 .177-.392Z" fill="currentColor"></path></svg>
+            </a>
+        </li>
+        <li class="">
+            <a href="/split_pdf?t={{key}}&amp;w={{id}}" title="Continue to Split PDF" data-tool="split" class="chained__list__link link--secondary tooltip tooltip--top" data-title="Continue to Split PDF">
+                <span class="chained__list__link__img">
+                    <i class="ico ico--split"></i>
+                </span>
+                <span class="chained__list__link__text">
+                    Split PDF                    </span>
+                <svg width="13" height="12" fill="none" xmlns="http://www.w3.org/2000/svg" class="chained__list__link__arrow"><path d="M9.334 5.997a.51.51 0 0 0-.043-.207.542.542 0 0 0-.135-.179L4.291 1.155A.554.554 0 0 0 3.898 1a.6.6 0 0 0-.288.07.52.52 0 0 0-.276.454c0 .142.053.267.16.374l4.803 4.41v-.616l-4.804 4.41a.504.504 0 0 0-.159.374c0 .1.025.19.074.27.049.077.116.139.202.185a.6.6 0 0 0 .288.069.607.607 0 0 0 .221-.04.581.581 0 0 0 .178-.115l4.86-4.456a.533.533 0 0 0 .177-.392Z" fill="currentColor"></path></svg>
+            </a>
+        </li>
+         
+    </ul>
+
+<div class="chained__more ">
+    <button class="link link--secondary">See more</button>
+</div>
+</div>
+                            <div>
+<h4 class="title4">How can you thank us? Spread the word!</h4>
+<h5 class="paragraph">
+    Please share the tool to inspire more productive people!    </h5>
+<ul class="share">
+    <li>
+        <a class="share__link small link--secondary" onclick="window.ev('sendOnce', 'event', 'click', 'download-share', 'trustpilot');
+var height = 500;
+var width = 700;
+var left = ( screen.width - width ) / 2;
+var top = ( screen.height - height ) / 2;
+left += window.screenX;
+var features ='width=' + width + ', height=' + height + ',location=0, resizable, scrollbars, toolbar=0, menubar=0, top='+ top + ', left=' + left;
+window.open('https://www.trustpilot.com/evaluate/{{manifest["title"]|lower}}.com', 'popupwindow', features);">
+            <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_6240_6700)"><path d="M16.9982 6.11469H10.5078L8.50293 0L6.49194 6.11469L0.00146484 6.10859L5.2578 9.89141L3.24659 16L8.50293 12.2233L13.7529 16L11.7481 9.89141L16.9982 6.11469Z" fill="#00B67A"></path><path d="M12.1992 11.2744L11.7481 9.89136L8.50293 12.2232L12.1992 11.2744Z" fill="#005128"></path></g><defs><clipPath id="clip0_6240_6700"><rect width="17" height="16" fill="white"></rect></clipPath></defs></svg>                Trustpilot
+        </a>
+    </li>
+    <li>
+        <a class="share__link small link--secondary" onclick="window.ev('sendOnce', 'event', 'click', 'download-share', 'facebook');
+var height = 500;
+var width = 700;
+var left = ( screen.width - width ) / 2;
+var top = ( screen.height - height ) / 2;
+left += window.screenX;
+var features ='width=' + width + ', height=' + height + ',location=0, resizable, scrollbars, toolbar=0, menubar=0, top='+ top + ', left=' + left;
+window.open('http://www.facebook.com/sharer.php?u=https://www.{{manifest["title"]|lower}}.com/merge_pdf', 'popupwindow', features);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" fill="none"><path fill="#3B5998" d="M6.964 8.832H5.38c-.256 0-.336-.096-.336-.336V6.56c0-.256.096-.336.336-.336h1.584V4.816c0-.64.112-1.248.432-1.808.336-.576.816-.96 1.424-1.184.4-.144.8-.208 1.232-.208h1.568c.224 0 .32.096.32.32V3.76c0 .224-.096.32-.32.32-.432 0-.864 0-1.296.016-.432 0-.656.208-.656.656-.016.48 0 .944 0 1.44h1.856c.256 0 .352.096.352.352V8.48c0 .256-.08.336-.352.336H9.668v5.216c0 .272-.08.368-.368.368h-2c-.24 0-.336-.096-.336-.336V8.832Z"></path></svg>                Facebook
+        </a>
+    </li>
+    <li>
+        <a class="share__link small link--secondary" onclick="popUp=window.open('http://twitter.com/intent/tweet?url=https://www.{{manifest["title"]|lower}}.com/merge_pdf&amp;text=Merge PDF files online. Free service to merge PDF&amp;via={{manifest['title']}}_com&amp;hashtags={{manifest['title']}}','popupwindow','scrollbars=yes,width=700,height=400');popUp.focus();return false">
+            <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.738 2h1.994L9.377 7.083 14.5 14h-4.011L7.346 9.805 3.751 14H1.757l4.658-5.437L1.5 2h4.113l2.84 3.834L11.738 2Zm-.7 10.781h1.105l-7.13-9.627H3.828l7.21 9.627Z" fill="#161616"></path></svg>                Twitter
+        </a>
+    </li>
+    <li>
+        <a class="share__link small link--secondary" onclick="popUp=window.open('http://www.linkedin.com/shareArticle?url=https://www.{{manifest["title"]|lower}}.com/merge_pdf','popupwindow','scrollbars=yes,width=700,height=400');popUp.focus();return false">
+            <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M3.403 4.56c.774 0 1.402-.572 1.402-1.28 0-.707-.628-1.28-1.402-1.28C2.628 2 2 2.573 2 3.28c0 .708.628 1.28 1.403 1.28ZM2 12.771h2.516V5.515H2v7.256ZM8.027 9.057c0-.832.394-1.646 1.335-1.646.942 0 1.173.814 1.173 1.626V13h2.505V8.875c0-2.866-1.694-3.36-2.736-3.36-1.042 0-1.616.353-2.277 1.206v-.977H5.515V13h2.512V9.057Z" fill="#0976B4"></path></svg>                LinkedIn
+        </a>
+    </li>
+        </ul>
+</div>
+        </div>
+        <div class="ad-layout__right">
+                <div id="ad-right" class="add">
+    
+                </div>
+        </div>
+    </div>
+</div>
+
+        <div class="block  block--white">
+        <div class="block__container">
+            <div class="block__body">
+                <h2 class="title2">The PDF software trusted by millions of users</h2>
+                <div class="row justify-content-center">
+                    <div class="col-6">
+                        <p>{{manifest['title']}} is your number 1 web app for editing PDF with ease. Enjoy all the tools you need to work efficiently with your digital documents while keeping your data safe and secure.</p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="block__body js-scroll fade-in-bottom">
+                <style>
+.binary-link img {
+    margin-bottom: 12px;
+    margin-top: 24px;
+}
+.binary-link p {
+    color: #161616;
+}
+.binary-link {
+    text-decoration: none;
+}
+.binary-link:hover p{
+    color:#E5322D;
+}
+</style>
+<div class="row align-content-center justify-content-around">
+
+<div class="col-md-2">
+    <a class="binary-link" href="/desktop#windows" title="Windows">
+        <img src="/static/img/desktop/windows.svg" alt="Windows">
+        <p>Windows</p>
+    </a>
+</div>
+<div class="col-md-2">
+    <a class="binary-link" href="/" title="Web">
+        <img src="/static/img/desktop/web.svg" alt="Web">
+        <p>Web</p>
+    </a>
+</div>
+</div>                </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade text-left" id="linkModal" tabindex="-1" role="dialog" aria-labelledby="Link Modal" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+<div class="dialog__body">
+<div class="dialog__back" style="display: none;">
+    <span class="dialog__back__icon"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="11"><path d="M.616 5.005l4.526-4.3c.288-.273.754-.273 1.042 0s.288.717 0 .99L2.18 5.5l4.004 3.805c.288.273.288.716 0 .99s-.754.273-1.042 0l-4.526-4.3A.68.68 0 0 1 .4 5.5a.68.68 0 0 1 .216-.495z" fill="#e5322d" fill-rule="evenodd"></path></svg></span>
+    <span class="dialog__back__text">Back</span>
+</div>
+<div class="dialog__close" data-dismiss="modal" aria-label="Close"></div>
+<h3 class="title3">Copy &amp; Send download link</h3>
+<div class="form__group form__group--btn form__group--btn-lg">
+    <div class="input--icon input--world">
+        <input id="dlink" type="text" class="input" value="" onclick="this.select();" readonly="true">
+    </div>
+    <button class="btn" id="autoCopy">
+        <svg aria-hidden="true" width="12" height="12" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style="margin-right: 8px;">
+            <path fill="currentColor" d="M320 448v40c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V120c0-13.255 10.745-24 24-24h72v296c0 30.879 25.121 56 56 56h168zm0-344V0H152c-13.255 0-24 10.745-24 24v368c0 13.255 10.745 24 24 24h272c13.255 0 24-10.745 24-24V128H344c-13.2 0-24-10.8-24-24zm120.971-31.029L375.029 7.029A24 24 0 0 0 358.059 0H352v96h96v-6.059a24 24 0 0 0-7.029-16.97z" class=""></path>
+        </svg>
+        Copy        </button>
+</div>
+</div>
+<div class="dialog__body">
+<h3 class="title3">Instantly download to your phone</h3>
+<!--<p>Download processed files to your device by scanning the QR code</p>-->
+<div class="d-flex justify-content-center">
+    <div id="qrcode" style="margin: 32px 32px 0;" title="{{apiServer}}/v1/download/{{key}}"><canvas width="250" height="250" style="display: none;"></canvas>
+        <img src="data:image/png;base64,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" style="display: block;"></div>
+    <!--
+        <div>
+            <ul class="listdot" style="margin: 24px auto 0; max-width: 350px; text-align: left;">
+                <li>Open up the camera on your device.</li>
+                <li>Aline your device's camera with the QR.</li>
+                <li>Tap the notification on your screen to  enable direct transfer of files.</li>
+            </ul>
+        </div>
+        -->
+</div>
+
+
+        <script type="text/javascript" src="/static/js/qrcode.min.js"></script>
+            <script type="text/javascript">
+        var qrcode = null;
+
+        function printQr() {
+            var link = document.getElementById("pickfiles").getAttribute('href');
+            if( link.indexOf("http") !== 0 ) {
+                link = 'https:' + link;
+            }
+            if (!QRCode) {
+                return
+            }
+            if (qrcode == null) {
+                qrcode = new QRCode(document.getElementById("qrcode"), {
+                    text: link,
+                    width: 250,
+                    height: 250,
+                    //colorDark: "#E5322D",
+                    colorDark: "#383E45",
+                    colorLight: "#ffffff",
+                    correctLevel: QRCode.CorrectLevel.M
+                });
+            } else {
+                qrcode.makeCode(link);
+            }
+        }
+
+        function waitForLink() {
+            var link = document.getElementById("pickfiles").getAttribute('href');
+            if (/javascript/.test(link)) {
+                setTimeout(function () {
+                    waitForLink();
+                }, 200)
+            } else {
+                printQr();
+            }
+        }
+
+        printQr();
+    </script>
+</div>
+    </div></div></div>
+    <!-- Modals -->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="File available time" aria-hidden="true">
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="dialog__header">
+<h5 class="dialog__title">File available time</h5>
+<div class="dialog__back" style="display: none;">
+    <span class="dialog__back__icon"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="11"><path d="M.616 5.005l4.526-4.3c.288-.273.754-.273 1.042 0s.288.717 0 .99L2.18 5.5l4.004 3.805c.288.273.288.716 0 .99s-.754.273-1.042 0l-4.526-4.3A.68.68 0 0 1 .4 5.5a.68.68 0 0 1 .216-.495z" fill="#e5322d" fill-rule="evenodd"></path></svg></span>
+    <span class="dialog__back__text">Back</span>
+</div>
+<div class="dialog__close" data-dismiss="modal" aria-label="Close"></div>
+</div>
+<div class="dialog__body">
+<p>All your files will be automatically deleted after</p>
+<div id="countdown" class="countdown">
+    <div class="countdown__item">
+        <div class="countdown__item__time">1</div>
+        <div class="countdown__item__period">Hours</div>
+    </div>
+    <div class="countdown__item">
+        <div class="countdown__item__time">56</div>
+        <div class="countdown__item__period">Minutes</div>
+    </div>
+    <div class="countdown__item">
+        <div class="countdown__item__time">47</div>
+        <div class="countdown__item__period">Seconds</div>
+    </div>
+</div>
+</div>
+<div class="dialog__footer">
+<button type="button" class="btn btn-secondary" data-dismiss="modal" id="btnDelete">Delete it now</button>
+</div>        </div>
+</div>
+</div>
+
+<script>
+    var downloadMessages = {
+        'TaskSuccess': 'PDFs have been merged!',
+        'TaskWaiting': 'Files for the task have been uploaded but processing order has not been received yet.',
+        'TaskProcessing': 'This task is currently processing files.',
+        'TaskSuccessWithWarnings': 'This task has already been processed successfully with warnings.',
+        'TaskError': 'This task has already been processed successfully with warnings.',
+        'TaskDeleted': 'This task has already been deleted.',
+        'TaskNotFound': 'Task not found.'
+    };
+
+    var iloveLang = {
+        'Back to homepage': 'Back to homepage',
+        'Saved': 'Saved',
+        'Image': 'Images',
+        'Your ${fileType} is now ${percent}% smaller!': 'Your ${fileType} are now ${percent}% smaller!',
+        'Damaged/Corrupted File': 'Damaged/Corrupted File',
+        'Repaired File': 'Repaired File',
+        'We’re sorry. Something went wrong.': 'We’re sorry. Something went wrong.',
+        'alreadyCompressed': 'Sorry! This file cannot be compressed any more without quality loss.',
+
+        'File number exceeded': 'File number exceeded',
+        'File size exceeded': 'File size exceeded',
+        'Sorry, we are not ready for that.': 'Sorry, we are not ready for that.',
+        'superlimitWhoa': "You\'ve hit the limit, even for Premium. Whoa!",
+        'superlimitDownload': "Unfortunately, our system doesn\'t have enough capacity to process your task. For now.",
+        //Quan hi hagi Desktop App
+        //'superlimitDownload': 'Get our Desktop App to edit your files without any restrictions.',
+        'Original size (in pixels) for this image': 'Original size (in pixels) for this image',
+        'This image will be resized to this size (in pixels)': 'This image will be resized to this size (in pixels)',
+        'Uploading...': "Uploading...",
+        '1 file': '1 file',
+        '1 mb': '1 mb',
+        '${limit} files': '${limit} files',
+        '${limit} mb': '${limit} mb',
+        'registeredLevel': 'registered users',
+        'premiumLevel': 'premium users',
+        'publicLevel': 'non registered users',
+        'limitTaskMsg': "This connected task is <strong>limited to ${currentLimit}</strong> for ${currentLevel}. <strong>${nextLevel} can upload up to ${nextLimit}</strong>.",
+        'Limit exceeded': 'Upgrade account',
+    };
+
+    var ilovePdfConfig = {
+        action: 'download',
+        workerServer: apiServer,
+        taskId: 's49qmk4lhttqjq59949hnkcr9rk1k4h07q89wlmpwy33skb819z1mghgb71k8fzcc4l3y89z8nc99cdgpztf4k6dgskhvpcw4dzhp3gqrcdvjpml60rk0jymAAy9yf2f2kzjfmp4sy7khm2rzs0fqrl9A74rzj8330x3cwlvwxgxwb8mth21',
+        token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJhdWQiOiIiLCJpYXQiOjE1MjMzNjQ4MjQsIm5iZiI6MTUyMzM2NDgyNCwianRpIjoicHJvamVjdF9wdWJsaWNfYzkwNWRkMWMwMWU5ZmQ3NzY5ODNjYTQwZDBhOWQyZjNfT1Vzd2EwODA0MGI4ZDJjN2NhM2NjZGE2MGQ2MTBhMmRkY2U3NyJ9.qvHSXgCJgqpC4gd6-paUlDLFmg0o2DsOvb1EUYPYx_E',
+        tool: 'merge',
+        subtool: '',
+        realTool: 'merge',
+        fileLimits: {"merge":{"mb":100,"files":25},"split":{"mb":100,"files":1},"compress":{"mb":200,"files":2},"officepdf":{"mb":15,"files":1},"wordpdf":{"mb":15,"files":1},"powerpointpdf":{"mb":15,"files":1},"excelpdf":{"mb":15,"files":1},"pdfoffice":{"mb":15,"files":1},"pdfword":{"mb":15,"files":1},"pdfocr":{"mb":15,"files":1,"pages":50},"pdfpowerpoint":{"mb":15,"files":1},"pdfexcel":{"mb":15,"files":1,"pages":500},"pdfjpg":{"mb":25,"files":2},"imagepdf":{"mb":40,"files":20},"pagenumber":{"mb":100,"files":2},"watermark":{"mb":100,"files":2},"rotate":{"mb":100,"files":20},"unlock":{"mb":100,"files":2},"protect":{"mb":100,"files":2},"pdfa":{"mb":100,"files":1},"repair":{"mb":100,"files":1},"organize":{"mb":100,"files":5},"redact":{"mb":400,"files":1},"resizeimage":{"mb":200,"files":30},"compressimage":{"mb":200,"files":30},"cropimage":{"mb":90,"files":1},"converttojpg":{"mb":200,"files":30},"convertfromjpg":{"mb":200,"files":30},"rotateimage":{"mb":200,"files":30},"watermarkimage":{"mb":200,"files":30},"memeimage":{"mb":200,"files":1},"editimage":{"mb":50,"files":1},"editpdf":{"mb":100,"files":1},"sign":{"mb":50,"files":3},"upscaleimage":{"mb":6,"files":3,"pxsize":33177600},"removebackgroundimage":{"mb":6,"files":3,"pxsize":17612800},"blurfaceimage":{"mb":100,"files":10}},
+        allFileLimits: {"limits":{"merge":{"mb":100,"files":25},"split":{"mb":100,"files":1},"compress":{"mb":200,"files":2},"officepdf":{"mb":15,"files":1},"wordpdf":{"mb":15,"files":1},"powerpointpdf":{"mb":15,"files":1},"excelpdf":{"mb":15,"files":1},"pdfoffice":{"mb":15,"files":1},"pdfword":{"mb":15,"files":1},"pdfocr":{"mb":15,"files":1,"pages":50},"pdfpowerpoint":{"mb":15,"files":1},"pdfexcel":{"mb":15,"files":1,"pages":500},"pdfjpg":{"mb":25,"files":2},"imagepdf":{"mb":40,"files":20},"pagenumber":{"mb":100,"files":2},"watermark":{"mb":100,"files":2},"rotate":{"mb":100,"files":20},"unlock":{"mb":100,"files":2},"protect":{"mb":100,"files":2},"pdfa":{"mb":100,"files":1},"repair":{"mb":100,"files":1},"organize":{"mb":100,"files":5},"redact":{"mb":400,"files":1},"resizeimage":{"mb":200,"files":30},"compressimage":{"mb":200,"files":30},"cropimage":{"mb":90,"files":1},"converttojpg":{"mb":200,"files":30},"convertfromjpg":{"mb":200,"files":30},"rotateimage":{"mb":200,"files":30},"watermarkimage":{"mb":200,"files":30},"memeimage":{"mb":200,"files":1},"editimage":{"mb":50,"files":1},"editpdf":{"mb":100,"files":1},"sign":{"mb":50,"files":3},"upscaleimage":{"mb":6,"files":3,"pxsize":33177600},"removebackgroundimage":{"mb":6,"files":3,"pxsize":17612800},"blurfaceimage":{"mb":100,"files":10}},"registered_limits":{"merge":{"mb":100,"files":25},"split":{"mb":100,"files":1},"compress":{"mb":200,"files":2},"officepdf":{"mb":15,"files":1},"wordpdf":{"mb":15,"files":1},"powerpointpdf":{"mb":15,"files":1},"excelpdf":{"mb":15,"files":1},"pdfoffice":{"mb":15,"files":1},"pdfword":{"mb":15,"files":1},"pdfocr":{"mb":15,"files":1,"pages":50},"pdfpowerpoint":{"mb":15,"files":1},"pdfexcel":{"mb":15,"files":1,"pages":500},"pdfjpg":{"mb":25,"files":2},"imagepdf":{"mb":40,"files":20},"pagenumber":{"mb":100,"files":2},"watermark":{"mb":100,"files":2},"rotate":{"mb":100,"files":20},"unlock":{"mb":100,"files":2},"protect":{"mb":100,"files":2},"pdfa":{"mb":100,"files":1},"repair":{"mb":100,"files":1},"organize":{"mb":100,"files":5},"redact":{"mb":400,"files":1},"resizeimage":{"mb":200,"files":30},"compressimage":{"mb":200,"files":30},"cropimage":{"mb":90,"files":1},"converttojpg":{"mb":200,"files":30},"convertfromjpg":{"mb":200,"files":30},"rotateimage":{"mb":200,"files":30},"watermarkimage":{"mb":200,"files":30},"memeimage":{"mb":200,"files":1},"editimage":{"mb":50,"files":1},"editpdf":{"mb":100,"files":1},"sign":{"mb":50,"files":3},"upscaleimage":{"mb":6,"files":3,"pxsize":33177600},"removebackgroundimage":{"mb":6,"files":3,"pxsize":17612800},"blurfaceimage":{"mb":100,"files":10}},"premium_limits":{"merge":{"mb":4000,"files":500},"split":{"mb":4000,"files":1},"compress":{"mb":4000,"files":10},"officepdf":{"mb":4000,"files":10},"wordpdf":{"mb":4000,"files":10},"powerpointpdf":{"mb":4000,"files":10},"excelpdf":{"mb":4000,"files":10},"pdfword":{"mb":4000,"files":10},"pdfocr":{"mb":4000,"files":10,"pages":1000},"pdfpowerpoint":{"mb":4000,"files":10},"pdfexcel":{"mb":4000,"files":10,"pages":1000},"pdfoffice":{"mb":4000,"files":10},"pdfjpg":{"mb":4000,"files":10},"imagepdf":{"mb":4000,"files":80},"pagenumber":{"mb":4000,"files":10},"watermark":{"mb":4000,"files":10},"rotate":{"mb":4000,"files":80},"unlock":{"mb":4000,"files":10},"protect":{"mb":4000,"files":80},"pdfa":{"mb":4000,"files":10},"repair":{"mb":4000,"files":10},"organize":{"mb":4000,"files":20},"redact":{"mb":400,"files":1},"resizeimage":{"mb":4000,"files":120},"compressimage":{"mb":4000,"files":120},"cropimage":{"mb":4000,"files":1},"converttojpg":{"mb":4000,"files":120},"convertfromjpg":{"mb":4000,"files":120},"rotateimage":{"mb":4000,"files":120},"watermarkimage":{"mb":4000,"files":120},"memeimage":{"mb":4000,"files":1},"editimage":{"mb":50,"files":1},"editpdf":{"mb":100,"files":1},"sign":{"mb":50,"files":5},"upscaleimage":{"mb":6,"files":3,"pxsize":33177600},"removebackgroundimage":{"mb":6,"files":3,"pxsize":17612800},"blurfaceimage":{"mb":4000,"files":120}},"temp_limits":{"merge":{"mb":1000,"files":80},"split":{"mb":1000,"files":1},"compress":{"mb":1000,"files":3},"officepdf":{"mb":1000,"files":3},"wordpdf":{"mb":100,"files":3},"powerpointpdf":{"mb":100,"files":3},"excelpdf":{"mb":100,"files":3},"pdfword":{"mb":100,"files":1},"pdfocr":{"mb":100,"files":1,"pages":100},"pdfpowerpoint":{"mb":100,"files":1},"pdfexcel":{"mb":100,"files":1,"pages":500},"pdfoffice":{"mb":100,"files":1},"pdfjpg":{"mb":100,"files":3},"imagepdf":{"mb":1000,"files":80},"pagenumber":{"mb":1000,"files":3},"watermark":{"mb":1000,"files":3},"rotate":{"mb":1000,"files":30},"unlock":{"mb":1000,"files":10},"protect":{"mb":1000,"files":5},"pdfa":{"mb":100,"files":1},"repair":{"mb":1000,"files":2},"organize":{"mb":1000,"files":5},"redact":{"mb":400,"files":1},"resizeimage":{"mb":1000,"files":60},"compressimage":{"mb":1000,"files":60},"cropimage":{"mb":1000,"files":1},"converttojpg":{"mb":5000,"files":60},"convertfromjpg":{"mb":1000,"files":60},"rotateimage":{"mb":1000,"files":60},"watermarkimage":{"mb":1000,"files":60},"memeimage":{"mb":1000,"files":1},"editimage":{"mb":50,"files":1},"editpdf":{"mb":100,"files":1},"sign":{"mb":50,"files":3},"upscaleimage":{"mb":6,"files":3,"pxsize":33177600},"removebackgroundimage":{"mb":6,"files":3,"pxsize":17612800},"blurfaceimage":{"mb":150,"files":15}}},
+        level: 'user',
+        user: null,
+        fp: 1,
+        fpt: 7        };
+
+    ev('send', 'event', 'user', 'process', 'merge');
+    ev('event', 'process', {tool: 'merge'});
+</script>
+
+</div>
+
+<div class="footer">
+    <div class="footer__copy">
+        &copy; {{manifest['title']}} 2024 &reg; - Your PDF Editor    </div>
+</div>       
+<script src="/static/dist/js/app.7909e88.js" async></script>
+
+<script src="/static/dist/js/download.7909e88.js" async></script>
+
+{%endblock%}

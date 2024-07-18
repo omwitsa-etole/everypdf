@@ -71,6 +71,11 @@ def paypal_pay():
 def error_merge(tool,key,id):
     return "An error occured during "+tool+"<a href='/'>Home</a>"
 
+
+@app.route("/download/<string:key>/<int:id>")
+def success_download(key,id):
+    return render_template("download.html",key=key,id=id,manifest=session["manifest"],apiServer="http://localhost")
+
 @app.route("/")
 def index():
     return render_template("index.html",manifest=session["manifest"])
