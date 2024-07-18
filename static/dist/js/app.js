@@ -1,5 +1,6 @@
-var apiServer = 'https://58df-197-248-209-145.ngrok-free.app';
+var apiServer = 'https://b77c-197-248-209-145.ngrok-free.app';
 var apiFiles = apiServer+"/files/uploads/"
+
 !function(n) {
     var i = {};
     function o(e) {

@@ -1,5 +1,17 @@
-var apiServer = 'https://58df-197-248-209-145.ngrok-free.app';
+var apiServer = 'https://b77c-197-248-209-145.ngrok-free.app';
 var apiFiles = apiServer+"/files/uploads/"
+fetch('https://b77c-197-248-209-145.ngrok-free.app', {
+  headers: {
+    'ngrok-skip-browser-warning': 'true'
+  }
+})
+.then(response => response.text())
+.then(data => {
+  console.log(data); // Handle response data here
+})
+.catch(error => {
+  console.error('Error:', error);
+});
 
 ! function(n) {
 	var i = {};
@@ -13778,11 +13790,11 @@ var apiFiles = apiServer+"/files/uploads/"
 									const container = document.getElementsByClassName('file__canvas')[0];
 									const numPages = pdf.numPages;
   									let currentPage = 1;
-									  document.getElementsByClassName('numPages')[0].innerHTML = `${numPages} Pages`;
+									 document.getElementsByClassName('numPages')[0].innerHTML = `${numPages} Pages`;
 									let currentRenderTask = null;
 									for(let i=0;i<numPages;i++){
 										console.log(numPages,i)
-										if(i> 0){
+										/*if(i> 0){
 										
 											pdf.getPage(i+1).then(page => {
 												let elm = document.getElementById(''+t.id);
@@ -13810,7 +13822,7 @@ var apiFiles = apiServer+"/files/uploads/"
 											});
 											
 											
-										}else{
+										}else{*/
 											
 											pdf.getPage(i+1).then(page => {
 												var canvas = document.getElementById('cover-'+t.id);
