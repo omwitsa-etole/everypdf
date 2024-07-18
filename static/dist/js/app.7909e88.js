@@ -13748,31 +13748,105 @@ var apiFiles = apiServer+"/files/uploads/"
 							n = JSON.parse(n.response);
                             console.log("response",n,t,e);
 							//n.server_filename = apiFiles+n.server_filename;
-                            var canvas = document.getElementById('cover-'+t.id);
-                            var ctx = canvas.getContext('2d');
+                            
                             const pdfUrl = apiFiles+n.server_filename;
                             pdfjsLib.GlobalWorkerOptions.workerSrc = "/static/js/pdfjs/pdf.worker.min.js";
                             pdfjsLib.getDocument(pdfUrl).promise.then(pdf => {
                                 // Get the first page
-                                pdf.getPage(1).then(page => {
-                                    //const scale = 1.5; // Adjust scale as needed
-                                    
-                                    const originalViewport = page.getViewport({ scale:1 });
-                                    const scaleWidth = canvas.width / originalViewport.width;
-                                    const scaleHeight = canvas.height / originalViewport.height;
-                                    const scale = Math.min(scaleWidth, scaleHeight);
-                                    const viewport = page.getViewport({ scale });
-                                    // Set canvas dimensions
-                                    //canvas.width = viewport.width;
-                                    //canvas.height = viewport.height;
-                            
-                                    // Render PDF page into canvas context
-                                    const renderContext = {
-                                        canvasContext: ctx,
-                                        viewport: viewport,
-                                    };
-                                    page.render(renderContext);
-                                });
+								if(window.location.href.includes('merge')){
+									pdf.getPage(1).then(page => {
+										//const scale = 1.5; // Adjust scale as needed
+										var canvas = document.getElementById('cover-'+t.id);
+                            			var ctx = canvas.getContext('2d');
+										const originalViewport = page.getViewport({ scale:1 });
+										const scaleWidth = canvas.width / originalViewport.width;
+										const scaleHeight = canvas.height / originalViewport.height;
+										const scale = Math.min(scaleWidth, scaleHeight);
+										const viewport = page.getViewport({ scale });
+										// Set canvas dimensions
+										//canvas.width = viewport.width;
+										//canvas.height = viewport.height;
+								
+										// Render PDF page into canvas context
+										const renderContext = {
+											canvasContext: ctx,
+											viewport: viewport,
+										};
+										page.render(renderContext);
+									});
+								}else{
+									const container = document.getElementsByClassName('file__canvas')[0];
+									const numPages = pdf.numPages;
+  									let currentPage = 1;
+									  document.getElementsByClassName('numPages')[0].innerHTML = `${numPages} Pages`;
+									let currentRenderTask = null;
+									for(let i=0;i<numPages;i++){
+										console.log(numPages,i)
+										if(i> 0){
+											setTimeout(()=>{
+												if (currentRenderTask) {
+													//currentRenderTask.cancel();
+												}
+												pdf.getPage(i+1).then(page => {
+													let elm = document.getElementById(''+t.id);
+													elm.style.width = `${elm.clientWidth + 100}`;
+													var newcanvas = document.createElement('canvas');
+													var newctx = canvas.getContext('2d');
+													newcanvas.setAttribute("class","pdf pdf");
+													newcanvas.setAttribute("id","canvas-"+i)
+													newcanvas.width = 99;
+													newcanvas.height = 140;
+													container.appendChild(newcanvas);
+													const originalViewport = page.getViewport({ scale:1 });
+													const scaleWidth = newcanvas.width / originalViewport.width;
+													const scaleHeight = newcanvas.height / originalViewport.height;
+													const scale = Math.min(scaleWidth, scaleHeight);
+													const viewport = page.getViewport({ scale });
+													
+													const renderContext = {
+														canvasContext: newctx,
+														viewport: viewport,
+													};
+													if (currentRenderTask && !currentRenderTask.cancelled) {
+													currentRenderTask.promise.then(() => {
+														currentRenderTask = page.render(renderContext);
+													});
+													} else {
+													currentRenderTask = page.render(renderContext);
+													}
+													
+												});
+											},1501)
+											
+										}else{
+											var canvas = document.getElementById('cover-'+t.id);
+                            				var ctx = canvas.getContext('2d');
+											pdf.getPage(i+1).then(page => {
+										
+												const originalViewport = page.getViewport({ scale:1 });
+												const scaleWidth = canvas.width / originalViewport.width;
+												const scaleHeight = canvas.height / originalViewport.height;
+												const scale = Math.min(scaleWidth, scaleHeight);
+												const viewport = page.getViewport({ scale });
+												
+												const renderContext = {
+													canvasContext: ctx,
+													viewport: viewport,
+												};
+												if (currentRenderTask && !currentRenderTask.cancelled) {
+												currentRenderTask.promise.then(() => {
+													currentRenderTask = page.render(renderContext);
+												});
+												} else {
+												currentRenderTask = page.render(renderContext);
+												}
+												
+											});
+										}
+										
+									}
+									
+								}
                             }).catch(err => {
                                 console.error('Error loading PDF: ', err);
                             });
