@@ -6319,8 +6319,14 @@ var apiServer = "http://localhost"
         }
         ,
         t.prototype.checkHasLimits = function(e) {
-            return void 0 === e && (e = null),
-            this.fileLimits[this.concreteTool] ? null == e || this.fileLimits[this.concreteTool].hasOwnProperty(e) : null
+            
+            try{
+                return void 0 === e && (e = null),
+                this.fileLimits[this.concreteTool] ? null == e || this.fileLimits[this.concreteTool].hasOwnProperty(e) : null
+            }catch(er){
+                console.log(er)
+            }
+            
         }
         ,
         t.prototype.checkSizeLimit = function(e) {
