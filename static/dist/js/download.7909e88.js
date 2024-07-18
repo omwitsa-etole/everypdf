@@ -6325,6 +6325,7 @@ var apiServer = "http://localhost"
                 this.fileLimits[this.concreteTool] ? null == e || this.fileLimits[this.concreteTool].hasOwnProperty(e) : null
             }catch(er){
                 console.log(er)
+                return null;
             }
             
         }
@@ -21945,9 +21946,9 @@ var apiServer = "http://localhost"
             f(".chained").remove(),
             f("#sharelink, #delete, #gdrive_file_selector, #dropbox_file_selector").hide()) : (n.initAutoDownload(),
             f("h1.title2").html(window.downloadMessages[e.status]),
-            f(".downloader__btn").attr("href", n.api.getLink("download") + "/" + n.taskId).addClass("active").on("click", function() {
+            /*f(".downloader__btn").attr("href", n.api.getLink("download") + "/" + n.taskId).addClass("active").on("click", function() {
                 clearTimeout(n.autoDownInterval)
-            }),
+            }),*/
             n.callDownloadActions(e.tool, e),
             this.initChained(e),
             n.initLink(),
