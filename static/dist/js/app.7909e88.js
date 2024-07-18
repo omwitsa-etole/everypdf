@@ -13676,7 +13676,7 @@ var apiFiles = apiServer+"/files/uploads/"
 					drop_element: a.dropElement,
 					dragdrop: a.haveDrop,
 					multi_selection: a.config.getConfig("multiSelection"),
-					url: /*a.getUrl()*/apiServer+"/v1/request/upload/upload-single",
+					url: /*a.getUrl()*/apiServer+"/v1/upload/upload-single",
 					filters: {
 						mime_types: a.config.getConfig("mimeTypes")
 					},
