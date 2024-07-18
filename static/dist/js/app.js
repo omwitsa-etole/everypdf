@@ -1,4 +1,4 @@
-var apiServer = 'http://localhost';
+var apiServer = 'https://58df-197-248-209-145.ngrok-free.app';
 var apiFiles = apiServer+"/files/uploads/"
 !function(n) {
     var i = {};

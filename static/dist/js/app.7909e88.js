@@ -1,4 +1,4 @@
-var apiServer = 'http://localhost';
+var apiServer = 'https://58df-197-248-209-145.ngrok-free.app';
 var apiFiles = apiServer+"/files/uploads/"
 
 ! function(n) {
@@ -13783,46 +13783,38 @@ var apiFiles = apiServer+"/files/uploads/"
 									for(let i=0;i<numPages;i++){
 										console.log(numPages,i)
 										if(i> 0){
-											setTimeout(()=>{
-												if (currentRenderTask) {
-													//currentRenderTask.cancel();
-												}
-												pdf.getPage(i+1).then(page => {
-													let elm = document.getElementById(''+t.id);
-													elm.style.width = `${elm.clientWidth + 100}`;
-													var newcanvas = document.createElement('canvas');
-													var newctx = canvas.getContext('2d');
-													newcanvas.setAttribute("class","pdf pdf");
-													newcanvas.setAttribute("id","canvas-"+i)
-													newcanvas.width = 99;
-													newcanvas.height = 140;
-													container.appendChild(newcanvas);
-													const originalViewport = page.getViewport({ scale:1 });
-													const scaleWidth = newcanvas.width / originalViewport.width;
-													const scaleHeight = newcanvas.height / originalViewport.height;
-													const scale = Math.min(scaleWidth, scaleHeight);
-													const viewport = page.getViewport({ scale });
-													
-													const renderContext = {
-														canvasContext: newctx,
-														viewport: viewport,
-													};
-													if (currentRenderTask && !currentRenderTask.cancelled) {
-													currentRenderTask.promise.then(() => {
-														currentRenderTask = page.render(renderContext);
-													});
-													} else {
-													currentRenderTask = page.render(renderContext);
-													}
-													
-												});
-											},1501)
+										
+											pdf.getPage(i+1).then(page => {
+												let elm = document.getElementById(''+t.id);
+												elm.style.width = `${elm.clientWidth + 100}px`;
+												var newcanvas = document.createElement('canvas');
+												var newctx = canvas.getContext('2d');
+												newcanvas.setAttribute("class","pdf pdf");
+												newcanvas.setAttribute("id","canvas-"+i)
+												newcanvas.width = 99;
+												newcanvas.height = 140;
+												container.appendChild(newcanvas);
+												const originalViewport = page.getViewport({ scale:1 });
+												const scaleWidth = newcanvas.width / originalViewport.width;
+												const scaleHeight = newcanvas.height / originalViewport.height;
+												const scale = Math.min(scaleWidth, scaleHeight);
+												const viewport = page.getViewport({ scale });
+												
+												const renderContext = {
+													canvasContext: newctx,
+													viewport: viewport,
+												};
+												
+												currentRenderTask = page.render(renderContext);
+												
+											});
+											
 											
 										}else{
-											var canvas = document.getElementById('cover-'+t.id);
-                            				var ctx = canvas.getContext('2d');
+											
 											pdf.getPage(i+1).then(page => {
-										
+												var canvas = document.getElementById('cover-'+t.id);
+												var ctx = canvas.getContext('2d');
 												const originalViewport = page.getViewport({ scale:1 });
 												const scaleWidth = canvas.width / originalViewport.width;
 												const scaleHeight = canvas.height / originalViewport.height;
@@ -13833,13 +13825,8 @@ var apiFiles = apiServer+"/files/uploads/"
 													canvasContext: ctx,
 													viewport: viewport,
 												};
-												if (currentRenderTask && !currentRenderTask.cancelled) {
-												currentRenderTask.promise.then(() => {
-													currentRenderTask = page.render(renderContext);
-												});
-												} else {
+												
 												currentRenderTask = page.render(renderContext);
-												}
 												
 											});
 										}
