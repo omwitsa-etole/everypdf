@@ -1,17 +1,6 @@
-var apiServer = 'https://b77c-197-248-209-145.ngrok-free.app';
+var apiServer = 'http://localhost';
 var apiFiles = apiServer+"/files/uploads/"
-fetch('https://b77c-197-248-209-145.ngrok-free.app', {
-  headers: {
-    'ngrok-skip-browser-warning': 'true'
-  }
-})
-.then(response => response.text())
-.then(data => {
-  console.log(data); // Handle response data here
-})
-.catch(error => {
-  console.error('Error:', error);
-});
+
 
 ! function(n) {
 	var i = {};

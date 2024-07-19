@@ -16,6 +16,8 @@ ALLOWED_EXTENSIONS = {'pdf'}
 
 app.secret_key = 'ussd'
 
+apiServer = "http://localhost"
+
 CORS(app)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
@@ -77,7 +79,8 @@ def error_merge(tool,key,id):
 @app.route("/download/<int:id>/<string:key>")
 def success_download(id,key):
     print("id",id)
-    return render_template("download.html",url_key=key,url_id=id,manifest=session["manifest"],apiServer="https://b77c-197-248-209-145.ngrok-free.app")
+    global apiServer
+    return render_template("download.html",url_key=key,url_id=id,manifest=session["manifest"],apiServer=apiServer)
 
 @app.route("/")
 def index():
