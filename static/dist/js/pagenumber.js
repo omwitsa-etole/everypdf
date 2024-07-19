@@ -18349,7 +18349,7 @@ var apiFiles = apiServer+"/files/uploads/"
         ,
         g.prototype.goProblem = function(e) {
             void 0 === e && (e = null);
-            var t = "/problem/" + this.tool + "/" + this.taskId + "/" + this.getWorkerNumber();
+            var t = "/problem/" + this.tool + "/" + this.taskId ?? 0 + "/" + this.getWorkerNumber();
             "en-US" != window.lang && (t = "/" + window.lang + t),
             null !== e && ("string" == typeof e ? t = t + "/" + e : e.error && "string" == typeof e.error ? t = t + "/" + e.error : t += "/ServerError"),
             1 != this.stopGoProblem && (window.location.href = t)
