@@ -70,7 +70,7 @@ var apiFiles = apiServer+"/files/uploads/"
     }
     ,
     r.p = "",
-    r(r.s = 509)
+    r(r.s = 595)
 }([function(e, t, n) {
     "use strict";
     n.d(t, "b", function() {
@@ -10153,10 +10153,10 @@ var apiFiles = apiServer+"/files/uploads/"
             function N() {
                 S()
             }
-            var e, p, b, o, B, h, U, H, w, l, c, S, E, n, x, m, i, r, g, T = "sizzle" + +new Date, v = M.document, O = 0, z = 0, q = de(), V = de(), y = de(), W = function(e, t) {
+            var e, p, b, o, B, h, U, H, w, l, c, S, E, n, x, m, i, r, g, T = "sizzle" + +new Date, v = M.document, k = 0, z = 0, q = de(), V = de(), y = de(), W = function(e, t) {
                 return e === t && (c = !0),
                 0
-            }, G = {}.hasOwnProperty, t = [], Y = t.pop, K = t.push, k = t.push, Q = t.slice, _ = function(e, t) {
+            }, G = {}.hasOwnProperty, t = [], Y = t.pop, K = t.push, O = t.push, Q = t.slice, _ = function(e, t) {
                 for (var n = 0, i = e.length; n < i; n++)
                     if (e[n] === t)
                         return n;
@@ -10177,10 +10177,10 @@ var apiFiles = apiServer+"/files/uploads/"
                 next: "legend"
             });
             try {
-                k.apply(t = Q.call(v.childNodes), v.childNodes),
+                O.apply(t = Q.call(v.childNodes), v.childNodes),
                 t[v.childNodes.length].nodeType
             } catch (e) {
-                k = {
+                O = {
                     apply: t.length ? function(e, t) {
                         K.apply(e, Q.call(t))
                     }
@@ -10212,10 +10212,10 @@ var apiFiles = apiServer+"/files/uploads/"
                                 n
                         } else {
                             if (l[2])
-                                return k.apply(n, t.getElementsByTagName(e)),
+                                return O.apply(n, t.getElementsByTagName(e)),
                                 n;
                             if ((r = l[3]) && p.getElementsByClassName && t.getElementsByClassName)
-                                return k.apply(n, t.getElementsByClassName(r)),
+                                return O.apply(n, t.getElementsByClassName(r)),
                                 n
                         }
                     if (p.qsa && !y[e + " "] && (!m || !m.test(e))) {
@@ -10231,7 +10231,7 @@ var apiFiles = apiServer+"/files/uploads/"
                         }
                         if (u)
                             try {
-                                return k.apply(n, d.querySelectorAll(u)),
+                                return O.apply(n, d.querySelectorAll(u)),
                                 n
                             } catch (e) {} finally {
                                 s === T && t.removeAttribute("id")
@@ -10592,16 +10592,16 @@ var apiFiles = apiServer+"/files/uploads/"
                                 }
                                 if (l = [y ? u.firstChild : u.lastChild],
                                 y && f) {
-                                    for (p = (s = (i = (r = (o = (a = u)[T] || (a[T] = {}))[a.uniqueID] || (o[a.uniqueID] = {}))[h] || [])[0] === O && i[1]) && i[2],
+                                    for (p = (s = (i = (r = (o = (a = u)[T] || (a[T] = {}))[a.uniqueID] || (o[a.uniqueID] = {}))[h] || [])[0] === k && i[1]) && i[2],
                                     a = s && u.childNodes[s]; a = ++s && a && a[c] || (p = s = 0,
                                     l.pop()); )
                                         if (1 === a.nodeType && ++p && a === e) {
-                                            r[h] = [O, s, p];
+                                            r[h] = [k, s, p];
                                             break
                                         }
-                                } else if (!1 === (p = f ? s = (i = (r = (o = (a = e)[T] || (a[T] = {}))[a.uniqueID] || (o[a.uniqueID] = {}))[h] || [])[0] === O && i[1] : p))
+                                } else if (!1 === (p = f ? s = (i = (r = (o = (a = e)[T] || (a[T] = {}))[a.uniqueID] || (o[a.uniqueID] = {}))[h] || [])[0] === k && i[1] : p))
                                     for (; (a = ++s && a && a[c] || (p = s = 0,
-                                    l.pop())) && ((_ ? a.nodeName.toLowerCase() !== d : 1 !== a.nodeType) || !++p || (f && ((r = (o = a[T] || (a[T] = {}))[a.uniqueID] || (o[a.uniqueID] = {}))[h] = [O, p]),
+                                    l.pop())) && ((_ ? a.nodeName.toLowerCase() !== d : 1 !== a.nodeType) || !++p || (f && ((r = (o = a[T] || (a[T] = {}))[a.uniqueID] || (o[a.uniqueID] = {}))[h] = [k, p]),
                                     a !== e)); )
                                         ;
                                 return (p -= g) === m || p % m == 0 && 0 <= p / m
@@ -10772,7 +10772,7 @@ var apiFiles = apiServer+"/files/uploads/"
                     return !1
                 }
                 : function(e, t, n) {
-                    var i, r, o = [O, d];
+                    var i, r, o = [k, d];
                     if (n) {
                         for (; e = e[s]; )
                             if ((1 === e.nodeType || u) && a(e, t, n))
@@ -10784,7 +10784,7 @@ var apiFiles = apiServer+"/files/uploads/"
                                 l && l === e.nodeName.toLowerCase())
                                     e = e[s] || e;
                                 else {
-                                    if ((i = r[c]) && i[0] === O && i[1] === d)
+                                    if ((i = r[c]) && i[0] === k && i[1] === d)
                                         return o[2] = i[2];
                                     if ((r[c] = o)[2] = a(e, t, n))
                                         return !0
@@ -10835,12 +10835,12 @@ var apiFiles = apiServer+"/files/uploads/"
                         }
                     } else
                         f = ye(f === t ? f.splice(c, f.length) : f),
-                        v ? v(null, t, f, i) : k.apply(t, f)
+                        v ? v(null, t, f, i) : O.apply(t, f)
                 })
             }
             function be(g, v) {
                 function e(e, t, n, i, r) {
-                    var o, a, s, l = 0, c = "0", u = e && [], d = [], f = w, p = e || _ && b.find.TAG("*", r), h = O += null == f ? 1 : Math.random() || .1, m = p.length;
+                    var o, a, s, l = 0, c = "0", u = e && [], d = [], f = w, p = e || _ && b.find.TAG("*", r), h = k += null == f ? 1 : Math.random() || .1, m = p.length;
                     for (r && (w = t === E || t || r); c !== m && null != (o = p[c]); c++) {
                         if (_ && o) {
                             for (a = 0,
@@ -10850,7 +10850,7 @@ var apiFiles = apiServer+"/files/uploads/"
                                     i.push(o);
                                     break
                                 }
-                            r && (O = h)
+                            r && (k = h)
                         }
                         y && ((o = !s && o) && l--,
                         e) && u.push(o)
@@ -10865,10 +10865,10 @@ var apiFiles = apiServer+"/files/uploads/"
                                     u[c] || d[c] || (d[c] = Y.call(i));
                             d = ye(d)
                         }
-                        k.apply(i, d),
+                        O.apply(i, d),
                         r && !e && 0 < d.length && 1 < l + v.length && A.uniqueSort(i)
                     }
-                    return r && (O = h,
+                    return r && (k = h,
                     w = f),
                     u
                 }
@@ -10958,7 +10958,7 @@ var apiFiles = apiServer+"/files/uploads/"
                             if (o.splice(r, 1),
                             e = i.length && R(o))
                                 break;
-                            return k.apply(n, i),
+                            return O.apply(n, i),
                             n
                         }
                 }
@@ -11690,7 +11690,7 @@ var apiFiles = apiServer+"/files/uploads/"
             td: [3, "<table><tbody><tr>", "</tr></tbody></table>"],
             _default: [0, "", ""]
         };
-        function O(e, t) {
+        function k(e, t) {
             var n = void 0 !== e.getElementsByTagName ? e.getElementsByTagName(t || "*") : void 0 !== e.querySelectorAll ? e.querySelectorAll(t || "*") : [];
             return void 0 === t || t && l(e, t) ? E.merge([e], n) : n
         }
@@ -11702,7 +11702,7 @@ var apiFiles = apiServer+"/files/uploads/"
         T.tbody = T.tfoot = T.colgroup = T.caption = T.thead,
         T.th = T.td;
         var Te = /<|&#?\w+;/;
-        function Oe(e, t, n, i, r) {
+        function ke(e, t, n, i, r) {
             for (var o, a, s, l, c, u = t.createDocumentFragment(), d = [], f = 0, p = e.length; f < p; f++)
                 if ((o = e[f]) || 0 === o)
                     if ("object" === h(o))
@@ -11723,7 +11723,7 @@ var apiFiles = apiServer+"/files/uploads/"
                 if (i && -1 < E.inArray(o, i))
                     r && r.push(o);
                 else if (l = E.contains(o.ownerDocument, o),
-                a = O(u.appendChild(o), "script"),
+                a = k(u.appendChild(o), "script"),
                 l && xe(a),
                 n)
                     for (c = 0; o = a[c++]; )
@@ -11738,14 +11738,14 @@ var apiFiles = apiServer+"/files/uploads/"
         g.checkClone = I.cloneNode(!0).cloneNode(!0).lastChild.checked,
         I.innerHTML = "<textarea>x</textarea>",
         g.noCloneChecked = !!I.cloneNode(!0).lastChild.defaultValue;
-        var ke = S.documentElement
+        var Oe = S.documentElement
           , Ce = /^key/
           , Pe = /^(?:mouse|pointer|contextmenu|drag|drop)|click/
           , Ae = /^([^.]*)(?:\.(.+)|)/;
         function Ie() {
             return !0
         }
-        function k() {
+        function O() {
             return !1
         }
         function Le() {
@@ -11768,7 +11768,7 @@ var apiFiles = apiServer+"/files/uploads/"
             i = n,
             n = void 0)),
             !1 === r)
-                r = k;
+                r = O;
             else if (!r)
                 return e;
             return 1 === o && (a = r,
@@ -11788,7 +11788,7 @@ var apiFiles = apiServer+"/files/uploads/"
                 if (h)
                     for (n.handler && (n = (o = n).handler,
                     r = o.selector),
-                    r && E.find.matchesSelector(ke, r),
+                    r && E.find.matchesSelector(Oe, r),
                     n.guid || (n.guid = E.guid++),
                     s = (s = h.events) || (h.events = {}),
                     a = (a = h.handle) || (h.handle = function(e) {
@@ -11954,7 +11954,7 @@ var apiFiles = apiServer+"/files/uploads/"
                 return new E.Event(e,t);
             e && e.type ? (this.originalEvent = e,
             this.type = e.type,
-            this.isDefaultPrevented = e.defaultPrevented || void 0 === e.defaultPrevented && !1 === e.returnValue ? Ie : k,
+            this.isDefaultPrevented = e.defaultPrevented || void 0 === e.defaultPrevented && !1 === e.returnValue ? Ie : O,
             this.target = e.target && 3 === e.target.nodeType ? e.target.parentNode : e.target,
             this.currentTarget = e.currentTarget,
             this.relatedTarget = e.relatedTarget) : this.type = e,
@@ -11965,9 +11965,9 @@ var apiFiles = apiServer+"/files/uploads/"
         ,
         E.Event.prototype = {
             constructor: E.Event,
-            isDefaultPrevented: k,
-            isPropagationStopped: k,
-            isImmediatePropagationStopped: k,
+            isDefaultPrevented: O,
+            isPropagationStopped: O,
+            isImmediatePropagationStopped: O,
             isSimulated: !1,
             preventDefault: function() {
                 var e = this.originalEvent;
@@ -12055,7 +12055,7 @@ var apiFiles = apiServer+"/files/uploads/"
                     if ("object" != typeof e)
                         return !1 !== t && "function" != typeof t || (n = t,
                         t = void 0),
-                        !1 === n && (n = k),
+                        !1 === n && (n = O),
                         this.each(function() {
                             E.event.remove(this, e, n, t)
                         });
@@ -12106,13 +12106,13 @@ var apiFiles = apiServer+"/files/uploads/"
                     h && (i[0] = p.call(this, e, t.html())),
                     C(t, i, r, o)
                 });
-            if (d && (t = (e = Oe(i, n[0].ownerDocument, !1, n, o)).firstChild,
+            if (d && (t = (e = ke(i, n[0].ownerDocument, !1, n, o)).firstChild,
             1 === e.childNodes.length && (e = t),
             t || o)) {
-                for (s = (a = E.map(O(e, "script"), Be)).length; u < d; u++)
+                for (s = (a = E.map(k(e, "script"), Be)).length; u < d; u++)
                     l = e,
                     u !== f && (l = E.clone(l, !0, !0),
-                    s) && E.merge(a, O(l, "script")),
+                    s) && E.merge(a, k(l, "script")),
                     r.call(n[u], l, u);
                 if (s)
                     for (c = a[a.length - 1].ownerDocument,
@@ -12125,8 +12125,8 @@ var apiFiles = apiServer+"/files/uploads/"
         }
         function ze(e, t, n) {
             for (var i, r = t ? E.filter(t, e) : e, o = 0; null != (i = r[o]); o++)
-                n || 1 !== i.nodeType || E.cleanData(O(i)),
-                i.parentNode && (n && E.contains(i.ownerDocument, i) && xe(O(i, "script")),
+                n || 1 !== i.nodeType || E.cleanData(k(i)),
+                i.parentNode && (n && E.contains(i.ownerDocument, i) && xe(k(i, "script")),
                 i.parentNode.removeChild(i));
             return e
         }
@@ -12137,23 +12137,23 @@ var apiFiles = apiServer+"/files/uploads/"
             clone: function(e, t, n) {
                 var i, r, o, a, s, l, c, u = e.cloneNode(!0), d = E.contains(e.ownerDocument, e);
                 if (!(g.noCloneChecked || 1 !== e.nodeType && 11 !== e.nodeType || E.isXMLDoc(e)))
-                    for (a = O(u),
+                    for (a = k(u),
                     i = 0,
-                    r = (o = O(e)).length; i < r; i++)
+                    r = (o = k(e)).length; i < r; i++)
                         s = o[i],
                         l = a[i],
                         c = void 0,
                         "input" === (c = l.nodeName.toLowerCase()) && we.test(s.type) ? l.checked = s.checked : "input" !== c && "textarea" !== c || (l.defaultValue = s.defaultValue);
                 if (t)
                     if (n)
-                        for (o = o || O(e),
-                        a = a || O(u),
+                        for (o = o || k(e),
+                        a = a || k(u),
                         i = 0,
                         r = o.length; i < r; i++)
                             He(o[i], a[i]);
                     else
                         He(e, u);
-                return 0 < (a = O(u, "script")).length && xe(a, !d && O(e, "script")),
+                return 0 < (a = k(u, "script")).length && xe(a, !d && k(e, "script")),
                 u
             },
             cleanData: function(e) {
@@ -12206,7 +12206,7 @@ var apiFiles = apiServer+"/files/uploads/"
             },
             empty: function() {
                 for (var e, t = 0; null != (e = this[t]); t++)
-                    1 === e.nodeType && (E.cleanData(O(e, !1)),
+                    1 === e.nodeType && (E.cleanData(k(e, !1)),
                     e.textContent = "");
                 return this
             },
@@ -12228,7 +12228,7 @@ var apiFiles = apiServer+"/files/uploads/"
                         e = E.htmlPrefilter(e);
                         try {
                             for (; n < i; n++)
-                                1 === (t = this[n] || {}).nodeType && (E.cleanData(O(t, !1)),
+                                1 === (t = this[n] || {}).nodeType && (E.cleanData(k(t, !1)),
                                 t.innerHTML = e);
                             t = 0
                         } catch (e) {}
@@ -12240,7 +12240,7 @@ var apiFiles = apiServer+"/files/uploads/"
                 var n = [];
                 return C(this, arguments, function(e) {
                     var t = this.parentNode;
-                    E.inArray(this, n) < 0 && (E.cleanData(O(this)),
+                    E.inArray(this, n) < 0 && (E.cleanData(k(this)),
                     t) && t.replaceChild(e, this)
                 }, n)
             }
@@ -12269,7 +12269,7 @@ var apiFiles = apiServer+"/files/uploads/"
             var e;
             n && (Qe.style.cssText = "position:absolute;left:-11111px;width:60px;margin-top:1px;padding:0;border:0",
             n.style.cssText = "position:relative;display:block;box-sizing:border-box;overflow:scroll;margin:auto;border:1px;padding:1px;width:60%;top:1%",
-            ke.appendChild(Qe).appendChild(n),
+            Oe.appendChild(Qe).appendChild(n),
             e = w.getComputedStyle(n),
             Ve = "1%" !== e.top,
             Ke = 12 === Ze(e.marginLeft),
@@ -12278,7 +12278,7 @@ var apiFiles = apiServer+"/files/uploads/"
             We = 36 === Ze(e.width),
             n.style.position = "absolute",
             Ge = 36 === n.offsetWidth || "absolute",
-            ke.removeChild(Qe),
+            Oe.removeChild(Qe),
             n = null)
         }
         function Ze(e) {
@@ -13180,8 +13180,8 @@ var apiFiles = apiServer+"/files/uploads/"
         }),
         w.location)
           , Tt = Date.now()
-          , Ot = /\?/
-          , kt = (E.parseXML = function(e) {
+          , kt = /\?/
+          , Ot = (E.parseXML = function(e) {
             var t;
             if (!e || "string" != typeof e)
                 return null;
@@ -13213,7 +13213,7 @@ var apiFiles = apiServer+"/files/uploads/"
                     !function n(i, e, r, o) {
                         if (Array.isArray(e))
                             E.each(e, function(e, t) {
-                                r || kt.test(i) ? o(i, t) : n(i + "[" + ("object" == typeof t && null != t ? e : "") + "]", t, r, o)
+                                r || Ot.test(i) ? o(i, t) : n(i + "[" + ("object" == typeof t && null != t ? e : "") + "]", t, r, o)
                             });
                         else if (r || "object" !== h(e))
                             o(i, e);
@@ -13404,10 +13404,10 @@ var apiFiles = apiServer+"/files/uploads/"
                     h.hasContent = !Dt.test(h.type),
                     c = h.url.replace(Lt, ""),
                     h.hasContent ? h.data && h.processData && 0 === (h.contentType || "").indexOf("application/x-www-form-urlencoded") && (h.data = h.data.replace(It, "+")) : (e = h.url.slice(c.length),
-                    h.data && (h.processData || "string" == typeof h.data) && (c += (Ot.test(c) ? "&" : "?") + h.data,
+                    h.data && (h.processData || "string" == typeof h.data) && (c += (kt.test(c) ? "&" : "?") + h.data,
                     delete h.data),
                     !1 === h.cache && (c = c.replace(jt, "$1"),
-                    e = (Ot.test(c) ? "&" : "?") + "_=" + Tt++ + e),
+                    e = (kt.test(c) ? "&" : "?") + "_=" + Tt++ + e),
                     h.url = c + e),
                     h.ifModified && (E.lastModified[c] && b.setRequestHeader("If-Modified-Since", E.lastModified[c]),
                     E.etag[c]) && b.setRequestHeader("If-None-Match", E.etag[c]),
@@ -13721,7 +13721,7 @@ var apiFiles = apiServer+"/files/uploads/"
             var i, r, o, a = !1 !== e.jsonp && (Yt.test(e.url) ? "url" : "string" == typeof e.data && 0 === (e.contentType || "").indexOf("application/x-www-form-urlencoded") && Yt.test(e.data) && "data");
             if (a || "jsonp" === e.dataTypes[0])
                 return i = e.jsonpCallback = y(e.jsonpCallback) ? e.jsonpCallback() : e.jsonpCallback,
-                a ? e[a] = e[a].replace(Yt, "$1" + i) : !1 !== e.jsonp && (e.url += (Ot.test(e.url) ? "&" : "?") + e.jsonp + "=" + i),
+                a ? e[a] = e[a].replace(Yt, "$1" + i) : !1 !== e.jsonp && (e.url += (kt.test(e.url) ? "&" : "?") + e.jsonp + "=" + i),
                 e.converters["script json"] = function() {
                     return o || E.error(i + " was not called"),
                     o[0]
@@ -13751,7 +13751,7 @@ var apiFiles = apiServer+"/files/uploads/"
             t || (g.createHTMLDocument ? ((i = (t = S.implementation.createHTMLDocument("")).createElement("base")).href = S.location.href,
             t.head.appendChild(i)) : t = S),
             i = !n && [],
-            (n = Z.exec(e)) ? [t.createElement(n[1])] : (n = Oe([e], t, i),
+            (n = Z.exec(e)) ? [t.createElement(n[1])] : (n = ke([e], t, i),
             i && i.length && E(i).remove(),
             E.merge([], n.childNodes)))
         }
@@ -13846,7 +13846,7 @@ var apiFiles = apiServer+"/files/uploads/"
                 return this.map(function() {
                     for (var e = this.offsetParent; e && "static" === E.css(e, "position"); )
                         e = e.offsetParent;
-                    return e || ke
+                    return e || Oe
                 })
             }
         }),
@@ -18349,9 +18349,9 @@ var apiFiles = apiServer+"/files/uploads/"
         ,
         g.prototype.goProblem = function(e) {
             void 0 === e && (e = null);
-            var t = "/problem/" + this.tool + "/" + this.taskId ?? 0 + "/" + this.getWorkerNumber();
+            var t = "/problem/" + this.tool + "/" + this.taskId + "/" + this.getWorkerNumber();
             "en-US" != window.lang && (t = "/" + window.lang + t),
-            null !== e && ("string" == typeof e ? t = t + "/" + e : e.error && "string" == typeof e.error ? t = t + "/" + e.error : t += ""),
+            null !== e && ("string" == typeof e ? t = t + "/" + e : e.error && "string" == typeof e.error ? t = t + "/" + e.error : t += "/ServerError"),
             1 != this.stopGoProblem && (window.location.href = t)
         }
         ,
@@ -18793,7 +18793,7 @@ var apiFiles = apiServer+"/files/uploads/"
         a.prototype.changeDNSServer = function(e) {
             return this.workerServer = /*this.workerServer*/apiServer.replace(".", "-cf."),
             this.optionsManager.changeServer(/*this.workerServer*/apiServer),
-            this.uploader.setOption("url", /*this.workerServer*/ + "/" + this.apiVersion + "/upload/upload-single"),
+            this.uploader.setOption("url", /*this.workerServer*/apiServer + "/" + this.apiVersion + "/upload/upload-single"),
             this.dnsFallbackActive = !0,
             window.ev("sendOnce", "event", "upload-info", "upload-change", "dns - " + e),
             window.ev("eventOnce", "upload-change", {
@@ -22000,11 +22000,11 @@ var apiFiles = apiServer+"/files/uploads/"
 , function(M, e, t) {
     "use strict";
     var s, d = t(37), l = t(142), f = t(94), p = t(95), F = t(66), c = 0, u = 4, h = 0, m = -2, N = -1, B = 4, U = 2, g = 8, H = 9, n = 286, z = 30, q = 19, V = 2 * n + 1, W = 15, v = 3, y = 258, _ = y + v + 1, b = 42, w = 113, S = 1, E = 2, x = 3, T = 4;
-    function O(e, t) {
+    function k(e, t) {
         return e.msg = F[t],
         t
     }
-    function k(e) {
+    function O(e) {
         return (e << 1) - (4 < e ? 9 : 0)
     }
     function C(e) {
@@ -22279,7 +22279,7 @@ var apiFiles = apiServer+"/files/uploads/"
         e.adler = 2 === t.wrap ? 0 : 1,
         t.last_flush = c,
         l._tr_init(t),
-        h) : O(e, m)
+        h) : k(e, m)
     }
     function D(e) {
         var t = R(e);
@@ -22307,7 +22307,7 @@ var apiFiles = apiServer+"/files/uploads/"
         i = -i) : 15 < i && (a = 2,
         i -= 16),
         r < 1 || H < r || n !== g || i < 8 || 15 < i || t < 0 || 9 < t || o < 0 || B < o)
-            return O(e, m);
+            return k(e, m);
         8 === i && (i = 9);
         var s = new G;
         return (e.state = s).strm = e,
@@ -22377,10 +22377,10 @@ var apiFiles = apiServer+"/files/uploads/"
     e.deflate = function(e, t) {
         var n, i, r, o;
         if (!e || !e.state || 5 < t || t < 0)
-            return e ? O(e, m) : m;
+            return e ? k(e, m) : m;
         if (i = e.state,
         !e.output || !e.input && 0 !== e.avail_in || 666 === i.status && t !== u)
-            return O(e, 0 === e.avail_out ? -5 : m);
+            return k(e, 0 === e.avail_out ? -5 : m);
         if (i.strm = e,
         n = i.last_flush,
         i.last_flush = t,
@@ -22475,10 +22475,10 @@ var apiFiles = apiServer+"/files/uploads/"
             0 === e.avail_out)
                 return i.last_flush = -1,
                 h
-        } else if (0 === e.avail_in && k(t) <= k(n) && t !== u)
-            return O(e, -5);
+        } else if (0 === e.avail_in && O(t) <= O(n) && t !== u)
+            return k(e, -5);
         if (666 === i.status && 0 !== e.avail_in)
-            return O(e, -5);
+            return k(e, -5);
         if (0 !== e.avail_in || 0 !== i.lookahead || t !== c && 666 !== i.status) {
             var a = 2 === i.strategy ? function(e, t) {
                 for (var n; ; ) {
@@ -22561,8 +22561,8 @@ var apiFiles = apiServer+"/files/uploads/"
     ,
     e.deflateEnd = function(e) {
         var t;
-        return e && e.state ? (t = e.state.status) !== b && 69 !== t && 73 !== t && 91 !== t && 103 !== t && t !== w && 666 !== t ? O(e, m) : (e.state = null,
-        t === w ? O(e, -3) : h) : m
+        return e && e.state ? (t = e.state.status) !== b && 69 !== t && 73 !== t && 91 !== t && 103 !== t && t !== w && 666 !== t ? k(e, m) : (e.state = null,
+        t === w ? k(e, -3) : h) : m
     }
     ,
     e.deflateSetDictionary = function(e, t) {
@@ -22623,8 +22623,8 @@ var apiFiles = apiServer+"/files/uploads/"
         for (var t = e.length; 0 <= --t; )
             e[t] = 0
     }
-    var s, l, c, f = 29, p = 256, h = p + 1 + f, m = 30, g = 19, T = 2 * h + 1, O = 15, i = 16, B = 7, v = 256, y = 16, _ = 17, b = 18, w = [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 0], S = [0, 0, 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11, 12, 12, 13, 13], U = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 3, 7], E = [16, 17, 18, 0, 8, 7, 9, 6, 10, 5, 11, 4, 12, 3, 13, 2, 14, 1, 15], x = new Array(2 * (h + 2)), k = (t(x),
-    new Array(2 * m)), C = (t(k),
+    var s, l, c, f = 29, p = 256, h = p + 1 + f, m = 30, g = 19, T = 2 * h + 1, k = 15, i = 16, B = 7, v = 256, y = 16, _ = 17, b = 18, w = [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 0], S = [0, 0, 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11, 12, 12, 13, 13], U = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 3, 7], E = [16, 17, 18, 0, 8, 7, 9, 6, 10, 5, 11, 4, 12, 3, 13, 2, 14, 1, 15], x = new Array(2 * (h + 2)), O = (t(x),
+    new Array(2 * m)), C = (t(O),
     new Array(512)), P = (t(C),
     new Array(256)), A = (t(P),
     new Array(f)), I = (t(A),
@@ -22668,7 +22668,7 @@ var apiFiles = apiServer+"/files/uploads/"
         return n >>> 1
     }
     function z(e, t, n) {
-        for (var i, r = new Array(O + 1), o = 0, a = 1; a <= O; a++)
+        for (var i, r = new Array(k + 1), o = 0, a = 1; a <= k; a++)
             r[a] = o = o + n[a - 1] << 1;
         for (i = 0; i <= t; i++) {
             var s = e[2 * i + 1];
@@ -22747,7 +22747,7 @@ var apiFiles = apiServer+"/files/uploads/"
         2 <= e.heap_len; )
             ;
         e.heap[--e.heap_max] = e.heap[1];
-        for (var u, d, f, p, h, m = e, g = t.dyn_tree, v = t.max_code, y = t.stat_desc.static_tree, _ = t.stat_desc.has_stree, b = t.stat_desc.extra_bits, w = t.stat_desc.extra_base, S = t.stat_desc.max_length, E = 0, x = 0; x <= O; x++)
+        for (var u, d, f, p, h, m = e, g = t.dyn_tree, v = t.max_code, y = t.stat_desc.static_tree, _ = t.stat_desc.has_stree, b = t.stat_desc.extra_bits, w = t.stat_desc.extra_base, S = t.stat_desc.max_length, E = 0, x = 0; x <= k; x++)
             m.bl_count[x] = 0;
         for (g[2 * m.heap[m.heap_max] + 1] = 0,
         u = m.heap_max + 1; u < T; u++)
@@ -22833,7 +22833,7 @@ var apiFiles = apiServer+"/files/uploads/"
     }
     e._tr_init = function(e) {
         if (!Q) {
-            for (var t, n, i, r = new Array(O + 1), o = 0, a = 0; a < f - 1; a++)
+            for (var t, n, i, r = new Array(k + 1), o = 0, a = 0; a < f - 1; a++)
                 for (A[a] = o,
                 t = 0; t < 1 << w[a]; t++)
                     P[o++] = a;
@@ -22846,7 +22846,7 @@ var apiFiles = apiServer+"/files/uploads/"
                 for (I[a] = i << 7,
                 t = 0; t < 1 << S[a] - 7; t++)
                     C[256 + i++] = a;
-            for (n = 0; n <= O; n++)
+            for (n = 0; n <= k; n++)
                 r[n] = 0;
             for (t = 0; t <= 143; )
                 x[2 * t + 1] = 8,
@@ -22866,10 +22866,10 @@ var apiFiles = apiServer+"/files/uploads/"
                 r[8]++;
             for (z(x, h + 1, r),
             t = 0; t < m; t++)
-                k[2 * t + 1] = 5,
-                k[2 * t] = H(t, 5);
-            s = new L(x,w,p + 1,h,O),
-            l = new L(k,S,0,m,O),
+                O[2 * t + 1] = 5,
+                O[2 * t] = H(t, 5);
+            s = new L(x,w,p + 1,h,k),
+            l = new L(O,S,0,m,k),
             c = new L(new Array(0),U,0,g,B),
             Q = !0
         }
@@ -22914,7 +22914,7 @@ var apiFiles = apiServer+"/files/uploads/"
             X(e, t, n, i);
         else if (4 === e.strategy || o === r)
             D(e, 2 + (i ? 1 : 0), 3),
-            G(e, x, k);
+            G(e, x, O);
         else {
             D(e, 4 + (i ? 1 : 0), 3);
             var s, l = e, t = e.l_desc.max_code + 1, n = e.d_desc.max_code + 1, c = a + 1;
@@ -23176,7 +23176,7 @@ var apiFiles = apiServer+"/files/uploads/"
     ,
     t.inflateInit2 = c,
     t.inflate = function(e, t) {
-        var n, i, r, o, a, s, l, c, u, d, f, p, h, m, g, v, y, _, b, w, S, E, x, T, O = 0, k = new I.Buf8(4), C = [16, 17, 18, 0, 8, 7, 9, 6, 10, 5, 11, 4, 12, 3, 13, 2, 14, 1, 15];
+        var n, i, r, o, a, s, l, c, u, d, f, p, h, m, g, v, y, _, b, w, S, E, x, T, k = 0, O = new I.Buf8(4), C = [16, 17, 18, 0, 8, 7, 9, 6, 10, 5, 11, 4, 12, 3, 13, 2, 14, 1, 15];
         if (!e || !e.state || !e.output || !e.input && 0 !== e.avail_in)
             return B;
         12 === (n = e.state).mode && (n.mode = 13),
@@ -23205,9 +23205,9 @@ var apiFiles = apiServer+"/files/uploads/"
                         u += 8
                     }
                     if (2 & n.wrap && 35615 === c)
-                        k[n.check = 0] = 255 & c,
-                        k[1] = c >>> 8 & 255,
-                        n.check = j(n.check, k, 2, 0),
+                        O[n.check = 0] = 255 & c,
+                        O[1] = c >>> 8 & 255,
+                        n.check = j(n.check, O, 2, 0),
                         u = c = 0,
                         n.mode = 2;
                     else if (n.flags = 0,
@@ -23255,9 +23255,9 @@ var apiFiles = apiServer+"/files/uploads/"
                     break
                 }
                 n.head && (n.head.text = c >> 8 & 1),
-                512 & n.flags && (k[0] = 255 & c,
-                k[1] = c >>> 8 & 255,
-                n.check = j(n.check, k, 2, 0)),
+                512 & n.flags && (O[0] = 255 & c,
+                O[1] = c >>> 8 & 255,
+                n.check = j(n.check, O, 2, 0)),
                 u = c = 0,
                 n.mode = 3;
             case 3:
@@ -23269,11 +23269,11 @@ var apiFiles = apiServer+"/files/uploads/"
                     u += 8
                 }
                 n.head && (n.head.time = c),
-                512 & n.flags && (k[0] = 255 & c,
-                k[1] = c >>> 8 & 255,
-                k[2] = c >>> 16 & 255,
-                k[3] = c >>> 24 & 255,
-                n.check = j(n.check, k, 4, 0)),
+                512 & n.flags && (O[0] = 255 & c,
+                O[1] = c >>> 8 & 255,
+                O[2] = c >>> 16 & 255,
+                O[3] = c >>> 24 & 255,
+                n.check = j(n.check, O, 4, 0)),
                 u = c = 0,
                 n.mode = 4;
             case 4:
@@ -23286,9 +23286,9 @@ var apiFiles = apiServer+"/files/uploads/"
                 }
                 n.head && (n.head.xflags = 255 & c,
                 n.head.os = c >> 8),
-                512 & n.flags && (k[0] = 255 & c,
-                k[1] = c >>> 8 & 255,
-                n.check = j(n.check, k, 2, 0)),
+                512 & n.flags && (O[0] = 255 & c,
+                O[1] = c >>> 8 & 255,
+                n.check = j(n.check, O, 2, 0)),
                 u = c = 0,
                 n.mode = 5;
             case 5:
@@ -23302,9 +23302,9 @@ var apiFiles = apiServer+"/files/uploads/"
                     }
                     n.length = c,
                     n.head && (n.head.extra_len = c),
-                    512 & n.flags && (k[0] = 255 & c,
-                    k[1] = c >>> 8 & 255,
-                    n.check = j(n.check, k, 2, 0)),
+                    512 & n.flags && (O[0] = 255 & c,
+                    O[1] = c >>> 8 & 255,
+                    n.check = j(n.check, O, 2, 0)),
                     u = c = 0
                 } else
                     n.head && (n.head.extra = null);
@@ -23553,9 +23553,9 @@ var apiFiles = apiServer+"/files/uploads/"
                 n.mode = 19;
             case 19:
                 for (; n.have < n.nlen + n.ndist; ) {
-                    for (; v = (O = n.lencode[c & (1 << n.lenbits) - 1]) >>> 16 & 255,
-                    y = 65535 & O,
-                    !((g = O >>> 24) <= u); ) {
+                    for (; v = (k = n.lencode[c & (1 << n.lenbits) - 1]) >>> 16 & 255,
+                    y = 65535 & k,
+                    !((g = k >>> 24) <= u); ) {
                         if (0 === s)
                             break e;
                         s--,
@@ -23675,9 +23675,9 @@ var apiFiles = apiServer+"/files/uploads/"
                     12 === n.mode && (n.back = -1);
                     break
                 }
-                for (n.back = 0; v = (O = n.lencode[c & (1 << n.lenbits) - 1]) >>> 16 & 255,
-                y = 65535 & O,
-                !((g = O >>> 24) <= u); ) {
+                for (n.back = 0; v = (k = n.lencode[c & (1 << n.lenbits) - 1]) >>> 16 & 255,
+                y = 65535 & k,
+                !((g = k >>> 24) <= u); ) {
                     if (0 === s)
                         break e;
                     s--,
@@ -23687,9 +23687,9 @@ var apiFiles = apiServer+"/files/uploads/"
                 if (v && 0 == (240 & v)) {
                     for (_ = g,
                     b = v,
-                    w = y; v = (O = n.lencode[w + ((c & (1 << _ + b) - 1) >> _)]) >>> 16 & 255,
-                    y = 65535 & O,
-                    !(_ + (g = O >>> 24) <= u); ) {
+                    w = y; v = (k = n.lencode[w + ((c & (1 << _ + b) - 1) >> _)]) >>> 16 & 255,
+                    y = 65535 & k,
+                    !(_ + (g = k >>> 24) <= u); ) {
                         if (0 === s)
                             break e;
                         s--,
@@ -23737,9 +23737,9 @@ var apiFiles = apiServer+"/files/uploads/"
                 n.was = n.length,
                 n.mode = 23;
             case 23:
-                for (; v = (O = n.distcode[c & (1 << n.distbits) - 1]) >>> 16 & 255,
-                y = 65535 & O,
-                !((g = O >>> 24) <= u); ) {
+                for (; v = (k = n.distcode[c & (1 << n.distbits) - 1]) >>> 16 & 255,
+                y = 65535 & k,
+                !((g = k >>> 24) <= u); ) {
                     if (0 === s)
                         break e;
                     s--,
@@ -23749,9 +23749,9 @@ var apiFiles = apiServer+"/files/uploads/"
                 if (0 == (240 & v)) {
                     for (_ = g,
                     b = v,
-                    w = y; v = (O = n.distcode[w + ((c & (1 << _ + b) - 1) >> _)]) >>> 16 & 255,
-                    y = 65535 & O,
-                    !(_ + (g = O >>> 24) <= u); ) {
+                    w = y; v = (k = n.distcode[w + ((c & (1 << _ + b) - 1) >> _)]) >>> 16 & 255,
+                    y = 65535 & k,
+                    !(_ + (g = k >>> 24) <= u); ) {
                         if (0 === s)
                             break e;
                         s--,
@@ -23914,7 +23914,7 @@ var apiFiles = apiServer+"/files/uploads/"
 , function(e, t, n) {
     "use strict";
     e.exports = function(e, t) {
-        var n, i, r, o, a, s, l = e.state, c = e.next_in, u = e.input, d = c + (e.avail_in - 5), f = e.next_out, p = e.output, h = f - (t - e.avail_out), m = f + (e.avail_out - 257), g = l.dmax, v = l.wsize, y = l.whave, _ = l.wnext, b = l.window, w = l.hold, S = l.bits, E = l.lencode, x = l.distcode, T = (1 << l.lenbits) - 1, O = (1 << l.distbits) - 1;
+        var n, i, r, o, a, s, l = e.state, c = e.next_in, u = e.input, d = c + (e.avail_in - 5), f = e.next_out, p = e.output, h = f - (t - e.avail_out), m = f + (e.avail_out - 257), g = l.dmax, v = l.wsize, y = l.whave, _ = l.wnext, b = l.window, w = l.hold, S = l.bits, E = l.lencode, x = l.distcode, T = (1 << l.lenbits) - 1, k = (1 << l.distbits) - 1;
         e: do {
             for (S < 15 && (w += u[c++] << S,
             S += 8,
@@ -23949,7 +23949,7 @@ var apiFiles = apiServer+"/files/uploads/"
                     S += 8,
                     w += u[c++] << S,
                     S += 8),
-                    n = x[w & O]; ; ) {
+                    n = x[w & k]; ; ) {
                         if (w >>>= i = n >>> 24,
                         S -= i,
                         !(16 & (i = n >>> 16 & 255))) {
@@ -24050,7 +24050,7 @@ var apiFiles = apiServer+"/files/uploads/"
       , F = [1, 2, 3, 4, 5, 7, 9, 13, 17, 25, 33, 49, 65, 97, 129, 193, 257, 385, 513, 769, 1025, 1537, 2049, 3073, 4097, 6145, 8193, 12289, 16385, 24577, 0, 0]
       , N = [16, 16, 16, 16, 17, 17, 18, 18, 19, 19, 20, 20, 21, 21, 22, 22, 23, 23, 24, 24, 25, 25, 26, 26, 27, 27, 28, 28, 29, 29, 64, 64];
     e.exports = function(e, t, n, i, r, o, a, s) {
-        for (var l, c, u, d, f, p, h, m, g, v = s.bits, y = 0, _ = 0, b = 0, w = 0, S = 0, E = 0, x = 0, T = 0, O = 0, k = 0, C = null, P = 0, A = new R.Buf16(16), I = new R.Buf16(16), L = null, j = 0, y = 0; y <= 15; y++)
+        for (var l, c, u, d, f, p, h, m, g, v = s.bits, y = 0, _ = 0, b = 0, w = 0, S = 0, E = 0, x = 0, T = 0, k = 0, O = 0, C = null, P = 0, A = new R.Buf16(16), I = new R.Buf16(16), L = null, j = 0, y = 0; y <= 15; y++)
             A[y] = 0;
         for (_ = 0; _ < i; _++)
             A[t[n + _]]++;
@@ -24086,10 +24086,10 @@ var apiFiles = apiServer+"/files/uploads/"
             -1),
             y = b,
             f = o,
-            x = _ = k = 0,
+            x = _ = O = 0,
             u = -1,
-            d = (O = 1 << (E = S)) - 1,
-            1 === e && 852 < O || 2 === e && 592 < O)
+            d = (k = 1 << (E = S)) - 1,
+            1 === e && 852 < k || 2 === e && 592 < k)
                 return 1;
             for (; ; ) {
                 for (g = a[_] < p ? (m = 0,
@@ -24097,30 +24097,30 @@ var apiFiles = apiServer+"/files/uploads/"
                 C[P + a[_]]) : (m = 96,
                 0),
                 l = 1 << (h = y - x),
-                b = c = 1 << E; r[f + (k >> x) + (c -= l)] = h << 24 | m << 16 | g | 0,
+                b = c = 1 << E; r[f + (O >> x) + (c -= l)] = h << 24 | m << 16 | g | 0,
                 0 !== c; )
                     ;
-                for (l = 1 << y - 1; k & l; )
+                for (l = 1 << y - 1; O & l; )
                     l >>= 1;
-                if (k = 0 !== l ? (k & l - 1) + l : 0,
+                if (O = 0 !== l ? (O & l - 1) + l : 0,
                 _++,
                 0 == --A[y]) {
                     if (y === w)
                         break;
                     y = t[n + a[_]]
                 }
-                if (S < y && (k & d) !== u) {
+                if (S < y && (O & d) !== u) {
                     for (f += b,
                     T = 1 << (E = y - (x = 0 === x ? S : x)); E + x < w && !((T -= A[E + x]) <= 0); )
                         E++,
                         T <<= 1;
-                    if (O += 1 << E,
-                    1 === e && 852 < O || 2 === e && 592 < O)
+                    if (k += 1 << E,
+                    1 === e && 852 < k || 2 === e && 592 < k)
                         return 1;
-                    r[u = k & d] = S << 24 | E << 16 | f - o | 0
+                    r[u = O & d] = S << 24 | E << 16 | f - o | 0
                 }
             }
-            0 !== k && (r[f + k] = y - x << 24 | 64 << 16 | 0),
+            0 !== O && (r[f + O] = y - x << 24 | 64 << 16 | 0),
             s.bits = S
         }
         return 0
@@ -24438,7 +24438,7 @@ var apiFiles = apiServer+"/files/uploads/"
             i = 3 < arguments.length && void 0 !== i ? i : null;
             return w(n, i ? S(t) : h(t, c(n)), i)
         }
-        function O(e) {
+        function k(e) {
             var t = e.ownerDocument.defaultView.getComputedStyle(e)
               , n = parseFloat(t.marginTop || 0) + parseFloat(t.marginBottom || 0)
               , t = parseFloat(t.marginLeft || 0) + parseFloat(t.marginRight || 0);
@@ -24447,7 +24447,7 @@ var apiFiles = apiServer+"/files/uploads/"
                 height: e.offsetHeight + n
             }
         }
-        function k(e) {
+        function O(e) {
             var t = {
                 left: "right",
                 right: "left",
@@ -24460,7 +24460,7 @@ var apiFiles = apiServer+"/files/uploads/"
         }
         function C(e, t, n) {
             n = n.split("-")[0];
-            var e = O(e)
+            var e = k(e)
               , i = {
                 width: e.width,
                 height: e.height
@@ -24471,7 +24471,7 @@ var apiFiles = apiServer+"/files/uploads/"
               , s = r ? "height" : "width"
               , r = r ? "width" : "height";
             return i[o] = t[o] + t[s] / 2 - e[s] / 2,
-            i[a] = n === a ? t[a] - e[r] : t[k(a)],
+            i[a] = n === a ? t[a] - e[r] : t[O(a)],
             i
         }
         function P(e, t) {
@@ -24766,7 +24766,7 @@ var apiFiles = apiServer+"/files/uploads/"
                               , s = a.toLowerCase()
                               , l = n ? "left" : "top"
                               , n = n ? "bottom" : "right"
-                              , c = O(t)[o]
+                              , c = k(t)[o]
                               , n = (i[n] - c < r[s] && (e.offsets.popper[s] -= r[s] - (i[n] - c)),
                             i[s] + c > r[n] && (e.offsets.popper[s] += i[s] + c - r[n]),
                             e.offsets.popper = _(e.offsets.popper),
@@ -24792,7 +24792,7 @@ var apiFiles = apiServer+"/files/uploads/"
                         if (!(U(c.instance.modifiers, "inner") || c.flipped && c.placement === c.originalPlacement)) {
                             var d = E(c.instance.popper, c.instance.reference, u.padding, u.boundariesElement, c.positionFixed)
                               , f = c.placement.split("-")[0]
-                              , p = k(f)
+                              , p = O(f)
                               , h = c.placement.split("-")[1] || ""
                               , m = [];
                             switch (u.behavior) {
@@ -24812,7 +24812,7 @@ var apiFiles = apiServer+"/files/uploads/"
                                 if (f !== e || m.length === t + 1)
                                     return c;
                                 f = c.placement.split("-")[0],
-                                p = k(f);
+                                p = O(f);
                                 var e = c.offsets.popper
                                   , n = c.offsets.reference
                                   , i = Math.floor
@@ -24853,7 +24853,7 @@ var apiFiles = apiServer+"/files/uploads/"
                           , o = -1 !== ["left", "right"].indexOf(n)
                           , a = -1 === ["top", "left"].indexOf(n);
                         return i[o ? "left" : "top"] = r[n] - (a ? i[o ? "width" : "height"] : 0),
-                        e.placement = k(t),
+                        e.placement = O(t),
                         e.offsets.popper = _(i),
                         e
                     }
@@ -29818,7 +29818,7 @@ var apiFiles = apiServer+"/files/uploads/"
             return Se._jQueryInterface
         }
         ,
-        "collapse"), xe = "4.2.1", d = "bs.collapse", Te = "." + d, Oe, ke = g.fn[Ee], Ce = {
+        "collapse"), xe = "4.2.1", d = "bs.collapse", Te = "." + d, ke, Oe = g.fn[Ee], Ce = {
             toggle: true,
             parent: ""
         }, Pe = {
@@ -30054,7 +30054,7 @@ var apiFiles = apiServer+"/files/uploads/"
         g.fn[Ee] = je._jQueryInterface,
         g.fn[Ee].Constructor = je,
         g.fn[Ee].noConflict = function() {
-            g.fn[Ee] = ke;
+            g.fn[Ee] = Oe;
             return je._jQueryInterface
         }
         ,
@@ -30812,7 +30812,7 @@ var apiFiles = apiServer+"/files/uploads/"
             container: false,
             fallbackPlacement: "flip",
             boundary: "scrollParent"
-        }, O = {
+        }, k = {
             SHOW: "show",
             OUT: "out"
         }, ft = {
@@ -30826,7 +30826,7 @@ var apiFiles = apiServer+"/files/uploads/"
             FOCUSOUT: "focusout" + T,
             MOUSEENTER: "mouseenter" + T,
             MOUSELEAVE: "mouseleave" + T
-        }, k = {
+        }, O = {
             FADE: "fade",
             SHOW: "show"
         }, pt = {
@@ -30881,7 +30881,7 @@ var apiFiles = apiServer+"/files/uploads/"
                     else
                         i._leave(null, i)
                 } else {
-                    if (g(this.getTipElement()).hasClass(k.SHOW)) {
+                    if (g(this.getTipElement()).hasClass(O.SHOW)) {
                         this._leave(null, this);
                         return
                     }
@@ -30925,7 +30925,7 @@ var apiFiles = apiServer+"/files/uploads/"
                     this.element.setAttribute("aria-describedby", a);
                     this.setContent();
                     if (this.config.animation)
-                        g(o).addClass(k.FADE);
+                        g(o).addClass(O.FADE);
                     var s = typeof this.config.placement === "function" ? this.config.placement.call(this, o, this.element) : this.config.placement;
                     var l = this._getAttachment(s);
                     this.addAttachmentClass(l);
@@ -30958,7 +30958,7 @@ var apiFiles = apiServer+"/files/uploads/"
                             return n._handlePopperPlacementChange(t)
                         }
                     });
-                    g(o).addClass(k.SHOW);
+                    g(o).addClass(O.SHOW);
                     if ("ontouchstart"in document.documentElement)
                         g(document.body).children().on("mouseover", null, g.noop);
                     var u = function e() {
@@ -30967,10 +30967,10 @@ var apiFiles = apiServer+"/files/uploads/"
                         var t = n._hoverState;
                         n._hoverState = null;
                         g(n.element).trigger(n.constructor.Event.SHOWN);
-                        if (t === O.OUT)
+                        if (t === k.OUT)
                             n._leave(null, n)
                     };
-                    if (g(this.tip).hasClass(k.FADE)) {
+                    if (g(this.tip).hasClass(O.FADE)) {
                         var d = v.getTransitionDurationFromElement(this.tip);
                         g(this.tip).one(v.TRANSITION_END, u).emulateTransitionEnd(d)
                     } else
@@ -30983,7 +30983,7 @@ var apiFiles = apiServer+"/files/uploads/"
                 var i = this.getTipElement();
                 var r = g.Event(this.constructor.Event.HIDE);
                 var o = function e() {
-                    if (n._hoverState !== O.SHOW && i.parentNode)
+                    if (n._hoverState !== k.SHOW && i.parentNode)
                         i.parentNode.removeChild(i);
                     n._cleanTipClass();
                     n.element.removeAttribute("aria-describedby");
@@ -30996,13 +30996,13 @@ var apiFiles = apiServer+"/files/uploads/"
                 g(this.element).trigger(r);
                 if (r.isDefaultPrevented())
                     return;
-                g(i).removeClass(k.SHOW);
+                g(i).removeClass(O.SHOW);
                 if ("ontouchstart"in document.documentElement)
                     g(document.body).children().off("mouseover", null, g.noop);
                 this._activeTrigger[C.CLICK] = false;
                 this._activeTrigger[C.FOCUS] = false;
                 this._activeTrigger[C.HOVER] = false;
-                if (g(this.tip).hasClass(k.FADE)) {
+                if (g(this.tip).hasClass(O.FADE)) {
                     var a = v.getTransitionDurationFromElement(i);
                     g(i).one(v.TRANSITION_END, o).emulateTransitionEnd(a)
                 } else
@@ -31031,7 +31031,7 @@ var apiFiles = apiServer+"/files/uploads/"
             e.setContent = function e() {
                 var t = this.getTipElement();
                 this.setElementContent(g(t.querySelectorAll(pt.TOOLTIP_INNER)), this.getTitle());
-                g(t).removeClass(k.FADE + " " + k.SHOW)
+                g(t).removeClass(O.FADE + " " + O.SHOW)
             }
             ;
             e.setElementContent = function e(t, n) {
@@ -31113,18 +31113,18 @@ var apiFiles = apiServer+"/files/uploads/"
                 }
                 if (t)
                     n._activeTrigger[t.type === "focusin" ? C.FOCUS : C.HOVER] = true;
-                if (g(n.getTipElement()).hasClass(k.SHOW) || n._hoverState === O.SHOW) {
-                    n._hoverState = O.SHOW;
+                if (g(n.getTipElement()).hasClass(O.SHOW) || n._hoverState === k.SHOW) {
+                    n._hoverState = k.SHOW;
                     return
                 }
                 clearTimeout(n._timeout);
-                n._hoverState = O.SHOW;
+                n._hoverState = k.SHOW;
                 if (!n.config.delay || !n.config.delay.show) {
                     n.show();
                     return
                 }
                 n._timeout = setTimeout(function() {
-                    if (n._hoverState === O.SHOW)
+                    if (n._hoverState === k.SHOW)
                         n.show()
                 }, n.config.delay.show)
             }
@@ -31141,13 +31141,13 @@ var apiFiles = apiServer+"/files/uploads/"
                 if (n._isWithActiveTrigger())
                     return;
                 clearTimeout(n._timeout);
-                n._hoverState = O.OUT;
+                n._hoverState = k.OUT;
                 if (!n.config.delay || !n.config.delay.hide) {
                     n.hide();
                     return
                 }
                 n._timeout = setTimeout(function() {
-                    if (n._hoverState === O.OUT)
+                    if (n._hoverState === k.OUT)
                         n.hide()
                 }, n.config.delay.hide)
             }
@@ -31202,7 +31202,7 @@ var apiFiles = apiServer+"/files/uploads/"
                 var n = this.config.animation;
                 if (t.getAttribute("x-placement") !== null)
                     return;
-                g(t).removeClass(k.FADE);
+                g(t).removeClass(O.FADE);
                 this.config.animation = false;
                 this.hide();
                 this.show();
@@ -31390,14 +31390,14 @@ var apiFiles = apiServer+"/files/uploads/"
                 }
             }]);
             return i
-        }(P), Ot = (g.fn[ht] = Tt._jQueryInterface,
+        }(P), kt = (g.fn[ht] = Tt._jQueryInterface,
         g.fn[ht].Constructor = Tt,
         g.fn[ht].noConflict = function() {
             g.fn[ht] = vt;
             return Tt._jQueryInterface
         }
         ,
-        "scrollspy"), kt = "4.2.1", Ct = "bs.scrollspy", Pt = "." + Ct, At, It = g.fn[Ot], Lt = {
+        "scrollspy"), Ot = "4.2.1", Ct = "bs.scrollspy", Pt = "." + Ct, At, It = g.fn[kt], Lt = {
             offset: 10,
             method: "auto",
             target: ""
@@ -31492,12 +31492,12 @@ var apiFiles = apiServer+"/files/uploads/"
                 if (typeof t.target !== "string") {
                     var n = g(t.target).attr("id");
                     if (!n) {
-                        n = v.getUID(Ot);
+                        n = v.getUID(kt);
                         g(t.target).attr("id", n)
                     }
                     t.target = "#" + n
                 }
-                v.typeCheckConfig(Ot, t, jt);
+                v.typeCheckConfig(kt, t, jt);
                 return t
             }
             ;
@@ -31585,7 +31585,7 @@ var apiFiles = apiServer+"/files/uploads/"
             o(i, null, [{
                 key: "VERSION",
                 get: function e() {
-                    return kt
+                    return Ot
                 }
             }, {
                 key: "Default",
@@ -31602,10 +31602,10 @@ var apiFiles = apiServer+"/files/uploads/"
                 Mt._jQueryInterface.call(i, i.data())
             }
         }),
-        g.fn[Ot] = Mt._jQueryInterface,
-        g.fn[Ot].Constructor = Mt,
-        g.fn[Ot].noConflict = function() {
-            g.fn[Ot] = It;
+        g.fn[kt] = Mt._jQueryInterface,
+        g.fn[kt].Constructor = Mt,
+        g.fn[kt].noConflict = function() {
+            g.fn[kt] = It;
             return Mt._jQueryInterface
         }
         ,
@@ -32121,8 +32121,8 @@ var apiFiles = apiServer+"/files/uploads/"
                   , E = pe ? S : y
                   , x = S.find(".sp-preview-inner")
                   , T = c.color || de && y.val()
-                  , O = false
-                  , k = c.preferredFormat
+                  , k = false
+                  , O = c.preferredFormat
                   , he = !c.showButtons || c.clickoutFiresChange
                   , C = !T
                   , P = c.allowEmpty && !fe;
@@ -32260,12 +32260,12 @@ var apiFiles = apiServer+"/files/uploads/"
                     if (!!T) {
                         I(T);
                         R();
-                        k = c.preferredFormat || tinycolor(T).format;
+                        O = c.preferredFormat || tinycolor(T).format;
                         ye(T)
                     } else
                         R();
                     if (i)
-                        Oe();
+                        ke();
                     function t(e) {
                         if (e.data && e.data.ignore) {
                             I(Ne(e.target).closest(".sp-thumb-el").data("color"));
@@ -32339,7 +32339,7 @@ var apiFiles = apiServer+"/files/uploads/"
                 }
                 function we() {
                     if (c.showInitial) {
-                        var e = O;
+                        var e = k;
                         var t = L();
                         ae.html(We([e, t], t, "sp-palette-row-initial", c))
                     }
@@ -32377,9 +32377,9 @@ var apiFiles = apiServer+"/files/uploads/"
                     if (t)
                         A();
                     else
-                        Oe()
+                        ke()
                 }
-                function Oe() {
+                function ke() {
                     var e = Ne.Event("beforeShow.spectrum");
                     if (t) {
                         M();
@@ -32390,19 +32390,19 @@ var apiFiles = apiServer+"/files/uploads/"
                         return;
                     Ge();
                     t = true;
-                    Ne(v).on("keydown.spectrum", ke);
+                    Ne(v).on("keydown.spectrum", Oe);
                     Ne(v).on("click.spectrum", Ce);
                     Ne(window).on("resize.spectrum", U);
                     S.addClass("sp-active");
                     _.removeClass("sp-hidden");
                     M();
                     R();
-                    O = L();
+                    k = L();
                     we();
-                    r.show(O);
-                    y.trigger("show.spectrum", [O])
+                    r.show(k);
+                    y.trigger("show.spectrum", [k])
                 }
-                function ke(e) {
+                function Oe(e) {
                     if (e.keyCode === 27)
                         A()
                 }
@@ -32421,7 +32421,7 @@ var apiFiles = apiServer+"/files/uploads/"
                     if (!t || i)
                         return;
                     t = false;
-                    Ne(v).off("keydown.spectrum", ke);
+                    Ne(v).off("keydown.spectrum", Oe);
                     Ne(v).off("click.spectrum", Ce);
                     Ne(window).off("resize.spectrum", U);
                     S.removeClass("sp-active");
@@ -32430,7 +32430,7 @@ var apiFiles = apiServer+"/files/uploads/"
                     y.trigger("hide.spectrum", [L()])
                 }
                 function Pe() {
-                    I(O, true);
+                    I(k, true);
                     D(true)
                 }
                 function I(e, t) {
@@ -32452,7 +32452,7 @@ var apiFiles = apiServer+"/files/uploads/"
                     }
                     R();
                     if (n && n.isValid() && !t)
-                        k = c.preferredFormat || n.getFormat()
+                        O = c.preferredFormat || n.getFormat()
                 }
                 function L(e) {
                     e = e || {};
@@ -32464,7 +32464,7 @@ var apiFiles = apiServer+"/files/uploads/"
                         v: p,
                         a: Math.round(h * 1e3) / 1e3
                     }, {
-                        format: e.format || k
+                        format: e.format || O
                     })
                 }
                 function Ae() {
@@ -32484,7 +32484,7 @@ var apiFiles = apiServer+"/files/uploads/"
                         v: 1
                     });
                     $.css("background-color", e.toHexString());
-                    var t = k;
+                    var t = O;
                     if (h < 1 && !(h === 0 && t === "name"))
                         if (t === "hex" || t === "hex3" || t === "hex6" || t === "name")
                             t = "rgb";
@@ -32561,9 +32561,9 @@ var apiFiles = apiServer+"/files/uploads/"
                 function D(e) {
                     var t = L()
                       , n = ""
-                      , i = !tinycolor.equals(t, O);
+                      , i = !tinycolor.equals(t, k);
                     if (t) {
-                        n = t.toString(k);
+                        n = t.toString(O);
                         ye(t)
                     }
                     if (de)
@@ -32610,7 +32610,7 @@ var apiFiles = apiServer+"/files/uploads/"
                         return c[e];
                     c[e] = t;
                     if (e === "preferredFormat")
-                        k = c.preferredFormat;
+                        O = c.preferredFormat;
                     me()
                 }
                 function Re() {
@@ -32630,7 +32630,7 @@ var apiFiles = apiServer+"/files/uploads/"
                 }
                 ge();
                 var Fe = {
-                    show: Oe,
+                    show: ke,
                     hide: A,
                     toggle: Te,
                     reflow: M,
@@ -32838,7 +32838,7 @@ var apiFiles = apiServer+"/files/uploads/"
                     return e;
                 if (!(this instanceof d))
                     return new d(e,t);
-                var n = O(e);
+                var n = k(e);
                 this._originalInput = e;
                 this._r = n.r;
                 this._g = n.g;
@@ -32856,7 +32856,7 @@ var apiFiles = apiServer+"/files/uploads/"
                 this._ok = n.ok;
                 this._tc_id = T++
             };
-            function O(e) {
+            function k(e) {
                 var t = {
                     r: 0,
                     g: 0,
@@ -32869,7 +32869,7 @@ var apiFiles = apiServer+"/files/uploads/"
                     e = Q(e);
                 if (typeof e == "object") {
                     if (e.hasOwnProperty("r") && e.hasOwnProperty("g") && e.hasOwnProperty("b")) {
-                        t = k(e.r, e.g, e.b);
+                        t = O(e.r, e.g, e.b);
                         i = true;
                         r = String(e.r).substr(-1) === "%" ? "prgb" : "rgb"
                     } else if (e.hasOwnProperty("h") && e.hasOwnProperty("s") && e.hasOwnProperty("v")) {
@@ -32898,7 +32898,7 @@ var apiFiles = apiServer+"/files/uploads/"
                     a: n
                 }
             }
-            function k(e, t, n) {
+            function O(e, t, n) {
                 return {
                     r: v(e, 255) * 255,
                     g: v(t, 255) * 255,
@@ -33737,7 +33737,7 @@ var apiFiles = apiServer+"/files/uploads/"
         ) ? i.apply(t, r) : i) && (e.exports = r)
     }()
 }
-, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , function(e, t, n) {
+, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , function(e, t, n) {
     "use strict";
     var i, r, o = this && this.__extends || (i = function(e, t) {
         return (i = Object.setPrototypeOf || ({
@@ -33764,10 +33764,10 @@ var apiFiles = apiServer+"/files/uploads/"
         value: !0
     }),
     t.IlovepdfTool = void 0,
-    n(149)), s = n(510), a = (r = a.IloveTool,
+    n(149)), s = n(596), a = (r = a.IloveTool,
     o(l, r),
     l.prototype.getOptionsManager = function() {
-        return new s.PagenumberOptionsManager(this.getToolOptions())
+        return new s.WatermarkOptionsManager(this.getToolOptions())
     }
     ,
     l.prototype.getToolOptions = function() {
@@ -33801,13 +33801,13 @@ var apiFiles = apiServer+"/files/uploads/"
     }
     t.IlovepdfTool = a
 }
-, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , function(e, t, n) {
+, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , function(e, t, n) {
     "use strict";
     n.r(t);
     n(185),
     n(165),
     n(106);
-    t = n(387);
+    t = n(397);
     n(118),
     n(294),
     n(125),
@@ -33815,10 +33815,10 @@ var apiFiles = apiServer+"/files/uploads/"
     window.userModel = window.ilovepdfConfig.user,
     window.ilovepdf = new t.IlovepdfTool(window.ilovepdfConfig)
 }
-, function(e, d, f) {
+, function(e, p, h) {
     "use strict";
-    !function(p) {
-        var i, t, e = this && this.__extends || (i = function(e, t) {
+    !function(c) {
+        var i, r, e = this && this.__extends || (i = function(e, t) {
             return (i = Object.setPrototypeOf || ({
                 __proto__: []
             }instanceof Array ? function(e, t) {
@@ -33839,178 +33839,146 @@ var apiFiles = apiServer+"/files/uploads/"
             e.prototype = null === t ? Object.create(t) : (n.prototype = t.prototype,
             new n)
         }
-        ), r = this && this.__createBinding || (Object.create ? function(e, t, n, i) {
-            void 0 === i && (i = n),
-            Object.defineProperty(e, i, {
-                enumerable: !0,
-                get: function() {
-                    return t[n]
-                }
-            })
-        }
-        : function(e, t, n, i) {
-            e[i = void 0 === i ? n : i] = t[n]
-        }
-        ), o = this && this.__setModuleDefault || (Object.create ? function(e, t) {
-            Object.defineProperty(e, "default", {
-                enumerable: !0,
-                value: t
-            })
-        }
-        : function(e, t) {
-            e.default = t
-        }
-        ), n = this && this.__importStar || function(e) {
-            if (e && e.__esModule)
-                return e;
-            var t = {};
-            if (null != e)
-                for (var n in e)
-                    "default" !== n && Object.hasOwnProperty.call(e, n) && r(t, e, n);
-            return o(t, e),
-            t
-        }
-        , a = (Object.defineProperty(d, "__esModule", {
+        ), t = (Object.defineProperty(p, "__esModule", {
             value: !0
         }),
-        d.PagenumberOptionsManager = void 0,
-        f(90)), s = f(85), l = f(172), h = f(7), m = f(34), c = n(f(15)), g = f(17), n = (t = a.OptionsManager,
-        e(u, t),
-        u.prototype.startPanels = function() {
+        p.WatermarkOptionsManager = void 0,
+        h(90)), s = h(85), l = h(7), u = h(34), d = h(17), n = h(172), o = h(101), a = h(115), t = (r = t.OptionsManager,
+        e(f, r),
+        f.prototype.startPanels = function() {
             var e = this;
-            t.prototype.startPanels.call(this),
+            r.prototype.startPanels.call(this),
+            c("#orderByName").hide(),
             this.waitForViewManager().then(function() {
                 e.viewManager.pdfViewer.onFileReady().then(function() {
-                    p("#filePages").css("display", "flex"),
-                    e.setTooltip()
+                    c("#filePages").css("display", "flex")
                 }, function() {})
             }, function() {}),
+            this.initUploader(),
             this.initToolbar(),
             this.initToolbarActions(),
-            this.initCustomTextChangeAction(),
             this.initRangeActions()
         }
         ,
-        u.prototype.initToolbar = function() {
+        f.prototype.initActions = function() {
+            r.prototype.initActions.call(this);
             var t = this;
-            l.Toolbar.init(),
-            p(".editor__toolbar__options").show(),
-            p("#editor_file_select").on("change", function() {
-                var e = t.files.getFile(this.value);
-                p(".page").hide(),
-                p(".file" + e.id).show()
+            c(".option__page__position").on("click", function(e) {
+                c(".option__page__position").removeClass("option--active"),
+                c(e.target).addClass("option--active"),
+                t.setBullet(),
+                t.setTooltip(),
+                c('[name="mosaic"]').prop("checked", !1)
             }),
-            p(".editor__toolbar__options .drop").on("click", function() {
-                var e = p("#editor_file_select").val().toString();
+            c("#transparency").on("change", function() {
+                var e = parseInt(c("#transparency").val().toString()) / 100;
+                c(".file__bullet").css("opacity", e)
+            }),
+            c('[name="mosaic"]').on("click", function(e) {
+                1 == c('[name="mosaic"]').is(":checked") ? t.showMosaic() : t.hideMosaic(),
+                t.setTooltip()
+            })
+        }
+        ,
+        f.prototype.setBullet = function() {
+            var e = c(".option__page__position.option--active")
+              , t = e.attr("data-vertical")
+              , e = e.attr("data-horizontal");
+            c(".file__bullet").attr("class", "file__bullet").addClass("file__bullet--" + t).addClass("file__bullet--" + e)
+        }
+        ,
+        f.prototype.setTooltip = function() {
+            var e = c(".option__page__position.option--active")
+              , n = e.attr("data-vertical")
+              , i = e.attr("data-horizontal");
+            c(".file__bullet").each(function(e, t) {
+                u.Tooltip.setContent(t, l.Lang.t("positionTooltip", {
+                    positionVertical: l.Lang.t(n),
+                    positionHorizontal: l.Lang.t(i)
+                }))
+            })
+        }
+        ,
+        f.prototype.showMosaic = function() {
+            this.lastPos = c(".option__page__position.option--active"),
+            this.lastPos.removeClass("option--active"),
+            c(".file__bullet").remove();
+            var e = '<div class="file__bullet"></div>';
+            c(".page__canvas").append(c(e).addClass("file__bullet--top file__bullet--left")),
+            c(".page__canvas").append(c(e).addClass("file__bullet--top file__bullet--center")),
+            c(".page__canvas").append(c(e).addClass("file__bullet--top file__bullet--right")),
+            c(".page__canvas").append(c(e).addClass("file__bullet--middle file__bullet--left")),
+            c(".page__canvas").append(c(e).addClass("file__bullet--middle file__bullet--center")),
+            c(".page__canvas").append(c(e).addClass("file__bullet--middle file__bullet--right")),
+            c(".page__canvas").append(c(e).addClass("file__bullet--bottom file__bullet--left")),
+            c(".page__canvas").append(c(e).addClass("file__bullet--bottom file__bullet--center")),
+            c(".page__canvas").append(c(e).addClass("file__bullet--bottom file__bullet--right"))
+        }
+        ,
+        f.prototype.hideMosaic = function() {
+            this.lastPos.addClass("option--active"),
+            c(".file__bullet").remove(),
+            c(".page__canvas").append('<div class="file__bullet"></div>'),
+            this.setBullet(),
+            this.setTooltip(),
+            this.showPagesPosition()
+        }
+        ,
+        f.prototype.initUploader = function() {
+            this.uploader = new a.PluploadUpload({
+                id: "pickwatermark",
+                container: "pickwatermarkContainer",
+                optionsManager: this,
+                processManager: this.processManager,
+                config: new o.Config({
+                    tool: "watermarkimage",
+                    subtool: "watermarkimage",
+                    config: this.config.config
+                }),
+                apiVersion: this.processManager.apiVersion,
+                files: this.files,
+                workerServer: this.workerServer,
+                startServer: this.startServer,
+                token: this.processManager.token,
+                tool: this.tool,
+                taskId: this.processManager.taskId,
+                servers: [],
+                haveDrop: !0,
+                dropElement: "sidebar",
+                ignoreFiles: !0
+            })
+        }
+        ,
+        f.prototype.initToolbar = function() {
+            var t = this;
+            n.Toolbar.init(),
+            c(".editor__toolbar__options").show(),
+            c("#editor_file_select").on("change", function() {
+                var e = t.files.getFile(this.value);
+                c(".page").hide(),
+                c(".file" + e.id).show()
+            }),
+            c(".editor__toolbar__options .drop").on("click", function() {
+                var e = c("#editor_file_select").val().toString();
                 t.removeFile(e),
                 t.fileRemoved(e)
             })
         }
         ,
-        u.prototype.initActions = function() {
-            var n = this;
-            t.prototype.initActions.call(this),
-            p(".option__page__position").on("click", function(e) {
-                var t, e = p(e.target);
-                "middle" != e.attr("data-vertical") && (p(".option__page__position").removeClass("option--active"),
-                e.addClass("option--active"),
-                t = e.attr("data-vertical"),
-                e = e.attr("data-horizontal"),
-                p(".file__bullet").attr("class", "file__bullet").addClass("file__bullet--" + t).addClass("file__bullet--" + e),
-                n.setTooltip())
-            }),
-            p(':radio[name="facing_pages"]').on("change", function(e) {
-                "true" == p(':radio[name="facing_pages"]').filter(":checked").val() ? p("#first_cover").is(":checked") ? (n.groupCover(),
-                0 == n.rangeChanged && (p('[name="starting_number"]').val("3"),
-                p("#start_pages").val("2"),
-                p('[name="page_init"]').val("3"))) : n.groupFacing() : (0 == n.rangeChanged && (p("#start_pages").val("0"),
-                p('[name="starting_number"]').val("1"),
-                p('[name="page_init"]').val("1")),
-                n.ungroup()),
-                n.showPagesPosition(),
-                n.setTooltip()
-            }),
-            p("#text").on("change", function() {
-                n.setTooltip()
-            }),
-            p('[name="starting_number"]').on("keyup mouseup", function(e) {
-                n.validateStartingNumber(),
-                n.setTooltip()
-            }),
-            p("#first_cover").on("change", function(e) {
-                p("#first_cover").is(":checked") ? (n.groupCover(),
-                0 == n.rangeChanged && (p('[name="starting_number"]').val("3"),
-                p("#start_pages").val("2"),
-                p('[name="page_init"]').val("3"))) : (0 == n.rangeChanged && (p("#start_pages").val("0"),
-                p('[name="starting_number"]').val("1"),
-                p('[name="page_init"]').val("1")),
-                n.groupFacing()),
-                n.showPagesPosition(),
-                n.setTooltip()
-            }),
-            p("#textFormat").on("change", function() {
-                var e = p("#textFormat").val();
-                p(".file__bullet").removeClass("file__bullet--small file__bullet--medium file__bullet--big").addClass("file__bullet--" + e)
-            })
-        }
-        ,
-        u.prototype.setTooltip = function() {
-            var c = this
-              , u = this.getOption("text")
-              , e = ("custom" == u && (u = p("#textCustom").val()),
-            p(".option__page__position.option--active"))
-              , d = e.attr("data-vertical")
-              , f = e.attr("data-horizontal");
-            p.each(c.files.files, function(e, t) {
-                var o = parseInt(p('[name="starting_number"]').val().toString())
-                  , n = parseInt(p('[name="page_init"]').val().toString())
-                  , a = parseInt(p('[name="page_end"]').val().toString()) - n + 1
-                  , s = c.pages
-                  , l = (1 < c.files.files.length && t.file && (a = t.file.numPages - n,
-                s = t.file.numPages),
-                a + o - 1);
-                o -= n,
-                p(".file" + t.id + " .file__bullet").each(function(e, t) {
-                    o++;
-                    var n = "{n}" == u ? "positionTooltipNumber" : "positionTooltipText"
-                      , i = g.Tools.parseTemplate(u, {
-                        n: o,
-                        p: s,
-                        r: a,
-                        rf: l
-                    })
-                      , r = f;
-                    "true" != c.getOption("facing_pages").toString() || "left" != r && "right" != r || ("true" == c.getOption("first_cover").toString() ? e % 2 == 1 && (r = "left" == f ? "right" : "left") : e % 2 == 0 && (r = "left" == f ? "right" : "left")),
-                    m.Tooltip.setContent(t, h.Lang.t(n, {
-                        pageText: i,
-                        positionVertical: h.Lang.t(d),
-                        positionHorizontal: h.Lang.t(r)
-                    }))
-                })
-            })
-        }
-        ,
-        u.prototype.initCustomTextChangeAction = function() {
-            var e = this;
-            p("#textCustom").on("change", function() {
-                e.setTooltip()
-            })
-        }
-        ,
-        u.prototype.initToolbarActions = function() {
-            var t = p("#textFormatOptions")
+        f.prototype.initToolbarActions = function() {
+            var t = c("#textFormatOptions")
               , n = this
-              , i = (p("#textFormatOptionsFontSize").val(this.fontSize),
-            p("#textFormatOptionsFontSizeText").val(this.fontSize),
-            p("#textFormatOptions input.color").not("no-picker").each(function(e, t) {
-                g.Tools.colorpicker(t)
+              , i = (c("#textFormatOptionsFontSize").val(this.fontSize),
+            c("#textFormatOptionsFontSizeText").val(this.fontSize),
+            c("#textFormatOptions input.color").not("no-picker").each(function(e, t) {
+                d.Tools.colorpicker(t)
             }),
-            p("body").click(function(e) {
-                p(e.target).closest(".editor__content__item"),
-                p(e.target).closest(".editor__toolbar__options");
-                var t = p(e.target).closest(".editor__toolbar__option");
-                1 == t.length ? p(e.target).is(".editor__option__selector") || 1 == p(e.target).parents(".editor__option__selector").length ? ((t = t.children(".editor__option__content")).toggle(),
-                p(".editor__option__content").not(t).hide()) : p(e.target).is(".editor__option__content") || 1 == p(e.target).parents(".editor__option__content").length || p(".editor__option__content").hide() : p(".editor__option__content").hide()
+            c("body").click(function(e) {
+                c(e.target).closest(".editor__content__item"),
+                c(e.target).closest(".editor__toolbar__options");
+                var t = c(e.target).closest(".editor__toolbar__option");
+                1 == t.length ? c(e.target).is(".editor__option__selector") || 1 == c(e.target).parents(".editor__option__selector").length ? ((t = t.children(".editor__option__content")).toggle(),
+                c(".editor__option__content").not(t).hide()) : c(e.target).is(".editor__option__content") || 1 == c(e.target).parents(".editor__option__content").length || c(".editor__option__content").hide() : c(".editor__option__content").hide()
             }),
             t.find('[name="font_size"]'))
               , r = (i.on("keyup mouseup", function(e) {
@@ -34025,16 +33993,16 @@ var apiFiles = apiServer+"/files/uploads/"
               , e = t.find(".font-selector")
               , o = (e.on("click", function(e) {
                 var t;
-                p(e.target).hasClass("disabled") || (n.fontFamily = p(e.target).data("value"),
-                t = p(e.target).html(),
-                p(".font-selector").removeClass("active"),
-                p(e.target).addClass("active"),
-                p("#textFormatOptions .font-selected").css("font-family", n.fontFamily).html(t),
-                t = p(e.target).data("country"),
-                p("#textFormatOptions .font-selected").attr("data-country", t),
-                p(e.target).parent().hide(),
-                1 == p(e.target).data("italic") ? p(".editor__option.italic").parent().show() : p(".editor__option.italic").parent().hide(),
-                1 == p(e.target).data("bold") ? p(".editor__option.bold").parent().show() : p(".editor__option.bold").parent().hide())
+                c(e.target).hasClass("disabled") || (n.fontFamily = c(e.target).data("value"),
+                t = c(e.target).html(),
+                c(".font-selector").removeClass("active"),
+                c(e.target).addClass("active"),
+                c("#textFormatOptions .font-selected").css("font-family", n.fontFamily).html(t),
+                t = c(e.target).data("country"),
+                c("#textFormatOptions .font-selected").attr("data-country", t),
+                c(e.target).parent().hide(),
+                1 == c(e.target).data("italic") ? c(".editor__option.italic").parent().show() : c(".editor__option.italic").parent().hide(),
+                1 == c(e.target).data("bold") ? c(".editor__option.bold").parent().show() : c(".editor__option.bold").parent().hide())
             }),
             t.find('[name="font_color"]'))
               , a = (o.on("change", function() {
@@ -34056,125 +34024,43 @@ var apiFiles = apiServer+"/files/uploads/"
                 1 == n.italic ? l.parent().addClass("active") : l.parent().removeClass("active")
             }),
             t.find(".textAlign").on("click", function(e) {
-                e = p(e.target).closest(".editor__toolbar__option"),
-                p("#textFormatOptions .textAlign").removeClass("active"),
+                e = c(e.target).closest(".editor__toolbar__option"),
+                c("#textFormatOptions .textAlign").removeClass("active"),
                 e.addClass("active"),
                 e = e.data("align");
                 n.textAlign = e
             })
         }
         ,
-        u.prototype.initTextFormat = function() {
-            var t = this
-              , e = p("#textFormatOptions");
-            e.find('[name="font_size"]').val(this.fontSize),
-            e.find('[name="font_size_number"]').val(this.fontSize);
-            try {
-                e.find('[name="font_family"]').val(this.fontFamily.toLowerCase()),
-                e.find(".font-selected").html(this.fontFamily).css("font-family", this.fontFamily.toLowerCase())
-            } catch (e) {
-                c.captureMessage("Error set font family"),
-                c.configureScope(function(e) {
-                    e.setExtra("fontFamily", t.fontFamily)
-                })
-            }
-            e.find('[name="font_color"]').val(this.fontColor)
-        }
-        ,
-        u.prototype.initRangeActions = function() {
-            var e = this;
-            p('[name="page_init"]').val(1),
-            p('[name="page_end"]').val(this.pages),
-            p('[name="page_init"]').on("change", function() {
-                e.rangeChanged = !0
-            }),
-            p('[name="page_init"], [name="page_end"]').on("change", function() {
-                e.validateRange(),
-                e.showPagesPosition(),
-                e.setTooltip()
-            }),
-            p("#start_pages").on("change", function() {
-                e.rangeChanged = !0,
-                p('[name="page_init"]').val(p("#start_pages").val()),
-                e.showPagesPosition()
-            }),
-            p("#end_pages").on("change", function() {
-                parseInt(p("#end_pages").val().toString());
-                e.showPagesPosition()
+        f.prototype.initRangeActions = function() {
+            var r = this;
+            c('[name="page_init"]').val(1),
+            c('[name="page_end"]').val(this.pages),
+            c('[name="page_init"], [name="page_end"]').on("change", function() {
+                var e = c('[name="page_init"]')
+                  , t = c('[name="page_end"]')
+                  , n = parseInt(e.val().toString())
+                  , i = parseInt(t.val().toString());
+                (n < 1 || isNaN(n)) && (n = 1,
+                e.val(1)),
+                i < n && (i = n,
+                t.val(n)),
+                (i > r.pages || isNaN(i)) && (i = r.pages,
+                t.val(r.pages)),
+                r.showPagesPosition()
             })
         }
         ,
-        u.prototype.validateRange = function() {
-            var e = p('[name="page_init"]')
-              , t = p('[name="page_end"]')
-              , n = parseInt(e.val().toString())
-              , i = parseInt(t.val().toString());
-            (n < 1 || isNaN(n)) && e.val(n = 1),
-            n > this.pages && (n = this.pages,
-            e.val(n)),
-            i < n && (i = n,
-            t.val(n)),
-            (i > this.pages || isNaN(i)) && (i = this.pages,
-            t.val(this.pages))
+        f.prototype.showPagesPosition = function() {
+            if (0 != this.files.countNotIgnored())
+                for (var e = parseInt(c('[name="page_init"]').val().toString()), t = parseInt(c('[name="page_end"]').val().toString()), n = (c(".file__bullet").hide(),
+                this.files.files[0].id), i = e; i < t + 1; i++)
+                    c("#" + n + i + " .file__bullet").show()
         }
         ,
-        u.prototype.validateStartingNumber = function() {
-            var e = p('[name="starting_number"]')
-              , t = parseInt(e.val().toString());
-            (t < 1 || isNaN(t)) && e.val(1)
-        }
+        f.prototype.updateOrderStatus = function() {}
         ,
-        u.prototype.showPagesPosition = function() {
-            var o, a, s;
-            0 != this.files.countNotIgnored() && (o = parseInt(p('[name="page_init"]').val().toString()),
-            a = parseInt(p('[name="page_end"]').val().toString()),
-            1 < (s = this.files.countNotIgnored()) ? p(".file__bullet").show() : p(".file__bullet").hide(),
-            p.each(this.files.files, function(e, t) {
-                if (t.file && t.file.numPages)
-                    if (1 < s) {
-                        a = t.file.numPages;
-                        var n = parseInt(p("#start_pages").val().toString())
-                          , i = parseInt(p("#end_pages").val().toString());
-                        p("#" + t.id + e + " .file__bullet").show(),
-                        0 != n && p(".file" + t.id + " .file__bullet").slice(0, n).hide(),
-                        0 != i && p(".file" + t.id + " .file__bullet").slice(-i).hide()
-                    } else
-                        for (var r = o; r < a + 1; r++)
-                            p("#" + t.id + r + " .file__bullet").show()
-            }))
-        }
-        ,
-        u.prototype.updateOrderStatus = function() {
-            p("#orderByName").hide()
-        }
-        ,
-        u.prototype.ungroup = function() {
-            p(".facing-page .page").unwrap()
-        }
-        ,
-        u.prototype.groupFacing = function() {
-            p(".facing-page .page").unwrap(),
-            p.each(this.files.files, function(e, t) {
-                var n = p(".file" + t.id + ":odd")
-                  , i = p(".file" + t.id + ":even");
-                n.each(function(e, t) {
-                    p(t).add(i[e]).wrapAll('<div class="facing-page"></div>')
-                })
-            })
-        }
-        ,
-        u.prototype.groupCover = function() {
-            p(".facing-page .page").unwrap(),
-            p.each(this.files.files, function(e, t) {
-                var n = p(".file" + t.id + ":odd")
-                  , i = p(".file" + t.id + ":even");
-                n.each(function(e, t) {
-                    i[e + 1] && p(t).add(i[e + 1]).wrapAll('<div class="facing-page"></div>')
-                })
-            })
-        }
-        ,
-        u.prototype.waitForViewManager = function() {
+        f.prototype.waitForViewManager = function() {
             var i = this;
             return new Promise(function(e, t) {
                 var n = window.setInterval(function() {
@@ -34186,57 +34072,99 @@ var apiFiles = apiServer+"/files/uploads/"
             )
         }
         ,
-        u.prototype.fileReady = function(e) {
-            t.prototype.fileReady.call(this, e),
+        f.prototype.fileAdded = function(e, t) {
+            return "pickwatermark" == t ? (this.limits.addIgnoredFile(e.id),
+            this.files.updateFile(e.id, {
+                ignored: !0
+            }),
+            this.processDisabledUploading = !0,
+            this.imageIsLoading = !0,
+            this.image = null,
+            this.checkProcessBtn(),
+            c("#watermarkPreview").html(""),
+            c("#watermarkPreview").css({
+                "background-image": "url(img/svg_icons/preload_w.svg)"
+            }),
+            r.prototype.fileAdded.call(this, e, t),
+            new Promise(function(e, t) {
+                e()
+            }
+            )) : (this.checkProcessBtn(),
+            r.prototype.fileAdded.call(this, e, t))
+        }
+        ,
+        f.prototype.fileUploaded = function(e, t) {
+            var n = this.files.updateFile(e, t);
+            null != n && "upBy"in n && "pickwatermark" == n.upBy ? (this.processDisabledUploading = !1,
+            this.image = n.server_filename,
+            this.imageIsLoading = !1,
+            this.setOption("image", this.image),
+            this.checkProcessBtn()) : r.prototype.fileUploaded.call(this, e, t)
+        }
+        ,
+        f.prototype.fileReady = function(e) {
+            r.prototype.fileReady.call(this, e),
+            e && "upBy"in e && "pickwatermark" == e.upBy ? (c("#" + e.id).hide(),
+            this.actionFormAddImage(e.id, this.viewManager.imageViewer.imageSrc["cover-" + e.id])) : (this.addPages(e),
+            this.showOptionsByFiles(),
             this.addFileToToolbar(e),
-            this.addPages(e),
-            this.showOptionsByFiles(),
-            p(".page").hide(),
-            p(".file" + e.id).show(),
-            this.showPagesPosition(),
-            this.viewManager.pdfViewer.checkIfNotRendered()
+            c(".page").hide(),
+            c(".file" + e.id).show(),
+            this.viewManager.pdfViewer.checkIfNotRendered(),
+            this.checkProcessBtn())
         }
         ,
-        u.prototype.addFileToToolbar = function(e) {
-            p("#editor_file_select").append('<option value="' + e.id + '" selected="selected">' + e.name + "</option>")
+        f.prototype.actionFormAddImage = function(e, t) {
+            c("#watermarkPreview").html(""),
+            c("#watermarkPreview").css({
+                "background-image": "url(" + t + ")"
+            }),
+            c("#pickwatermark span").hide(),
+            c("#changeImage").show()
         }
         ,
-        u.prototype.fileRemoved = function(e) {
-            p(".file" + e.fileId).remove(),
-            t.prototype.fileRemoved.call(this, e),
+        f.prototype.addFileToToolbar = function(e) {
+            c("#editor_file_select").append('<option value="' + e.id + '" selected="selected">' + e.name + "</option>")
+        }
+        ,
+        f.prototype.fileRemoved = function(e) {
+            c(".file" + e.fileId).remove(),
+            r.prototype.fileRemoved.call(this, e),
             this.showOptionsByFiles(),
-            p("#editor_file_select").html(""),
-            p.each(this.files.files, function(e, t) {
-                !0 !== t.ignored && p("#editor_file_select").append('<option value="' + t.id + '" selected="selected">' + t.name + "</option>")
+            c("#editor_file_select").html(""),
+            c.each(this.files.files, function(e, t) {
+                !0 !== t.ignored && c("#editor_file_select").append('<option value="' + t.id + '" selected="selected">' + t.name + "</option>")
             });
-            e = p("#editor_file_select").val();
-            e && (p(".file" + e).show(),
-            this.showPagesPosition()),
-            this.viewManager.pdfViewer.checkIfNotRendered()
+            e = c("#editor_file_select").val();
+            e && c(".file" + e).show(),
+            this.checkProcessBtn()
         }
         ,
-        u.prototype.showOptionsByFiles = function() {
-            0 == this.files.countNotIgnored() ? p("#filePages").hide() : (p("#filePages").show(),
-            1 < this.files.countNotIgnored() ? (p(".multiple_files").show(),
-            p(".single_file").hide()) : (p(".multiple_files").hide(),
-            p(".single_file").show(),
+        f.prototype.showOptionsByFiles = function() {
+            0 == this.files.countNotIgnored() ? c("#filePages").hide() : (c("#filePages").show(),
+            1 < this.files.countNotIgnored() ? (c(".multiple_files").show(),
+            c(".single_file").hide()) : (c(".multiple_files").hide(),
+            c(".single_file").show(),
             this.pages = this.files.files[0].file.numPages,
-            p('[name="page_init"]').val(1),
-            p('[name="page_end"]').val(this.pages),
-            1 == this.pages ? p(".multiple_pages").hide() : p(".multiple_pages").show(),
-            this.setTooltip()))
+            c('[name="page_init"]').val(1),
+            c('[name="page_end"]').val(this.pages),
+            1 == this.pages ? c(".multiple_pages").hide() : c(".multiple_pages").show()))
         }
         ,
-        u.prototype.addPages = function(e) {
+        f.prototype.addPages = function(e) {
             var t = e.file
               , n = e.id
               , i = 1
-              , r = p(".option__page__position.option--active").attr("data-vertical")
-              , o = p(".option__page__position.option--active").attr("data-horizontal")
-              , a = p('<div class="file__bullet"></div>');
+              , r = c(".option__page__position.option--active").attr("data-vertical")
+              , o = c(".option__page__position.option--active").attr("data-horizontal")
+              , a = c('<div class="file__bullet"></div>');
             for (a.addClass("file__bullet--" + r),
-            a.addClass("file__bullet--" + o); i <= t.numPages; )
-                p("#filePages").append(s.OptionsTemplate.page({
+            a.addClass("file__bullet--" + o),
+            a.attr("title", l.Lang.t("positionTooltip", {
+                positionVertical: l.Lang.t(r),
+                positionHorizontal: o
+            })); i <= t.numPages; )
+                c("#filePages").append(s.OptionsTemplate.page({
                     page: i,
                     file: n,
                     filename: e.name,
@@ -34244,103 +34172,52 @@ var apiFiles = apiServer+"/files/uploads/"
                     screenSize: this.screenSize,
                     class: "file" + n
                 })),
-                a.attr("title", h.Lang.t("positionTooltip", {
-                    positionVertical: h.Lang.t(r),
-                    positionHorizontal: o
-                })),
-                p("#" + n + i + " .page__canvas").append(a.clone()),
+                c("#" + n + i + " .page__canvas").append(a.clone()),
                 this.viewManager.pdfViewer.renderPage(n, i, "page-" + n + "-" + i).then(function() {}, function() {}),
                 i++;
-            "true" == this.getOption("facing_pages").toString() && ("true" == this.getOption("first_cover").toString() ? this.groupCover() : this.groupFacing()),
-            this.setTooltip(),
-            this.showPagesPosition()
+            u.Tooltip.init(".file__bullet")
         }
         ,
-        u.prototype.setAdjustmentByGravity = function() {
-            var e = {
-                top: {
-                    left: {
-                        x: 1,
-                        y: -1
-                    },
-                    center: {
-                        x: 1,
-                        y: -1
-                    },
-                    right: {
-                        x: -1,
-                        y: -1
-                    }
-                },
-                middle: {
-                    left: {
-                        x: 1,
-                        y: 1
-                    },
-                    center: {
-                        x: 1,
-                        y: 1
-                    },
-                    right: {
-                        x: -1,
-                        y: 1
-                    }
-                },
-                bottom: {
-                    left: {
-                        x: 1,
-                        y: 1
-                    },
-                    center: {
-                        x: 1,
-                        y: 1
-                    },
-                    right: {
-                        x: -1,
-                        y: 1
-                    }
-                }
-            };
-            this.options.vertical_position_adjustment = this.options.vertical_position_adjustment * e[this.options.vertical_position][this.options.horizontal_position].y,
-            this.options.horizontal_position_adjustment = this.options.horizontal_position_adjustment * e[this.options.vertical_position][this.options.horizontal_position].x
+        f.prototype.actionText = function() {
+            this.setOption("mode", "text"),
+            this.checkProcessBtn()
         }
         ,
-        u.prototype.sanitizeFontName = function() {
+        f.prototype.actionImage = function() {
+            this.setOption("mode", "image"),
+            this.checkProcessBtn()
+        }
+        ,
+        f.prototype.checkProcessBtn = function() {
+            1 == this.imageIsLoading ? this.disableProcessBtn(l.Lang.t("Wait a moment, please...")) : "image" == this.getOption("mode") && null == this.image ? this.disableProcessBtn(l.Lang.t("No file selected.")) : this.enableProcessBtn()
+        }
+        ,
+        f.prototype.sanitizeFontName = function() {
             this.options.font_family && (this.options.font_family = this.options.font_family.toLowerCase().split("-").map(function(e) {
                 return e.charAt(0).toUpperCase() + e.substring(1)
             }).join(" ").replace(" Ms", " MS").replace("Wenquanyi", "WenQuanYi").replace("Comic", "Comic Sans MS"))
         }
         ,
-        u.prototype.beforeProcess = function() {
-            var n, i, r = this, e = (this.options.font_family = this.fontFamily,
+        f.prototype.beforeProcess = function() {
+            "text" == this.getOption("mode") && (this.options.font_family = this.fontFamily,
             this.sanitizeFontName(),
             this.options.font_style = this.bold ? "Bold" : this.italic ? " Italic" : "Regular",
             this.options.font_size = this.fontSize,
             this.options.font_color = this.fontColor,
-            this.options.starting_number = parseInt(this.options.starting_number),
-            1 == this.files.countNotIgnored() ? this.options.pages = p('[name="page_init"]').val() + "-" + p('[name="page_end"]').val() : (n = parseInt(p("#start_pages").val().toString()) || 0,
-            i = parseInt(p("#end_pages").val().toString()) || 0,
-            p.each(this.files.files, function(e, t) {
-                r.files.files[e].pages = n + 1 + "-" + (t.file.numPages - i)
-            })),
-            p(".option__page__position.option--active")), e = (this.options.horizontal_position = e.attr("data-horizontal"),
-            this.options.vertical_position = e.attr("data-vertical"),
-            this.options.horizontal_position_adjustment = 0,
-            this.options.vertical_position_adjustment = 0,
-            p("#textFormat").val());
-            return "small" === e ? ("center" != this.options.horizontal_position && (this.options.horizontal_position_adjustment = -10),
-            "middle" != this.options.horizontal_position && (this.options.vertical_position_adjustment = -10)) : "big" === e && ("center" != this.options.horizontal_position && (this.options.horizontal_position_adjustment = 10),
-            "middle" != this.options.horizontal_position) && (this.options.vertical_position_adjustment = 10),
-            this.setAdjustmentByGravity(),
+            this.options.text = this.options.text.replace('"', "'")),
+            "image" == this.getOption("mode") && this.options.image,
+            1 == this.files.countNotIgnored() && (this.options.pages = c('[name="page_init"]').val() + "-" + c('[name="page_end"]').val());
+            var e = c(".option__page__position.option--active");
+            return 0 < e.length && (this.options.horizontal_position = e.attr("data-horizontal"),
+            this.options.vertical_position = e.attr("data-vertical")),
             "center" == this.options.horizontal_position && (this.options.horizontal_position = "middle"),
             "middle" == this.options.vertical_position && (this.options.vertical_position = "center"),
-            "custom" == this.options.text && (this.options.text = this.options.textCustom),
-            t.prototype.beforeProcess.call(this)
+            r.prototype.beforeProcess.call(this)
         }
         ,
-        u);
-        function u(e) {
-            e = t.call(this, e = void 0 === e ? {} : e) || this;
+        f);
+        function f(e) {
+            e = r.call(this, e = void 0 === e ? {} : e) || this;
             return e.fontColor = "#000000",
             e.fontSize = 14,
             e.textAlign = "left",
@@ -34348,14 +34225,15 @@ var apiFiles = apiServer+"/files/uploads/"
             e.bold = !1,
             e.italic = !1,
             e.underline = !1,
+            e.image = null,
             e.damagedRemove = !0,
             e.passwordNeeded = !0,
-            e.rangeChanged = !1,
+            e.imageIsLoading = !1,
             e.screenSize = [170, 200, 150, 10, 60, -10, 23, 106, -75, -55, -60],
             e
         }
-        d.PagenumberOptionsManager = n
+        p.WatermarkOptionsManager = t
     }
-    .call(this, f(1))
+    .call(this, h(1))
 }
 ]);

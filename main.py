@@ -92,6 +92,8 @@ def paypal_pay():
     print(request.form)
     return "EC-64F96244MB6033632"
 
+@app.route("/problem/<string:tool>/<string:key>/")
+@app.route("/problem/<string:tool>/<string:key>/<int:id>")
 @app.route("/problem/<string:tool>/<string:key>/<int:id>/ServerError")
 def error_merge(tool,key,id):
     return "An error occured during "+tool+"<a href='/'>Home</a>"
