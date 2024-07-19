@@ -20586,7 +20586,7 @@ var apiFiles = apiServer+"/files/uploads/"
                 processManager: this.processManager,
                 config: this.config,
                 files: this.files,
-                workerServer: /*this.workerServer*/,
+                workerServer: /*this.workerServer*/apiServer,
                 startServer: this.startServer,
                 token: this.token,
                 tool: this.tool,
