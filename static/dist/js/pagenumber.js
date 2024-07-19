@@ -18352,7 +18352,7 @@ var apiFiles = apiServer+"/files/uploads/"
             var t = "/problem/" + this.tool + "/" + this.taskId ?? 0 + "/" + this.getWorkerNumber();
             "en-US" != window.lang && (t = "/" + window.lang + t),
             null !== e && ("string" == typeof e ? t = t + "/" + e : e.error && "string" == typeof e.error ? t = t + "/" + e.error : t += "/ServerError"),
-            1 != this.stopGoProblem && (window.location.href = t)
+            1 != this.stopGoProblem && (/*window.location.href = t*/console.log(t))
         }
         ,
         g.prototype.askForPassword = function(e) {
