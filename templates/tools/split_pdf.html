@@ -9,6 +9,9 @@
 <style>
     .footer-main{display:none;}
     #uploader a{background-color: aqua;}
+	#split-ranges-rendered .range {
+		display: none;
+	}
 </style>
 
 <div class="main">
@@ -56,7 +59,7 @@
         </a>
                             </div>        <div class="tool__workarea__rendered" id="fileGroups"></div>
             <div class="tool__workarea__rendered" id="split-ranges-rendered"></div>
-            <div class="tool__workarea__rendered" id="split-fixed"></div>
+            <div class="tool__workarea__rendered" id="split-fixed" style="display:none;"></div>
             <div class="tool__workarea__rendered" id="split-extract"></div>
         </div>
         <div id="sidebar" class="tool__sidebar">
@@ -169,7 +172,7 @@
                         <div class="info">
                             This PDF will be split into files of <span class="fixedRange"></span> pages.<br>
                             <!--This PDF will be split into files of <span class="fixedRange">1</span> page.-->
-                            <strong><span class="extractFixedFiles"></span> PDFs</strong> will be created.                        <!--<strong><span class="extractFixedFiles">1</span> PDF</strong> will be created.-->
+                            <strong><span class="extractFixedFiless"></span> PDFs</strong> will be created.                        <!--<strong><span class="extractFixedFiles">1</span> PDF</strong> will be created.-->
                         </div>
                     </div>
                 </div>
@@ -206,7 +209,7 @@
                 </div>
                 <div class="option__panel__content">
                     <div class="info extractPagesInfo">
-                        Selected pages will be converted into separate PDF files.                    <strong><span class="extractPagesFiles">{fileNumber}</span> PDF</strong> will be created.                </div>
+                        Selected pages will be converted into separate PDF files.                    <strong><span class="extractPagesFiless">{fileNumber}</span> PDF</strong> will be created.                </div>
                 </div>
             </div>
         </div>

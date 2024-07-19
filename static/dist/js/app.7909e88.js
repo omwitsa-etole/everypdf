@@ -2472,9 +2472,11 @@ var apiFiles = apiServer+"/files/uploads/"
 		var i, a, s, t;
 		if (!h[e]) switch (h[e] = !0, e) {
 			case "console":
+				//console.log("e",e,n)
 				"console" in p && ["debug", "info", "warn", "error", "log", "assert"].forEach(function(i) {
 					i in p.console && Object(d.c)(p.console, i, function(n) {
 						return function() {
+							
 							for (var e = [], t = 0; t < arguments.length; t++) e[t] = arguments[t];
 							g("console", {
 								args: e,
@@ -6328,6 +6330,7 @@ var apiFiles = apiServer+"/files/uploads/"
 				e && (1 != n || 1 != e.limited) && 1 != e.ignored && e.file && e.file.numPages && (i += e.file.numPages ? parseInt(e.file.numPages.toString()) : 0)
 			}), i
 		}, o.prototype.cleanName = function(e) {
+			console.log("cleanname",e);e.filname = apiFiles+e.server_filename;
 			return "filename" in e && null != e.filename && (e.filename, e.filename.replace(/[\u00A0\u1680​\u180e\u2000-\u2009\u200a​\u200b​\u202f\u205f​\u3000\ufeff]/g, " ").trim(), e.filename = e.filename.replace(/"/g, "")), "name" in e && null != e.name && (e.name, e.name.replace(/[\u00A0\u1680​\u180e\u2000-\u2009\u200a​\u200b​\u202f\u205f​\u3000\ufeff]/g, " ").trim(), e.name = e.name.replace(/"/g, "")), e
 		}, o.prototype.onUploaded = function() {
 			return new Promise(function(e, t) {})
@@ -13749,12 +13752,12 @@ var apiFiles = apiServer+"/files/uploads/"
 							n = JSON.parse(n.response);
                             console.log("response",n,t,e);
 							//n.server_filename = apiFiles+n.server_filename;
-                            
+                            a.fileUploaded(t.id, n)
                             const pdfUrl = apiFiles+n.server_filename;
                             pdfjsLib.GlobalWorkerOptions.workerSrc = "/static/js/pdfjs/pdf.worker.min.js";
                             pdfjsLib.getDocument(pdfUrl).promise.then(pdf => {
                                 // Get the first page
-								if(window.location.href.includes('merge') || window.location.href.includes('organize')){
+								if(window.location.href.includes('merge') ){
 									pdf.getPage(1).then(page => {
 										//const scale = 1.5; // Adjust scale as needed
 										var canvas = document.getElementById('cover-'+t.id);
@@ -13775,70 +13778,117 @@ var apiFiles = apiServer+"/files/uploads/"
 										};
 										page.render(renderContext);
 									});
-								}else{
-									const container = document.getElementsByClassName('file__canvas')[0];
+								}if(window.location.href.includes("split")){
+									//const container = document.getElementsByClassName('file__canvas')[0];
 									const numPages = pdf.numPages;
   									let currentPage = 1;
-									 document.getElementsByClassName('numPages')[0].innerHTML = `${numPages} Pages`;
-									let currentRenderTask = null;
-									for(let i=0;i<numPages;i++){
-										console.log(numPages,i)
-										/*if(i> 0){
-										
-											pdf.getPage(i+1).then(page => {
-												let elm = document.getElementById(''+t.id);
-												elm.style.width = `${elm.clientWidth + 100}px`;
-												var newcanvas = document.createElement('canvas');
-												var newctx = canvas.getContext('2d');
-												newcanvas.setAttribute("class","pdf pdf");
-												newcanvas.setAttribute("id","canvas-"+i)
-												newcanvas.width = 99;
-												newcanvas.height = 140;
-												container.appendChild(newcanvas);
-												const originalViewport = page.getViewport({ scale:1 });
-												const scaleWidth = newcanvas.width / originalViewport.width;
-												const scaleHeight = newcanvas.height / originalViewport.height;
-												const scale = Math.min(scaleWidth, scaleHeight);
-												const viewport = page.getViewport({ scale });
-												
-												const renderContext = {
-													canvasContext: newctx,
-													viewport: viewport,
-												};
-												
-												currentRenderTask = page.render(renderContext);
-												
-											});
-											
-											
-										}else{*/
-											
-											pdf.getPage(i+1).then(page => {
-												var canvas = document.getElementById('cover-'+t.id);
-												var ctx = canvas.getContext('2d');
-												const originalViewport = page.getViewport({ scale:1 });
-												const scaleWidth = canvas.width / originalViewport.width;
-												const scaleHeight = canvas.height / originalViewport.height;
-												const scale = Math.min(scaleWidth, scaleHeight);
-												const viewport = page.getViewport({ scale });
-												
-												const renderContext = {
-													canvasContext: ctx,
-													viewport: viewport,
-												};
-												
-												currentRenderTask = page.render(renderContext);
-												
-											});
-										//}
-										
-									}
 									
+									$(".numPages").html(`${numPages} Pages`);
+									
+									let currentRenderTask = null;
+									let removed = null;
+									
+									
+									for(let i=0;i<numPages;i++){
+		
+										pdf.getPage(i+1).then(page => {
+											var parent_canvas = document.getElementsByClassName(`range__container`)[0];
+											if(removed== null){if(parent_canvas){parent_canvas.innerHTML = ``;}$("split_fixed").empty();removed=1;}
+											var canvas = document.getElementById(`range-${i+1}-ini`)
+											if(canvas == null){
+												let elm = `<div class="range__element range__element--start"><div class="range__canvas">
+															<canvas id="range-${i+1}-ini" width="99" height="140" data-file="${t.id}" data-page="${i+1}">
+														</div><div class="file__info"><span class="file__info__name" id="info-${i+1}-ini">${i+1}</span></div></div>`
+												if(parent_canvas){parent_canvas.innerHTML+= elm}else{$("#split-ranges-rendered").html(`<div class="range__container">${elm}</div>`)}
+												canvas = document.getElementById(`range-${i+1}-ini`)
+												
+											}else{canvas.setAttribute("width", "100");canvas.setAttribute("height", "140");}
+											console.log("canvas",canvas)
+											var ctx = canvas.getContext('2d');
+											const originalViewport = page.getViewport({ scale:1 });
+											const scaleWidth = canvas.width / originalViewport.width;
+											const scaleHeight = canvas.height / originalViewport.height;
+											const scale = Math.min(scaleWidth, scaleHeight);
+											const viewport = page.getViewport({ scale });
+											
+											const renderContext = {
+												canvasContext: ctx,
+												viewport: viewport,
+											};
+											
+											currentRenderTask =  page.render(renderContext);
+											
+										});
+
+									}
+									$("#split-fixed").empty()
+									for(let i=0;i<numPages;i++){
+	
+										pdf.getPage(i+1).then(page => {
+											var ocanvas = document.getElementById(`range-fix-${i+1}-ini`)
+											if(ocanvas == null){
+												let elm = `
+													<div class="range" id="range-fix-${i+1}">
+														<div class="file__actions">
+															<a class="file__btn remove tooltip tooltip--top" title="Delete">
+																<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><polygon fill="#47474F" fill-rule="evenodd" points="12 1.208 10.79 0 6 4.792 1.21 0 0 1.208 4.79 6 0 10.792 1.21 12 6 7.208 10.79 12 12 10.792 7.21 6"></polygon></svg>
+															</a>
+														</div>
+														<div class="range__title">Range ${i+1}</div>
+														<div class="range__container">
+															<div class="range__element range__element--start">
+																<div class="range__canvas">
+																	<canvas id="range-fix-${i+1}-ini" width="99" height="140" data-file="${t.id}" data-page="${i+1}" data-width="596.04" data-height="842.88" style="background-image: none;"></canvas>
+																</div>
+																<div class="file__info">
+																	<span class="file__info__name" id="info-${i+1}-ini">${i+1}</span>
+																</div>
+															</div>
+															<div class="range__to" style="display: none;"></div>
+															<div class="range__element range__element--end" style="display: none;">
+																<div class="range__canvas range__canvas--end">
+																	<canvas id="range-fix-${i+1}-end" width="undefined" height="undefined"></canvas>
+																</div>
+																<div class="file__info">
+																	<span class="file__info__name" id="info-${i+1}-end">${i+1}</span>
+																</div>
+															</div>
+														</div>
+													</div>
+												`
+												document.getElementById("split-fixed").innerHTML+= elm
+												document.getElementById("split-extract").innerHTML+= elm
+												ocanvas = document.getElementById(`range-fix-${i+1}-ini`)
+												
+											}
+											var ctx = ocanvas.getContext('2d');
+											const originalViewport = page.getViewport({ scale:1 });
+											const scaleWidth = ocanvas.width / originalViewport.width;
+											const scaleHeight = ocanvas.height / originalViewport.height;
+											const scale = Math.min(scaleWidth, scaleHeight);
+											const viewport = page.getViewport({ scale });
+											
+											const renderContext = {
+												canvasContext: ctx,
+												viewport: viewport,
+											};
+											
+											page.render(renderContext);
+										})
+									}
+									$(".extractFixedFiless").html(`${numPages}`);
+									$("[data-value='fixed_range']").click(function() {
+										$("#split_fixed").css("display", "flex");
+										$("#split-ranges-rendered").css("display", "none");
+									});
+									$("[data-value='ranges']").click(function() {
+										$("#split_fixed").css("display", "none");
+									});
 								}
                             }).catch(err => {
                                 console.error('Error loading PDF: ', err);
                             });
-							a.fileUploaded(t.id, n)
+							
 						},
 						UploadComplete: function(e, t) {
 							t.forEach(function(e) {
@@ -26842,13 +26892,13 @@ var apiFiles = apiServer+"/files/uploads/"
 				n.prototype.fileRemoved.call(this, e), this.rangeCount = 0, this.extractStarted = !1, this.fixedStarted = !1, this.removeStarted = !1, c(".range__remove").each(function() {
 					c(this).trigger("click")
 				}), c("#split-ranges").html(""), c(".tool__workarea__rendered").not("#fileGroups").each(function() {
-					c(this).html(""), c(this).hide()
+					/*c(this).html(""),*/ c(this).hide()
 				}), this.initDefaultOptions(), this.initDefaultValues(), this.disableProcessBtn()
 			}, r.prototype.beforeProcess = function() {
 				var e = this.getOption("split_mode");
 				if (delete this.options.merge_after, "ranges" == e) this.getRangeOptions(), this.setOption("output_filename", "{filename}"), this.setOption("packaged_filename", "ilovepdf_split-range"), this.setOption("merge_after", c('[name="merge_after_ranges"]').is(":checked"));
 				else if ("extract_pages" == e) {
-					this.setOption("output_filename", "{filename}"), this.setOption("packaged_filename", "ilovepdf_extracted-pages"), this.setOption("merge_after", c('[name="merge_after_extract_pages"]').is(":checked"));
+					this.setOption("output_filename", "{filename}"), this.setOption("packaged_filename", "extracted-pages"), this.setOption("merge_after", c('[name="merge_after_extract_pages"]').is(":checked"));
 					var e = this.getOption("extract_pages").split(","),
 						o = [];
 					if (c.each(e, function(e, t) {
@@ -27003,6 +27053,7 @@ var apiFiles = apiServer+"/files/uploads/"
 					t = parseInt(e.val().toString()) || this.values.numPages;
 				t < n ? e.val(n) : t > parseInt(this.values.numPages) ? e.val(this.values.numPages) : t < 1 && e.val(1)
 			}, r.prototype.renderRange = function(e, t, n) {
+				
 				c("#split-ranges-rendered").append(s.OptionsTemplate.rangeBox({
 					rangeId: e,
 					pageIni: t,
@@ -27010,12 +27061,13 @@ var apiFiles = apiServer+"/files/uploads/"
 					screenSize: this.screenSize
 				}));
 				var i = this.files.getFirst().id;
+				console.log("renderer",t,i)
 				this.viewManager.pdfViewer.renderPage(i, t, "range-" + e + "-ini").then(function() {}, function() {}), n == t || "" == n ? (c("#range-" + e + " .range__element--end").hide(), c("#range-" + e + " .range__to").hide()) : (this.viewManager.pdfViewer.renderPage(i, n, "range-" + e + "-end").then(function() {}, function() {}), c("#range-" + e + " .range__element--end").show(), c("#range-" + e + " .range__to").show())
 			}, r.prototype.refreshRange = function(e, t, n) {
 				var i = this.files.getFirst().id;
 				this.viewManager.pdfViewer.renderPage(i, n, "range-" + e + "-" + t).then(function() {}, function() {}), c("#info-" + e + "-" + t).html(n)
 			}, r.prototype.addFixedRenders = function() {
-				c("#split-fixed").empty();
+				/*c("#split-fixed").empty();*/
 				for (var e = this.files.getFirst().file, t = this.files.getFirst().id, n = parseInt(c('input[name="fixed_range"]').val()), i = 1, o = 1; i < e.numPages + 1;) {
 					var r = i,
 						a = i + n - 1;
