@@ -14,30 +14,216 @@
             background-size: 100% auto;
             background-image: url('/img/bg/background.svg');
         }
-        .tools__item{
-            margin-left: 10px;
-            cursor: pointer;
-            display:grid;
-            place-items: center;
-            font-size: 18px;
-            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-        }
-        .tools__item:hover{
-            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-        }
+        .card {
+  width: 100%;
+  max-width: 360px;
+  
+  min-width: 300px;
+  min-height: 250px;
+  background-color: #292929;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.24);
+  border: 2px solid rgba(7, 7, 7, 0.12);
+  font-size: 16px;
+  transition: all 0.3s ease;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  overflow:hidden;
+}
+
+.icon {
+  margin: 0 auto;
+  width: 100%;
+  height: 80px;
+  max-width: 80px;
+  background: linear-gradient(90deg, #7eaaff 0%, #ff48fb 40%, rgba(0, 0, 0, 0.28) 60%);
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.8s ease;
+  background-position: 0px;
+  background-size: 200px;
+}
+
+.icon svg {
+  fill: white;
+}
+
+.card .title {
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  justify-content:center;
+  margin-top: 30px;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+}
+
+.card .text {
+  width: 80%;
+  margin: 0 auto;
+  font-size: 13px;
+  text-align: center;
+  margin-top: 20px;
+  color: white;
+  font-weight: 200;
+  letter-spacing: 2px;
+  opacity: 0;
+  max-height: 0;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  min-height: 350px;
+}
+
+.card:hover .text {
+  transition: all 0.3s ease;
+  opacity: 1;
+  max-height: 100px;
+}
+
+.card:hover .icon {
+  background-position: -120px;
+  transition: all 0.3s ease;
+}
+
+.card:hover .icon svg path {
+  fill: url('#gradientColor');
+  transition: all 0.3s ease;
+}
+.card a{text_decoration:none;}
+
+.search_form{
+	width: 80%;
+	margin: 1% auto;
+}
+
+.form button {
+  border: none;
+  background: none;
+  color: #8b8ba7;
+}
+/* styling of whole input container */
+.form {
+  --timing: 0.3s;
+  --width-of-input: 80%;
+  --height-of-input: 50px;
+  --border-height: 2px;
+  --input-bg: #fff;
+  --border-color: #2f2ee9;
+  --border-radius: 30px;
+  --after-border-radius: 1px;
+  position: relative;
+  width: var(--width-of-input);
+  height: var(--height-of-input);
+  display: flex;
+  align-items: center;
+  padding-inline: 0.8em;
+  border-radius: var(--border-radius);
+  transition: border-radius 0.5s ease;
+  background: var(--input-bg,#fff);
+}
+/* styling of Input */
+.input {
+  font-size: 0.9rem;
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  padding-inline: 0.5em;
+  padding-block: 0.7em;
+  border: none;
+}
+/* styling of animated border */
+.form:before {
+  content: "";
+  position: absolute;
+  background: var(--border-color);
+  transform: scaleX(0);
+  transform-origin: center;
+  width: 100%;
+  height: var(--border-height);
+  left: 0;
+  bottom: 0;
+  border-radius: 1px;
+  transition: transform var(--timing) ease;
+}
+/* Hover on Input */
+.form:focus-within {
+  border-radius: var(--after-border-radius);
+}
+
+input:focus {
+  outline: none;
+}
+/* here is code of animated border */
+.form:focus-within:before {
+  transform: scale(1);
+}
+/* styling of close button */
+/* == you can click the close button to remove text == */
+.reset {
+  border: none;
+  background: none;
+  opacity: 0;
+  visibility: hidden;
+}
+/* close button shown when typing */
+input:not(:placeholder-shown) ~ .reset {
+  opacity: 1;
+  visibility: visible;
+}
+/* sizing svg icons */
+.form svg {
+  width: 17px;
+  margin-top: 3px;
+}
     </style>
     <div class="pattern-bg"></div>
 <div class="home-title">
     <h1 class="home-title__title">Every tool you need to work with PDFs in one place</h1>
     <h2 class="home-title__subtitle">Every tool you need to use PDFs, at your fingertips. All are 100% FREE and easy to use! Merge, split, compress, convert, rotate, unlock and watermark PDFs with just a few clicks.</h2>
 </div>
+<div class="search_form">
+	  <div class="form">
+      <button>
+          <svg width="17" height="16" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="search">
+              <path d="M7.667 12.667A5.333 5.333 0 107.667 2a5.333 5.333 0 000 10.667zM14.334 14l-2.9-2.9" stroke="currentColor" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+      </button>
+      <input class="input" placeholder="Search a tool" onkeyup="filterTools(this.value)" type="text">
+      <button class="reset" type="reset">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+      </button>
+  </div>
+</div>
 <div class="tools">
-    <div class="tools__container">
+    <div class="tools__container" id="tool_container">
         {%for tool in manifest['tools']%}
         {%set key=tool.keys() | first %}
 		{%set ico =key.replace('_to_','').split('_')%}
-        <div class="tools__item">
-            <a href="{{key}}" title="{{tool[key]['title']}}">
+		<div class="card">
+		<a href="{{key}}"  title="{{tool[key]['title']}}"  style="text-decoration: none;">
+		  <div class="icon">
+			<i class="ico ico--{{ico[0]}}"></i>
+		  </div>
+		  <p class="title">{{tool[key]['title']}}</p>
+		  <p class="text">{{tool[key]['description']}}</p>
+		</a>
+		</div>
+        <!--<div class="tools__item">
+            <a href="{{key}}" class="heading" title="{{tool[key]['title']}}">
                 <div class="tools__item__icon">
                     <i class="ico ico--{{ico[0]}}"></i>
 				</div>
@@ -46,7 +232,7 @@
                     <p>{{tool[key]['description']}}</p>
                 </div>
             </a>
-        </div>
+        </div>--->
         {%endfor%}
         
     </div>
@@ -89,5 +275,25 @@
     </div>
 </div>
 </div>
+
+<script>
+function filterTools(query){
+	const tool_container = document.getElementById("tool_container")
+	const tools = tool_container.getElementsByClassName('card')
+	query = query.toUpperCase()
+	for(const tool of tools){
+		const ps = tool.getElementsByTagName("p");
+		for(var p of ps){
+			p = p.innerText.toUpperCase() 
+			if(p.includes(query)){
+				tool.style.display = ''
+				break
+			}else{
+				tool.style.display = 'none'
+			}
+		}
+	}
+}
+</script>
             
 {%endblock%}

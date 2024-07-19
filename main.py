@@ -55,7 +55,7 @@ async def before_request_func():
                 {"redact_pdf":{"title":"Redact PDF","svg":"","description":"Remove sensitive content from PDFs","new":True,"category":"PDF SECURITY"}},
                 {"sign_pdf":{"title":"Sign PDF","svg":"","description":"Your tool to eSign documents. Sign a document yourself or send a signature request to others.","new":True,"category":"PDF SECURITY"}},
                 {"protect_pdf":{"title":"Encrypt PDF","svg":"","description":"Encrypt your PDF with a password to keep sensitive data confidential.","new":True,"category":"PDF SECURITY"}},
-                {"unlock_pdf":{"title":"Encrypt PDF","svg":"","description":"Remove PDF password security, giving you the freedom to use your PDFs as you want.","new":True,"category":"PDF SECURITY"}}
+                {"unlock_pdf":{"title":"Decrypt PDF","svg":"","description":"Remove PDF password security, giving you the freedom to use your PDFs as you want.","new":True,"category":"PDF SECURITY"}}
             ],
             "categories":["ORGANIZE PDF","OPTIMIZE PDF","CONVERT TO PDF","CONVERT FROM PDF","EDIT PDF","PDF SECURITY"]
         }
