@@ -45,7 +45,7 @@ async def before_request_func():
                 {"pdf_to_jpg":{"title":"PDF to JPG","svg":"","description":"Convert each PDF page into a JPG or extract all images contained in a PDF.","new":True,"category":"CONVERT FROM PDF"}},
                 {"pdf_to_word":{"title":"PDF to WORD","svg":"","description":"Convert your PDF to WORD documents with incredible accuracy.","new":True,"category":"CONVERT FROM PDF"}},
                 {"pdf_to_ppt":{"title":"PDF to PPT","svg":"","description":"Convert your PDFs to POWERPOINT.","new":True,"category":"CONVERT FROM PDF"}},
-                {"pdf_to_excel":{"title":"PDF to PPT","svg":"","description":"Convert your PDFs to Excel SpreadSheets.","new":True,"category":"CONVERT FROM PDF"}},
+                {"pdf_to_excel":{"title":"PDF to Excel","svg":"","description":"Convert your PDFs to Excel SpreadSheets.","new":True,"category":"CONVERT FROM PDF"}},
                 {"rotate_pdf":{"title":"Rotate PDF","svg":"","description":"Rotate your PDFs the way you need them. You can even rotate multiple PDFs at once!","new":True,"category":"EDIT PDF"}},
                 {"add_page_number":{"title":"Add PDF page numbers","svg":"","description":"Add page numbers into PDFs with ease. Choose your positions, dimensions, typography.","new":True,"category":"EDIT PDF"}},
                 {"add_watermark":{"title":"Add watermark into a PDF","svg":"","description":"Stamp an image or text over your PDF in seconds. Choose the typography, transparency and position.","new":True,"category":"EDIT PDF"}},
