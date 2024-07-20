@@ -118,7 +118,7 @@ def user():
 @app.route("/user/premium")
 def user_premium():
     if session["manifest"].get("user") == None:
-        return redirect(url_for("logout"))
+        return redirect(url_for("register"))
     return render_template("premium.html",manifest=session["manifest"]) 
 
 @app.route("/user/security")
