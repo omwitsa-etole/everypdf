@@ -1,4 +1,4 @@
-var apiServer = 'http://localhost';
+var apiServer = 'https://api.webdocedit.com';
 var apiFiles = apiServer+"/files/uploads/"
 
 !function(n) {

@@ -16,7 +16,7 @@ ALLOWED_EXTENSIONS = {'pdf'}
 
 app.secret_key = 'ussd'
 
-apiServer = "http://localhost"
+apiServer = "https://api.webdocedit.com"
 
 CORS(app)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
