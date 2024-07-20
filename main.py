@@ -1,5 +1,5 @@
 
-from flask import Flask, request,jsonify,make_response,redirect ,session,render_template,url_for,send_from_directory
+from flask import Flask,Response, request,jsonify,make_response,redirect ,session,render_template,url_for,send_from_directory
 import os
 from flask_cors import CORS
 #from modules import *
