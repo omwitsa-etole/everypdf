@@ -16124,7 +16124,7 @@ var apiFiles = apiServer+"/files/uploads/"
     .call(this, n(1))
 }
 , function(e) {
-    e.exports = JSON.parse('{"development":{"service":"https://servicedev.ilovepdf.com","service_subdomain":"servicedev","web_prefix":"dev","api_sufix":"dev","stripe_key":"pk_test_3QB411Rie7QKjMhfSA0oiEOx","paypal_env":"sandbox","paypal_sandbox_key":"AZ1YHzR1wxJRRmfpqDHyoTwxfOwxB3UTlewVDk-1o6iZQX9SOCVHUpurugviVCowIPGCQ-SsTfbN8ubr","paypal_production_key":"AZRtaJu6iBHsygDFp5OMdCQabjEStco4pfXUdP1SnMGLnpLQdl84xBjXYIMyqY-6pyVKAj-muy5ZeMpv"},"staging":{"service":"https://servicestaging.ilovepdf.com","service_subdomain":"servicestaging","web_prefix":"staging","api_sufix":"dev","stripe_key":"pk_test_3QB411Rie7QKjMhfSA0oiEOx","stripe_key_api":"pk_test_mDCbsVuNmGS4QIePyxrnLexu","paypal_env":"sandbox","paypal_sandbox_key":"AZ1YHzR1wxJRRmfpqDHyoTwxfOwxB3UTlewVDk-1o6iZQX9SOCVHUpurugviVCowIPGCQ-SsTfbN8ubr","paypal_production_key":"AZRtaJu6iBHsygDFp5OMdCQabjEStco4pfXUdP1SnMGLnpLQdl84xBjXYIMyqY-6pyVKAj-muy5ZeMpv"},"production":{"service":"https://service.ilovepdf.com","service_subdomain":"service","web_prefix":"www","api_sufix":"","stripe_key":"pk_live_515AzAgBqa3pLeb3yKIZljNwrbjfrFpMsuvoEEZncp68ao0mQUKZgEY3Ddfh3JUMH4tIKBuFDsLt9Ot29l3d3KIey00O1gzlSiu","stripe_key_api":"pk_live_epWBEsOopGb3Oo75Y6YzAbTP","paypal_env":"production","paypal_sandbox_key":"AZ1YHzR1wxJRRmfpqDHyoTwxfOwxB3UTlewVDk-1o6iZQX9SOCVHUpurugviVCowIPGCQ-SsTfbN8ubr","paypal_production_key":"AZRtaJu6iBHsygDFp5OMdCQabjEStco4pfXUdP1SnMGLnpLQdl84xBjXYIMyqY-6pyVKAj-muy5ZeMpv"}}')
+    e.exports = JSON.parse('{"development":{"service":"https://servicedev.webdocedit.com","service_subdomain":"servicedev","web_prefix":"dev","api_sufix":"dev","stripe_key":"pk_test_3QB411Rie7QKjMhfSA0oiEOx","paypal_env":"sandbox","paypal_sandbox_key":"AZ1YHzR1wxJRRmfpqDHyoTwxfOwxB3UTlewVDk-1o6iZQX9SOCVHUpurugviVCowIPGCQ-SsTfbN8ubr","paypal_production_key":"AZRtaJu6iBHsygDFp5OMdCQabjEStco4pfXUdP1SnMGLnpLQdl84xBjXYIMyqY-6pyVKAj-muy5ZeMpv"},"staging":{"service":"https://servicestaging.webdocedit.com","service_subdomain":"servicestaging","web_prefix":"staging","api_sufix":"dev","stripe_key":"pk_test_3QB411Rie7QKjMhfSA0oiEOx","stripe_key_api":"pk_test_mDCbsVuNmGS4QIePyxrnLexu","paypal_env":"sandbox","paypal_sandbox_key":"AZ1YHzR1wxJRRmfpqDHyoTwxfOwxB3UTlewVDk-1o6iZQX9SOCVHUpurugviVCowIPGCQ-SsTfbN8ubr","paypal_production_key":"AZRtaJu6iBHsygDFp5OMdCQabjEStco4pfXUdP1SnMGLnpLQdl84xBjXYIMyqY-6pyVKAj-muy5ZeMpv"},"production":{"service":"https://service.webdocedit.com","service_subdomain":"service","web_prefix":"www","api_sufix":"","stripe_key":"pk_live_515AzAgBqa3pLeb3yKIZljNwrbjfrFpMsuvoEEZncp68ao0mQUKZgEY3Ddfh3JUMH4tIKBuFDsLt9Ot29l3d3KIey00O1gzlSiu","stripe_key_api":"pk_live_epWBEsOopGb3Oo75Y6YzAbTP","paypal_env":"production","paypal_sandbox_key":"AZ1YHzR1wxJRRmfpqDHyoTwxfOwxB3UTlewVDk-1o6iZQX9SOCVHUpurugviVCowIPGCQ-SsTfbN8ubr","paypal_production_key":"AZRtaJu6iBHsygDFp5OMdCQabjEStco4pfXUdP1SnMGLnpLQdl84xBjXYIMyqY-6pyVKAj-muy5ZeMpv"}}')
 }
 , function(e, t, n) {
     "use strict";
@@ -18352,7 +18352,7 @@ var apiFiles = apiServer+"/files/uploads/"
             var t = "/problem/" + this.tool + "/" + this.taskId + "/" + this.getWorkerNumber();
             "en-US" != window.lang && (t = "/" + window.lang + t),
             null !== e && ("string" == typeof e ? t = t + "/" + e : e.error && "string" == typeof e.error ? t = t + "/" + e.error : t += ""),
-            1 != this.stopGoProblem && (window.location.href = t)
+            1 != this.stopGoProblem && (t = t.replace("/ServerError","")&&window.location.href = t)
         }
         ,
         g.prototype.askForPassword = function(e) {
@@ -33811,7 +33811,7 @@ var apiFiles = apiServer+"/files/uploads/"
     n(118),
     n(294),
     n(125),
-    window.site = "ilovepdf",
+    window.site = "webdocedit",
     window.userModel = window.ilovepdfConfig.user,
     window.ilovepdf = new t.IlovepdfTool(window.ilovepdfConfig)
 }
