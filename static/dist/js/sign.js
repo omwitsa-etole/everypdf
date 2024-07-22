@@ -27089,6 +27089,7 @@ var apiFiles = apiServer+"/files/uploads/"
         }
         ,
         S.prototype.fileAddError = function(e, t, n) {
+			console.log("fileadderror",e,t,n);
             void 0 === n && (n = "DamagedFile"),
             1 == (t = void 0 === t ? !1 : t) ? window.Toastr.error(u.Lang.t(n), u.Lang.t("Error"), {
                 timeOut: 0,
@@ -43054,6 +43055,7 @@ var apiFiles = apiServer+"/files/uploads/"
     }
     ,
     m.prototype.invalidFileAdded = function(e) {
+		console.log("invalid file",e);
         null != e && e.id && this.uploader.files.removeFile(e.id, !0),
         window.Toastr.error(h.Lang.t("damagedFile"), h.Lang.t("uploadError"), {
             timeOut: 15e3,
@@ -56139,6 +56141,7 @@ var apiFiles = apiServer+"/files/uploads/"
     }
     ,
     d.prototype.invalidFileAdded = function(e) {
+		console.log("e- invalid filea added",e);
         null != e && e.id && this.files.removeFile(e.id, !0),
         window.Toastr.error(c.Lang.t("damagedFile"), c.Lang.t("uploadError"), {
             timeOut: 15e3,
@@ -57774,6 +57777,7 @@ var apiFiles = apiServer+"/files/uploads/"
         }
         ,
         F.prototype.assertNoFileUploadErrors = function(e) {
+			console.log("e-no file upload",e)
             return 1 == e.password ? (this.fileAddError(e.id, !0, v.Lang.t("ProtectedFile")),
             this.toggleWait(!1),
             !1) : !!e.pdf_pages || (this.fileAddError(e.id, !0, "DamagedFile"),
