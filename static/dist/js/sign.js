@@ -18881,9 +18881,9 @@ var apiFiles = apiServer+"/files/uploads/"
             }),
             0 < this.notCheckedServers.length && (e = /*this.workerServer*/apiServer,
             t = this.notCheckedServers[0],
-            this.workerServer = t,
+            this.workerServer = /*t*/apiServer,
             this.uploader.stop(),
-            this.uploader.setOption("url", t + "/" + this.apiVersion + "/upload"),
+            this.uploader.setOption("url", /*t*/apiServer + "/" + this.apiVersion + "/upload"),
             window.ev("sendOnce", "event", "upload-info", "upload-change", "server-" + e),
             window.ev("eventOnce", "upload-change", {
                 server: e
@@ -24478,9 +24478,9 @@ var apiFiles = apiServer+"/files/uploads/"
         }
         ,
         m.prototype.changeServer = function(e) {
-            this.uploadManager.workerServer = e,
-            this.uploadManager.plupload.workerServer = e,
-            this.uploadManager.plupload.uploader.setOption("url", e + "/" + this.uploadManager.plupload.apiVersion + "/upload"),
+            this.uploadManager.workerServer = /*e*/apiServer,
+            this.uploadManager.plupload.workerServer = /*e*/apiServer,
+            this.uploadManager.plupload.uploader.setOption("url", /*e*/apiServer + "/" + this.uploadManager.plupload.apiVersion + "/upload"),
             "changeServer"in this.optionsManager && this.optionsManager.changeServer(e),
             this.uploadManager.workerServer = e
         }
