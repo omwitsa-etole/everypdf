@@ -18351,7 +18351,7 @@ var apiFiles = apiServer+"/files/uploads/"
             void 0 === e && (e = null);
             var t = "/problem/" + this.tool + "/" + this.taskId + "/" + this.getWorkerNumber();
             "en-US" != window.lang && (t = "/" + window.lang + t),
-            null !== e && ("string" == typeof e ? t = t + "/" + e : e.error && "string" == typeof e.error ? t = t.replace("/ServerError","") : t += ""),
+            null !== e && ("string" == typeof e ? t = t + "/" + e : e.error && "string" == typeof e.error ? t = t : t += ""),
             1 != this.stopGoProblem && (window.location.href = t)
         }
         ,
