@@ -78,14 +78,17 @@ def serve_static(filename):
         return response
     except FileNotFoundError:
         abort(404)
+        
+@app.route("/libpdf/<string:id>/<path:file_dir>")
+def webview_utils(id,file_dir):
+    print(file_dir)
+    file_dir = file_dir.replace(".map","")
+    return send_from_directory("static/",path=file_dir)
     
-@app.route("/v1/upload",methods=["POST"])
-def uploader():
-    file = request.files['file']
-    print(file)
-    thumb = secure_filename(request.form['name'])
-    file.save(os.path.join(app.config['UPLOAD_FOLDER'], thumb))
-    return jsonify({"server_filename":"/static/uploads/"+thumb})
+@app.route("/libpdf/<string:id>/ui/index.html")
+def webview(id):
+    print(id)
+    return render_template("webview/index.html",manifest=session['manifest'])
 
 @app.route("/stripe/execute",methods=["POST"])
 def stripe_pay():
@@ -275,5 +278,5 @@ def function(title):
 
 
 if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 5000))
-    app.run(host="0.0.0.0", port=port,debug=True )
+    port = int(os.environ.get('PORT', 8081))#host="0.0.0.0",
+    app.run( port=port,debug=True )
