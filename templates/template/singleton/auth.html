@@ -1,0 +1,200 @@
+<div>
+    <div data-state="AuthState">
+    <div class="dialog__content">
+        <div class="dialog__header ">
+            <div class="dialog__title">Log in to {{manifest['title']|lower}}</div>
+            <div class="dialog__subtitle"></div>
+            <div class="dialog__close"></div>
+        </div>
+        <div class="dialog__body">
+            <div data-screen='login'>
+        <h2 class="form__title">Login to your account</h2>
+    <div class="social-auth">
+    <div id="w0" class="social-auth--big-buttons"><ul class="auth-clients"><li><span class="auth-link facebook" onclick="window.ilove_openSocialAuthPopup(&#039;facebook&#039;, this);" data-provider="facebook" data-auth-action="login"><span class="auth-icon facebook"></span><span class="auth-link__text">Facebook</span></span></li><li><span class="auth-link google" onclick="window.ilove_openSocialAuthPopup(&#039;google&#039;, this);" data-provider="google" data-auth-action="login"><span class="auth-icon google"></span><span class="auth-link__text">Google</span></span></li><li><span class="auth-link sso" onclick="window.ilove_openSocialAuthPopup(&#039;sso&#039;, this);" data-provider="sso" data-auth-action="login"><span class="auth-icon sso"></span><span class="auth-link__text">Sso</span></span></li></ul></div></div>
+<form id="loginForm" action="/templates/singleton/auth" method="post">
+<input type="hidden" name="_csrf-{{manifest['title']|lower}}" value="z8uUoiQ-SlRt5gATDLk01B_qqig6lbsxy7Fxatd-bRSk-sHXdG47PwejLSJ03BmeZaLES1Dl1WCH9Eg4gR0YQA==">
+    
+
+    <div class="form__group ">
+        <div class="field-loginEmail required">
+<div class="input--icon input--email"><input type="text" id="loginEmail" class="input" name="LoginForm[email]" placeholder="Enter your email" autofocus="true" aria-required="true"></div><div class="help-block"></div>
+</div>    </div>
+    <div class="form__group ">
+        <div class="field-inputPasswordAuth required">
+<div class="input--icon input--pwd"><input type="password" id="inputPasswordAuth" class="input" name="LoginForm[password]" placeholder="Password" aria-required="true"></div><div class="help-block"></div>
+</div>    </div>
+            <!-- 2-Factor-Auth -->
+        
+        <div class="form__group ">
+            <div class="field-loginform-google_authenticator_code">
+<div class="input--icon input--key"><input type="text" id="loginform-google_authenticator_code" class="input form-control hidden" name="LoginForm[google_authenticator_code]" placeholder="Google Authenticator Code" autocomplete="off"></div><div class="help-block"></div>
+</div>        </div>
+    
+        <div class="form__group">
+        <p>
+            <a href="https://www.{{manifest['title']|lower}}.com/login/forgetpassword"
+               id="forget-password">Forgot your password?</a>
+        </p>
+    </div>
+    <div class="form-actions">
+        <input type="hidden" name="remember" id="rememberAuth" value="1">
+        <button type="submit" data-loading-text="Checking..." class="btn" id="loginBtn">
+            Log in <i class="m-icon-swapright m-icon-white"></i>
+        </button>
+    </div>
+    <div class="create-account">
+        <p>
+            Don't have an account?&nbsp;&nbsp;<a
+                href="https://www.{{manifest['title']|lower}}.com/register"
+                id="goRegister">Create an account</a>
+        </p>
+    </div>
+    <script>
+        // For inline register page; This logic is also present in "AbstractAuthState"
+        (function () {
+            function defer(method) {
+                if (window.Cookies) {
+                    method();
+                } else {
+                    setTimeout(function () {
+                        defer(method)
+                    }, 50);
+                }
+            }
+
+            defer(function () {
+                if (window.Intl && window.Intl.DateTimeFormat()) {
+                    var tzNewValue = window.Intl.DateTimeFormat().resolvedOptions().timeZone;
+                    if (tzNewValue) {
+                        window.Cookies.set('auth_tz', tzNewValue);
+                        var tzElem = document.querySelector("#signupform-timezone");
+                        if (tzElem) tzElem.value = tzNewValue;
+                    }
+                }
+            });
+        })()
+    </script>
+    </form></div>
+<div data-screen='register'>
+        <h2 class="form__title">Create new account</h2>
+<div class="social-auth">
+    <div id="w1" class="social-auth--big-buttons"><ul class="auth-clients"><li><span class="auth-link facebook" onclick="window.ilove_openSocialAuthPopup(&#039;facebook&#039;, this);" data-provider="facebook" data-auth-action="register"><span class="auth-icon facebook"></span><span class="auth-link__text">Facebook</span></span></li><li><span class="auth-link google" onclick="window.ilove_openSocialAuthPopup(&#039;google&#039;, this);" data-provider="google" data-auth-action="register"><span class="auth-icon google"></span><span class="auth-link__text">Google</span></span></li><li><span class="auth-link sso" onclick="window.ilove_openSocialAuthPopup(&#039;sso&#039;, this);" data-provider="sso" data-auth-action="register"><span class="auth-icon sso"></span><span class="auth-link__text">Sso</span></span></li></ul></div></div>
+
+    
+
+<form id="signupForm" action="/templates/singleton/auth" method="post">
+<input type="hidden" name="_csrf-{{manifest['title']|lower}}" value="z8uUoiQ-SlRt5gATDLk01B_qqig6lbsxy7Fxatd-bRSk-sHXdG47PwejLSJ03BmeZaLES1Dl1WCH9Eg4gR0YQA==">    <div class="form__group">
+        <div class="field-name required" style="display: block;">
+<div class="input--icon input--user"><input type="text" id="name" class="input" name="SignupForm[name]" placeholder="Name" autofocus aria-required="true"></div><div class="help-block"></div>
+</div>    </div>
+    <div class="form__group">
+        <div class="field-signupEmail required" style="display: block;">
+<div class="input--icon input--email"><input type="text" id="signupEmail" class="input" name="SignupForm[email]" placeholder="Email" aria-required="true"></div><div class="help-block"></div>
+</div>    </div>
+    <div class="form__group">
+        <div class="field-password required" style="display: block;">
+<div class="input--icon input--lock"><input type="password" id="password" class="input" name="SignupForm[password]" placeholder="Password" aria-required="true"></div><div class="help-block"></div>
+</div>    </div>
+<div class="field-signupform-timezone" style="display: block;">
+
+<input type="hidden" id="signupform-timezone" class="form-control" name="SignupForm[timezone]" value="UTC">
+
+<div class="help-block"></div>
+</div>    <div class="form-actions">
+        <button type="submit" data-loading-text="Checking..." class="btn" id="registerButton">
+            Sign up <i class="m-icon-swapright m-icon-white"></i>
+        </button>
+    </div>
+    <div class="create-account">
+        <p>
+            Already member? <a
+                    href="https://www.{{manifest['title']|lower}}.com/login"
+                    id="goLogin">Log in</a>
+        </p>
+    </div>
+    <div class="form-extra-info small">
+        By creating an account, you agree to {{manifest['title']|lower}} <a href="/help/terms" class="termsLink">Terms of Service</a> and <a href="/help/privacy" class="legalLink">Privacy Policy</a>    </div>
+
+    <script>
+        // For inline register page; This logic is also present in "AbstractAuthState"
+        (function(){
+            function defer(method) {
+                if (window.Cookies) {
+                    method();
+                } else {
+                    setTimeout(function () {
+                        defer(method)
+                    }, 50);
+                }
+            }
+            defer(function(){
+                if(window.Intl && window.Intl.DateTimeFormat()){
+                    var tzNewValue = window.Intl.DateTimeFormat().resolvedOptions().timeZone;
+                    if(tzNewValue){
+                        window.Cookies.set('auth_tz', tzNewValue);
+                        var tzElem =  document.querySelector("#signupform-timezone");
+                        if(tzElem) tzElem.value = tzNewValue;
+                    }
+                }
+            });
+        })()
+    </script>
+</form></div>
+<div data-screen='reset'>
+    
+<a class="brand" href="/" title="{{manifest['title']|lower}}">
+    <img src="/static/img/{{manifest['title']|lower}}.svg" alt="{{manifest['title']|lower}}"/>
+</a><form id="reset" class="form-horizontal" action="/templates/singleton/auth" method="post">
+<input type="hidden" name="_csrf-{{manifest['title']|lower}}" value="z8uUoiQ-SlRt5gATDLk01B_qqig6lbsxy7Fxatd-bRSk-sHXdG47PwejLSJ03BmeZaLES1Dl1WCH9Eg4gR0YQA=="><h3 class="form__title">Reset your password</h3>
+
+    <h4 class="form__subtitle">Enter your email and check your inbox for instructions. Please also check your spam folder.</h4>
+    <br/>
+    <div class="form__group">
+        
+
+                                    <div class="input--icon input--email"><input type="text" id="userpasswordresetform-email" class="input" name="UserPasswordResetForm[email]" placeholder="Your email" aria-required="true"></div>
+                                    <span class="error"></span>
+        <br>
+    </div>
+
+        <div class="form-actions">
+        <button type="submit" data-loading-text="Checking..." class="btn">
+            Send <i class="m-icon-swapright m-icon-white"></i>
+        </button>
+    </div>
+<div class="create-account">
+    <p>
+        Already member? <a href="https://www.{{manifest['title']|lower}}.com/login" id="goBackReset">
+            Log in</a>
+    </p>
+</div>
+</form></div>
+<div data-screen='reset-success'>
+    <div class="reset-password-success-msg"></div>
+    <div class="form-actions">
+        <button id="resetSuccessBtn" class="btn btn--blue">Done</button>
+    </div>
+</div>
+
+<template class="auth-screens__backdrop--social" style="display: none">
+    <img style="width: 100px; margin-bottom: 18px;" src="/static/img/icons/{{manifest['title']|lower}}-white.svg">
+    <div class="ilove-backdrop__title">
+        <span class="ilove-backdrop__title__text"></span>
+        <img style="width: 12px; height: 16px; float: right;margin-left: 4px;" src="/static/img/icons/new-window.svg">
+    </div>
+    <div class="ilove-backdrop__subtitle">
+    <span class="ilove-backdrop__subtitle__text"></span>
+    </div>
+</template>
+
+<div class='text-translations' style="display:none;">
+    {"backdrop_social_signin_title":"{social_provider}","backdrop_social_signup_title":"{social_provider}","social_provider_facebook":"Facebook","social_provider_google":"Google","social_provider_sso":"SSO","backdrop_social_subtitle":"Cancel"}</div>        </div>
+        <div class="dialog__footer">
+            <div class="new-premium__logos">
+            <img width="55px" height="25px" src="/static/img/logos/pdf-association-logo.svg" title="PDF Association">
+        <img width="67px" height="30px" src="/static/img/logos/iso-logo.svg" title="ISO27001 certified">
+    <img width="80px" height="26px" src="/static/img/logos/secure-payment-logo.svg" title="Secure Payment">
+    <img width="80px" height="26px" src="/static/img/logos/ssl-encrypted-logo.svg" title="Secure connection Https">
+    </div>        </div>
+    </div>
+</div></div>
