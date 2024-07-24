@@ -70,8 +70,7 @@ async def before_request_func():
             ],
             "categories":["ORGANIZE PDF","OPTIMIZE PDF","CONVERT TO PDF","CONVERT FROM PDF","EDIT PDF","PDF SECURITY"]
         }
-        session["manifest"]["tools"] = session["manifest"]["tools"].reverse()
-        session["manifest"]["categories"] = session["manifest"]["categories"].reverse()
+        
     if session.get("user") == None:
         session["manifest"]["user"] = None
     else:
@@ -123,6 +122,8 @@ def success_download(id,key):
 
 @app.route("/")
 def index():
+    session["manifest"]["tools"] = session["manifest"]["tools"][::-1]
+    session["manifest"]["categories"] = session["manifest"]["categories"][::-1]
     return render_template("index.html",manifest=session["manifest"])
 
 @app.route("/user",methods=["GET","POST"])
