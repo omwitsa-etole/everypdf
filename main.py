@@ -255,7 +255,7 @@ def register():
 @app.route("/templates/<string:name>")
 def load_template(name):
     url_key = request.args.get("tool")
-    url_id = req.args.get("taskId")
+    url_id = request.args.get("taskId")
     global apiServer
     return render_template("template/"+name+".html",apiServer=apiServer,manifest=session["manifest"],**locals())
 
