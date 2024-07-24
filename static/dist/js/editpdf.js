@@ -18340,7 +18340,7 @@ var apiFiles = apiServer+"/files/uploads/"
         }
         ,
         g.prototype.goDownload = function(t) {
-            1 != this.stopGoDownload && (window.location.href = this.downloadUrl + "/" + this.taskId + "/" + this.getWorkerNumber())
+            1 != this.stopGoDownload && (window.location.href = this.downloadUrl + "/" + e.Id + "/" + e.tool)
         }
         ,
         g.prototype.getWorkerNumber = function() {
