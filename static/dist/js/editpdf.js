@@ -51173,7 +51173,7 @@ var apiFiles = apiServer+"/files/uploads/"
             a.toggleNonInteractiveWall = function(t) {
                 var e, n = 0 < d(".non-interactive-wall").length;
                 t ? (n || d("body").append("<div class='non-interactive-wall'>"),
-                0 === (e = d(".non-interactive-wall")).find(".loading-icon").length && e.append("<img class='loading-icon' src=\src="/static/img/svg_icons/preload.svg\" />"),
+                0 === (e = d(".non-interactive-wall")).find(".loading-icon").length && e.append("<img class='loading-icon' src='/static/img/svg_icons/preload.svg\' />"),
                 setTimeout(function() {
                     e.addClass("non-interactive-wall--loading")
                 }, 1)) : n && ((t = d(".non-interactive-wall")).find(".loading-icon"),
