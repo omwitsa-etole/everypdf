@@ -9,7 +9,7 @@
     <meta name="keywords" content="Merge PDF, split PDF, combine PDF, extract PDF, compress PDF, convert PDF, Word to PDF, Excel to PDF, Powerpoint to PDF, PDF to JPG, JPG to PDF"/>
     <link rel="canonical" href="/register"/>
     <meta name="apple-itunes-app" content="app-id=1207332399">
-    <meta name="google-play-app" content="app-id=com.ilovepdf.www">
+    <meta name="google-play-app" content="app-id=com.{{manifest['title']|lower}}.www">
     <link rel="apple-touch-icon" href="/static/img/app-icon.png">
     <meta name="google-site-verification" content="IZueAX8T8h1eMQN3D0y8Xx7qu8-yCvtHnwn3MmpdSLo"/>
     <link rel="icon" type="image/png" sizes="16x16" href="/static/img/favicons-pdf/favicon-32x32.png">
@@ -131,7 +131,7 @@
                     method();
                 } else {
                     setTimeout(function () {
-                        defer(method)
+                        //defer(method)
                     }, 50);
                 }
             }
