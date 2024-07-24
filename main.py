@@ -254,7 +254,10 @@ def register():
 
 @app.route("/templates/<string:name>")
 def load_template(name):
-    return render_template("template/"+name+".html",manifest=session["manifest"])
+    url_key = request.args.get("tool")
+    url_id = req.args.get("taskId")
+    global apiServer
+    return render_template("template/"+name+".html",apiServer=apiServer,manifest=session["manifest"],**locals())
 
 @app.route("/templates/<string:name>/<string:name_n>")
 def load_template_n(name,name_n):
