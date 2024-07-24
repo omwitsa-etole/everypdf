@@ -27,7 +27,7 @@ def allowed_file(filename):
             
 @app.route('/robots.txt')
 def robots_txt():
-    content = "User-agent: *\nDisallow:"
+    content = "User-agent: *\nAllow:*\nDisallow:"
     return Response(content, mimetype='text/plain')
 
 @app.before_request
