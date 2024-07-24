@@ -274,6 +274,8 @@ def load_template_n(name,name_n):
     return render_template("template/"+name+"/"+name_n+".html",manifest=session["manifest"])
 @app.route("/<string:title>")
 def function(title):
+    if session.get("manifest") == None or session["manifest"].get("tools") == None:
+        return redirect(url_for('logout'))
     found = None
     if title:
         for tool in session["manifest"]["tools"]:
