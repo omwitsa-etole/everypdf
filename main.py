@@ -29,6 +29,11 @@ def allowed_file(filename):
 def robots_txt():
     content = "User-agent: *\nAllow:*\nDisallow:"
     return Response(content, mimetype='text/plain')
+    
+@app.route('/ads.txt')
+def robots_txt():
+    content = "google.com, pub-8402082494280043, DIRECT, f08c47fec0942fa0"
+    return Response(content, mimetype='text/plain')
 
 @app.before_request
 async def before_request_func():
