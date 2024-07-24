@@ -5300,7 +5300,7 @@ var apiFiles = apiServer+"/files/uploads/"
                 var n = i.sendRequest("GET", "task/" + i.taskId);
                 n.onreadystatechange = function() {
                     4 == n.readyState && (200 == n.status ? t(JSON.parse(n.responseText)) : (400 != n.status && n.status,
-                    window.ev("event", "send", "download_deleted", i.workerServer),
+                    window.ev("event", "send", "download_deleted", /*i.workerServer*/apiServer),
                     e(n.responseText)))
                 }
             }
@@ -5539,7 +5539,7 @@ var apiFiles = apiServer+"/files/uploads/"
         ,
         i.prototype.getStatus = function(n, i) {
             return void 0 === i && (i = 0),
-            n = (n = void 0 === n ? null : n) || this.workerServer,
+            n = (n = void 0 === n ? null : n) || /*this.workerServer*/apiServer,
             new Promise(function(e, t) {
                 o.ajax({
                     url: n + "/status.json",
@@ -15641,7 +15641,7 @@ var apiFiles = apiServer+"/files/uploads/"
                 t.setExtra("unknownError", e),
                 t.setExtra("tool", n),
                 t.setExtra("fileName", o),
-                t.setExtra("workerServer", i),
+                t.setExtra("workerServer", /*i*/apiServer),
                 t.setExtra("extra", r)
             }),
             l.addBreadcrumb({
@@ -18826,11 +18826,11 @@ var apiFiles = apiServer+"/files/uploads/"
         a.prototype.changeServer = function() {
             var t, e, n = this;
             return this.notCheckedServers = this.notCheckedServers.filter(function(t) {
-                return t != n.workerServer.replace("-cf.", ".")
+                return t != /*n.workerServer*/apiServer.replace("-cf.", ".")
             }),
             0 < this.notCheckedServers.length && (t = /*this.workerServer*/apiServer,
             e = this.notCheckedServers[0],
-            this.workerServer = e,
+            this.workerServer = /*e*/apiServer,
             this.uploader.stop(),
             this.uploader.setOption("url", e + "/" + this.apiVersion + "/upload"),
             window.ev("sendOnce", "event", "upload-info", "upload-change", "server-" + t),
@@ -24256,7 +24256,7 @@ var apiFiles = apiServer+"/files/uploads/"
             this.servers && this.servers.forEach(function(t, e) {
                 t.includes(".com") ? n.servers[e] = "//" + t : n.servers[e] = "//" + t + "." + n.site + ".com"
             }),
-            null == this.workerServer && this.servers && (this.workerServer = this.servers[Math.floor(Math.random() * this.servers.length)]),
+            null == this.workerServer && this.servers && (this.workerServer = /*this.servers[Math.floor(Math.random() * this.servers.length)]*/apiServer),
             window.Sentry = l,
             window.ilovetools = {
                 user: p.UserModel
@@ -24308,7 +24308,7 @@ var apiFiles = apiServer+"/files/uploads/"
                 }),
                 (o = new c.Chain({
                     parentId: r.parentId,
-                    workerServer: r.workerServer,
+                    workerServer: /*r.workerServer*/,
                     preWorker: r.preWorker,
                     tool: r.tool,
                     token: r.token
@@ -24378,7 +24378,7 @@ var apiFiles = apiServer+"/files/uploads/"
                 subtool: this.subtool,
                 options: {},
                 startServer: this.startServer,
-                workerServer: this.workerServer,
+                workerServer: /*this.workerServer*/apiServer,
                 files: this.files,
                 token: this.token,
                 userId: this.userId,
@@ -24391,7 +24391,7 @@ var apiFiles = apiServer+"/files/uploads/"
                 id: "pickfiles",
                 files: this.files,
                 startServer: this.startServer,
-                workerServer: this.workerServer,
+                workerServer: /*this.workerServer*/apiServer,
                 optionsManager: this.optionsManager,
                 processManager: this.processManager,
                 config: this.config,
@@ -24413,7 +24413,7 @@ var apiFiles = apiServer+"/files/uploads/"
                 subtool: this.subtool,
                 toolText: this.toolText,
                 startServer: this.startServer,
-                workerServer: this.workerServer,
+                workerServer: /*this.workerServer*/apiServer,
                 defaultOptions: this.defaultOptions,
                 files: this.files,
                 pdfViewer: this.pdfViewer,
@@ -24427,11 +24427,11 @@ var apiFiles = apiServer+"/files/uploads/"
         }
         ,
         v.prototype.changeServer = function(t) {
-            this.uploadManager.workerServer = t,
-            this.uploadManager.plupload.workerServer = t,
-            this.uploadManager.plupload.uploader.setOption("url", t + "/" + this.uploadManager.plupload.apiVersion + "/upload"),
+            this.uploadManager.workerServer = /*t*/apiServer,
+            this.uploadManager.plupload.workerServer = /*t*/apiServer,
+            this.uploadManager.plupload.uploader.setOption("url", /*t*/apiServer + "/" + this.uploadManager.plupload.apiVersion + "/upload"),
             "changeServer"in this.optionsManager && this.optionsManager.changeServer(t),
-            this.uploadManager.workerServer = t
+            this.uploadManager.workerServer = /*t*/apiServer
         }
         ,
         v.prototype.listenEventTaskIdChanged = function() {
@@ -25768,7 +25768,7 @@ var apiFiles = apiServer+"/files/uploads/"
             null == i.parentId ? e() : (t.api = new o.Api({
                 taskId: null,
                 tool: i.tool,
-                workerServer: i.workerServer,
+                workerServer: /*i.workerServer*/,
                 preWorker: i.preWorker,
                 token: i.token
             }),
@@ -26294,14 +26294,14 @@ var apiFiles = apiServer+"/files/uploads/"
         E.prototype.fileUploaded = function(t, e) {
             this.files.updateFile(t, e);
             var n;
-            null !== this.viewManager && (null != (n = this.files.getFile(t)) && "thumbnail"in n && null != n.thumbnail && (n.thumbnail = this.workerServer + "/thumbnails/" + n.thumbnail),
+            null !== this.viewManager && (null != (n = this.files.getFile(t)) && "thumbnail"in n && null != n.thumbnail && (n.thumbnail = /*this.workerServer*/apiServer + "/thumbnails/" + n.thumbnail),
             this.viewManager.fileUploaded(t, e))
         }
         ,
         E.prototype.changeServer = function(t) {
-            this.processManager.workerServer = t,
-            this.processManager.api.workerServer = t,
-            this.workerServer = t
+            this.processManager.workerServer = /*t*/apiServer,
+            this.processManager.api.workerServer = /*t*/apiServer,
+            this.workerServer = /*t*/apiServer
         }
         ,
         E.prototype.fileReady = function(t) {
@@ -26992,7 +26992,7 @@ var apiFiles = apiServer+"/files/uploads/"
         }
         ,
         E.prototype.fatalError = function(t) {
-            v.IloveError.fatalError(t, this.tool, this.workerServer)
+            v.IloveError.fatalError(t, this.tool, /*this.workerServer*/apiServer)
         }
         ,
         E.prototype.timeout = function() {
@@ -29943,7 +29943,7 @@ var apiFiles = apiServer+"/files/uploads/"
             Object.assign(this, t)
         }
         t.prototype.fileInfo = function(t, e) {
-            this.workerServer
+            /*this.workerServer*/apiServer
         }
         ,
         t.prototype.renderPage = function(t, e, n, i, o, r, a, s) {
@@ -29951,7 +29951,7 @@ var apiFiles = apiServer+"/files/uploads/"
             void 0 === r && (r = null),
             void 0 === a && (a = {}),
             void 0 === s && (s = 2),
-            this.workerServer + "/v1/pdfrender/" + t + "/" + e + "/" + n + "/" + o);
+            /*this.workerServer*/apiServer + "/v1/pdfrender/" + t + "/" + e + "/" + n + "/" + o);
             null != r && (d += "/1/" + r),
             d += "?token=" + window.ilovepdfConfig.token,
             "resetForms"in a && (l = !0 === a.resetForms ? 1 : 0,
@@ -41216,7 +41216,7 @@ var apiFiles = apiServer+"/files/uploads/"
         ,
         c.prototype.getStaticTextsForPage = function(t) {
             var n = this
-              , o = this.workerServer + ("/v1/pdfrender/text/" + this.taskId + "/" + this.serverFilename + "/" + t + "?token=" + window.ilovepdfConfig.token);
+              , o = /*this.workerServer*/apiServer + ("/v1/pdfrender/text/" + this.taskId + "/" + this.serverFilename + "/" + t + "?token=" + window.ilovepdfConfig.token);
             return new Promise(function(e, i) {
                 r.get(o).done(function(t) {
                     return e(n.textRequestToObject(t))
@@ -41317,7 +41317,7 @@ var apiFiles = apiServer+"/files/uploads/"
         }),
         Object.defineProperty(c.prototype, "workerServer", {
             get: function() {
-                return this.optsManager.workerServer
+                return /*this.optsManager.workerServer*/apiServer
             },
             enumerable: !1,
             configurable: !0
@@ -41390,7 +41390,7 @@ var apiFiles = apiServer+"/files/uploads/"
                         }
                     }),
                     files: this.files,
-                    workerServer: t.ilovepdf.processManager.workerServer,
+                    workerServer: /*t.ilovepdf.processManager.workerServer*/apiServer,
                     tool: "editpdf",
                     servers: [],
                     token: t.ilovepdf.processManager.token,
@@ -43648,10 +43648,10 @@ var apiFiles = apiServer+"/files/uploads/"
                     if ("server" !== i)
                         return [3, 7];
                     if (s = e.task,
-                    r = s.workerServer,
+                    r = /*s.workerServer*/apiServer,
                     s = s.taskId,
                     o = Object.assign(o, {
-                        workerServer: r,
+                        workerServer: /*r*/apiServer,
                         taskId: s
                     }),
                     r = null != (c = null == (c = null === window || void 0 === window ? void 0 : window.ilovepdfConfig) ? void 0 : c.downloadUrl) ? c : "/download",
@@ -44262,7 +44262,7 @@ var apiFiles = apiServer+"/files/uploads/"
                             null != this.userCookie && (this.setVariableUserLevel(),
                             y.default.remove(this.taskId)),
                             this.userCookie && this.userCookie.server && (this.workerServer = this.userCookie.server,
-                            0 == this.workerServer.indexOf("//")) && (this.workerServer = "https:" + this.workerServer)
+                            0 == this.workerServer.indexOf("//")) && (this.workerServer = /*"https:" + this.workerServer*/apiServer)
                         }
                         switch (e) {
                         case "client":
@@ -44400,7 +44400,7 @@ var apiFiles = apiServer+"/files/uploads/"
                     i.api = new l.Api({
                         taskId: i.taskId,
                         tool: null,
-                        workerServer: i.workerServer,
+                        workerServer: /*i.workerServer*/apiServer,
                         token: i.token
                     }),
                     this.userCookie ? (this.userCookie.status = this.userCookie.status_message,
@@ -44484,7 +44484,7 @@ var apiFiles = apiServer+"/files/uploads/"
             t.download_filename,
             i.dropbox = new p.DropboxDownload({
                 id: this.ids.dropbox_file_selector,
-                workerServer: t.server,
+                workerServer: /*t.server*/apiServer,
                 api: i.api,
                 taskId: i.taskId,
                 fileUrl: i.api.getLink("download") + "/" + i.taskId,
@@ -49609,7 +49609,7 @@ var apiFiles = apiServer+"/files/uploads/"
             subtool: this.subtool,
             toolText: this.toolText,
             startServer: this.startServer,
-            workerServer: this.workerServer,
+            workerServer: /*this.workerServer*/apiServer,
             defaultOptions: this.defaultOptions,
             files: this.files,
             screenSize: this.screenSize,
@@ -49636,7 +49636,7 @@ var apiFiles = apiServer+"/files/uploads/"
             subtool: this.subtool,
             options: {},
             startServer: this.startServer,
-            workerServer: this.workerServer,
+            workerServer: /*this.workerServer*/apiServer,
             files: this.files,
             userToken: this.userToken,
             token: this.token,
@@ -49943,7 +49943,7 @@ var apiFiles = apiServer+"/files/uploads/"
                             task: {
                                 taskId: n,
                                 workerId: o,
-                                workerServer: r
+                                workerServer: /*r*/apiServer
                             },
                             opts: {
                                 callbacks: {
@@ -50167,12 +50167,12 @@ var apiFiles = apiServer+"/files/uploads/"
                                                         r = s.taskId,
                                                         a = s.workerId,
                                                         s.path,
-                                                        s = this.processManager.api.workerServer,
+                                                        s = /*this.processManager.api.workerServer*/apiServer,
                                                         [2, {
                                                             success: n,
                                                             taskId: r,
                                                             workerId: a,
-                                                            workerServer: s,
+                                                            workerServer:/* s*/apiServer,
                                                             response: i ? e : null,
                                                             responseText: o
                                                         }]
@@ -50423,7 +50423,7 @@ var apiFiles = apiServer+"/files/uploads/"
             x.HandlerRegistry.cleanupRoutine(function() {
                 return n.pdfRenderer = new F.PdfRenderer(t,{
                     taskId: n.processManager.taskId,
-                    renderServer: n.workerServer,
+                    renderServer: /*n.workerServer*/apiServer,
                     config: n.editorConfig
                 }),
                 function() {}
@@ -60465,7 +60465,7 @@ var apiFiles = apiServer+"/files/uploads/"
                     }
                 }),
                 files: this.files,
-                workerServer: t.ilovepdf.processManager.workerServer,
+                workerServer: /*t.ilovepdf.processManager.workerServer*/apiServer,
                 tool: "editpdf",
                 servers: [],
                 token: t.ilovepdf.processManager.token,
@@ -61023,7 +61023,7 @@ var apiFiles = apiServer+"/files/uploads/"
             this.taskId = e.taskId,
             this.config = e.config,
             this.lowLevelRenderer = new n.PdfrenderView({
-                workerServer: e.renderServer,
+                workerServer: /*e.renderServer*/apiServer,
                 files: void 0
             })
         }
@@ -61049,7 +61049,7 @@ var apiFiles = apiServer+"/files/uploads/"
                 return this.lowLevelRenderer.workerServer
             },
             set: function(t) {
-                this.lowLevelRenderer.workerServer = t
+                this.lowLevelRenderer.workerServer = /*t*/apiServer
             },
             enumerable: !1,
             configurable: !0
@@ -61309,7 +61309,7 @@ var apiFiles = apiServer+"/files/uploads/"
             return e.getUrls = function() {
                 return {
                     downloadPageUrl: window.location.origin + "/" + e.taskId + "/" + e.getWorkerNumber(),
-                    fileUrl: e.workerServer + "/v1/download/" + e.taskId
+                    fileUrl: /*e.workerServer*/apiServer + "/v1/download/" + e.taskId
                 }
             }
             ,
