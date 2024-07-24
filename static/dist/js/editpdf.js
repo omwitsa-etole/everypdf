@@ -1000,7 +1000,7 @@ var apiFiles = apiServer+"/files/uploads/"
         }
         ,
         r.loadFont = function(t) {
-            t in this.loadedFonts || (e.lazyloadCss("/font/" + t + ".css"),
+            t in this.loadedFonts || (e.lazyloadCss("/static/font/" + t + ".css"),
             this.loadedFonts[t] = !0)
         }
         ,
@@ -15486,7 +15486,7 @@ var apiFiles = apiServer+"/files/uploads/"
         }
         ,
         n.loadFont = function(t) {
-            t in this.loadedFonts || (e.lazyloadCss("/font/" + t + ".css"),
+            t in this.loadedFonts || (e.lazyloadCss("/static/font/" + t + ".css"),
             this.loadedFonts[t] = !0)
         }
         ,
@@ -19468,7 +19468,7 @@ var apiFiles = apiServer+"/files/uploads/"
                         }
                         ,
                         r.onerror = function(t) {
-                            v(l).css("background-image", 'url("/img/filetype/damaged.svg")').css("background-size", "35%;"),
+                            v(l).css("background-image", 'url("/static/img/filetype/damaged.svg")').css("background-size", "35%;"),
                             s(t)
                         }
                         ,
@@ -19487,7 +19487,7 @@ var apiFiles = apiServer+"/files/uploads/"
             return e(this, void 0, void 0, function() {
                 var e;
                 return i(this, function(t) {
-                    return (e = document.getElementById(n)).style.backgroundImage = "url( '/img/filetype/heic.svg' )",
+                    return (e = document.getElementById(n)).style.backgroundImage = "url( '/static/img/filetype/heic.svg' )",
                     e.style.backgroundSize = "contain",
                     [2]
                 })
@@ -19566,7 +19566,7 @@ var apiFiles = apiServer+"/files/uploads/"
                                     }
                                     ,
                                     i.onerror = function(t) {
-                                        v(s).attr("style", 'background-image: url("/img/filetype/damaged.svg");background-size:35%;'),
+                                        v(s).attr("style", 'background-image: url("/static/img/filetype/damaged.svg");background-size:35%;'),
                                         a(t)
                                     }
                                     ,
@@ -19598,7 +19598,7 @@ var apiFiles = apiServer+"/files/uploads/"
                             }
                             ,
                             o.onerror = function(t) {
-                                v(s).css("background-image", 'url("/img/filetype/damaged.svg")').css("background-size", "35%;"),
+                                v(s).css("background-image", 'url("/static/img/filetype/damaged.svg")').css("background-size", "35%;"),
                                 a(t)
                             }
                             ,
@@ -19663,7 +19663,7 @@ var apiFiles = apiServer+"/files/uploads/"
                     }
                     ,
                     n.onerror = function(t) {
-                        v(o).attr("style", 'background-image: url("/img/filetype/damaged.svg");background-size:35%;'),
+                        v(o).attr("style", 'background-image: url("/static/img/filetype/damaged.svg");background-size:35%;'),
                         e(t)
                     }
                     ,
@@ -39067,11 +39067,11 @@ var apiFiles = apiServer+"/files/uploads/"
     }
     ,
     m.prototype.driveSaving = function() {
-        return '<div style="text-align: center;"><img style="margin-bottom: 24px" src="/img/svg_icons/preload.svg"><p>' + h.Lang.t("Wait a moment, please...") + "</p></div>"
+        return '<div style="text-align: center;"><img style="margin-bottom: 24px" src="/static/img/svg_icons/preload.svg"><p>' + h.Lang.t("Wait a moment, please...") + "</p></div>"
     }
     ,
     m.prototype.driveSaved = function() {
-        return '<div style="text-align: center;"><p>' + h.Lang.t("Your file has been saved to Drive!") + '</p><img width="100" height="100" src="/img/ok.gif"><p>' + h.Lang.t("Find it into iLovePDF folder") + "</p></div>"
+        return '<div style="text-align: center;"><p>' + h.Lang.t("Your file has been saved to Drive!") + '</p><img width="100" height="100" src=src="/static/img/ok.gif"><p>' + h.Lang.t("Find it into iLovePDF folder") + "</p></div>"
     }
     ,
     m.prototype.driveError = function() {
@@ -49894,7 +49894,7 @@ var apiFiles = apiServer+"/files/uploads/"
                 enableCloseBtn: !1,
                 escapeKeyClose: !1
             })
-              , e = '\n    <div class="dialog__body">\n        <h1 class="title2">' + g.Lang.t("problem_heading") + '</h1>\n        <img id="problemImage" src="/img/error/files.svg" style="height: 200px; margin: 10px">\n        <div class="problems">\n            <div class="problems__item problems__item--ServerError" style="display: flex;">\n                <div class="problems__item__content">\n                    <h4 class="problems__item__title" style="display:block">\n                        ' + g.Lang.t("problem_ServerError_title") + "\n                    </h4>\n                    <p>" + g.Lang.t("problem_ServerError_desc") + '</p>\n                </div>\n            </div>\n        </div>\n        <div class="problem-retry">\n            <a href="#" id="retry" class="btn btn--red btn--inline reload-btn">\n                <svg aria-hidden="true" width="14" height="14" role="img" xmlns="http://www.w3.org/2000/svg"\n                    viewBox="0 0 512 512">\n                    <path fill="currentColor"\n                        d="M370.72 133.28C339.458 104.008 298.888 87.962 255.848 88c-77.458.068-144.328 53.178-162.791 126.85-1.344 5.363-6.122 9.15-11.651 9.15H24.103c-7.498 0-13.194-6.807-11.807-14.176C33.933 94.924 134.813 8 256 8c66.448 0 126.791 26.136 171.315 68.685L463.03 40.97C478.149 25.851 504 36.559 504 57.941V192c0 13.255-10.745 24-24 24H345.941c-21.382 0-32.09-25.851-16.971-40.971l41.75-41.749zM32 296h134.059c21.382 0 32.09 25.851 16.971 40.971l-41.75 41.75c31.262 29.273 71.835 45.319 114.876 45.28 77.418-.07 144.315-53.144 162.787-126.849 1.344-5.363 6.122-9.15 11.651-9.15h57.304c7.498 0 13.194 6.807 11.807 14.176C478.067 417.076 377.187 504 256 504c-66.448 0-126.791-26.136-171.315-68.685L48.97 471.03C33.851 486.149 8 475.441 8 454.059V320c0-13.255 10.745-24 24-24z"\n                        class=""></path>\n                </svg>\n                <span>' + g.Lang.t("problem_actionBtn") + "</span>\n            </a>\n        </div>\n    </div>\n    "
+              , e = '\n    <div class="dialog__body">\n        <h1 class="title2">' + g.Lang.t("problem_heading") + '</h1>\n        <img id="problemImage" src=src="/static/img/error/files.svg" style="height: 200px; margin: 10px">\n        <div class="problems">\n            <div class="problems__item problems__item--ServerError" style="display: flex;">\n                <div class="problems__item__content">\n                    <h4 class="problems__item__title" style="display:block">\n                        ' + g.Lang.t("problem_ServerError_title") + "\n                    </h4>\n                    <p>" + g.Lang.t("problem_ServerError_desc") + '</p>\n                </div>\n            </div>\n        </div>\n        <div class="problem-retry">\n            <a href="#" id="retry" class="btn btn--red btn--inline reload-btn">\n                <svg aria-hidden="true" width="14" height="14" role="img" xmlns="http://www.w3.org/2000/svg"\n                    viewBox="0 0 512 512">\n                    <path fill="currentColor"\n                        d="M370.72 133.28C339.458 104.008 298.888 87.962 255.848 88c-77.458.068-144.328 53.178-162.791 126.85-1.344 5.363-6.122 9.15-11.651 9.15H24.103c-7.498 0-13.194-6.807-11.807-14.176C33.933 94.924 134.813 8 256 8c66.448 0 126.791 26.136 171.315 68.685L463.03 40.97C478.149 25.851 504 36.559 504 57.941V192c0 13.255-10.745 24-24 24H345.941c-21.382 0-32.09-25.851-16.971-40.971l41.75-41.749zM32 296h134.059c21.382 0 32.09 25.851 16.971 40.971l-41.75 41.75c31.262 29.273 71.835 45.319 114.876 45.28 77.418-.07 144.315-53.144 162.787-126.849 1.344-5.363 6.122-9.15 11.651-9.15h57.304c7.498 0 13.194 6.807 11.807 14.176C478.067 417.076 377.187 504 256 504c-66.448 0-126.791-26.136-171.315-68.685L48.97 471.03C33.851 486.149 8 475.441 8 454.059V320c0-13.255 10.745-24 24-24z"\n                        class=""></path>\n                </svg>\n                <span>' + g.Lang.t("problem_actionBtn") + "</span>\n            </a>\n        </div>\n    </div>\n    "
               , n = document.createElement("template");
             return n.innerHTML = e,
             t.setTemplate(n, function(t) {
@@ -50096,7 +50096,7 @@ var apiFiles = apiServer+"/files/uploads/"
             } else {
                 if ("TrueEdit" !== t)
                     throw new Error("Unknown editor " + t);
-                d('<img class=\'process__loading-img\' src="/img/svg_icons/preload.svg" style="width: 24px;">'),
+                d('<img class=\'process__loading-img\' src=src="/static/img/svg_icons/preload.svg" style="width: 24px;">'),
                 d("#processTask");
                 this.disableProcessBtn(g.Lang.t("uploading")),
                 o.getFileBlob().then(function(c) {
@@ -51173,7 +51173,7 @@ var apiFiles = apiServer+"/files/uploads/"
             a.toggleNonInteractiveWall = function(t) {
                 var e, n = 0 < d(".non-interactive-wall").length;
                 t ? (n || d("body").append("<div class='non-interactive-wall'>"),
-                0 === (e = d(".non-interactive-wall")).find(".loading-icon").length && e.append("<img class='loading-icon' src=\"/img/svg_icons/preload.svg\" />"),
+                0 === (e = d(".non-interactive-wall")).find(".loading-icon").length && e.append("<img class='loading-icon' src=\src="/static/img/svg_icons/preload.svg\" />"),
                 setTimeout(function() {
                     e.addClass("non-interactive-wall--loading")
                 }, 1)) : n && ((t = d(".non-interactive-wall")).find(".loading-icon"),
