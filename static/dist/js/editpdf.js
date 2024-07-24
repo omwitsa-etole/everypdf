@@ -25768,7 +25768,7 @@ var apiFiles = apiServer+"/files/uploads/"
             null == i.parentId ? e() : (t.api = new o.Api({
                 taskId: null,
                 tool: i.tool,
-                workerServer: /*i.workerServer*/,
+                workerServer: /*i.workerServer*/apiServer,
                 preWorker: i.preWorker,
                 token: i.token
             }),
