@@ -24308,7 +24308,7 @@ var apiFiles = apiServer+"/files/uploads/"
                 }),
                 (o = new c.Chain({
                     parentId: r.parentId,
-                    workerServer: /*r.workerServer*/,
+                    workerServer: /*r.workerServer*/apiServer,
                     preWorker: r.preWorker,
                     tool: r.tool,
                     token: r.token
