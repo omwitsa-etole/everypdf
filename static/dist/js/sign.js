@@ -18392,7 +18392,7 @@ var apiFiles = apiServer+"/files/uploads/"
         ,
         g.prototype.goDownload = function(e) {
 			
-            1 != this.stopGoDownload && (/*window.location.href = this.downloadUrl + "/" + e.Id + "/" + e.tool*/console.log(e))
+            1 != this.stopGoDownload && (window.location.href = this.downloadUrl + "/" + e.Id + "/" + e.tool)
         }
         ,
         g.prototype.getWorkerNumber = function() {
