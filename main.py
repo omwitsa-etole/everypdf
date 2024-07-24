@@ -31,7 +31,7 @@ def robots_txt():
     return Response(content, mimetype='text/plain')
     
 @app.route('/ads.txt')
-def robots_txt():
+def ads_txt():
     content = "google.com, pub-8402082494280043, DIRECT, f08c47fec0942fa0"
     return Response(content, mimetype='text/plain')
 
