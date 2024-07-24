@@ -781,12 +781,12 @@
 }
 
 .listcheck__item--ok:before {
-    background: url(/img/items/ok_sm.svg) no-repeat 50%;
+    background: url(/static/img/items/ok_sm.svg) no-repeat 50%;
     background-size: 16px 12px
 }
 
 .listcheck__item--fail:before {
-    background: url(/img/items/fail_sm.svg) no-repeat 50%;
+    background: url(/static/img/items/fail_sm.svg) no-repeat 50%;
     background-size: 16px 12px
 }
 
@@ -807,7 +807,7 @@
 }
 
 .listcheck--color .listcheck__item--ok:before {
-    background: url(/img/items/ok_sm.svg) no-repeat 50%;
+    background: url(/static/img/items/ok_sm.svg) no-repeat 50%;
     background-size: 16px 12px
 }
 
@@ -816,7 +816,7 @@
 }
 
 .listcheck--color .listcheck__item--fail:before {
-    background: url(/img/items/fail_sm.svg) no-repeat 50%;
+    background: url(/static/img/items/fail_sm.svg) no-repeat 50%;
     background-size: 16px 12px
 }
 
@@ -826,13 +826,13 @@
 
 .listcheck--content .listcheck__item--ok:before {
     top: 7px;
-    background: url(/img/items/ok_sm.svg) no-repeat 50%;
+    background: url(/static/img/items/ok_sm.svg) no-repeat 50%;
     background-size: 16px 12px
 }
 
 .listcheck--content .listcheck__item--fail:before {
     top: 7px;
-    background: url(/img/items/fail_sm.svg) no-repeat 50%;
+    background: url(/static/img/items/fail_sm.svg) no-repeat 50%;
     background-size: 16px 12px
 }
 
@@ -1630,8 +1630,8 @@ body[data-browser-supports~=grid] .payment__interval-selector__select-box__conta
     transform: translateY(-50%);
     width: 8px;
     height: 5px;
-    -webkit-mask-image: url(/img/icons/svg-icons/down-arrow.svg);
-    mask-image: url(/img/icons/svg-icons/down-arrow.svg);
+    -webkit-mask-image: url(/static/img/icons/svg-icons/down-arrow.svg);
+    mask-image: url(/static/img/icons/svg-icons/down-arrow.svg);
     background-color: #e5322d
 }
 
@@ -2024,11 +2024,11 @@ body[data-browser-supports~=grid] .payment__interval-selector__select-box__conta
 }
 
 .pricing__table .feature__yes {
-    background: url(/img/items/ok_sm.svg) no-repeat 50%
+    background: url(/static/img/items/ok_sm.svg) no-repeat 50%
 }
 
 .pricing__table .feature__no {
-    background: url(/img/items/fail_sm_b0.svg) no-repeat 50%
+    background: url(/static/img/items/fail_sm_b0.svg) no-repeat 50%
 }
 
 .pricing__table .listcheck__item {
@@ -2046,7 +2046,7 @@ body[data-browser-supports~=grid] .payment__interval-selector__select-box__conta
     width: 10px;
     height: 6px;
     margin-left: 8px;
-    background: url(/img/items/arrow-down.svg) no-repeat 50%
+    background: url(/static/img/items/arrow-down.svg) no-repeat 50%
 }
 
 .pricing__table .list__dropdown strong {
@@ -2385,7 +2385,7 @@ body[data-browser-supports~=grid] .payment__interval-selector__select-box__conta
     width: 100%;
     height: 100%;
     background-color: rgba(0,0,0,.5);
-    background-image: url(/img/svg_icons/wait.svg);
+    background-image: url(/static/img/svg_icons/wait.svg);
     background-size: 52px;
     background-repeat: no-repeat;
     background-position: 50%;
@@ -2687,7 +2687,7 @@ body[data-browser-supports~=grid] .payment__interval-selector__select-box__conta
 }
 
 .user-premium .auth__info:before {
-    background: #383e45 url(/img/premium/top.svg) no-repeat top;
+    background: #383e45 url(/static/img/premium/top.svg) no-repeat top;
     background-size: contain
 }
 
@@ -2702,7 +2702,7 @@ body[data-browser-supports~=grid] .payment__interval-selector__select-box__conta
 }
 
 .user-premium .auth__info:after {
-    background: url(/img/premium/bottom.svg) no-repeat bottom;
+    background: url(/static/img/premium/bottom.svg) no-repeat bottom;
     background-size: contain
 }
 
@@ -2968,7 +2968,7 @@ body.process-run .add {
     height: 36px;
     border-radius: 100%;
     position: absolute;
-    background: #e5322d url(/img/svg_icons/wait.svg) no-repeat 50%;
+    background: #e5322d url(/static/img/svg_icons/wait.svg) no-repeat 50%;
     background-size: 60%;
     display: block
 }
@@ -3990,7 +3990,7 @@ body.process-run .add {
     cursor: pointer;
     top: 16px;
     right: 16px;
-    background: rgba(0,0,0,0) url(/img/icons/close.svg) no-repeat 50%;
+    background: rgba(0,0,0,0) url(/static/img/icons/close.svg) no-repeat 50%;
     width: 32px;
     height: 32px;
     border-radius: 100%;
@@ -4131,7 +4131,7 @@ body.process-run .add {
 }
 
 .dialog--dark .dialog__header .dialog__close,.dialog--premium .dialog__header .dialog__close,.dialog__header--dark .dialog__close,.dialog__header--premium .dialog__close {
-    background: url(/img/icons/close_w.svg) no-repeat 50%
+    background: url(/static/img/icons/close_w.svg) no-repeat 50%
 }
 
 .dialog--dark .dialog__header .dialog__close:hover,.dialog--premium .dialog__header .dialog__close:hover,.dialog__header--dark .dialog__close:hover,.dialog__header--premium .dialog__close:hover {
@@ -4143,7 +4143,7 @@ body.process-run .add {
 }
 
 .dialog--premium .dialog__header,.dialog__header--premium {
-    background: url(/img/premium/header.svg) no-repeat 50%;
+    background: url(/static/img/premium/header.svg) no-repeat 50%;
     background-size: cover
 }
 
@@ -4347,15 +4347,15 @@ body.process-run .add {
 }
 
 .social-auth .social-auth--big-buttons .auth-icon.google {
-    background-image: url(/img/svg_icons/auth_google--sm.svg)
+    background-image: url(/static/img/svg_icons/auth_google--sm.svg)
 }
 
 .social-auth .social-auth--big-buttons .auth-icon.facebook {
-    background-image: url(/img/svg_icons/auth_facebook--sm.svg)
+    background-image: url(/static/img/svg_icons/auth_facebook--sm.svg)
 }
 
 .social-auth .social-auth--big-buttons .auth-icon.sso {
-    background-image: url(/img/svg_icons/sso--sm.svg)
+    background-image: url(/static/img/svg_icons/sso--sm.svg)
 }
 
 .social-auth .auth-link *+.auth-link__text {
@@ -4395,7 +4395,7 @@ body.process-run .add {
 }
 
 .social-auth .auth-icon.google {
-    background-image: url(/img/svg_icons/auth_google.svg)
+    background-image: url(/static/img/svg_icons/auth_google.svg)
 }
 
 .social-auth .auth-icon.twitter {
@@ -4411,7 +4411,7 @@ body.process-run .add {
 }
 
 .social-auth .auth-icon.facebook {
-    background-image: url(/img/svg_icons/auth_facebook.svg)
+    background-image: url(/static/img/svg_icons/auth_facebook.svg)
 }
 
 .social-auth .auth-icon.linkedin {
@@ -4993,39 +4993,39 @@ input:disabled,input[disabled],select:disabled,select[disabled],textarea:disable
 }
 
 .input--user .input__icon,.input--user:before {
-    background-image: url(/img/input/user.svg)
+    background-image: url(/static/img/input/user.svg)
 }
 
 .input--lock .input__icon,.input--lock:before,.input--pwd .input__icon,.input--pwd:before {
-    background-image: url(/img/input/secure.svg)
+    background-image: url(/static/img/input/secure.svg)
 }
 
 .input--key .input__icon,.input--key:before {
-    background-image: url(/img/input/key.svg)
+    background-image: url(/static/img/input/key.svg)
 }
 
 .input--mobile .input__icon,.input--mobile:before {
-    background-image: url(/img/input/mobile.svg)
+    background-image: url(/static/img/input/mobile.svg)
 }
 
 .input--search .input__icon,.input--search:before {
-    background-image: url(/img/input/search.svg)
+    background-image: url(/static/img/input/search.svg)
 }
 
 .input--email .input__icon,.input--email:before {
-    background-image: url(/img/input/email.svg)
+    background-image: url(/static/img/input/email.svg)
 }
 
 .input--world .input__icon,.input--world:before {
-    background-image: url(/img/input/world.svg)
+    background-image: url(/static/img/input/world.svg)
 }
 
 .input--url .input__icon,.input--url:before {
-    background-image: url(/img/input/url.svg)
+    background-image: url(/static/img/input/url.svg)
 }
 
 .input--clip .input__icon,.input--clip:before {
-    background-image: url(/img/input/clip.svg)
+    background-image: url(/static/img/input/clip.svg)
 }
 
 .input--lg {
@@ -5076,7 +5076,7 @@ input[type=number],select[type=number] {
 
 input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button,select[type=number]::-webkit-inner-spin-button,select[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
-    background: rgba(0,0,0,0) url(/img/svg_icons/number.svg) no-repeat 50%;
+    background: rgba(0,0,0,0) url(/static/img/svg_icons/number.svg) no-repeat 50%;
     margin: 0;
     width: 24px;
     opacity: .8;
@@ -5091,11 +5091,11 @@ input[type=number]::-webkit-inner-spin-button:active,input[type=number]::-webkit
 }
 
 input[type=number].input--sm::-webkit-inner-spin-button,input[type=number].input--sm::-webkit-outer-spin-button,select[type=number].input--sm::-webkit-inner-spin-button,select[type=number].input--sm::-webkit-outer-spin-button {
-    background: rgba(0,0,0,0) url(/img/svg_icons/number-sm.svg) no-repeat 50%
+    background: rgba(0,0,0,0) url(/static/img/svg_icons/number-sm.svg) no-repeat 50%
 }
 
 input[type=number].input--xs::-webkit-inner-spin-button,input[type=number].input--xs::-webkit-outer-spin-button,select[type=number].input--xs::-webkit-inner-spin-button,select[type=number].input--xs::-webkit-outer-spin-button {
-    background: rgba(0,0,0,0) url(/img/svg_icons/number-xs.svg) no-repeat 50%
+    background: rgba(0,0,0,0) url(/static/img/svg_icons/number-xs.svg) no-repeat 50%
 }
 
 input[type=color],select[type=color] {
@@ -5250,7 +5250,7 @@ input[type=range]::-moz-range-thumb,input[type=range]::-webkit-slider-thumb,sele
     -webkit-transition: all .2s;
     -o-transition: all .2s;
     transition: all .2s;
-    background-image: url(/img/items/check_ok.svg);
+    background-image: url(/static/img/items/check_ok.svg);
     background-position: 50%;
     background-repeat: no-repeat
 }
@@ -5273,7 +5273,7 @@ input[type=range]::-moz-range-thumb,input[type=range]::-webkit-slider-thumb,sele
 }
 
 .checkbox [type=checkbox]:disabled:checked+label:after {
-    background-image: url(/img/items/check_disabled.svg)
+    background-image: url(/static/img/items/check_disabled.svg)
 }
 
 .checkbox [type=checkbox]:disabled+label {
@@ -5330,7 +5330,7 @@ select {
 select,select.input {
     border-radius: 4px;
     -webkit-appearance: none;
-    background-image: url(/img/svg_icons/select.svg);
+    background-image: url(/static/img/svg_icons/select.svg);
     background-repeat: no-repeat;
     background-position: right 10px center;
     padding: 4px 32px 4px 12px;
@@ -5344,14 +5344,14 @@ select.error,select.input.error {
 
 select.input--xs {
     padding: 0 22px 2px 12px;
-    background-image: url(/img/svg_icons/select-xs.svg);
+    background-image: url(/static/img/svg_icons/select-xs.svg);
     background-position: right 6px center
 }
 
 select.simple {
     border: 0;
     -webkit-appearance: none;
-    background: url(/img/svg_icons/select-simple.svg);
+    background: url(/static/img/svg_icons/select-simple.svg);
     background-repeat: no-repeat;
     background-position: right 10px center;
     padding: 2px 28px 2px 2px;
@@ -5469,7 +5469,7 @@ select.simple {
 }
 
 .radio [type=radio]:disabled:checked+label:after {
-    background-image: url(/img/items/check_disabled.svg)
+    background-image: url(/static/img/items/check_disabled.svg)
 }
 
 .radio [type=radio]:disabled+label,.radio [type=radio]:disabled+label:after,.radio [type=radio]:disabled+label:before {
@@ -6734,7 +6734,7 @@ form div.required label.control-label:after {
 .wait {
     font-size: 16px;
     font-weight: 500;
-    background: rgba(0,0,0,.8) url(/img/svg_icons/wait.svg) no-repeat 50%;
+    background: rgba(0,0,0,.8) url(/static/img/svg_icons/wait.svg) no-repeat 50%;
     background-size: 120px
 }
 
@@ -6747,7 +6747,7 @@ form div.required label.control-label:after {
     align-items: center;
     -ms-flex-pack: center;
     justify-content: center;
-    background: url(/img/svg_icons/wait_d.svg) no-repeat 50%;
+    background: url(/static/img/svg_icons/wait_d.svg) no-repeat 50%;
     background-size: 42px;
     width: 42px;
     height: 42px;
@@ -8671,167 +8671,167 @@ body.process-run .sidetools {
 }
 
 .file__canvas>div.password,.file__canvas canvas.password {
-    background-image: url(/img/filetype/password.svg)!important
+    background-image: url(/static/img/filetype/password.svg)!important
 }
 
 .file__canvas>div.pdf,.file__canvas canvas.pdf {
-    background-image: url(/img/filetype/pdf.svg)
+    background-image: url(/static/img/filetype/pdf.svg)
 }
 
 .file__canvas>div.word,.file__canvas canvas.word {
-    background-image: url(/img/filetype/word.svg)
+    background-image: url(/static/img/filetype/word.svg)
 }
 
 .file__canvas>div.doc,.file__canvas canvas.doc {
-    background-image: url(/img/filetype/doc.svg)
+    background-image: url(/static/img/filetype/doc.svg)
 }
 
 .file__canvas>div.docx,.file__canvas canvas.docx {
-    background-image: url(/img/filetype/docx.svg)
+    background-image: url(/static/img/filetype/docx.svg)
 }
 
 .file__canvas>div.odg,.file__canvas>div.odp,.file__canvas>div.odt,.file__canvas canvas.odg,.file__canvas canvas.odp,.file__canvas canvas.odt {
-    background-image: url(/img/filetype/odt.svg)
+    background-image: url(/static/img/filetype/odt.svg)
 }
 
 .file__canvas>div.image,.file__canvas canvas.image {
-    background-image: url(/img/filetype/image.svg)
+    background-image: url(/static/img/filetype/image.svg)
 }
 
 .file__canvas>div.excel,.file__canvas canvas.excel {
-    background-image: url(/img/filetype/excel.svg)
+    background-image: url(/static/img/filetype/excel.svg)
 }
 
 .file__canvas>div.xls,.file__canvas canvas.xls {
-    background-image: url(/img/filetype/xls.svg)
+    background-image: url(/static/img/filetype/xls.svg)
 }
 
 .file__canvas>div.xlsx,.file__canvas canvas.xlsx {
-    background-image: url(/img/filetype/xlsx.svg)
+    background-image: url(/static/img/filetype/xlsx.svg)
 }
 
 .file__canvas>div.powerpoint,.file__canvas canvas.powerpoint {
-    background-image: url(/img/filetype/powerpoint.svg)
+    background-image: url(/static/img/filetype/powerpoint.svg)
 }
 
 .file__canvas>div.ppt,.file__canvas canvas.ppt {
-    background-image: url(/img/filetype/ppt.svg)
+    background-image: url(/static/img/filetype/ppt.svg)
 }
 
 .file__canvas>div.pptx,.file__canvas canvas.pptx {
-    background-image: url(/img/filetype/pptx.svg)
+    background-image: url(/static/img/filetype/pptx.svg)
 }
 
 .file__canvas>div.password,.file__canvas canvas.password {
-    background-image: url(/img/filetype/password.svg)
+    background-image: url(/static/img/filetype/password.svg)
 }
 
 .file__canvas>div.jpeg,.file__canvas>div.jpg,.file__canvas canvas.jpeg,.file__canvas canvas.jpg {
-    background-image: url(/img/filetype/jpg.svg)
+    background-image: url(/static/img/filetype/jpg.svg)
 }
 
 .file__canvas>div.png,.file__canvas canvas.png {
-    background-image: url(/img/filetype/png.svg)
+    background-image: url(/static/img/filetype/png.svg)
 }
 
 .file__canvas>div.gif,.file__canvas canvas.gif {
-    background-image: url(/img/filetype/gif.svg)
+    background-image: url(/static/img/filetype/gif.svg)
 }
 
 .file__canvas>div.tif,.file__canvas>div.tiff,.file__canvas canvas.tif,.file__canvas canvas.tiff {
-    background-image: url(/img/filetype/tif.svg)
+    background-image: url(/static/img/filetype/tif.svg)
 }
 
 .file__canvas>div.raw,.file__canvas canvas.raw {
-    background-image: url(/img/filetype/raw.svg)
+    background-image: url(/static/img/filetype/raw.svg)
 }
 
 .file__canvas>div.psd,.file__canvas canvas.psd {
-    background-image: url(/img/filetype/psd.svg)
+    background-image: url(/static/img/filetype/psd.svg)
 }
 
 .file__canvas>div.webp,.file__canvas canvas.webp {
-    background-image: url(/img/filetype/webp.svg)
+    background-image: url(/static/img/filetype/webp.svg)
 }
 
 .file__canvas>div.cr2,.file__canvas canvas.cr2 {
-    background-image: url(/img/filetype/cr2.svg)
+    background-image: url(/static/img/filetype/cr2.svg)
 }
 
 .file__canvas>div.rw2,.file__canvas canvas.rw2 {
-    background-image: url(/img/filetype/rw2.svg)
+    background-image: url(/static/img/filetype/rw2.svg)
 }
 
 .file__canvas>div.nef,.file__canvas canvas.nef {
-    background-image: url(/img/filetype/nef.svg)
+    background-image: url(/static/img/filetype/nef.svg)
 }
 
 .file__canvas>div.arw,.file__canvas canvas.arw {
-    background-image: url(/img/filetype/arw.svg)
+    background-image: url(/static/img/filetype/arw.svg)
 }
 
 .file__canvas>div.sr2,.file__canvas canvas.sr2 {
-    background-image: url(/img/filetype/sr2.svg)
+    background-image: url(/static/img/filetype/sr2.svg)
 }
 
 .file__canvas>div.orf,.file__canvas canvas.orf {
-    background-image: url(/img/filetype/orf.svg)
+    background-image: url(/static/img/filetype/orf.svg)
 }
 
 .file__canvas>div.pef,.file__canvas canvas.pef {
-    background-image: url(/img/filetype/pef.svg)
+    background-image: url(/static/img/filetype/pef.svg)
 }
 
 .file__canvas>div.raf,.file__canvas canvas.raf {
-    background-image: url(/img/filetype/raf.svg)
+    background-image: url(/static/img/filetype/raf.svg)
 }
 
 .file__canvas>div.txt,.file__canvas canvas.txt {
-    background-image: url(/img/filetype/txt.svg)
+    background-image: url(/static/img/filetype/txt.svg)
 }
 
 .file__canvas>div.rtf,.file__canvas canvas.rtf {
-    background-image: url(/img/filetype/rtf.svg)
+    background-image: url(/static/img/filetype/rtf.svg)
 }
 
 .file__canvas>div.zip,.file__canvas canvas.zip {
-    background-image: url(/img/filetype/zip.svg)
+    background-image: url(/static/img/filetype/zip.svg)
 }
 
 .file__canvas>div.z7z,.file__canvas canvas.z7z {
-    background-image: url(/img/filetype/7z.svg)
+    background-image: url(/static/img/filetype/7z.svg)
 }
 
 .file__canvas>div.rar,.file__canvas canvas.rar {
-    background-image: url(/img/filetype/rar.svg)
+    background-image: url(/static/img/filetype/rar.svg)
 }
 
 .file__canvas>div.odt,.file__canvas canvas.odt {
-    background-image: url(/img/filetype/odt.svg)
+    background-image: url(/static/img/filetype/odt.svg)
 }
 
 .file__canvas>div.ods,.file__canvas canvas.ods {
-    background-image: url(/img/filetype/ods.svg)
+    background-image: url(/static/img/filetype/ods.svg)
 }
 
 .file__canvas>div.odp,.file__canvas canvas.odp {
-    background-image: url(/img/filetype/odp.svg)
+    background-image: url(/static/img/filetype/odp.svg)
 }
 
 .file__canvas>div.sxw,.file__canvas canvas.sxw {
-    background-image: url(/img/filetype/sxw.svg)
+    background-image: url(/static/img/filetype/sxw.svg)
 }
 
 .file__canvas>div.sxc,.file__canvas canvas.sxc {
-    background-image: url(/img/filetype/sxc.svg)
+    background-image: url(/static/img/filetype/sxc.svg)
 }
 
 .file__canvas>div.sxi,.file__canvas canvas.sxi {
-    background-image: url(/img/filetype/sxi.svg)
+    background-image: url(/static/img/filetype/sxi.svg)
 }
 
 .file__canvas>div.damaged,.file__canvas>div.error,.file__canvas canvas.damaged,.file__canvas canvas.error {
-    background-image: url(/img/filetype/damaged.svg)
+    background-image: url(/static/img/filetype/damaged.svg)
 }
 
 .file__canvas>div {
@@ -8927,7 +8927,7 @@ body.process-run .sidetools {
     left: 0;
     width: 100%;
     height: 100%;
-    background: hsla(0,0%,100%,.8) url(/img/svg_icons/preload.svg) 50% no-repeat
+    background: hsla(0,0%,100%,.8) url(/static/img/svg_icons/preload.svg) 50% no-repeat
 }
 
 .file__name {
@@ -8991,7 +8991,7 @@ body.process-run .sidetools {
 }
 
 .file.selected .file__info:before,.selected.page__element .file__info:before,.selected.range__element .file__info:before {
-    background: #4acd86 url(/img/svg_icons/check-white.svg) no-repeat 50%;
+    background: #4acd86 url(/static/img/svg_icons/check-white.svg) no-repeat 50%;
     position: absolute;
     bottom: 8px;
     left: 4px;
@@ -9331,7 +9331,7 @@ body.process-run .sidetools {
     transform: translateY(-50%);
     height: 42px;
     border-radius: 100%;
-    background: #fff url(/img/svg_icons/add-page.svg) no-repeat 50%;
+    background: #fff url(/static/img/svg_icons/add-page.svg) no-repeat 50%;
     cursor: pointer;
     -webkit-box-shadow: 0 3px 6px 0 rgba(0,0,0,.14);
     box-shadow: 0 3px 6px 0 rgba(0,0,0,.14)
@@ -9380,7 +9380,7 @@ body.process-run .sidetools {
     margin-left: auto;
     width: 24px;
     height: 24px;
-    background: url(/img/svg_icons/close.svg) no-repeat 50%;
+    background: url(/static/img/svg_icons/close.svg) no-repeat 50%;
     cursor: pointer
 }
 
@@ -9391,7 +9391,7 @@ body.process-run .sidetools {
     flex: 0 0 32px;
     margin: 0;
     display: block;
-    background: url(/img/svg_icons/drag-up-down.svg) no-repeat 50%;
+    background: url(/static/img/svg_icons/drag-up-down.svg) no-repeat 50%;
     background-size: contain;
     cursor: move
 }
@@ -9646,7 +9646,7 @@ body.process-run .sidetools {
     color: #fff;
     width: 28px;
     height: 28px;
-    background: #4acd86 url(/img/svg_icons/check-white.svg) no-repeat 50%;
+    background: #4acd86 url(/static/img/svg_icons/check-white.svg) no-repeat 50%;
     border-radius: 100%;
     text-align: center;
     line-height: 18px;
@@ -9667,7 +9667,7 @@ body.process-run .sidetools {
 .option--next:after {
     width: 8px;
     height: 12px;
-    background: url(/img/items/chevron_right_g.svg) no-repeat 50%
+    background: url(/static/img/items/chevron_right_g.svg) no-repeat 50%
 }
 
 .option--next:hover:after {
@@ -10405,7 +10405,7 @@ body.process-run .sidetools {
     right: 0;
     display: block;
     content: "";
-    background: url(/img/items/go_arrow.svg) no-repeat 50%;
+    background: url(/static/img/items/go_arrow.svg) no-repeat 50%;
     width: 12px;
     height: 8px;
     -webkit-transition: all .4s ease-out;
@@ -10573,7 +10573,7 @@ input.option,select.option {
     font-size: 48px;
     width: 24px;
     height: 20px;
-    background: url(/img/elements/range.svg) 50% no-repeat
+    background: url(/static/img/elements/range.svg) 50% no-repeat
 }
 
 @media (max-width: 1280px) {
@@ -10633,7 +10633,7 @@ input.option,select.option {
     left: 0;
     width: 100%;
     height: 100%;
-    background: hsla(0,0%,100%,.6) url(/img/svg_icons/remove.svg) 50% no-repeat;
+    background: hsla(0,0%,100%,.6) url(/static/img/svg_icons/remove.svg) 50% no-repeat;
     -ms-flex-align: center;
     align-items: center;
     -ms-flex-pack: center;
@@ -10659,7 +10659,7 @@ input.option,select.option {
     position: absolute;
     top: 12px;
     left: 12px;
-    background: #4acd86 url(/img/items/check_w.svg) no-repeat 50%;
+    background: #4acd86 url(/static/img/items/check_w.svg) no-repeat 50%;
     border: 1px solid #1d9d58;
     border-radius: 100%;
     width: 24px;
@@ -10691,7 +10691,7 @@ input.option,select.option {
     flex: 0 0 32px;
     margin: 0;
     display: block;
-    background: url(/img/svg_icons/drag-up-down.svg) no-repeat 50%;
+    background: url(/static/img/svg_icons/drag-up-down.svg) no-repeat 50%;
     background-size: contain;
     cursor: move
 }
@@ -11407,7 +11407,7 @@ input.option,select.option {
     transform: translate(-50%,-50%);
     width: 32px;
     height: 32px;
-    background: url(/img/svg_icons/preload.svg);
+    background: url(/static/img/svg_icons/preload.svg);
     background-size: contain
 }
 
@@ -11453,7 +11453,7 @@ input.option,select.option {
     transition: all .4s ease-in-out;
     border: 1px solid rgba(0,0,0,0);
     border-radius: 8px;
-    background: #fff url(/img/limits/pattern.svg);
+    background: #fff url(/static/img/limits/pattern.svg);
     -webkit-box-shadow: 0 -8px 30px 0 rgba(0,0,0,.1);
     box-shadow: 0 -8px 30px 0 rgba(0,0,0,.1);
     cursor: pointer;
@@ -11494,7 +11494,7 @@ input.option,select.option {
     left: 24px;
     width: 48px;
     height: 48px;
-    background: url(/img/limits/icon.svg) no-repeat 50%
+    background: url(/static/img/limits/icon.svg) no-repeat 50%
 }
 
 @media (max-width: 840px) {
@@ -11526,15 +11526,15 @@ input.option,select.option {
 }
 
 .limit-alert--files:before {
-    background-image: url(/img/limits/files-icon.svg)
+    background-image: url(/static/img/limits/files-icon.svg)
 }
 
 .limit-alert--size:before {
-    background-image: url(/img/limits/size-icon.svg)
+    background-image: url(/static/img/limits/size-icon.svg)
 }
 
 .limit-alert--pages:before {
-    background-image: url(/img/limits/pages-icon.svg)
+    background-image: url(/static/img/limits/pages-icon.svg)
 }
 
 body.rtl .limit-alert {
@@ -11708,7 +11708,7 @@ body.rtl .limit-alert:before {
 
 .item-loading {
     position: absolute;
-    background: hsla(0,0%,100%,.8) url(/img/svg_icons/preload.svg) 50% no-repeat;
+    background: hsla(0,0%,100%,.8) url(/static/img/svg_icons/preload.svg) 50% no-repeat;
     top: 0;
     left: 0;
     width: 100%;
@@ -11860,7 +11860,7 @@ body.download .container {
     position: absolute;
     top: 4px;
     right: 4px;
-    background: url(/img/svg_icons/close.svg) no-repeat 50%;
+    background: url(/static/img/svg_icons/close.svg) no-repeat 50%;
     background-size: contain;
     cursor: pointer
 }
@@ -13639,7 +13639,7 @@ body.rtl.tool-editpdf .editpdf-menu-wrapper.unfolded,body.rtl.tool-editpdf .edit
     color: #161616;
     background-color: #ffe4c9;
     border: 1px solid #d76c00;
-    background-image: url(/img/alert/warning.svg);
+    background-image: url(/static/img/alert/warning.svg);
     display: none;
     max-width: 400px;
     margin: 32px auto
@@ -13867,59 +13867,59 @@ body.rtl.tool-editpdf .editpdf-menu-wrapper.unfolded,body.rtl.tool-editpdf .edit
     flex: 0 0 32px;
     width: 32px;
     height: 32px;
-    background: url(/img/problem/alert.svg) no-repeat 50%
+    background: url(/static/img/problem/alert.svg) no-repeat 50%
 }
 
 .problems__item--TaskError .problems__item__icon {
-    background-image: url(/img/problem/task.svg)
+    background-image: url(/static/img/problem/task.svg)
 }
 
 .problems__item--NoImages .problems__item__icon {
-    background-image: url(/img/problem/no-image.svg)
+    background-image: url(/static/img/problem/no-image.svg)
 }
 
 .problems__item--EmptyFile .problems__item__icon {
-    background-image: url(/img/problem/empty.svg)
+    background-image: url(/static/img/problem/empty.svg)
 }
 
 .problems__item--noTablesToExtract .problems__item__icon {
-    background-image: url(/img/problem/no-tables.svg)
+    background-image: url(/static/img/problem/no-tables.svg)
 }
 
 .problems__item--NoText .problems__item__icon {
-    background-image: url(/img/problem/no-text.svg)
+    background-image: url(/static/img/problem/no-text.svg)
 }
 
 .problems__item--TimeOut .problems__item__icon {
-    background-image: url(/img/problem/time.svg)
+    background-image: url(/static/img/problem/time.svg)
 }
 
 .problems__item--DamagedFile .problems__item__icon {
-    background-image: url(/img/problem/damaged.svg)
+    background-image: url(/static/img/problem/damaged.svg)
 }
 
 .problems__item--ServerError .problems__item__icon {
-    background-image: url(/img/problem/server.svg)
+    background-image: url(/static/img/problem/server.svg)
 }
 
 .problems__item--connection .problems__item__icon {
-    background-image: url(/img/problem/connection.svg)
+    background-image: url(/static/img/problem/connection.svg)
 }
 
 .problems__item--WrongPassword .problems__item__icon {
-    background-image: url(/img/problem/password.svg)
+    background-image: url(/static/img/problem/password.svg)
 }
 
 .problems__item--NonConformant .problems__item__icon {
-    background-image: url(/img/problem/non-conformant.svg)
+    background-image: url(/static/img/problem/non-conformant.svg)
 }
 
 .problems__item--UnknowError .problems__item__icon {
-    background-image: url(/img/problem/unknown.svg)
+    background-image: url(/static/img/problem/unknown.svg)
 }
 
 .problems__item--OutOfRange .problems__item__icon {
-    background-image: url(/img/problem/out-of-range.svg)
+    background-image: url(/static/img/problem/out-of-range.svg)
 }
 
 .problems__item__title {
@@ -13956,7 +13956,7 @@ body.rtl.tool-editpdf .editpdf-menu-wrapper.unfolded,body.rtl.tool-editpdf .edit
     content: "";
     width: 10px;
     height: 14px;
-    background: url(/img/items/file.svg);
+    background: url(/static/img/items/file.svg);
     background-size: contain;
     margin-right: 12px
 }
@@ -14442,7 +14442,7 @@ body.rtl.tool-editpdf .editpdf-menu-wrapper.unfolded,body.rtl.tool-editpdf .edit
     padding-right: 28px;
     border-color: #f5f5fa;
     color: #fff;
-    background-image: url(/img/items/arrow-down-w.svg);
+    background-image: url(/static/img/items/arrow-down-w.svg);
     background-color: #5c5c64
 }
 
@@ -14768,7 +14768,7 @@ body.rtl.tool-editpdf .editpdf-menu-wrapper.unfolded,body.rtl.tool-editpdf .edit
 
 .editor__option__selector:after {
     content: "";
-    background: url(/img/items/select_sm.svg) no-repeat 50%;
+    background: url(/static/img/items/select_sm.svg) no-repeat 50%;
     width: 4px;
     height: 4px;
     margin-left: 6px
