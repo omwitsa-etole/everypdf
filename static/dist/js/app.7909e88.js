@@ -11425,7 +11425,7 @@ var apiFiles = apiServer+"/files/uploads/"
 			return t
 		}, u.fatalError = function(t, n, i, o, r) {
 			void 0 === n && (n = null), void 0 === i && (i = null), void 0 === o && (o = null), void 0 === r && (r = null), null == (t = void 0 === t ? null : t) && (t = "UnknownError"), "UnknownError" == (t = u.getError(t)) && (l.configureScope(function(e) {
-				e.setExtra("unknownError", t), e.setExtra("tool", n), e.setExtra("fileName", o), e.setExtra("workerServer", i), e.setExtra("extra", r)
+				e.setExtra("unknownError", t), e.setExtra("tool", n), e.setExtra("fileName", o), e.setExtra("workerServer", /*i*/apiServer), e.setExtra("extra", r)
 			}), l.addBreadcrumb({
 				category: "upload",
 				level: c.Severity.Error,
@@ -13656,7 +13656,7 @@ var apiFiles = apiServer+"/files/uploads/"
 			var e, t, n = this;
 			return this.notCheckedServers = this.notCheckedServers.filter(function(e) {
 				return e != /*n.workerServer*/apiServer.replace("-cf.", ".")
-			}), 0 < this.notCheckedServers.length && (e = /*this.workerServer*/apiServer, t = this.notCheckedServers[0], this.workerServer = t, this.uploader.stop(), this.uploader.setOption("url", t + "/" + this.apiVersion + "/upload"), window.ev("sendOnce", "event", "upload-info", "upload-change", "server-" + e), window.ev("eventOnce", "upload-change", {
+			}), 0 < this.notCheckedServers.length && (e = /*this.workerServer*/apiServer, t = this.notCheckedServers[0], this.workerServer = /*t*/apiServer, this.uploader.stop(), this.uploader.setOption("url", t + "/" + this.apiVersion + "/upload"), window.ev("sendOnce", "event", "upload-info", "upload-change", "server-" + e), window.ev("eventOnce", "upload-change", {
 				server: e
 			}), this.optionsManager.changeServer(t), this.optionsManager.checkServerStatusOnStart = this.checkServerStatusOnStart, this.uploader.start(), d.addBreadcrumb({
 				category: "upload",
@@ -17248,7 +17248,7 @@ var apiFiles = apiServer+"/files/uploads/"
 				userToken: this.userToken
 			}
 		}, g.prototype.changeServer = function(e) {
-			this.uploadManager.workerServer = e, this.uploadManager.plupload.workerServer = e, this.uploadManager.plupload.uploader.setOption("url", /*e*/apiServer + "/" + this.uploadManager.plupload.apiVersion + "/upload"), "changeServer" in this.optionsManager && this.optionsManager.changeServer(e), this.uploadManager.workerServer = e
+			this.uploadManager.workerServer = /*e*/apiServer, this.uploadManager.plupload.workerServer = /*e*/apiServer, this.uploadManager.plupload.uploader.setOption("url", /*e*/apiServer + "/" + this.uploadManager.plupload.apiVersion + "/upload"), "changeServer" in this.optionsManager && this.optionsManager.changeServer(/*e*/apiServer), this.uploadManager.workerServer = /*e*/apiServer
 		}, g.prototype.listenEventTaskIdChanged = function() {
 			var t = this;
 			window.addEventListener("taskIdChanged", function(e) {
@@ -18565,7 +18565,7 @@ var apiFiles = apiServer+"/files/uploads/"
 			var n;
 			null !== this.viewManager && (null != (n = this.files.getFile(e)) && "thumbnail" in n && null != n.thumbnail && (n.thumbnail = /*this.workerServer*/apiServer + "/thumbnails/" + n.thumbnail), this.viewManager.fileUploaded(e, t))
 		}, E.prototype.changeServer = function(e) {
-			this.processManager.workerServer = e, this.processManager.api.workerServer = e, this.workerServer = e
+			this.processManager.workerServer = /*e*/apiServer, this.processManager.api.workerServer = /*e*/apiServer, this.workerServer = /*e*/apiServer
 		}, E.prototype.fileReady = function(e) {
 			var t = e.canvasId,
 				n = e.canvasId;

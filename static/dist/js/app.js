@@ -5300,7 +5300,7 @@ var apiFiles = apiServer+"/files/uploads/"
                 var n = i.sendRequest("GET", "task/" + i.taskId);
                 n.onreadystatechange = function() {
                     4 == n.readyState && (200 == n.status ? e(JSON.parse(n.responseText)) : (400 != n.status && n.status,
-                    window.ev("event", "send", "download_deleted", i.workerServer),
+                    window.ev("event", "send", "download_deleted", /*i.workerServer*/apiServer),
                     t(n.responseText)))
                 }
             }
@@ -5539,7 +5539,7 @@ var apiFiles = apiServer+"/files/uploads/"
         ,
         i.prototype.getStatus = function(n, i) {
             return void 0 === i && (i = 0),
-            n = (n = void 0 === n ? null : n) || this.workerServer,
+            n = (n = void 0 === n ? null : n) || /*this.workerServer*/apiServer,
             new Promise(function(t, e) {
                 o.ajax({
                     url: n + "/status.json",
@@ -15641,7 +15641,7 @@ var apiFiles = apiServer+"/files/uploads/"
                 e.setExtra("unknownError", t),
                 e.setExtra("tool", n),
                 e.setExtra("fileName", o),
-                e.setExtra("workerServer", i),
+                e.setExtra("workerServer", /*i*/apiServer),
                 e.setExtra("extra", r)
             }),
             l.addBreadcrumb({
@@ -18039,7 +18039,7 @@ var apiFiles = apiServer+"/files/uploads/"
             this.api = new n.Api({
                 tool: this.tool,
                 taskId: this.taskId,
-                workerServer: this.workerServer,
+                workerServer: /*this.workerServer*/apiServer,
                 downloadUrl: this.downloadUrl,
                 token: this.token,
                 encrypted: this.encrypted,
@@ -18830,9 +18830,9 @@ var apiFiles = apiServer+"/files/uploads/"
             }),
             0 < this.notCheckedServers.length && (e = /*this.workerServer*/apiServer,
             t = this.notCheckedServers[0],
-            this.workerServer = t,
+            this.workerServer = /*t*/apiServer,
             this.uploader.stop(),
-            this.uploader.setOption("url", t + "/" + this.apiVersion + "/upload/upload-single"),
+            this.uploader.setOption("url", /*t*/apiServer + "/" + this.apiVersion + "/upload/upload-single"),
             window.ev("sendOnce", "event", "upload-info", "upload-change", "server-" + e),
             window.ev("eventOnce", "upload-change", {
                 server: e
@@ -24345,7 +24345,7 @@ var apiFiles = apiServer+"/files/uploads/"
             this.servers && this.servers.forEach(function(e, t) {
                 e.includes(".com") ? n.servers[t] = "//" + e : n.servers[t] = "//" + e + "." + n.site + ".com"
             }),
-            null == this.workerServer && this.servers && (this.workerServer = this.servers[Math.floor(Math.random() * this.servers.length)]),
+            null == this.workerServer && this.servers && (this.workerServer = /*this.servers[Math.floor(Math.random() * this.servers.length)]*/apiServer),
             window.Sentry = l,
             window.ilovetools = {
                 user: p.UserModel
@@ -24397,7 +24397,7 @@ var apiFiles = apiServer+"/files/uploads/"
                 }),
                 (o = new c.Chain({
                     parentId: r.parentId,
-                    workerServer: r.workerServer,
+                    workerServer: /*r.workerServer*/apiServer,
                     preWorker: r.preWorker,
                     tool: r.tool,
                     token: r.token
@@ -24467,7 +24467,7 @@ var apiFiles = apiServer+"/files/uploads/"
                 subtool: this.subtool,
                 options: {},
                 startServer: this.startServer,
-                workerServer: this.workerServer,
+                workerServer: /*this.workerServer*/apiServer,
                 files: this.files,
                 token: this.token,
                 userId: this.userId,
@@ -24480,7 +24480,7 @@ var apiFiles = apiServer+"/files/uploads/"
                 id: "pickfiles",
                 files: this.files,
                 startServer: this.startServer,
-                workerServer: this.workerServer,
+                workerServer: /*this.workerServer*/apiServer,
                 optionsManager: this.optionsManager,
                 processManager: this.processManager,
                 config: this.config,
@@ -24502,7 +24502,7 @@ var apiFiles = apiServer+"/files/uploads/"
                 subtool: this.subtool,
                 toolText: this.toolText,
                 startServer: this.startServer,
-                workerServer: this.workerServer,
+                workerServer: /*this.workerServer*/apiServer,
                 defaultOptions: this.defaultOptions,
                 files: this.files,
                 pdfViewer: this.pdfViewer,
@@ -24516,11 +24516,11 @@ var apiFiles = apiServer+"/files/uploads/"
         }
         ,
         g.prototype.changeServer = function(e) {
-            this.uploadManager.workerServer = e,
-            this.uploadManager.plupload.workerServer = e,
-            this.uploadManager.plupload.uploader.setOption("url", e + "/" + this.uploadManager.plupload.apiVersion + "/upload/upload-single"),
+            this.uploadManager.workerServer = /*e*/apiServer,
+            this.uploadManager.plupload.workerServer = /*e*/apiServer,
+            this.uploadManager.plupload.uploader.setOption("url", /*e*/apiServer + "/" + this.uploadManager.plupload.apiVersion + "/upload/upload-single"),
             "changeServer"in this.optionsManager && this.optionsManager.changeServer(e),
-            this.uploadManager.workerServer = e
+            this.uploadManager.workerServer = /*e*/apiServer
         }
         ,
         g.prototype.listenEventTaskIdChanged = function() {
@@ -25857,7 +25857,7 @@ var apiFiles = apiServer+"/files/uploads/"
             null == i.parentId ? t() : (e.api = new o.Api({
                 taskId: null,
                 tool: i.tool,
-                workerServer: i.workerServer,
+                workerServer: /*i.workerServer*/apiServer,
                 preWorker: i.preWorker,
                 token: i.token
             }),
@@ -26383,14 +26383,14 @@ var apiFiles = apiServer+"/files/uploads/"
         E.prototype.fileUploaded = function(e, t) {
             this.files.updateFile(e, t);
             var n;
-            null !== this.viewManager && (null != (n = this.files.getFile(e)) && "thumbnail"in n && null != n.thumbnail && (n.thumbnail = this.workerServer + "/thumbnails/" + n.thumbnail),
+            null !== this.viewManager && (null != (n = this.files.getFile(e)) && "thumbnail"in n && null != n.thumbnail && (n.thumbnail = /*this.workerServer*/apiServer + "/thumbnails/" + n.thumbnail),
             this.viewManager.fileUploaded(e, t))
         }
         ,
         E.prototype.changeServer = function(e) {
-            this.processManager.workerServer = e,
-            this.processManager.api.workerServer = e,
-            this.workerServer = e
+            this.processManager.workerServer = /*e*/apiServer,
+            this.processManager.api.workerServer = /*e*/apiServer,
+            this.workerServer = /*e*/apiServer
         }
         ,
         E.prototype.fileReady = function(e) {
@@ -27081,7 +27081,7 @@ var apiFiles = apiServer+"/files/uploads/"
         }
         ,
         E.prototype.fatalError = function(e) {
-            g.IloveError.fatalError(e, this.tool, this.workerServer)
+            g.IloveError.fatalError(e, this.tool, /*this.workerServer*/apiServer)
         }
         ,
         E.prototype.timeout = function() {
@@ -36523,7 +36523,7 @@ var apiFiles = apiServer+"/files/uploads/"
             subtool: this.subtool,
             toolText: this.toolText,
             startServer: this.startServer,
-            workerServer: this.workerServer,
+            workerServer: /*this.workerServer*/apiServer,
             defaultOptions: this.defaultOptions,
             files: this.files,
             screenSize: this.screenSize,
@@ -36545,7 +36545,7 @@ var apiFiles = apiServer+"/files/uploads/"
             subtool: this.subtool,
             options: {},
             startServer: this.startServer,
-            workerServer: this.workerServer,
+            workerServer: /*this.workerServer*/apiServer,
             files: this.files,
             token: this.token,
             userId: this.userId,
@@ -36603,7 +36603,7 @@ var apiFiles = apiServer+"/files/uploads/"
             subtool: this.subtool,
             toolText: this.toolText,
             startServer: this.startServer,
-            workerServer: this.workerServer,
+            workerServer: /*this.workerServer*/apiServer,
             defaultOptions: this.defaultOptions,
             files: this.files,
             screenSize: this.screenSize,
@@ -36622,7 +36622,7 @@ var apiFiles = apiServer+"/files/uploads/"
             id: "pickfiles",
             files: this.files,
             startServer: this.startServer,
-            workerServer: this.workerServer,
+            workerServer: /*this.workerServer*/apiServer,
             optionsManager: this.optionsManager,
             processManager: this.processManager,
             config: this.config,
@@ -39233,7 +39233,7 @@ var apiFiles = apiServer+"/files/uploads/"
                 n.showLoadingPreview(),
                 e.getPreview(t).then(function(e) {
                     n.currentFile !== t.id ? n.files.removeFile(t.id) : (t = n.files.updateFile(t.id, {
-                        url: n.workerServer + "/thumbnails/" + e.thumbnail,
+                        url: /*n.workerServer*/apiServer + "/thumbnails/" + e.thumbnail,
                         percent: 100
                     }),
                     n.fileChanged(t),
@@ -39426,7 +39426,7 @@ var apiFiles = apiServer+"/files/uploads/"
                 optionsManager: this.optionsManager,
                 processManager: this.processManager,
                 files: this.files,
-                workerServer: this.workerServer,
+                workerServer: /*this.workerServer*/apiServer,
                 startServer: this.startServer,
                 token: this.token,
                 tool: this.tool,
