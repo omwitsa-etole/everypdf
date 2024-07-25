@@ -8471,8 +8471,8 @@ var apiFiles = apiServer+"/files/uploads/"
         t(r(15)));
         function s() {}
         s.preventClickAds = function() {
-            s.preventClick("ad"),
-            s.preventClick("adsq")
+            s.preventClick("adh"),
+            s.preventClick("adsqh")
         }
         ,
         s.sendEvent = function(t) {
@@ -8482,7 +8482,7 @@ var apiFiles = apiServer+"/files/uploads/"
         }
         ,
         s.preventClick = function(t) {
-            void 0 === t && (t = "ad");
+            void 0 === t && (t = "ad");console.log(document.getElementById(t))/*
             var e = document.getElementById(t)
               , n = (a(window).width(),
             "prvnt" + t)
@@ -8511,7 +8511,7 @@ var apiFiles = apiServer+"/files/uploads/"
                     r.removeEventListener("click", s.sendEvent(o)),
                     r.remove()
                 }, i)
-            }
+            }*/
         }
         ,
         n.Banner = s
@@ -17140,7 +17140,7 @@ var apiFiles = apiServer+"/files/uploads/"
             if (window.grecaptcha)
                 return n.grecaptcha = window.grecaptcha,
                 t();
-            a.lazyload("https://www.google.com/recaptcha/api.js?render=" + c),
+            a.lazyload("https://www.google.com/recaptcha/api.js"),
             n.captchaLoadInterval = window.setInterval(function() {
                 null !== window.grecaptcha && "object" == typeof window.grecaptcha && (window.grecaptcha.ready(function() {
                     return n.grecaptcha = window.grecaptcha,
