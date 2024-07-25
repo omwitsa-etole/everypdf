@@ -13753,7 +13753,7 @@ var apiFiles = apiServer+"/files/uploads/"
                             console.log("response",n,t,e);
 							//n.server_filename = apiFiles+n.server_filename;
                             a.fileUploaded(t.id, n)
-                            const pdfUrl = apiFiles+n.server_filename;
+                            /*const pdfUrl = apiFiles+n.server_filename;
                             pdfjsLib.GlobalWorkerOptions.workerSrc = "/static/js/pdfjs/pdf.worker.min.js";
                             pdfjsLib.getDocument(pdfUrl).promise.then(pdf => {
                                 // Get the first page
@@ -13888,7 +13888,7 @@ var apiFiles = apiServer+"/files/uploads/"
                             }).catch(err => {
                                 console.error('Error loading PDF: ', err);
                             });
-							
+							*/
 						},
 						UploadComplete: function(e, t) {
 							t.forEach(function(e) {

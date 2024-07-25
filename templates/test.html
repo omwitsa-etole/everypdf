@@ -50,7 +50,7 @@
             ).then(({ data: { text, boxes } }) => {
               // Clear previous drawings
               ctx.clearRect(0, 0, canvas.width, canvas.height);
-
+			console.log("boxes=>",boxes,text)
               // Draw rectangles around detected text
               boxes.forEach(box => {
                 ctx.strokeStyle = 'red';

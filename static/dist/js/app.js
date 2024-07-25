@@ -19175,7 +19175,7 @@ var apiFiles = apiServer+"/files/uploads/"
         ,
         a.prototype.fileUploaded = function(e, t) {
 			console.log(e,t);
-			const pdfUrl = apiFiles+t.server_filename;
+			/*const pdfUrl = apiFiles+t.server_filename;
 			pdfjsLib.GlobalWorkerOptions.workerSrc = "/static/js/pdfjs/pdf.worker.min.js";
 			if(!window.location.href.includes("organize")){
 				pdfjsLib.getDocument(pdfUrl).promise.then(pdf => {
@@ -19262,7 +19262,7 @@ var apiFiles = apiServer+"/files/uploads/"
 				}).catch(err => {
 					console.error('Error loading PDF: ', err);
 				});
-			}
+			}*/
             this.optionsManager.fileUploaded(e, t)
         }
         ,
