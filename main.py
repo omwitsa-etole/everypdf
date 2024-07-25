@@ -125,7 +125,7 @@ def terms():
 @app.route('/privacy-policy')
 @app.route('/privacy')
 def privacy():
-    return render_template('privacy.html',manifest=session["manifest"])
+    return render_template('privacy-policy.html',manifest=session["manifest"])
 
 @app.route("/problem/<string:tool>/<string:key>/")
 @app.route("/problem/<string:tool>/<string:key>/<int:id>")
