@@ -18,11 +18,25 @@ function renderImage(imageUrl, canvasId) {
 
       img.onload = function() {
         
-        //canvas.width = img.width;
-        //canvas.height = img.height;
+		const imgWidth = img.width;
+		const imgHeight = img.height;
 
-       
-        ctx.drawImage(img, 0, 0);
+		// Calculate scale to fit the canvas
+		const scaleWidth = canvas.width / imgWidth;
+		const scaleHeight = canvas.height / imgHeight;
+		const scale = Math.min(scaleWidth, scaleHeight);
+
+		// Set canvas dimensions to scaled image dimensions
+		const scaledWidth = imgWidth * scale;
+		const scaledHeight = imgHeight * scale;
+
+		// Clear canvas and set new dimensions
+		canvas.width = scaledWidth;
+		canvas.height = scaledHeight;
+
+		// Draw the image on the canvas at scaled dimensions
+		ctx.drawImage(img, 0, 0, scaledWidth, scaledHeight);
+
 
         
         URL.revokeObjectURL(url);
