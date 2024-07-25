@@ -98,9 +98,14 @@ def corePDF(file_dir):
     
 @app.route("/libpdf/<string:id>/ui/index.html")
 @app.route("/trueedit_libpdf/<string:id>/ui/index.html")
-def webview(id):
-    print(id)
+def webview(id,file_dir):
     return render_template("webview/index.html",manifest=session['manifest'])
+@app.route("/libpdf/<string:id>/ui/<path:file_dir>")
+@app.route("/trueedit_libpdf/<string:id>/ui/<path:file_dir>")
+def webview_files(id,file_dir):
+    print(id)
+    #return render_template("webview/index.html",manifest=session['manifest'])
+    return send_from_directory("static/",path=file_dir)
 
 @app.route("/stripe/execute",methods=["POST"])
 def stripe_pay():
