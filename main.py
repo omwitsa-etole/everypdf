@@ -92,6 +92,10 @@ def webview_utils(id,file_dir):
     file_dir = file_dir.replace(".map","")
     return send_from_directory("static/",path=file_dir)
     
+@app.route("/trueedit_libpdf/<string:id>/core/pdf/<path:file_dir>")
+def corePDF(file_dir):
+    return send_from_directory("static/core/pdf/",path=file_dir)
+    
 @app.route("/libpdf/<string:id>/ui/index.html")
 @app.route("/trueedit_libpdf/<string:id>/ui/index.html")
 def webview(id):

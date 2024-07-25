@@ -45081,8 +45081,8 @@ var apiFiles = apiServer+"/files/uploads/"
                     if (t.sent(),
                     this.mounted)
                         throw new Error("TrueEdit already mounted!");
-                    return a = (i = _._resourceId) ? "/dist/css/trueedit." + i + ".css" : "/dist/css/trueedit.css",
-                    i = i ? "/dist/js/trueedit." + i + ".js" : "/dist/js/trueedit.js",
+                    return a = (i = _._resourceId) ? "/static/dist/css/trueedit." + i + ".css" : "/static/dist/css/trueedit.css",
+                    i = i ? "/static/dist/js/trueedit." + i + ".js" : "/static/dist/js/trueedit.js",
                     r = b,
                     !0 === window[d.enableOriginalUI] && (r = []),
                     o = this,
