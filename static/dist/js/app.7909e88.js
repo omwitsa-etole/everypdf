@@ -19610,6 +19610,7 @@ var apiFiles = apiServer+"/files/uploads/"
 				}, 200)
 			})
 		}, t.prototype.renderPage = function(e, t, n, c) {
+			console.log("files=>",this.files);
 			var i, u = this,
 				o = (void 0 === c && (c = !1), this.files.getFile(e));
 			return null == o ? new Promise(function(e, t) {
@@ -27061,7 +27062,7 @@ var apiFiles = apiServer+"/files/uploads/"
 					screenSize: this.screenSize
 				}));
 				var i = this.files.getFirst().id;
-				console.log("renderer",t,i)
+				console.log("renderer",t,i,this)
 				this.viewManager.pdfViewer.renderPage(i, t, "range-" + e + "-ini").then(function() {}, function() {}), n == t || "" == n ? (c("#range-" + e + " .range__element--end").hide(), c("#range-" + e + " .range__to").hide()) : (this.viewManager.pdfViewer.renderPage(i, n, "range-" + e + "-end").then(function() {}, function() {}), c("#range-" + e + " .range__element--end").show(), c("#range-" + e + " .range__to").show())
 			}, r.prototype.refreshRange = function(e, t, n) {
 				var i = this.files.getFirst().id;

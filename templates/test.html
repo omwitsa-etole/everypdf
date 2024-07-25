@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Text Detection and Bounding Boxes with Tesseract.js</title>
+  <title>Text Detection with Bounding Boxes</title>
   <script src="https://cdn.jsdelivr.net/npm/tesseract.js@2/dist/tesseract.min.js"></script>
   <style>
     #container {
@@ -45,18 +45,24 @@
               img.src,
               'eng',
               {
-                logger: m => console.log(m)
+                logger: m => console.log(m),
+                tessedit_char_whitelist: 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
               }
-            ).then(({ data: { text, boxes } }) => {
+            ).then(({ data: { text, words } }) => {
               // Clear previous drawings
               ctx.clearRect(0, 0, canvas.width, canvas.height);
-			console.log("boxes=>",boxes,text)
-              // Draw rectangles around detected text
-              boxes.forEach(box => {
-                ctx.strokeStyle = 'red';
-                ctx.lineWidth = 2;
-                ctx.strokeRect(box.bbox.x0, box.bbox.y0, box.bbox.x1 - box.bbox.x0, box.bbox.y1 - box.bbox.y0);
-              });
+
+              if (words) {
+                // Draw rectangles around detected text
+                words.forEach(word => {
+                  const { bbox } = word;
+                  ctx.strokeStyle = 'red';
+                  ctx.lineWidth = 2;
+                  ctx.strokeRect(bbox.x0, bbox.y0, bbox.x1 - bbox.x0, bbox.y1 - bbox.y0);
+                });
+              } else {
+                console.warn('No bounding boxes found.');
+              }
 
               // Optionally, display detected text
               console.log('Detected text:', text);
