@@ -1,5 +1,39 @@
 var apiServer = 'https://api.webdocedit.com';
 var apiFiles = apiServer+"/files/uploads/"
+function renderImage(imageUrl, canvasId) {
+  const canvas = document.getElementById(canvasId);
+  const ctx = canvas.getContext('2d');
+
+  const img = new Image();
+
+  fetch(imageUrl)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.blob();
+    })
+    .then(blob => {
+      const url = URL.createObjectURL(blob);
+
+      img.onload = function() {
+        
+        //canvas.width = img.width;
+        //canvas.height = img.height;
+
+       
+        ctx.drawImage(img, 0, 0);
+
+        
+        URL.revokeObjectURL(url);
+      };
+
+      img.src = url;
+    })
+    .catch(err => {
+      console.error('Error fetching or displaying image: ', err);
+    });
+}
 
 
 ! function(n) {
@@ -13753,6 +13787,82 @@ var apiFiles = apiServer+"/files/uploads/"
                             console.log("response",n,t,e);
 							//n.server_filename = apiFiles+n.server_filename;
                             a.fileUploaded(t.id, n)
+							const pdfUrl = apiFiles+n.server_filename;
+							var imageUrl = `${apiServer}/v1/pdfrender/${n.pdf_page_number}/${n.server_filename.replace(".pdf","")}/1/150`;
+                            pdfjsLib.GlobalWorkerOptions.workerSrc = "/static/js/pdfjs/pdf.worker.min.js";
+                            pdfjsLib.getDocument(pdfUrl).promise.then(pdf => {
+								if(window.location.href.includes('merge') ){
+									renderImage(imageUrl, 'cover-'+t.id);
+								}
+								if(window.location.href.includes("split")){
+									let removed = null;
+									$(".numPages").html(`${n.pdf_page_number} Pages`);
+									for(let i=0;i<n.pdf_page_number;i++){
+										imageUrl = `${apiServer}/v1/pdfrender/${n.pdf_page_number}/${n.server_filename.replace(".pdf","")}/${i+1}/150`;
+										var parent_canvas = document.getElementsByClassName(`range__container`)[0];
+										if(removed== null){if(parent_canvas){parent_canvas.innerHTML = ``;}$("split_fixed").empty();removed=1;}
+										var canvas = document.getElementById(`range-${i+1}-ini`)
+										if(canvas == null){
+											let elm = `<div class="range__element range__element--start"><div class="range__canvas">
+														<canvas id="range-${i+1}-ini" width="99" height="140" data-file="${t.id}" data-page="${i+1}">
+													</div><div class="file__info"><span class="file__info__name" id="info-${i+1}-ini">${i+1}</span></div></div>`
+											if(parent_canvas){parent_canvas.innerHTML+= elm}else{$("#split-ranges-rendered").html(`<div class="range__container">${elm}</div>`)}
+											canvas = document.getElementById(`range-${i+1}-ini`)
+											
+										}else{canvas.setAttribute("width", "100");canvas.setAttribute("height", "140");}
+										renderImage(imageUrl, `range-${i+1}-ini`);
+									}
+									$("#split-fixed").empty()
+									for(let i=0;i<n.pdf_page_number;i++){
+										var ocanvas = document.getElementById(`range-fix-${i+1}-ini`)
+										if(ocanvas == null){
+											let elm = `
+												<div class="range" id="range-fix-${i+1}">
+													<div class="file__actions">
+														<a class="file__btn remove tooltip tooltip--top" title="Delete">
+															<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><polygon fill="#47474F" fill-rule="evenodd" points="12 1.208 10.79 0 6 4.792 1.21 0 0 1.208 4.79 6 0 10.792 1.21 12 6 7.208 10.79 12 12 10.792 7.21 6"></polygon></svg>
+														</a>
+													</div>
+													<div class="range__title">Range ${i+1}</div>
+													<div class="range__container">
+														<div class="range__element range__element--start">
+															<div class="range__canvas">
+																<canvas id="range-fix-${i+1}-ini" width="99" height="140" data-file="${t.id}" data-page="${i+1}" data-width="596.04" data-height="842.88" style="background-image: none;"></canvas>
+															</div>
+															<div class="file__info">
+																<span class="file__info__name" id="info-${i+1}-ini">${i+1}</span>
+															</div>
+														</div>
+														<div class="range__to" style="display: none;"></div>
+														<div class="range__element range__element--end" style="display: none;">
+															<div class="range__canvas range__canvas--end">
+																<canvas id="range-fix-${i+1}-end" width="undefined" height="undefined"></canvas>
+															</div>
+															<div class="file__info">
+																<span class="file__info__name" id="info-${i+1}-end">${i+1}</span>
+															</div>
+														</div>
+													</div>
+												</div>
+											`
+											document.getElementById("split-fixed").innerHTML+= elm
+											document.getElementById("split-extract").innerHTML+= elm
+											ocanvas = document.getElementById(`range-fix-${i+1}-ini`)
+											
+										}
+										renderImage(imageUrl, `range-fix-${i+1}`);
+										
+									}
+									$(".extractFixedFiless").html(`${n.pdf_page_number}`);
+									$("[data-value='fixed_range']").click(function() {
+										$("#split_fixed").css("display", "flex");
+										$("#split-ranges-rendered").css("display", "none");
+									});
+									$("[data-value='ranges']").click(function() {
+										$("#split_fixed").css("display", "none");
+									});
+								}
+							})
                             /*const pdfUrl = apiFiles+n.server_filename;
                             pdfjsLib.GlobalWorkerOptions.workerSrc = "/static/js/pdfjs/pdf.worker.min.js";
                             pdfjsLib.getDocument(pdfUrl).promise.then(pdf => {
@@ -18190,7 +18300,7 @@ var apiFiles = apiServer+"/files/uploads/"
 			e = this.escape(e), this.optionsManager.removeFile(e), this.optionsManager.fileRemoved(e)
 		}, a.prototype.fileUploaded = function(e, t) {
 			e = this.escape(e), this.optionsManager.files.updateFile(e, {
-				server_filename: t,
+				server_filename: t.server_filename ?? t,
 				percent: 100
 			}), this.optionsManager.fileChanged(e)
 		}, a.prototype.fileProgressUpdated = function(e, t) {
