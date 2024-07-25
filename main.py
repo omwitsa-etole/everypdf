@@ -116,6 +116,16 @@ def stripe_pay():
 def paypal_pay():
     print(request.form)
     return "EC-64F96244MB6033632"
+       
+@app.route('/terms-of-use') 
+@app.route('/terms')
+def terms():
+    return render_template('terms.html')
+
+@app.route('/privacy-policy')
+@app.route('/privacy')
+def privacy():
+    return render_template('privacy.html')
 
 @app.route("/problem/<string:tool>/<string:key>/")
 @app.route("/problem/<string:tool>/<string:key>/<int:id>")
