@@ -120,12 +120,12 @@ def paypal_pay():
 @app.route('/terms-of-use') 
 @app.route('/terms')
 def terms():
-    return render_template('terms.html')
+    return render_template('terms.html',manifest=session["manifest"])
 
 @app.route('/privacy-policy')
 @app.route('/privacy')
 def privacy():
-    return render_template('privacy.html')
+    return render_template('privacy.html',manifest=session["manifest"])
 
 @app.route("/problem/<string:tool>/<string:key>/")
 @app.route("/problem/<string:tool>/<string:key>/<int:id>")
