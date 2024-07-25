@@ -93,6 +93,7 @@ def webview_utils(id,file_dir):
     return send_from_directory("static/",path=file_dir)
     
 @app.route("/libpdf/<string:id>/ui/index.html")
+@app.route("/trueedit_libpdf/<string:id>/ui/index.html")
 def webview(id):
     print(id)
     return render_template("webview/index.html",manifest=session['manifest'])

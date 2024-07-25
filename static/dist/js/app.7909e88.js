@@ -13803,80 +13803,80 @@ function renderImage(imageUrl, canvasId) {
                             a.fileUploaded(t.id, n)
 							const pdfUrl = apiFiles+n.server_filename;
 							var imageUrl = `${apiServer}/v1/pdfrender/${n.pdf_page_number}/${n.server_filename.replace(".pdf","")}/1/150`;
-                            pdfjsLib.GlobalWorkerOptions.workerSrc = "/static/js/pdfjs/pdf.worker.min.js";
-                            pdfjsLib.getDocument(pdfUrl).promise.then(pdf => {
-								if(window.location.href.includes('merge') ){
-									renderImage(imageUrl, 'cover-'+t.id);
+                            //pdfjsLib.GlobalWorkerOptions.workerSrc = "/static/js/pdfjs/pdf.worker.min.js";
+                            
+							if(window.location.href.includes('merge') ){
+								renderImage(imageUrl, 'cover-'+t.id);
+							}
+							if(window.location.href.includes("split")){
+								let removed = null;
+								$(".numPages").html(`${n.pdf_page_number} Pages`);
+								for(let i=0;i<n.pdf_page_number;i++){
+									imageUrl = `${apiServer}/v1/pdfrender/${n.pdf_page_number}/${n.server_filename.replace(".pdf","")}/${i+1}/150`;
+									var parent_canvas = document.getElementsByClassName(`range__container`)[0];
+									if(removed== null){if(parent_canvas){parent_canvas.innerHTML = ``;}$("split_fixed").empty();removed=1;}
+									var canvas = document.getElementById(`range-${i+1}-ini`)
+									if(canvas == null){
+										let elm = `<div class="range__element range__element--start"><div class="range__canvas">
+													<canvas id="range-${i+1}-ini" width="99" height="140" data-file="${t.id}" data-page="${i+1}">
+												</div><div class="file__info"><span class="file__info__name" id="info-${i+1}-ini">${i+1}</span></div></div>`
+										if(parent_canvas){parent_canvas.innerHTML+= elm}else{$("#split-ranges-rendered").html(`<div class="range__container">${elm}</div>`)}
+										canvas = document.getElementById(`range-${i+1}-ini`)
+										
+									}else{canvas.setAttribute("width", "100");canvas.setAttribute("height", "140");}
+									renderImage(imageUrl, `range-${i+1}-ini`);
 								}
-								if(window.location.href.includes("split")){
-									let removed = null;
-									$(".numPages").html(`${n.pdf_page_number} Pages`);
-									for(let i=0;i<n.pdf_page_number;i++){
-										imageUrl = `${apiServer}/v1/pdfrender/${n.pdf_page_number}/${n.server_filename.replace(".pdf","")}/${i+1}/150`;
-										var parent_canvas = document.getElementsByClassName(`range__container`)[0];
-										if(removed== null){if(parent_canvas){parent_canvas.innerHTML = ``;}$("split_fixed").empty();removed=1;}
-										var canvas = document.getElementById(`range-${i+1}-ini`)
-										if(canvas == null){
-											let elm = `<div class="range__element range__element--start"><div class="range__canvas">
-														<canvas id="range-${i+1}-ini" width="99" height="140" data-file="${t.id}" data-page="${i+1}">
-													</div><div class="file__info"><span class="file__info__name" id="info-${i+1}-ini">${i+1}</span></div></div>`
-											if(parent_canvas){parent_canvas.innerHTML+= elm}else{$("#split-ranges-rendered").html(`<div class="range__container">${elm}</div>`)}
-											canvas = document.getElementById(`range-${i+1}-ini`)
-											
-										}else{canvas.setAttribute("width", "100");canvas.setAttribute("height", "140");}
-										renderImage(imageUrl, `range-${i+1}-ini`);
-									}
-									$("#split-fixed").empty()
-									for(let i=0;i<n.pdf_page_number;i++){
-										var ocanvas = document.getElementById(`range-fix-${i+1}-ini`)
-										if(ocanvas == null){
-											let elm = `
-												<div class="range" id="range-fix-${i+1}">
-													<div class="file__actions">
-														<a class="file__btn remove tooltip tooltip--top" title="Delete">
-															<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><polygon fill="#47474F" fill-rule="evenodd" points="12 1.208 10.79 0 6 4.792 1.21 0 0 1.208 4.79 6 0 10.792 1.21 12 6 7.208 10.79 12 12 10.792 7.21 6"></polygon></svg>
-														</a>
-													</div>
-													<div class="range__title">Range ${i+1}</div>
-													<div class="range__container">
-														<div class="range__element range__element--start">
-															<div class="range__canvas">
-																<canvas id="range-fix-${i+1}-ini" width="99" height="140" data-file="${t.id}" data-page="${i+1}" data-width="596.04" data-height="842.88" style="background-image: none;"></canvas>
-															</div>
-															<div class="file__info">
-																<span class="file__info__name" id="info-${i+1}-ini">${i+1}</span>
-															</div>
+								$("#split-fixed").empty()
+								for(let i=0;i<n.pdf_page_number;i++){
+									var ocanvas = document.getElementById(`range-fix-${i+1}-ini`)
+									if(ocanvas == null){
+										let elm = `
+											<div class="range" id="range-fix-${i+1}">
+												<div class="file__actions">
+													<a class="file__btn remove tooltip tooltip--top" title="Delete">
+														<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><polygon fill="#47474F" fill-rule="evenodd" points="12 1.208 10.79 0 6 4.792 1.21 0 0 1.208 4.79 6 0 10.792 1.21 12 6 7.208 10.79 12 12 10.792 7.21 6"></polygon></svg>
+													</a>
+												</div>
+												<div class="range__title">Range ${i+1}</div>
+												<div class="range__container">
+													<div class="range__element range__element--start">
+														<div class="range__canvas">
+															<canvas id="range-fix-${i+1}-ini" width="99" height="140" data-file="${t.id}" data-page="${i+1}" data-width="596.04" data-height="842.88" style="background-image: none;"></canvas>
 														</div>
-														<div class="range__to" style="display: none;"></div>
-														<div class="range__element range__element--end" style="display: none;">
-															<div class="range__canvas range__canvas--end">
-																<canvas id="range-fix-${i+1}-end" width="undefined" height="undefined"></canvas>
-															</div>
-															<div class="file__info">
-																<span class="file__info__name" id="info-${i+1}-end">${i+1}</span>
-															</div>
+														<div class="file__info">
+															<span class="file__info__name" id="info-${i+1}-ini">${i+1}</span>
+														</div>
+													</div>
+													<div class="range__to" style="display: none;"></div>
+													<div class="range__element range__element--end" style="display: none;">
+														<div class="range__canvas range__canvas--end">
+															<canvas id="range-fix-${i+1}-end" width="undefined" height="undefined"></canvas>
+														</div>
+														<div class="file__info">
+															<span class="file__info__name" id="info-${i+1}-end">${i+1}</span>
 														</div>
 													</div>
 												</div>
-											`
-											document.getElementById("split-fixed").innerHTML+= elm
-											document.getElementById("split-extract").innerHTML+= elm
-											ocanvas = document.getElementById(`range-fix-${i+1}-ini`)
-											
-										}
-										renderImage(imageUrl, `range-fix-${i+1}`);
+											</div>
+										`
+										document.getElementById("split-fixed").innerHTML+= elm
+										document.getElementById("split-extract").innerHTML+= elm
+										ocanvas = document.getElementById(`range-fix-${i+1}-ini`)
 										
 									}
-									$(".extractFixedFiless").html(`${n.pdf_page_number}`);
-									$("[data-value='fixed_range']").click(function() {
-										$("#split_fixed").css("display", "flex");
-										$("#split-ranges-rendered").css("display", "none");
-									});
-									$("[data-value='ranges']").click(function() {
-										$("#split_fixed").css("display", "none");
-									});
+									renderImage(imageUrl, `range-fix-${i+1}`);
+									
 								}
-							})
+								$(".extractFixedFiless").html(`${n.pdf_page_number}`);
+								$("[data-value='fixed_range']").click(function() {
+									$("#split_fixed").css("display", "flex");
+									$("#split-ranges-rendered").css("display", "none");
+								});
+								$("[data-value='ranges']").click(function() {
+									$("#split_fixed").css("display", "none");
+								});
+							}
+							
                             /*const pdfUrl = apiFiles+n.server_filename;
                             pdfjsLib.GlobalWorkerOptions.workerSrc = "/static/js/pdfjs/pdf.worker.min.js";
                             pdfjsLib.getDocument(pdfUrl).promise.then(pdf => {
@@ -27135,7 +27135,7 @@ function renderImage(imageUrl, canvasId) {
 						}, 100)
 					}), c(".range__remove").click(function() {
 						var e, t;
-						1 < c(".option__panel--active .ranges").length && (t = (e = c(this).parent()).data("range"), c("#range-" + t).remove(), e.remove())
+						1 < c(".option__panel--active .ranges").length && (t = (e = c(this).parent()).data("range"), c("#range-" + t).remove(), /*e.remove()*/console.log("range e",e))
 					}), 2 < c(".ranges").length && c("#sidebar")[0] && c("#split-ranges-rendered")[0]) try {
 					c("#sidebar")[0].scrollTo(0, c("#sidebar").height()), c("#split-ranges-rendered")[0].scrollTo(0, c("#split-ranges-rendered").height())
 				} catch (e) {}

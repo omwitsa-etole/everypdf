@@ -19175,6 +19175,65 @@ var apiFiles = apiServer+"/files/uploads/"
         ,
         a.prototype.fileUploaded = function(e, t) {
 			console.log(e,t);
+			var imageUrl = `${apiServer}/v1/pdfrender/${n.pdf_page_number}/${n.server_filename.replace(".pdf","")}/1/150`;
+			if(!window.location.href.includes("organize")){
+				renderImage(imageUrl, 'cover-'+t.id);
+			}else{
+				document.getElementById('filesOrder').innerHTML += `
+					<div class="files__order__item fileA" id="file-${e}">
+						<span class="ico-drag"></span>
+						<span class="filename">A: ${t.file}</span>
+						<div class="close"></div>
+					</div>
+				`
+				const numPages = pdf.page_number;
+				for(let i=0;i<numPages;i++){
+					console.log(numPages,i)
+					const filePages = document.getElementById('filePages');
+					filePages.innerHTML += `
+							<div class="page fileA" id="A${i+1}" data-page="${i+1}" data-pos="${i+1}" data-file="A">
+								<div class="page__add tooltip tooltip--top" data-title="Add a blank page"></div>
+								<div class="page__actions">
+									<a class="page__btn rotate tooltip--top tooltip" data-rotate="0" title="Rotate">
+										<svg width="14px" height="17px" viewBox="0 0 14 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-434.000000, -182.000000)" fill="#47474F"><g transform="translate(265.000000, 172.000000)"><g transform="translate(164.000000, 8.000000)"><path d="M7.76002152,9.05407587 L6.54613936,7.83158461 C5.77132096,8.83023944 5.28921173,9.98385795 5.14285714,11.1805219 L6.881894,11.1805219 C7.00242131,10.4315308 7.30373957,9.69975787 7.76002152,9.05407587 L7.76002152,9.05407587 Z M6.881894,12.9023406 L5.14285714,12.9023406 C5.28921173,14.0990046 5.76271186,15.2526231 6.53753027,16.2512779 L7.75141243,15.0287867 C7.30373957,14.3831047 7.00242131,13.6599408 6.881894,12.9023406 L6.881894,12.9023406 Z M7.75141243,17.4823783 C8.75006726,18.2571967 9.91229486,18.7220877 11.1089588,18.8684423 L11.1089588,17.1207963 C10.3599677,16.9916599 9.63680387,16.6989508 8.99112187,16.2340597 L7.75141243,17.4823783 L7.75141243,17.4823783 Z M12.8307775,5.21442023 L12.8307775,2.57142857 L8.91364003,6.48856605 L12.8307775,10.3196126 L12.8307775,6.95345709 C15.27576,7.36669357 17.1353242,9.48453054 17.1353242,12.0414313 C17.1353242,14.598332 15.27576,16.716169 12.8307775,17.1294054 L12.8307775,18.8684423 C16.2313694,18.4465967 18.8571429,15.5539414 18.8571429,12.0414313 C18.8571429,8.52892117 16.2313694,5.63626581 12.8307775,5.21442023 L12.8307775,5.21442023 Z" transform="translate(12.000000, 10.719935) scale(-1, 1) translate(-12.000000, -10.719935) "></path></g></g></g></g></svg></a><a class="page__btn remove tooltip--top tooltip" title="Delete"><svg width="12px" height="12px" viewBox="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-586.000000, -216.000000)" fill="#47474F"><g transform="translate(580.000000, 210.000000)"><polygon points="18 7.20857143 16.7914286 6 12 10.7914286 7.20857143 6 6 7.20857143 10.7914286 12 6 16.7914286 7.20857143 18 12 13.2085714 16.7914286 18 18 16.7914286 13.2085714 12"></polygon></g></g></g>
+										</svg>
+									</a>
+								</div>
+								<div class="page__container">
+									<div class="page__element">
+										<div class="page__canvas">
+											<canvas id="page-A-${i+1}" width="70" height="100" data-file="${e}" data-page="${i+1}" data-width="596.04" data-height="842.88" style="background-image: none;"></canvas>
+										</div>
+										<div class="file__info">
+										<span class="file__info__name">
+											<span class="file__info__more">
+												<strong>cv.pdf</strong>
+												<br>Page&nbsp;
+											</span>${i+1}
+										</span>
+									</div>
+								</div>
+							</div>
+							<div class="page__add tooltip tooltip--top" data-title="Add a blank page"></div>
+							</div>
+					`
+					pdf.getPage(i+1).then(page => {
+						
+						var canvas = document.getElementById(`page-A-${i+1}`);
+						var ctx = canvas.getContext('2d');
+						const originalViewport = page.getViewport({ scale:1 });
+						const scaleWidth = canvas.width / originalViewport.width;
+						const scaleHeight = canvas.height / originalViewport.height;
+						const scale = Math.min(scaleWidth, scaleHeight);
+						const viewport = page.getViewport({ scale });
+						
+						const renderContext = {
+							canvasContext: ctx,
+							viewport: viewport,
+						};
+						page.render(renderContext);
+					});
+			}
 			/*const pdfUrl = apiFiles+t.server_filename;
 			pdfjsLib.GlobalWorkerOptions.workerSrc = "/static/js/pdfjs/pdf.worker.min.js";
 			if(!window.location.href.includes("organize")){
